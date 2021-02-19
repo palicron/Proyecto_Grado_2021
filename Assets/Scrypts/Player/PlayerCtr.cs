@@ -50,13 +50,19 @@ public class PlayerCtr : MonoBehaviour
     bool WallInfront = false;
     Vector3 curDir = Vector3.zero;
     float MovementControl;
+    
+    float LerpingVelocity=0.4f;
 
+    CapsuleCollider col;
 
+    [SerializeField]
+    Vector3 LastGroundedPos;
     void Start()
     {
         CurrentSpeed = Speed;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        col = GetComponent<CapsuleCollider>();
         MovementControl = GroundControl;
     }
 
@@ -69,7 +75,7 @@ public class PlayerCtr : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded && canMove && !Indash)
         {
-            rb.drag = 0.5f;
+            
             curDir = transform.forward.normalized;
             Dash();
         }
@@ -112,7 +118,7 @@ public class PlayerCtr : MonoBehaviour
         MovementVec.y = 0;
         MovementVec.z = Ymove;
 
-        transform.forward = Vector3.Lerp(MovementVec.normalized, transform.forward, 0.4f);
+        transform.forward = Vector3.Lerp(MovementVec.normalized, transform.forward, LerpingVelocity);
         rb.AddForce(transform.forward * CurrentSpeed * MovementControl * Time.deltaTime, WalkForceMode);
         Vector3 rr = rb.velocity;
         rr.y = 0;
@@ -139,23 +145,27 @@ public class PlayerCtr : MonoBehaviour
 
     void jump()
     {
-        Debug.Log("jump");
+        animator.SetTrigger("Jump");
         rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
     }
     void GroundCheck()
     {
         RaycastHit hit;
         Vector3 down = new Vector3(0, 0, -80);
-
-        if (Physics.CapsuleCast(transform.position + new Vector3(0, 0.5f, 0), transform.position + new Vector3(0, 0.5f, 0) + down, 0.6f, Vector3.down, 1f, WhatIsGround))
+        if(Physics.CheckCapsule(col.bounds.center,new Vector3(col.bounds.center.x,col.bounds.min.y,col.bounds.center.z)
+        ,col.radius,WhatIsGround))
+        //if (Physics.CapsuleCast(transform.position + new Vector3(0, 0.5f, 0), transform.position + new Vector3(0, 0.5f, 0) + down, 0.6f, Vector3.down, 1f, WhatIsGround))
         {
             isGrounded = true;
             MovementControl = GroundControl;
+            LerpingVelocity = 0.4f;
+            LastGroundedPos = transform.position;
         }
         else
         {
             isGrounded = false;
             MovementControl = AirControl;
+            LerpingVelocity =0.55f;
         }
         if (Physics.Linecast(transform.position + new Vector3(0, 0.5f, 0), (transform.position + new Vector3(0, 0.5f, 0)) + (transform.forward * 1), WhatIsWall))
         {
@@ -165,6 +175,9 @@ public class PlayerCtr : MonoBehaviour
         {
             WallInfront = false;
         }
+
+        animator.SetBool("Grounded",isGrounded);
+        Debug.Log(LastGroundedPos);
     }
 
     //@TODO: cambiarlo fb
@@ -207,5 +220,10 @@ public class PlayerCtr : MonoBehaviour
 
     }
 
+    public Vector3 GetLastGroundPos(out Vector3 forward)
+    {
+        forward = curDir;
+        return LastGroundedPos;
+    }
 
 }

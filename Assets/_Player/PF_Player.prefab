@@ -116,7 +116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497069988222655922}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.464, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3203786552322567196}
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 3169579316793145572}
   - component: {fileID: 3169579316793145574}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PF_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -542,12 +542,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 50
-  CurrentSpeed: 0
-  DashTime: 0.2
+  MaxSpeed: 8
+  GroundControl: 1
+  AirControl: 0.5
+  WalkForceMode: 0
+  DashDistance: 4
   DashSpeedMultiplied: 2
+  DisableTime: 0.5
+  BackForceMultipliyer: 2
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  WhatIsWall:
+    serializedVersion: 2
+    m_Bits: 0
+  JumpForce: 15
 --- !u!1 &2915479855663259805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,7 +1075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5895210662574170918}
   m_LocalRotation: {x: 0.046675626, y: -0.02752064, z: 0.030786328, w: 0.99805623}
-  m_LocalPosition: {x: 0.0006551632, y: 0.89368254, z: -0.010674801}
+  m_LocalPosition: {x: 0, y: 0.654, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1800057758780720290}

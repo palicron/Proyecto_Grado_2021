@@ -12,7 +12,11 @@ public class GameManager : MonoBehaviour
     public GameObject[] salas;
     [SerializeField]
     public GameObject[,] Grid= new GameObject[2,2];
-
+    
+    public PlayerCtr Player;
+    [SerializeField]
+    float YkillZone;
+    
     private void Awake()
     {
         intance = this;
@@ -34,11 +38,23 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Player.transform.position.y <= YkillZone)
+        {
+            ResetPlayerOnfall();
+        }
     }
 
-    static void ScreemTransition()
+
+   
+    void ResetPlayerOnfall()
     {
-        
+    
+    //el respaw luego de caer no esta funcinando 
+     Vector3 forward;
+     Vector3 newpost= Player.GetLastGroundPos(out forward);
+     newpost = newpost +(forward.normalized *-10f);
+     newpost.y = 2.0f;
+     Player.transform.position = Vector3.zero;
     }
+
 }
