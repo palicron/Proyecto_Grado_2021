@@ -1,9 +1,10 @@
+
+/** COdigo encargado solo del movimeinto del jugador**/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-/** COdigo encargado solo del movimeinto del jugador**/
 public class PlayerCtr : MonoBehaviour
 {
     [Header("Player Movement")]
@@ -42,6 +43,7 @@ public class PlayerCtr : MonoBehaviour
     Animator animator;
     Vector3 MovementVec = Vector3.zero;
     Rigidbody rb;
+    healthsystems healthsystems;
     float Xvel = 0;
     float Yvel = 0;
     bool Indash = false;
@@ -64,6 +66,11 @@ public class PlayerCtr : MonoBehaviour
         animator = GetComponent<Animator>();
         col = GetComponent<CapsuleCollider>();
         MovementControl = GroundControl;
+        healthsystems = GetComponent<healthsystems>();
+        if(healthsystems)
+        {
+            healthsystems.Init();
+        }
     }
 
     // Update is called once per frame
