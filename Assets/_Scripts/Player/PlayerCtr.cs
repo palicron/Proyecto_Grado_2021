@@ -7,6 +7,10 @@ using UnityEngine;
 
 public class PlayerCtr : MonoBehaviour
 {
+
+
+    
+    public Interactable focus;
     [Header("Player Movement")]
     // Start is called before the first frame update
     [SerializeField]
@@ -136,7 +140,10 @@ public class PlayerCtr : MonoBehaviour
             rb.velocity = NewSpeed;
         }
     }
-
+  void SetFocus (Interactable newFocus)
+    {
+        focus = newFocus;   
+    }
 
     void Dash()
     {
