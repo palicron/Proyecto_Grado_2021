@@ -26,11 +26,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-       
-        Grid[1,1] = salas[0];
-          Grid[0,1] = salas[0];
-            Grid[0,0] = salas[1];
-              Grid[1,0] = salas[0];
+     
 
            
     }
