@@ -191,7 +191,7 @@ public class PlayerCtr : MonoBehaviour
         }
 
         animator.SetBool("Grounded",isGrounded);
-        Debug.Log(LastGroundedPos);
+       //Debug.Log(LastGroundedPos);
     }
 
     //@TODO: cambiarlo fb
@@ -237,6 +237,11 @@ public class PlayerCtr : MonoBehaviour
     public Vector3 GetLastGroundPos(out Vector3 forward)
     {
         forward = curDir;
+        return LastGroundedPos;
+    }
+
+    public Vector3 GetLastGroundedPos()
+    {
         return LastGroundedPos;
     }
 
