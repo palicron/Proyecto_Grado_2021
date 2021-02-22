@@ -2,6 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class ListItem
+{
+    public Item item;
+    public int quantity;
+
+    public ListItem(Item pItem)
+    {
+        item = pItem;
+        quantity = 1;
+    }
+}
 public class Inventory : MonoBehaviour
 {
 
@@ -24,16 +35,30 @@ public class Inventory : MonoBehaviour
 
     public int space = 20;
 
-    public List<Item> items = new List<Item>();
+    public List<ListItem> items = new List<ListItem>();
 
     public bool Add (Item item)
     {
+        bool added = false;
         if(items.Count >= space)
         {
             Debug.Log("Inventory is full.");
             return false;
         }
-        items.Add(item);
+        int index = items.FindLastIndex(pItem => pItem.item.name.Equals(item.name));
+        if (index!=-1)
+        {
+            ListItem actItem = items[index];
+            if(actItem.quantity<actItem.item.maxStack)
+            {
+                items[index].quantity++;
+                added = true;
+            }
+        }
+        if (!added)
+        {
+            items.Add(new ListItem(item));
+        }
 
         if(onItemChangedCallBack!=null)
         {
@@ -42,7 +67,7 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
-    public void Remove (Item item)
+    public void Remove (ListItem item)
     {
         items.Remove(item);
         if (onItemChangedCallBack != null)
