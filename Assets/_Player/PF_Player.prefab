@@ -477,6 +477,7 @@ GameObject:
   - component: {fileID: 3169579316793145572}
   - component: {fileID: 3169579316793145574}
   - component: {fileID: 2611549101238117223}
+  - component: {fileID: 3720479691866639684}
   m_Layer: 0
   m_Name: PF_Player
   m_TagString: Untagged
@@ -542,6 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463aff11d1255924489e6211987f8ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  focus: {fileID: 0}
   Speed: 50
   MaxSpeed: 8
   GroundControl: 1
@@ -572,6 +574,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHelath: 100
+--- !u!114 &3720479691866639684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2827682538584831654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3a2d7bed0833542bbef213f6288cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  space: 20
+  items: []
 --- !u!1 &2915479855663259805
 GameObject:
   m_ObjectHideFlags: 0
