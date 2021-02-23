@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public PlayerCtr Player;
     [SerializeField]
     float YkillZone;
+
+    UIManager Uimanager;
     
     private void Awake()
     {
@@ -27,8 +29,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
      
-
-           
+      Uimanager = UIManager.Instance;
+        
     }
 
     // Update is called once per frame
@@ -44,7 +46,6 @@ public class GameManager : MonoBehaviour
    
     void ResetPlayerOnfall()
     {
-    
     //el respaw luego de caer no esta funcinando 
      Vector3 forward;
      Vector3 newpost= Player.GetLastGroundPos(out forward);
@@ -52,5 +53,19 @@ public class GameManager : MonoBehaviour
      newpost.y = 2.0f;
      Player.transform.position = Vector3.zero;
     }
+
+
+    public void PauseGame()
+    {
+        if(UIManager.GameIsPaused)
+        {
+            Uimanager.Resume();
+        }
+        else
+        {
+            Uimanager.Pause();
+        }
+    }
+
 
 }

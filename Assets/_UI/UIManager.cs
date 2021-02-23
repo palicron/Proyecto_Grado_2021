@@ -6,17 +6,24 @@ public class UIManager : MonoBehaviour
 {
 
 
-    public static UIManager intance;
-    public static UIManager Instance { get { if (intance == null) { intance = new UIManager(); } return intance; } }
+    public static UIManager instance;
+    public static UIManager Instance { get { if (instance == null) { instance = new UIManager(); } return instance; } }
     // Start is called before the first frame update
-
+  
     
+
+      public static bool GameIsPaused = false;
     [SerializeField]
-    GameObject UiInvetory;
+     GameObject UiInvetory;
+
+     [SerializeField]
      GameObject UiHealth;
+
+     [SerializeField]
+     GameObject PauseMenu;
     private void Awake()
     {
-        intance = this;
+        instance = this;
        // Cursor.lockState = CursorLockMode.Confined;
         DontDestroyOnLoad(this.gameObject);
 
@@ -29,8 +36,18 @@ public class UIManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Resume()
     {
-        
+         GameIsPaused = false;
+         PauseMenu.SetActive(false);
+         Time.timeScale = 1.0f;
+    }
+
+    public void Pause()
+    {
+         GameIsPaused = true;
+         PauseMenu.SetActive(true);
+         Time.timeScale = 0.0f;
+
     }
 }
