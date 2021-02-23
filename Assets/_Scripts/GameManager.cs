@@ -30,12 +30,15 @@ public class GameManager : MonoBehaviour
     {
      
       Uimanager = UIManager.Instance;
+      //recordad que esto solo e spara le nivel de prueba tiene que estar es cuando se carga un lvl
+      iniComponents();
         
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         if(Player.transform.position.y <= YkillZone)
         {
             ResetPlayerOnfall();
@@ -65,6 +68,26 @@ public class GameManager : MonoBehaviour
         {
             Uimanager.Pause();
         }
+    }
+
+    void iniComponents()
+    {
+        
+        if(Player)
+        {
+            healthsystems hs =  Player.GetComponent<healthsystems>();
+            hs.healthUpdate += Uimanager.UpdatePlayerLife;
+             hs.Init();
+            Uimanager.UpdatePlayerLife( hs.getHealthPorcentage());
+            
+        }
+        else
+        {
+             Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCtr>();
+            Player.GetComponent<healthsystems>().healthUpdate += Uimanager.UpdatePlayerLife;
+        }
+         
+          
     }
 
 

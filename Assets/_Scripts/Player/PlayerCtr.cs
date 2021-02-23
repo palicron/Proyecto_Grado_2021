@@ -168,7 +168,7 @@ public class PlayerCtr : MonoBehaviour
     }
     void GroundCheck()
     {
-        RaycastHit hit;
+        //RaycastHit hit;
         Vector3 down = new Vector3(0, 0, -80);
         if(Physics.CheckCapsule(col.bounds.center,new Vector3(col.bounds.center.x,col.bounds.min.y,col.bounds.center.z)
         ,col.radius,WhatIsGround))
@@ -198,6 +198,10 @@ public class PlayerCtr : MonoBehaviour
        //Debug.Log(LastGroundedPos);
     }
 
+    public void ApliPlayerFoce(Vector3 force)
+    {
+       rb.AddForce(force, ForceMode.Impulse);
+    }
     //@TODO: cambiarlo fb
 
     IEnumerator StarDash()

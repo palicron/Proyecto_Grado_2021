@@ -10,20 +10,37 @@ public abstract class healthsystems : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     protected float MaxHelath = 100.0f;
+    [SerializeField]
     protected float currentHealh;
+    [SerializeField]
+    protected float invisivilitiTime = 1.0f;
 
+    protected float lastTimeHit = 0;
     public abstract void Init();
+
+    //delgados apra update de vida en porcetaje;
+    public delegate void OnhealthUpdate(float newlife);
+    public OnhealthUpdate healthUpdate;
+
+    public delegate void OnDeathNotify();
+    public static OnDeathNotify deathNotify;
+
     public virtual void TakeDmg(float Damage)
     {
 
-        currentHealh -= Mathf.Clamp((currentHealh - Damage), 0, MaxHelath);
-        if (currentHealh <= 0)
+        if (Time.time - lastTimeHit > invisivilitiTime)
         {
-            Death();
+            lastTimeHit = Time.time;
+            currentHealh = Mathf.Clamp((currentHealh - Damage), 0, MaxHelath);
+            healthUpdate(getHealthPorcentage());
+            if (currentHealh <= 0)
+            {
+                deathNotify();
+                Death();
+            }
         }
 
     }
-
 
     public virtual void Heal(float heal)
     {
@@ -32,6 +49,11 @@ public abstract class healthsystems : MonoBehaviour
 
     }
     public abstract void Death();
+
+    public virtual float getHealthPorcentage()
+    {
+        return currentHealh / MaxHelath;
+    }
 
 
 }
