@@ -101,7 +101,11 @@ public class PlayerCtr : MonoBehaviour
         {
             jump();
         }
-      
+        
+        if (Input.GetKeyDown(KeyCode.Escape) )
+        {
+             GameManager.Instance.PauseGame();
+        }
 
     }
 
@@ -245,4 +249,4 @@ public class PlayerCtr : MonoBehaviour
         return LastGroundedPos;
     }
 
-}
+ } 
