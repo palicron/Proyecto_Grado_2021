@@ -13,8 +13,6 @@ public class UIManager : MonoBehaviour
 
 
     public static bool GameIsPaused = false;
-    [SerializeField]
-    GameObject UiInvetory;
 
     [SerializeField]
     Slider UiHealth;
@@ -27,9 +25,6 @@ public class UIManager : MonoBehaviour
     {
         instance = this;
         // Cursor.lockState = CursorLockMode.Confined;
-
-
-        UiInvetory.SetActive(false);
 
     }
     void Start()
