@@ -45,14 +45,18 @@ public class Inventory : MonoBehaviour
             Debug.Log("Inventory is full.");
             return false;
         }
-        int index = items.FindLastIndex(pItem => pItem.item.name.Equals(item.name));
-        if (index!=-1)
+        List<ListItem> resultItems = items.FindAll(pItem => pItem.item.name.Equals(item.name));
+        if (resultItems.Count>=0)
         {
-            ListItem actItem = items[index];
-            if(actItem.quantity<actItem.item.maxStack)
+            for(int i = 0; i<resultItems.Count; i++)
             {
-                items[index].quantity++;
-                added = true;
+                ListItem actItem = resultItems[i];
+                if (actItem.quantity < actItem.item.maxStack)
+                {
+                    resultItems[i].quantity++;
+                    added = true;
+                    break;
+                }
             }
         }
         if (!added)

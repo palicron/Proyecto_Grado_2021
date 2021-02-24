@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8686183359650757259}
-  - component: {fileID: 2663291962431264603}
+  - component: {fileID: 1708812021463857037}
   m_Layer: 5
   m_Name: InventorySlot_PF
   m_TagString: Untagged
@@ -118,7 +118,7 @@ RectTransform:
   m_AnchoredPosition: {x: -59.464355, y: 100.82539}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2663291962431264603
+--- !u!114 &1708812021463857037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 8686183361494191735}
+  itemDescriptionUI: {fileID: 8121524436927487715, guid: fd11dc45f361fdc4fafe97e10652deef, type: 3}
+  descUI: {fileID: 4764583326334256040, guid: 93670225c2ab14f4e89c197c285e4ec3, type: 3}
   removeButton: {fileID: 8686183361605285603}
   itemQuantity: {fileID: 6367915432725776081}
 --- !u!1 &8686183360335978258
@@ -254,7 +256,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2663291962431264603}
+      - m_Target: {fileID: 1708812021463857037}
         m_TargetAssemblyTypeName: InventorySlot, Assembly-CSharp
         m_MethodName: UseItem
         m_Mode: 1
@@ -461,7 +463,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2663291962431264603}
+      - m_Target: {fileID: 1708812021463857037}
         m_TargetAssemblyTypeName: InventorySlot, Assembly-CSharp
         m_MethodName: OnRemoveButton
         m_Mode: 1
