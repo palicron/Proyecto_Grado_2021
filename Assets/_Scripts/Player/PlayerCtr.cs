@@ -212,7 +212,7 @@ public class PlayerCtr : MonoBehaviour
         bool cantmove = false;
 
         MaxSpeed *= DashSpeedMultiplied;
-
+        col.height = col.height/2;
         while (Vector3.Distance(StarPos, transform.position) <= DashDistance && !crash)
         {
 
@@ -230,6 +230,7 @@ public class PlayerCtr : MonoBehaviour
             }
             yield return new WaitForEndOfFrame();
         }
+        col.height = col.height*2;
         MaxSpeed *= (1 / DashSpeedMultiplied);
         if (!crash)
         {
