@@ -15,8 +15,8 @@ public class InventoryUI : MonoBehaviour
     {
         inventory = Inventory.instance;
         inventory.onItemChangedCallBack += UpdateUI;
+        inventory.onStorageCallBack += UpdateStorage;
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-        inventoryUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -40,6 +40,13 @@ public class InventoryUI : MonoBehaviour
             {
                 slots[i].ClearSlot();
             }
+        }
+    }
+    void UpdateStorage()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].SetStorage(inventory.storage);
         }
     }
 }

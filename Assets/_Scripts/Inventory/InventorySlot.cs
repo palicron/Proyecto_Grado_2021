@@ -16,6 +16,9 @@ public class InventorySlot : MonoBehaviour
 
     public Text itemQuantity;
 
+    private bool inStorage;
+
+    Storage storage;
 
     void Start()
     {
@@ -53,10 +56,15 @@ public class InventorySlot : MonoBehaviour
         GameObject droppedItem = Instantiate(lItem.item.pf, spawnPos, Quaternion.identity);
         Rigidbody droppedItemRB = droppedItem.GetComponent<Rigidbody>();
         droppedItemRB.AddForce(player.transform.forward * 8f, ForceMode.Impulse);
-        if(lItem.quantity>1)
+        removeItem();
+    }
+
+    public void removeItem()
+    {
+        if (lItem.quantity > 1)
         {
             --lItem.quantity;
-            if(lItem.quantity>1)
+            if (lItem.quantity > 1)
             {
                 itemQuantity.text = "" + lItem.quantity;
             }
@@ -77,12 +85,35 @@ public class InventorySlot : MonoBehaviour
         {
             if(lItem.item.isMaterial)
             {
-                itemDescriptionUI.setItem(lItem.item);
+                if(inStorage)
+                {
+                    if(storage.Add(lItem.item))
+                    {
+                        removeItem();
+                    }
+                }
+                else
+                {
+                    itemDescriptionUI.setItem(lItem.item);
+                }
             }
             else
             {
                 lItem.item.Use();
             }
+        }
+    }
+
+    public void SetStorage(Storage pStorage)
+    {
+        storage = pStorage;
+        if(storage!=null)
+        {
+            inStorage = true;
+        }
+        else
+        {
+            inStorage = false;
         }
     }
 }
