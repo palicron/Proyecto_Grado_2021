@@ -2,17 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ListItem
-{
-    public Item item;
-    public int quantity;
-
-    public ListItem(Item pItem)
-    {
-        item = pItem;
-        quantity = 1;
-    }
-}
 public class Inventory : MonoBehaviour
 {
 
@@ -32,6 +21,12 @@ public class Inventory : MonoBehaviour
     public delegate void OnItemChanged();
 
     public OnItemChanged onItemChangedCallBack;
+
+    public delegate void OnStorage();
+
+    public OnStorage onStorageCallBack;
+
+    public Storage storage;
 
     public int space = 20;
 
@@ -77,6 +72,15 @@ public class Inventory : MonoBehaviour
         if (onItemChangedCallBack != null)
         {
             onItemChangedCallBack.Invoke();
+        }
+    }
+
+    public void StorageDetected(Storage pStorage)
+    {
+        storage = pStorage;
+        if (onStorageCallBack != null)
+        {
+            onStorageCallBack.Invoke();
         }
     }
 
