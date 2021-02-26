@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     GameObject PauseMenu;
     [SerializeField]
-    float LifeBarSpeedDecrese =0.2f;
+    float LifeBarSpeedDecrese = 0.2f;
     private void Awake()
     {
         instance = this;
@@ -50,9 +50,9 @@ public class UIManager : MonoBehaviour
 
     public void UpdatePlayerLife(float life)
     {
-       StopAllCoroutines();
-       StartCoroutine(DecreseLifeBar(life));
-        
+        StopAllCoroutines();
+        StartCoroutine(DecreseLifeBar(life));
+
     }
 
     IEnumerator DecreseLifeBar(float newlife)
@@ -64,8 +64,10 @@ public class UIManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
 
         }
-        UiHealth.value = Mathf.Clamp( UiHealth.value,newlife,1);
+        UiHealth.value = Mathf.Clamp(UiHealth.value, newlife, 1);
 
     }
+
+ 
 
 }
