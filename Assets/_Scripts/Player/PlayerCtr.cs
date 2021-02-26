@@ -9,7 +9,7 @@ public class PlayerCtr : MonoBehaviour
 {
 
 
-    
+
     public Interactable focus;
     [Header("Player Movement")]
     // Start is called before the first frame update
@@ -54,10 +54,12 @@ public class PlayerCtr : MonoBehaviour
     bool isGrounded = false;
     bool canMove = true;
     bool WallInfront = false;
+    //Hacer el get y set bien
+    public bool CanControlPlayer = true;
     Vector3 curDir = Vector3.zero;
     float MovementControl;
-    
-    float LerpingVelocity=0.4f;
+
+    float LerpingVelocity = 0.4f;
 
     CapsuleCollider col;
 
@@ -71,7 +73,7 @@ public class PlayerCtr : MonoBehaviour
         col = GetComponent<CapsuleCollider>();
         MovementControl = GroundControl;
         healthsystems = GetComponent<healthsystems>();
-        if(healthsystems)
+        if (healthsystems)
         {
             healthsystems.Init();
         }
@@ -80,13 +82,18 @@ public class PlayerCtr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Xvel = Input.GetAxisRaw("Horizontal");
         Yvel = Input.GetAxisRaw("Vertical");
         animator.SetFloat("HorizontalSpeed", Mathf.Abs(rb.velocity.magnitude / MaxSpeed));
+       
+       
+        if (!CanControlPlayer)
+            return;
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded && canMove && !Indash)
         {
-            
+
             curDir = transform.forward.normalized;
             Dash();
         }
@@ -101,10 +108,10 @@ public class PlayerCtr : MonoBehaviour
         {
             jump();
         }
-        
-        if (Input.GetKeyDown(KeyCode.Escape) )
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-             GameManager.Instance.PauseGame();
+            GameManager.Instance.PauseGame();
         }
 
     }
@@ -113,11 +120,13 @@ public class PlayerCtr : MonoBehaviour
     {
 
         GroundCheck();
-        if(!isGrounded)
+        if (!isGrounded)
         {
-            rb.AddForce(Vector2.down*10f);
+            rb.AddForce(Vector2.down * 10f);
         }
 
+          if (!CanControlPlayer)
+            return;
         if ((Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0) && canMove)
         {
             move(Xvel, Yvel);
@@ -144,9 +153,9 @@ public class PlayerCtr : MonoBehaviour
             rb.velocity = NewSpeed;
         }
     }
-  void SetFocus (Interactable newFocus)
+    void SetFocus(Interactable newFocus)
     {
-        focus = newFocus;   
+        focus = newFocus;
     }
 
     void Dash()
@@ -170,8 +179,8 @@ public class PlayerCtr : MonoBehaviour
     {
         //RaycastHit hit;
         Vector3 down = new Vector3(0, 0, -80);
-        if(Physics.CheckCapsule(col.bounds.center,new Vector3(col.bounds.center.x,col.bounds.min.y,col.bounds.center.z)
-        ,col.radius,WhatIsGround))
+        if (Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z)
+        , col.radius, WhatIsGround))
         //if (Physics.CapsuleCast(transform.position + new Vector3(0, 0.5f, 0), transform.position + new Vector3(0, 0.5f, 0) + down, 0.6f, Vector3.down, 1f, WhatIsGround))
         {
             isGrounded = true;
@@ -183,7 +192,7 @@ public class PlayerCtr : MonoBehaviour
         {
             isGrounded = false;
             MovementControl = AirControl;
-            LerpingVelocity =0.55f;
+            LerpingVelocity = 0.55f;
         }
         if (Physics.Linecast(transform.position + new Vector3(0, 0.5f, 0), (transform.position + new Vector3(0, 0.5f, 0)) + (transform.forward * 1), WhatIsWall))
         {
@@ -194,13 +203,13 @@ public class PlayerCtr : MonoBehaviour
             WallInfront = false;
         }
 
-        animator.SetBool("Grounded",isGrounded);
-       //Debug.Log(LastGroundedPos);
+        animator.SetBool("Grounded", isGrounded);
+        //Debug.Log(LastGroundedPos);
     }
 
     public void ApliPlayerFoce(Vector3 force)
     {
-       rb.AddForce(force, ForceMode.Impulse);
+        rb.AddForce(force, ForceMode.Impulse);
     }
     //@TODO: cambiarlo fb
 
@@ -212,7 +221,7 @@ public class PlayerCtr : MonoBehaviour
         bool cantmove = false;
 
         MaxSpeed *= DashSpeedMultiplied;
-
+        col.height = col.height / 2;
         while (Vector3.Distance(StarPos, transform.position) <= DashDistance && !crash)
         {
 
@@ -230,6 +239,7 @@ public class PlayerCtr : MonoBehaviour
             }
             yield return new WaitForEndOfFrame();
         }
+        col.height = col.height * 2;
         MaxSpeed *= (1 / DashSpeedMultiplied);
         if (!crash)
         {
@@ -253,4 +263,4 @@ public class PlayerCtr : MonoBehaviour
         return LastGroundedPos;
     }
 
- } 
+}
