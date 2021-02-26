@@ -65,6 +65,10 @@ public class PlayerCtr : MonoBehaviour
 
     [SerializeField]
     Vector3 LastGroundedPos;
+
+    [Header("Componentes")]
+    [SerializeField]
+    GameObject PlayerVcam;
     void Start()
     {
         CurrentSpeed = Speed;
@@ -104,7 +108,7 @@ public class PlayerCtr : MonoBehaviour
         }
 
         animator.SetBool("Rolling", Indash);
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             jump();
         }
@@ -261,6 +265,22 @@ public class PlayerCtr : MonoBehaviour
     public Vector3 GetLastGroundedPos()
     {
         return LastGroundedPos;
+    }
+
+    public void SetDialogue(bool state,Vector3 lookpos )
+    {
+         if(state)
+         {
+             CanControlPlayer = false;
+             lookpos.y = transform.position.y;
+             transform.LookAt(lookpos);
+             PlayerVcam.SetActive(true);
+         }
+         else
+         {
+              CanControlPlayer = true;
+                 PlayerVcam.SetActive(false);
+         }
     }
 
 }

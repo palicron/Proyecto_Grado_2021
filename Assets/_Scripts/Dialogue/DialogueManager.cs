@@ -16,8 +16,14 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     Text DialogueText;
 
+    [SerializeField, Range(0, 1)]
+    float textSpeed;
+
     NPC CurrentNPCTalking = null;
 
+    bool IsTyping = false;
+
+    string Currentsentece = "";
     // Start is called before the first frame update
 
     private void Awake()
@@ -40,8 +46,8 @@ public class DialogueManager : MonoBehaviour
 
         if (Dialogue.bIsRandomDialogue)
         {
-             int ran = Random.Range(0,Dialogue.sentences.Length);
-             senteces.Enqueue(Dialogue.sentences[ran]);
+            int ran = Random.Range(0, Dialogue.sentences.Length);
+            senteces.Enqueue(Dialogue.sentences[ran]);
         }
         else
         {
@@ -57,14 +63,24 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if (senteces.Count == 0)
+        if (IsTyping)
         {
-            EndDialgue();
-            return;
+            StopAllCoroutines();
+            DialogueText.text = Currentsentece;
+            IsTyping = false;
         }
-        string sentece = senteces.Dequeue();
+        else
+        {
+            if (senteces.Count == 0)
+            {
+                EndDialgue();
+                return;
+            }
+            Currentsentece = senteces.Dequeue();
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(Currentsentece));
 
-        DialogueText.text = sentece;
+        }
 
     }
 
@@ -75,5 +91,18 @@ public class DialogueManager : MonoBehaviour
         CurrentNPCTalking = null;
         DialogueText.text = "";
         CharaterName.text = "";
+        Currentsentece = "";
+    }
+    IEnumerator TypeSentence(string sentece)
+    {
+        IsTyping = true;
+        DialogueText.text = "";
+        foreach (char letter in sentece.ToCharArray())
+        {
+
+            DialogueText.text += letter;
+            yield return new WaitForSeconds(textSpeed);
+        }
+        IsTyping = false;
     }
 }

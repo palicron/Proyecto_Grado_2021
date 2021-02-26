@@ -14,51 +14,51 @@ public class Npc_StacinariNpc : NPC
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && IsPlayerInrange && !bIsInConversation)
+        if (Input.GetButtonDown("Interact") && IsPlayerInrange && !bIsInConversation)
         {
             Interect();
 
         }
-        else if(Input.GetKeyDown(KeyCode.Z) && IsPlayerInrange && bIsInConversation)
+        else if (Input.GetButtonDown("Interact") && IsPlayerInrange && bIsInConversation)
         {
             DialogueManager.intance.DisplayNextSentence();
         }
-        else if(Input.GetKeyDown(KeyCode.X) && IsPlayerInrange && bIsInConversation )
+        else if (Input.GetKeyDown(KeyCode.X) && IsPlayerInrange && bIsInConversation)
         {
-           DialogueManager.Instance.EndDialgue();
+            DialogueManager.Instance.EndDialgue();
         }
     }
 
     protected override void Interect()
     {
-    
-       TriggerDialogue();
+
+        TriggerDialogue();
 
     }
 
     protected override void TriggerDialogue()
     {
-         CurrentNearPlayer.CanControlPlayer = false;
+        CurrentNearPlayer.SetDialogue(true, this.transform.position);
         Vector3 looktarget = CurrentNearPlayer.transform.position;
         looktarget.y = transform.position.y;
         lookAtTarget(looktarget);
         bIsInConversation = true;
-        if(DialogueInRandomOrder)
+        if (DialogueInRandomOrder)
         {
-           int ran = Random.Range(0,Dialogues.Length);
-           DialogueManager.intance.StarDialogue(Dialogues[ran],this);
+            int ran = Random.Range(0, Dialogues.Length);
+            DialogueManager.intance.StarDialogue(Dialogues[ran], this);
         }
         else
         {
-             DialogueManager.intance.StarDialogue(Dialogues[DialogueIndex],this);
+            DialogueManager.intance.StarDialogue(Dialogues[DialogueIndex], this);
         }
     }
 
 
     public override void EndDialogue()
     {
-          bIsInConversation = false;
-           CurrentNearPlayer.CanControlPlayer = true;
+        bIsInConversation = false;
+        CurrentNearPlayer.SetDialogue(false, Vector3.zero);
     }
 
     private void OnTriggerEnter(Collider other)
