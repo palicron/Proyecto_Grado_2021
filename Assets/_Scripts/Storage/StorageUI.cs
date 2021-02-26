@@ -46,4 +46,5 @@ public class StorageUI : MonoBehaviour
             slots[i].SetInventory(storage.inventory);
         }
     }
+
 }
