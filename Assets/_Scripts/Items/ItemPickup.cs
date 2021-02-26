@@ -10,7 +10,6 @@ public class ItemPickup : MonoBehaviour
 
         if(collider.gameObject.tag == "Player")
         {
-            Debug.Log("Picking up a_" + item.name);
             bool pickedUp = Inventory.instance.Add(item);
             if(pickedUp)
             {

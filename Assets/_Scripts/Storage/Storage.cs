@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class Storage : MonoBehaviour
 {
+
+    #region Singleton
     public static Storage instance;
 
     void Awake()
     {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one inventory instance found");
+        }
         instance = this;
     }
+    #endregion
 
     public delegate void OnStorageChanged();
 
@@ -23,7 +30,7 @@ public class Storage : MonoBehaviour
 
     public int space = 40;
 
-    public List<ListItem> items = new List<ListItem>();
+    public List<ListItem> items;
 
     public bool Add(Item item)
     {
@@ -74,6 +81,15 @@ public class Storage : MonoBehaviour
         if (onInventoryCallBack != null)
         {
             onInventoryCallBack.Invoke();
+        }
+    }
+
+    public void SetContent(ref List<ListItem> pItems)
+    {
+        items = pItems;
+        if (onStorageChangedCallBack != null)
+        {
+            onStorageChangedCallBack.Invoke();
         }
     }
 }
