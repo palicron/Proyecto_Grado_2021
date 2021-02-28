@@ -6,14 +6,14 @@ public class PlaftormController : MonoBehaviour
 {
 
     public Rigidbody platformRB;
-    public float platformSpeed=2;
+    public float platformSpeed;
     public Transform[] positions;
 
     private int actualPosition = 0;
     private int nextposition = 1;
 
     public bool moveToTheNext = true;
-    public float waitTime=2;
+    public float waitTime;
 
 
     // Update is called once per frame
