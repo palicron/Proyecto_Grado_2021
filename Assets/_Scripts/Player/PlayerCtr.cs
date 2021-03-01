@@ -44,6 +44,10 @@ public class PlayerCtr : MonoBehaviour
     [Header("Player Jump")]
     [SerializeField]
     float JumpForce = 15.0f;
+    [SerializeField]
+    float NoGroundDownForce =10.0f;
+    [SerializeField]
+    ForceMode ForceDownTipe;
     Animator animator;
     Vector3 MovementVec = Vector3.zero;
     Rigidbody rb;
@@ -126,7 +130,7 @@ public class PlayerCtr : MonoBehaviour
         GroundCheck();
         if (!isGrounded)
         {
-            rb.AddForce(Vector2.down * 10f);
+            rb.AddForce(Vector2.down * NoGroundDownForce,ForceDownTipe);
         }
 
           if (!CanControlPlayer)
@@ -232,6 +236,7 @@ public class PlayerCtr : MonoBehaviour
             DashForce();
             if (WallInfront || cantmove)
             {
+                col.height = col.height * 2;
                 animator.SetTrigger("Chrashing");
                 cantmove = true;
                 canMove = false;
@@ -239,14 +244,16 @@ public class PlayerCtr : MonoBehaviour
                 yield return new WaitForSeconds(DisableTime);
                 crash = true;
                 canMove = true;
+                
 
             }
             yield return new WaitForEndOfFrame();
         }
-        col.height = col.height * 2;
+      
         MaxSpeed *= (1 / DashSpeedMultiplied);
         if (!crash)
         {
+            col.height = col.height * 2;
             rb.velocity = rb.velocity.normalized * MaxSpeed;
             rb.AddForce(curDir * 10, ForceMode.VelocityChange);
         }

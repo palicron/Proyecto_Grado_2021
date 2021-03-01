@@ -663,7 +663,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2.2
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3169579316793145574
@@ -693,8 +693,10 @@ MonoBehaviour:
     m_Bits: 64
   WhatIsWall:
     serializedVersion: 2
-    m_Bits: 128
-  JumpForce: 10
+    m_Bits: 192
+  JumpForce: 12
+  NoGroundDownForce: 10
+  ForceDownTipe: 0
   CanControlPlayer: 1
   LastGroundedPos: {x: 0, y: 0, z: 0}
   PlayerVcam: {fileID: 927678895}
@@ -1276,7 +1278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5895210662574170918}
   m_LocalRotation: {x: 0.046675626, y: -0.02752064, z: 0.030786328, w: 0.99805623}
-  m_LocalPosition: {x: 0, y: 0.654, z: 0}
+  m_LocalPosition: {x: 0.003, y: 0.613, z: -0.004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1800057758780720290}
