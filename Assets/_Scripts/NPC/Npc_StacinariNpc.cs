@@ -19,7 +19,7 @@ public class Npc_StacinariNpc : NPC
             Interect();
 
         }
-        else if (Input.GetButtonDown("Interact") && IsPlayerInrange && bIsInConversation)
+        else if (Input.GetButtonDown("Interact") && IsPlayerInrange && bIsInConversation && !DialogueManager.WaitingAswer)
         {
             DialogueManager.intance.DisplayNextSentence();
         }

@@ -12,30 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f450dec53465c4ab22560f8b560a95, type: 3}
   m_Name: Dialogue_test_1
   m_EditorClassIdentifier: 
-  bIsRandomDialogue: 1
+  bIsRandomDialogue: 0
   DialoguePriority: 1
   lines:
   - LocutorName: Carlos
     sentences: "El papel se puede reciclar hasta 11 veces. Se va convirtiendo en
       diferentes tipos de papel y cart\xF3n. "
-    IsAendLine: 0
-    IsAquestion: 0
+    Type: 0
     JumpLine: 0
-    Istrade: 0
-    IsAskingFormats: 0
   - LocutorName: Carlos
     sentences: " El reciclaje de papel ahorra un 30% de la energ\xEDa el\xE9ctrica
       y un 70% del agua que se utilizar\xEDa normalmente para producirlo a partir
       de madera."
-    IsAendLine: 1
-    IsAquestion: 0
+    Type: 0
     JumpLine: 0
-    Istrade: 0
-    IsAskingFormats: 0
   - LocutorName: Carlos
     sentences: Cada persona produce casi 1,5 Kg. diario de basura.
-    IsAendLine: 0
-    IsAquestion: 0
+    Type: 1
     JumpLine: 0
-    Istrade: 0
-    IsAskingFormats: 0
