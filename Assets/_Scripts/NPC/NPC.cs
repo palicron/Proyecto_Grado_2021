@@ -19,7 +19,22 @@ public abstract class NPC : MonoBehaviour
 
     protected PlayerCtr CurrentNearPlayer;
 
+    protected virtual void ManageINputs()
+    {
+        if (Input.GetButtonDown("Interact") && IsPlayerInrange && !bIsInConversation)
+        {
+            Interect();
 
+        }
+        else if (Input.GetButtonDown("Interact") && IsPlayerInrange && bIsInConversation && !DialogueManager.WaitingAswer)
+        {
+            DialogueManager.intance.DisplayNextSentence();
+        }
+        else if (Input.GetKeyDown(KeyCode.X) && IsPlayerInrange && bIsInConversation)
+        {
+            DialogueManager.Instance.EndDialgue();
+        }
+    }
     protected abstract void Interect();
 
     protected abstract void TriggerDialogue();
