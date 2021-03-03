@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     
     public PlayerCtr Player;
     [SerializeField]
+
+    public EquipmentManager Equipment;
+    [SerializeField]
+
     float YkillZone;
 
     UIManager Uimanager;

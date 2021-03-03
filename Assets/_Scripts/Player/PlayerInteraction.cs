@@ -6,21 +6,13 @@ public class PlayerInteraction : MonoBehaviour
 {
     Storage storage;
 
-    Inventory inventory;
-
-    void Awake()
-    {
-        inventory = GetComponent<Inventory>();
-    }
-
     void OnTriggerEnter(Collider collider)
     {
 
         if (collider.gameObject.tag == "Storage")
         {
             storage = collider.GetComponent<Storage>();
-            inventory.StorageDetected(storage);
-            storage.SetInventory(inventory);
+            Inventory.instance.StorageDetected(storage);
         }
     }
 
@@ -29,7 +21,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (collider.gameObject.tag == "Storage")
         {
-            inventory.StorageDetected(null);
+            Inventory.instance.StorageDetected(null);
         }
     }
 }

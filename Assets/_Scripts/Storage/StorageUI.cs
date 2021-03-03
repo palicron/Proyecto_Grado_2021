@@ -14,7 +14,6 @@ public class StorageUI : MonoBehaviour
     {
         storage = Storage.instance;
         storage.onStorageChangedCallBack += UpdateUI;
-        storage.onInventoryCallBack += UpdateInventory;
         slots = itemsParent.GetComponentsInChildren<StorageSlot>();
     }
 
@@ -38,13 +37,4 @@ public class StorageUI : MonoBehaviour
             }
         }
     }
-    
-    void UpdateInventory()
-    {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            slots[i].SetInventory(storage.inventory);
-        }
-    }
-
 }
