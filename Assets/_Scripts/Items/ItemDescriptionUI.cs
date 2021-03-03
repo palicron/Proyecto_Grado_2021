@@ -24,6 +24,7 @@ public class ItemDescriptionUI : MonoBehaviour, IDragHandler
 
     private string lastItem = "";
 
+
     public void setItem(Item pItem)
     {
         icon.sprite = pItem.icon;

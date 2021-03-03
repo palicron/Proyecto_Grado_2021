@@ -20,8 +20,6 @@ public class StorageInteraction : MonoBehaviour
 
     Storage storage;
 
-    Inventory inventory;
-
     public List<ListItem> items = new List<ListItem>();
 
     void Awake()
@@ -33,7 +31,6 @@ public class StorageInteraction : MonoBehaviour
 
         if (collider.gameObject.tag == "Player")
         {
-            inventory = collider.gameObject.GetComponent<Inventory>();
             playerClose = true;
             interactingText.GetComponent<Animator>().SetBool("isInteracting", true);
         }
@@ -48,7 +45,7 @@ public class StorageInteraction : MonoBehaviour
             chestOpened = false;
             playerClose = false;
             playerInteracting = false;
-            inventory.StorageDetected(null);
+            Inventory.instance.StorageDetected(null);
             GetComponent<Animator>().SetBool("isOpened", false);
             interactingText.GetComponent<Animator>().SetBool("isInteracting", false);
         }
@@ -61,8 +58,14 @@ public class StorageInteraction : MonoBehaviour
             chestOpened = !chestOpened;
             playerInteracting = chestOpened;
             GetComponent<Animator>().SetBool("isOpened", chestOpened);
-            inventory.StorageDetected(storage);
-            storage.SetInventory(inventory);
+            if (!chestOpened)
+            {
+                Inventory.instance.StorageDetected(null);
+            }   
+            else
+            {
+                Inventory.instance.StorageDetected(storage);
+            }
             storage.SetContent(ref items);
             storageUI.SetActive(chestOpened);
             inventoryUI.SetActive(chestOpened);

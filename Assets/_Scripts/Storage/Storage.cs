@@ -22,10 +22,6 @@ public class Storage : MonoBehaviour
 
     public OnStorageChanged onStorageChangedCallBack;
 
-    public delegate void OnInventory();
-
-    public OnInventory onInventoryCallBack;
-
     public Inventory inventory;
 
     public int space = 40;
@@ -72,15 +68,6 @@ public class Storage : MonoBehaviour
         if (onStorageChangedCallBack != null)
         {
             onStorageChangedCallBack.Invoke();
-        }
-    }
-
-    public void SetInventory(Inventory pInventory)
-    {
-        inventory = pInventory;
-        if (onInventoryCallBack != null)
-        {
-            onInventoryCallBack.Invoke();
         }
     }
 

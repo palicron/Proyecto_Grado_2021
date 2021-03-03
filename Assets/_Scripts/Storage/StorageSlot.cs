@@ -14,6 +14,11 @@ public class StorageSlot : MonoBehaviour
 
     Inventory inventory;
 
+    void Awake()
+    {
+
+    }
+
     public void AddItem(ListItem newItem)
     {
         lItem = newItem;
@@ -37,7 +42,7 @@ public class StorageSlot : MonoBehaviour
     { 
         if(lItem!=null)
         {
-            if (inventory.Add(lItem.item))
+            if (Inventory.instance.Add(lItem.item))
             {
                 if (lItem.quantity > 1)
                 {
@@ -57,10 +62,5 @@ public class StorageSlot : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void SetInventory(Inventory pInventory)
-    {
-        inventory = pInventory;
     }
 }

@@ -20,7 +20,6 @@ public class Item : ScriptableObject
         VeryRare,
         UltraRare
     }
-    public InventoryUI ui;
     new public string name = "New Item";
     public Sprite icon = null;
     public bool isMaterial = false;
@@ -29,8 +28,9 @@ public class Item : ScriptableObject
     public string description = "This is a great item!";
     public ItemType type = ItemType.Default;
     public Rarity rarity = Rarity.Common;
-    public virtual void Use()
+    public virtual bool Use()
     {
         Debug.Log("Using " + name);
+        return false;
     }
 }

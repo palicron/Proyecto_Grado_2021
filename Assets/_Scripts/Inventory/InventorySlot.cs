@@ -6,9 +6,9 @@ public class InventorySlot : MonoBehaviour
 
     public Image icon;
 
-    public ItemDescriptionUI itemDescriptionUI;
+    ItemDescriptionUI itemDescriptionUI;
 
-    public GameObject descUI;
+    public GameObject equipUI;
 
     ListItem lItem;
 
@@ -20,9 +20,9 @@ public class InventorySlot : MonoBehaviour
 
     Storage storage;
 
-    void Start()
+    void Awake()
     {
-        descUI.SetActive(false);
+        itemDescriptionUI = gameObject.GetComponentInParent<ItemDescriptionUI>();
     }
 
     public void AddItem(ListItem newItem)
@@ -52,7 +52,7 @@ public class InventorySlot : MonoBehaviour
         Vector3 playerPos = player.transform.position;
         Vector3 playerDirection = player.transform.forward;
         Quaternion playerRotation = player.transform.rotation;
-        Vector3 spawnPos = playerPos + playerDirection * 1.4f;
+        Vector3 spawnPos = new Vector3(playerPos.x,playerPos.y+1,playerPos.z) + playerDirection * 1.4f;
         GameObject droppedItem = Instantiate(lItem.item.pf, spawnPos, Quaternion.identity);
         Rigidbody droppedItemRB = droppedItem.GetComponent<Rigidbody>();
         droppedItemRB.AddForce(player.transform.forward * 8f, ForceMode.Impulse);
@@ -83,11 +83,21 @@ public class InventorySlot : MonoBehaviour
     {
         if(lItem != null)
         {
-            if(lItem.item.isMaterial)
+            if(inStorage)
             {
-                if(inStorage)
+                if (storage.Add(lItem.item))
                 {
-                    if(storage.Add(lItem.item))
+                    removeItem();
+                }
+            }
+            else 
+            {
+                Debug.Log(lItem.item);
+                Debug.Log(lItem.item.type);
+                Debug.Log(equipUI);
+                if ((int) lItem.item.type == 0 && equipUI.activeSelf)
+                {
+                    if (lItem.item.Use())
                     {
                         removeItem();
                     }
@@ -96,10 +106,6 @@ public class InventorySlot : MonoBehaviour
                 {
                     itemDescriptionUI.setItem(lItem.item);
                 }
-            }
-            else
-            {
-                lItem.item.Use();
             }
         }
     }

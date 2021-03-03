@@ -28,7 +28,7 @@ public class Inventory : MonoBehaviour
 
     public Storage storage;
 
-    public int space = 20;
+    int space = 20;
 
     public List<ListItem> items = new List<ListItem>();
 
