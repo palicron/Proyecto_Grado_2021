@@ -8,7 +8,7 @@ public class BuffController : MonoBehaviour
     private PlayerCtr scriptPlayer;
     healthsystems hs = null;
     public BuffType type;
-
+    public bool isHealing = false;
 
     public enum BuffType
     {
@@ -40,7 +40,7 @@ public class BuffController : MonoBehaviour
                         break;
 
                     case BuffType.JUMP:
-                        scriptPlayer.JumpForce = 40f;
+                        scriptPlayer.JumpForce = 25f;
                         break;
 
                 }
@@ -52,6 +52,7 @@ public class BuffController : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+       
         scriptPlayer = other.gameObject.GetComponent<PlayerCtr>();
         if (scriptPlayer != null)
         {
@@ -60,7 +61,8 @@ public class BuffController : MonoBehaviour
             {
 
                 case BuffType.HEALTH:
-                    hs.Heal(3f);
+                    isHealing = true;
+                    hs.Heal(5f);
                     break;
 
             }

@@ -45,8 +45,13 @@ public abstract class healthsystems : MonoBehaviour
     public virtual void Heal(float heal)
     {
 
-        currentHealh += Mathf.Clamp((currentHealh + heal), 0, MaxHelath);
-
+        if (Time.time - lastTimeHit > invisivilitiTime)
+        {
+            lastTimeHit = Time.time;
+            currentHealh += Mathf.Clamp((currentHealh + heal), 0, MaxHelath);
+            healthUpdate(getHealthPorcentage());
+        }
+      
     }
     public abstract void Death();
 

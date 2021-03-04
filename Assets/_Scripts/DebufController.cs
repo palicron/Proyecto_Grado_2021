@@ -6,15 +6,19 @@ public class DebufController : MonoBehaviour
 {
 
     private PlayerCtr scriptPlayer;
-    healthsystems hs = null;
+    public healthsystems hs = null;
     public DebufType type;
 
+    [Header("TRAP VALUES")]
+    public float BackForce;
+    public float Dammage;
 
     public enum DebufType{
         SLOW,
         HEALTH,
         JUMP,
         DASH,
+        TRAP
     }
 
     void OnTriggerEnter(Collider other) 
@@ -40,6 +44,18 @@ public class DebufController : MonoBehaviour
                         scriptPlayer.JumpForce = 5f;
                         break;
 
+                    case DebufType.TRAP:
+
+                        hs = other.GetComponent<healthsystems>();
+                        if (hs)
+                        {
+                            hs.TakeDmg(5f);
+                            Vector3 vector = -(other.GetComponent<Rigidbody>().velocity.normalized);
+                            other.GetComponent<Rigidbody>().AddForce(vector * BackForce, ForceMode.Impulse);
+
+                        }
+                        hs = null;
+                        break;
                 }
                
             }
