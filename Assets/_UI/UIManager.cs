@@ -51,7 +51,15 @@ public class UIManager : MonoBehaviour
     public void UpdatePlayerLife(float life)
     {
         StopAllCoroutines();
-        StartCoroutine(DecreseLifeBar(life));
+        if(life>=0)
+        {
+            StartCoroutine(DecreseLifeBar(life));
+        }
+        else
+        {
+            StartCoroutine(IncreseLife( Mathf.Abs( life)));
+        }
+        
 
     }
 
@@ -68,6 +76,18 @@ public class UIManager : MonoBehaviour
 
     }
 
- 
+    IEnumerator IncreseLife(float newlife)
+    {
+        float currentValue = UiHealth.value;
+        while (UiHealth.value < newlife)
+        {
+            UiHealth.value += LifeBarSpeedDecrese * Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+
+        }
+        UiHealth.value = Mathf.Clamp(UiHealth.value, newlife, 1);
+
+    }
+
 
 }
