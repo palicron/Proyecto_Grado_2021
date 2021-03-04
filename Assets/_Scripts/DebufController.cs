@@ -6,6 +6,7 @@ public class DebufController : MonoBehaviour
 {
 
     private PlayerCtr scriptPlayer;
+    healthsystems hs = null;
     public DebufType type;
 
 
@@ -42,6 +43,24 @@ public class DebufController : MonoBehaviour
                 }
                
             }
+        }
+    }
+
+
+    void OnTriggerStay(Collider other)
+    {
+        scriptPlayer = other.gameObject.GetComponent<PlayerCtr>();
+            if (scriptPlayer != null )
+            {
+            hs = other.GetComponent<healthsystems>();
+            switch (type)
+                {
+
+                    case DebufType.HEALTH:
+                        hs.TakeDmg(3f);
+                        break;
+
+                }
         }
     }
 
