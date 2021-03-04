@@ -14,8 +14,8 @@ public class PlayerCtr : MonoBehaviour
     [Header("Player Movement")]
     // Start is called before the first frame update
     [SerializeField]
-    float Speed = 1.0f;
-    float CurrentSpeed;
+    public float Speed = 1.0f;
+    public float CurrentSpeed;
     [SerializeField]
     float MaxSpeed = 8.0f;
     [SerializeField, Range(0, 1.0f)]

@@ -1,0 +1,64 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DebufController : MonoBehaviour
+{
+
+    private PlayerCtr scriptPlayer;
+    public DebufType type;
+
+
+    public enum DebufType{
+        SLOW,
+        HEALTH,
+        JUMP,
+        DASH,
+        VISIBILITY
+    }
+
+    void OnTriggerEnter(Collider other) 
+    {
+
+        if (other.gameObject.tag == "Player") 
+        {
+            // other.gameObject.SetActive(false);
+            scriptPlayer = other.gameObject.GetComponent<PlayerCtr>();
+            if (scriptPlayer != null)
+            {
+                switch (type){
+
+                    case DebufType.SLOW:
+                        scriptPlayer.CurrentSpeed = 10f;
+                        break;
+                }
+               
+            }
+        }
+    }
+
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if (scriptPlayer != null)
+            {
+                scriptPlayer.CurrentSpeed = scriptPlayer.Speed;
+            }
+        }
+
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
