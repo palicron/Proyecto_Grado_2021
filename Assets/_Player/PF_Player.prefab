@@ -333,11 +333,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   focus: {fileID: 0}
   Speed: 25
+  CurrentSpeed: 0
   MaxSpeed: 5
   GroundControl: 1
   AirControl: 0.5
   WalkForceMode: 2
   DashDistance: 3.5
+  InitialDashDistance: 4
   DashSpeedMultiplied: 2.5
   DisableTime: 0.75
   BackForceMultipliyer: 1.5
@@ -347,6 +349,7 @@ MonoBehaviour:
   WhatIsWall:
     serializedVersion: 2
     m_Bits: 192
+  InitialJumpForce: 15
   JumpForce: 12
   NoGroundDownForce: 10
   ForceDownTipe: 0
