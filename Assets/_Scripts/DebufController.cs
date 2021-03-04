@@ -15,7 +15,6 @@ public class DebufController : MonoBehaviour
         HEALTH,
         JUMP,
         DASH,
-        VISIBILITY
     }
 
     void OnTriggerEnter(Collider other) 
@@ -40,6 +39,7 @@ public class DebufController : MonoBehaviour
                     case DebufType.JUMP:
                         scriptPlayer.JumpForce = 5f;
                         break;
+
                 }
                
             }

@@ -32,7 +32,7 @@ public class PlayerCtr : MonoBehaviour
     [SerializeField, Range(0, 10.0f)]
     public float InitialDashDistance = 4f;
     [SerializeField, Range(0, 10.0f)]
-    float DashSpeedMultiplied;
+    public float DashSpeedMultiplied;
     [SerializeField, Range(0, 1.0f)]
     float DisableTime = 0.5f;
     [SerializeField, Range(0, 5.0f)]
