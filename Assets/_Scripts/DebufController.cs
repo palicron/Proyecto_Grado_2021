@@ -31,6 +31,14 @@ public class DebufController : MonoBehaviour
                     case DebufType.SLOW:
                         scriptPlayer.CurrentSpeed = 10f;
                         break;
+
+                    case DebufType.DASH:
+                        scriptPlayer.DashDistance = 1f;
+                        break;
+
+                    case DebufType.JUMP:
+                        scriptPlayer.JumpForce = 5f;
+                        break;
                 }
                
             }
@@ -44,7 +52,23 @@ public class DebufController : MonoBehaviour
         {
             if (scriptPlayer != null)
             {
-                scriptPlayer.CurrentSpeed = scriptPlayer.Speed;
+
+                switch (type)
+                {
+
+                    case DebufType.SLOW:
+                        scriptPlayer.CurrentSpeed = scriptPlayer.Speed;
+                        break;
+
+                    case DebufType.DASH:
+                        scriptPlayer.DashDistance = scriptPlayer.InitialDashDistance;
+                        break;
+
+                    case DebufType.JUMP:
+                        scriptPlayer.JumpForce = scriptPlayer.InitialJumpForce;
+                        break;
+                }
+                
             }
         }
 

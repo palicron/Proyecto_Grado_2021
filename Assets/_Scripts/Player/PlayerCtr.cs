@@ -28,7 +28,9 @@ public class PlayerCtr : MonoBehaviour
     [Header("Player Dash")]
 
     [SerializeField, Range(0, 10.0f)]
-    float DashDistance = 4f;
+    public float DashDistance = 4f;
+    [SerializeField, Range(0, 10.0f)]
+    public float InitialDashDistance = 4f;
     [SerializeField, Range(0, 10.0f)]
     float DashSpeedMultiplied;
     [SerializeField, Range(0, 1.0f)]
@@ -44,7 +46,9 @@ public class PlayerCtr : MonoBehaviour
 
     [Header("Player Jump")]
     [SerializeField]
-    float JumpForce = 15.0f;
+    public float InitialJumpForce = 15.0f;
+    [SerializeField]
+    public float JumpForce= 15.0f;
     [SerializeField]
     float NoGroundDownForce = 10.0f;
     [SerializeField]
