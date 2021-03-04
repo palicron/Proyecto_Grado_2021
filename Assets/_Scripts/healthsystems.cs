@@ -49,7 +49,7 @@ public abstract class healthsystems : MonoBehaviour
         {
             lastTimeHit = Time.time;
             currentHealh += Mathf.Clamp((currentHealh + heal), 0, MaxHelath);
-            healthUpdate(getHealthPorcentage());
+            healthUpdate(-getHealthPorcentage());
         }
       
     }
