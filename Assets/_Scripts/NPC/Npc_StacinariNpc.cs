@@ -8,25 +8,13 @@ public class Npc_StacinariNpc : NPC
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Interact") && IsPlayerInrange && !bIsInConversation)
-        {
-            Interect();
-
-        }
-        else if (Input.GetButtonDown("Interact") && IsPlayerInrange && bIsInConversation && !DialogueManager.WaitingAswer)
-        {
-            DialogueManager.intance.DisplayNextSentence();
-        }
-        else if (Input.GetKeyDown(KeyCode.X) && IsPlayerInrange && bIsInConversation)
-        {
-            DialogueManager.Instance.EndDialgue();
-        }
+        ManageINputs();
     }
 
     protected override void Interect()
@@ -38,7 +26,7 @@ public class Npc_StacinariNpc : NPC
 
     protected override void TriggerDialogue()
     {
-        CurrentNearPlayer.SetDialogue(true, this.transform.position);
+        CurrentNearPlayer.SetDialogue(true, this.transform.position,this.transform);
         Vector3 looktarget = CurrentNearPlayer.transform.position;
         looktarget.y = transform.position.y;
         lookAtTarget(looktarget);

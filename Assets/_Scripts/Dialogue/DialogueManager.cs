@@ -96,6 +96,13 @@ public class DialogueManager : MonoBehaviour
                 case DialogueType.Question:
                     DisplayQuestion();
                     break;
+                case DialogueType.Information:
+                    DisplayInforQuestion();
+                    break;
+                case DialogueType.Trading:
+                    break;
+                case DialogueType.Asking:
+                    break;
                 default:
                     break;
             }
@@ -159,6 +166,17 @@ public class DialogueManager : MonoBehaviour
             ASwerButton[i].GetComponentInChildren<Text>().text = CurrentConversation.lines[ActiveLineIndex].Answers[i];
         }
     }
+
+    void DisplayInforQuestion()
+    {
+        DialogueManager.WaitingAswer = true;
+
+        for (int i = 0; i < CurrentConversation.lines[ActiveLineIndex].About.Length; i++)
+        {
+            ASwerButton[i].gameObject.SetActive(true);
+            ASwerButton[i].GetComponentInChildren<Text>().text = CurrentConversation.lines[ActiveLineIndex].About[i];
+        }
+    }
     public void EndDialgue()
     {
         DialoguePanel.SetActive(false);
@@ -197,23 +215,28 @@ public class DialogueManager : MonoBehaviour
 
     public void SendAswer(int Number)
     {
-       
-        if (Number == CorrectAswer)
+       if(CurrentConversation.lines[ActiveLineIndex-1].Type == DialogueType.Question)
         {
-            ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex-1].CorrectJump;
-      
+            if (Number == CorrectAswer)
+            {
+                ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex - 1].CorrectJump;
+
+            }
+            else
+            {
+                ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex - 1].InCorrectJump;
+
+            }
         }
-        else
+       else
         {
-            ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex-1].InCorrectJump;
-         
+            ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex - 1].WhereToJumpInfo[Number];
         }
         foreach (Button b in ASwerButton)
         {
             b.gameObject.SetActive(false);
         }
-     
-     
+
         DialogueManager.WaitingAswer = false;
         DisplayNextSentence();
     }

@@ -4,7 +4,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Analytics;
+using Cinemachine;
 public class PlayerCtr : MonoBehaviour
 {
 
@@ -45,7 +46,7 @@ public class PlayerCtr : MonoBehaviour
     [SerializeField]
     float JumpForce = 15.0f;
     [SerializeField]
-    float NoGroundDownForce =10.0f;
+    float NoGroundDownForce = 10.0f;
     [SerializeField]
     ForceMode ForceDownTipe;
     Animator animator;
@@ -64,7 +65,7 @@ public class PlayerCtr : MonoBehaviour
     float MovementControl;
 
     float LerpingVelocity = 0.4f;
-
+    Vector3 curvel;
     CapsuleCollider col;
 
     [SerializeField]
@@ -73,14 +74,19 @@ public class PlayerCtr : MonoBehaviour
     [Header("Componentes")]
     [SerializeField]
     GameObject PlayerVcam;
+    CinemachineVirtualCamera DialogueVcam;
     void Start()
     {
+        AnalyticsResult a = Analytics.CustomEvent("TEST");
+        Debug.Log(a);
         CurrentSpeed = Speed;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         col = GetComponent<CapsuleCollider>();
         MovementControl = GroundControl;
         healthsystems = GetComponent<healthsystems>();
+        DialogueVcam = PlayerVcam.GetComponent<CinemachineVirtualCamera>();
+
         if (healthsystems)
         {
             healthsystems.Init();
@@ -93,9 +99,11 @@ public class PlayerCtr : MonoBehaviour
 
         Xvel = Input.GetAxisRaw("Horizontal");
         Yvel = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("HorizontalSpeed", Mathf.Abs(rb.velocity.magnitude / MaxSpeed));
-       
-       
+        curvel = rb.velocity;
+        curvel.y = 0;
+        animator.SetFloat("HorizontalSpeed", Mathf.Abs(curvel.magnitude / MaxSpeed));
+
+
         if (!CanControlPlayer)
             return;
 
@@ -130,10 +138,10 @@ public class PlayerCtr : MonoBehaviour
         GroundCheck();
         if (!isGrounded)
         {
-            rb.AddForce(Vector2.down * NoGroundDownForce,ForceDownTipe);
+            rb.AddForce(Vector2.down * NoGroundDownForce, ForceDownTipe);
         }
 
-          if (!CanControlPlayer)
+        if (!CanControlPlayer)
             return;
         if ((Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0) && canMove)
         {
@@ -221,47 +229,7 @@ public class PlayerCtr : MonoBehaviour
     }
     //@TODO: cambiarlo fb
 
-    IEnumerator StarDash()
-    {
-        Indash = true;
-        bool crash = false;
-        Vector3 StarPos = transform.position;
-        bool cantmove = false;
 
-        MaxSpeed *= DashSpeedMultiplied;
-        col.height = col.height / 2;
-        while (Vector3.Distance(StarPos, transform.position) <= DashDistance && !crash)
-        {
-
-            DashForce();
-            if (WallInfront || cantmove)
-            {
-                col.height = col.height * 2;
-                animator.SetTrigger("Chrashing");
-                cantmove = true;
-                canMove = false;
-                rb.AddForce(-curDir * rb.velocity.magnitude * BackForceMultipliyer, ForceMode.VelocityChange);
-                yield return new WaitForSeconds(DisableTime);
-                crash = true;
-                canMove = true;
-                
-
-            }
-            yield return new WaitForEndOfFrame();
-        }
-      
-        MaxSpeed *= (1 / DashSpeedMultiplied);
-        if (!crash)
-        {
-            col.height = col.height * 2;
-            rb.velocity = rb.velocity.normalized * MaxSpeed;
-            rb.AddForce(curDir * 10, ForceMode.VelocityChange);
-        }
-
-        animator.ResetTrigger("Chrashing");
-        Indash = false;
-
-    }
 
     public Vector3 GetLastGroundPos(out Vector3 forward)
     {
@@ -274,20 +242,61 @@ public class PlayerCtr : MonoBehaviour
         return LastGroundedPos;
     }
 
-    public void SetDialogue(bool state,Vector3 lookpos )
+    public void SetDialogue(bool state, Vector3 lookpos, Transform tolook = null)
     {
-         if(state)
-         {
-             CanControlPlayer = false;
-             lookpos.y = transform.position.y;
-             transform.LookAt(lookpos);
-             PlayerVcam.SetActive(true);
-         }
-         else
-         {
-              CanControlPlayer = true;
-                 PlayerVcam.SetActive(false);
-         }
+        if (state)
+        {
+            CanControlPlayer = false;
+            lookpos.y = transform.position.y;
+            transform.LookAt(lookpos);
+            PlayerVcam.SetActive(true);
+            Debug.Log(tolook);
+            Debug.Log(DialogueVcam);
+            DialogueVcam.LookAt = tolook;
+        }
+        else
+        {
+            CanControlPlayer = true;
+            PlayerVcam.SetActive(false);
+            DialogueVcam.LookAt = null; 
+        }
     }
 
+
+    IEnumerator StarDash()
+    {
+        Indash = true;
+        bool crash = false;
+        Vector3 StarPos = transform.position;
+        bool cantmove = false;
+        MaxSpeed *= DashSpeedMultiplied;
+        col.height = col.height / 2;
+        while (Vector3.Distance(StarPos, transform.position) <= DashDistance && !crash)
+        {
+            DashForce();
+            if (WallInfront || cantmove)
+            {
+                col.height = col.height * 2;
+                animator.SetTrigger("Chrashing");
+                cantmove = true;
+                canMove = false;
+                rb.AddForce(-curDir * rb.velocity.magnitude * BackForceMultipliyer, ForceMode.VelocityChange);
+                yield return new WaitForSeconds(DisableTime);
+                crash = true;
+                canMove = true;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+        MaxSpeed *= (1 / DashSpeedMultiplied);
+        if (!crash)
+        {
+            col.height = col.height * 2;
+            rb.velocity = rb.velocity.normalized * MaxSpeed;
+            rb.AddForce(curDir * 10, ForceMode.VelocityChange);
+        }
+        animator.ResetTrigger("Chrashing");
+        Indash = false;
+
+    }
 }
+

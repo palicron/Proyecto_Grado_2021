@@ -12,13 +12,9 @@ public class EquipmentUI : MonoBehaviour
 
     // Start is called before the first frame update
 
-    void Awake()
-    {
-        equipment = EquipmentManager.instance;
-    }
-
     void Start()
     {
+        equipment = EquipmentManager.instance;
         equipment.onItemEquipedCallBack += UpdateUI;
         slots = itemsParent.GetComponentsInChildren<EquipmentSlot>();
     }

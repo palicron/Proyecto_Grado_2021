@@ -12,7 +12,8 @@ public enum DialogueType
     EndDialogue,
     Question,
     Trading,
-    Asking
+    Asking,
+    Information
 }
 [System.Serializable]
 public class line
@@ -32,6 +33,10 @@ public class line
     public int InCorrectJump;
     [Header("Asking")]
     public int[] elementNeded;
+
+    [Header("Information")]
+    public string[] About;
+    public int[] WhereToJumpInfo;
 
 
 }
