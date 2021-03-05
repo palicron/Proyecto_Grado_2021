@@ -96,7 +96,6 @@ GameObject:
   - component: {fileID: 8062830787530073238}
   - component: {fileID: 9118978907858535646}
   - component: {fileID: 243656245858895510}
-  - component: {fileID: 4381300945081568327}
   m_Layer: 0
   m_Name: PiratesChest_A1 1
   m_TagString: Storage
@@ -116,7 +115,7 @@ Transform:
   m_LocalScale: {x: 2.1085894, y: 2.19111, z: 1.7431998}
   m_Children:
   - {fileID: 4379584292552060292}
-  - {fileID: 7593023332525320468}
+  - {fileID: 8628344605603734007}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -145.404, z: 0}
@@ -230,18 +229,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.2, z: 1.5}
   m_Center: {x: 0.022278015, y: 0.7, z: 0.5}
---- !u!114 &4381300945081568327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4381300945081568326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 625792a1a91a2de4689516d28dbfe590, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7593023332525320469
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,16 +255,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7593023332525320469}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.197}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4379304107265242862}
-  m_RootOrder: 1
+  m_Father: {fileID: 8628344605603734007}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.731, y: 1.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0, y: 1}
 --- !u!23 &7593023332525320470
@@ -431,3 +418,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &8981500886493646611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8628344605603734007}
+  m_Layer: 0
+  m_Name: PopUpText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8628344605603734007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8981500886493646611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.731, y: 1.5, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7593023332525320468}
+  m_Father: {fileID: 4379304107265242862}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -6,12 +6,13 @@ public class Item : ScriptableObject
 {
     public enum ItemType
     {
-        Equipment,
+        Default,
         Consumable,
-        Metal,
-        Plastic,
         Paper,
-        Default
+        Plastic,
+        Glass,
+        Metal,
+        Equipment
     }
     public enum Rarity
     {

@@ -84,4 +84,12 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void RecyclingDetected(Storage pStorage)
+    {
+        storage = pStorage;
+        if (onStorageCallBack != null)
+        {
+            onStorageCallBack.Invoke();
+        }
+    }
 }
