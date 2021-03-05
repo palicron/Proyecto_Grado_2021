@@ -60,7 +60,7 @@ public class PlayerCtr : MonoBehaviour
     float Xvel = 0;
     float Yvel = 0;
     bool Indash = false;
-    bool isGrounded = false;
+    public bool isGrounded = false;
     bool canMove = true;
     bool WallInfront = false;
     //Hacer el get y set bien
@@ -70,7 +70,7 @@ public class PlayerCtr : MonoBehaviour
 
     float LerpingVelocity = 0.4f;
     Vector3 curvel;
-    CapsuleCollider col;
+    public CapsuleCollider col;
 
     [SerializeField]
     Vector3 LastGroundedPos;
