@@ -9,9 +9,10 @@ public class DebufController : MonoBehaviour
     public healthsystems hs = null;
     public DebufType type;
 
-    [Header("TRAP VALUES")]
+    [Header("DEBUFF VALUES")]
     public float BackForce;
     public float Dammage;
+    public float SlowValue;
 
     public enum DebufType{
         SLOW,
@@ -33,7 +34,7 @@ public class DebufController : MonoBehaviour
                 switch (type){
 
                     case DebufType.SLOW:
-                        scriptPlayer.CurrentSpeed = 10f;
+                        scriptPlayer.CurrentSpeed = SlowValue;
                         break;
 
                     case DebufType.DASH:
@@ -73,7 +74,7 @@ public class DebufController : MonoBehaviour
                 {
 
                     case DebufType.HEALTH:
-                        hs.TakeDmg(3f);
+                        hs.TakeDmg(Dammage);
                         break;
 
                 }

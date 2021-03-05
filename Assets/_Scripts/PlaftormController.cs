@@ -23,9 +23,10 @@ public class PlaftormController : MonoBehaviour
     public enum PlatformType{ 
         NORMAL,
         TRANSLATE,
-        TRIGGER,
+        TRIGGERTRANSLATE,
         TRIGGEREXIT,
-        ROTATIVE
+        ROTATIVE,
+       
     }
 
     void Awake() {
@@ -44,7 +45,7 @@ public class PlaftormController : MonoBehaviour
     void MovePlatform() 
     {
 
-        if (type == PlatformType.TRANSLATE || type == PlatformType.TRIGGER || type == PlatformType.TRIGGEREXIT)
+        if (type == PlatformType.TRANSLATE || type == PlatformType.TRIGGERTRANSLATE || type == PlatformType.TRIGGEREXIT)
         {
             if (moveToTheNext)
             {
