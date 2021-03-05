@@ -12,7 +12,7 @@ public class Storage : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning("More than one inventory instance found");
+            Debug.LogWarning("More than one storage instance found");
         }
         instance = this;
     }
@@ -28,8 +28,15 @@ public class Storage : MonoBehaviour
 
     public List<ListItem> items;
 
+    public StorageType storageType;
+
     public bool Add(Item item)
     {
+        if(storageType != StorageType.Storage && (int) storageType != (int) item.type-1)
+        {
+            Debug.Log("This is not " + storageType + "! It's "+item.type+"!");
+            return false;
+        }
         bool added = false;
         if (items.Count >= space)
         {
@@ -71,9 +78,10 @@ public class Storage : MonoBehaviour
         }
     }
 
-    public void SetContent(ref List<ListItem> pItems)
+    public void SetContent(ref List<ListItem> pItems, StorageType pType)
     {
         items = pItems;
+        storageType = pType;
         if (onStorageChangedCallBack != null)
         {
             onStorageChangedCallBack.Invoke();
