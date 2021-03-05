@@ -155,7 +155,7 @@ public class PlayerCtr : MonoBehaviour
     }
 
 
-    void move(float Xmove, float Ymove)
+    public void move(float Xmove, float Ymove)
     {
 
         MovementVec.x = Xmove;
