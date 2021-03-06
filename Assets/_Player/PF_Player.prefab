@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 1161704402}
   - component: {fileID: 919132149237822366}
   - component: {fileID: 8577977686316074891}
+  - component: {fileID: 3105449046126650713}
   m_Layer: 9
   m_Name: PF_Player
   m_TagString: Player
@@ -353,9 +354,14 @@ MonoBehaviour:
   JumpForce: 12
   NoGroundDownForce: 10
   ForceDownTipe: 0
+  isGrounded: 0
   CanControlPlayer: 1
+  LerpingVelocity: 0.4
+  col: {fileID: 0}
   LastGroundedPos: {x: 0, y: 0, z: 0}
   PlayerVcam: {fileID: 927678895}
+  PlayerCamera: {fileID: 0}
+  Is3Pesone: 0
 --- !u!114 &2611549101238117223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +435,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentEquipment: []
   equipmentUI: {fileID: 0}
+--- !u!114 &3105449046126650713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2827682538584831654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b462a006d3990c349af20a7503778926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreUIText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &3169579315775931393
 PrefabInstance:
   m_ObjectHideFlags: 0

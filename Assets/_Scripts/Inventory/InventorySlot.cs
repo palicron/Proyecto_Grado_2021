@@ -92,10 +92,7 @@ public class InventorySlot : MonoBehaviour
             }
             else 
             {
-                Debug.Log(lItem.item);
-                Debug.Log(lItem.item.type);
-                Debug.Log(equipUI);
-                if ((int) lItem.item.type == 0 && equipUI.activeSelf)
+                if (lItem.item.type == ItemType.Equipment && equipUI.activeSelf)
                 {
                     if (lItem.item.Use())
                     {
