@@ -17,7 +17,7 @@ public class TriggerPlatform : MonoBehaviour
     }
 
     void OnTriggerExit(Collider other) {
-        if (platformCt.type == PlaftormController.PlatformType.TRIGGEREXIT)
+        if (platformCt.type == PlaftormController.PlatformType.TRIGGEREXIT || platformCt.type == PlaftormController.PlatformType.ROTATIVETRIGGER)
         {
             platformCt.active = false;
         }

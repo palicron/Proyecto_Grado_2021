@@ -11,17 +11,19 @@ public class PlayerPlatform : MonoBehaviour
     Vector3 lastGroundPos;
     Vector3 CurrentPos;
 
+
     string groundName;
     string lastgroundName;
 
     bool isJump;
     public string tagface;
+    public bool moviendose;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GetComponent<PlayerCtr>();
+       
     }
 
     private void OnTriggerStay(Collider other)
@@ -29,27 +31,25 @@ public class PlayerPlatform : MonoBehaviour
         tagface = other.tag;
         if (other.tag =="Platform") 
         {
-            tagface = other.tag;
             if (!isJump) 
-            {
-
-             RaycastHit hit;
-                if (Physics.SphereCast(transform.position, playerController.col.radius, -transform.up, out hit)) 
-                {
-                    GameObject inGround = hit.collider.gameObject;
+            {   
+                  
+                    GameObject inGround = other.gameObject;
                     groundName = inGround.name;
                     groundPos = inGround.transform.position;
-
+                    PlaftormController speed = other.gameObject.GetComponent<PlaftormController>();
                     if (groundPos != lastGroundPos && groundName == lastgroundName) 
                     {
+                        moviendose = true;
                         CurrentPos = Vector3.zero;
-                        CurrentPos += groundPos - lastGroundPos;
+                        CurrentPos += groundPos- lastGroundPos;
+ 
                         playerController.move(CurrentPos.x, CurrentPos.y);
-                    
                     }
+                    playerController.CurrentSpeed = playerController.Speed;
                     lastgroundName = groundName;
                     lastGroundPos = groundPos;
-                }
+                
             }
             if (Input.GetKey(KeyCode.Space))
             {
@@ -68,9 +68,4 @@ public class PlayerPlatform : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

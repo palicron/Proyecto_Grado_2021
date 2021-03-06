@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlaftormController : MonoBehaviour
 {
@@ -18,7 +19,9 @@ public class PlaftormController : MonoBehaviour
     public bool moveToTheNext = true;
     public float waitTime;
     public bool active = false;
-  
+    Quaternion angle_final = Quaternion.Euler(90, 0, 0);
+    Quaternion angle_start = Quaternion.Euler(0, 0, 0);
+    public Quaternion target;
 
     public enum PlatformType{ 
         NORMAL,
@@ -26,13 +29,22 @@ public class PlaftormController : MonoBehaviour
         TRIGGERTRANSLATE,
         TRIGGEREXIT,
         ROTATIVE,
+        ROTATIVETRIGGER
        
     }
+
+    void Start()
+    {
+        target = angle_start;
+    }
+
 
     void Awake() {
         if (type == PlatformType.TRANSLATE || type == PlatformType.ROTATIVE) { active = true; }
     }
-   
+
+  
+
 
     // Update is called once per frame
     void Update()
@@ -40,7 +52,13 @@ public class PlaftormController : MonoBehaviour
         if (active) {
             MovePlatform();
         }
+        else if (type == PlatformType.ROTATIVETRIGGER) 
+        {
+            platformRB.DORotate(new Vector3(0, 0, 0), 0.5f, RotateMode.Fast);
+        }
     }
+
+
 
     void MovePlatform() 
     {
@@ -65,11 +83,17 @@ public class PlaftormController : MonoBehaviour
                 }
             }
         }
-        else if(type == PlatformType.ROTATIVE)
+        else if (type == PlatformType.ROTATIVE)
         {
             transform.Rotate(new Vector3(rotationX, rotationY, rotationZ) * platformSpeed * Time.deltaTime);
         }
+        else if (type == PlatformType.ROTATIVETRIGGER)
+        {
+            platformRB.DORotate(new Vector3(90,0,0),0.10f, RotateMode.Fast);
+            
+        }
     }
+
 
     IEnumerator WaitForMove(float time) {
         moveToTheNext = false;
