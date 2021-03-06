@@ -1,19 +1,18 @@
 using UnityEngine;
 
-
+public enum ItemType
+{
+    Default,
+    Consumable,
+    Paper,
+    Plastic,
+    Glass,
+    Metal,
+    Equipment
+}
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject
 {
-    public enum ItemType
-    {
-        Default,
-        Consumable,
-        Paper,
-        Plastic,
-        Glass,
-        Metal,
-        Equipment
-    }
     public enum Rarity
     {
         Common,
