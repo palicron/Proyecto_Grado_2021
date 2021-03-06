@@ -544,7 +544,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
+  m_Size: {x: 0.6, y: 2, z: 1}
   m_Center: {x: 0, y: 1, z: 0.85}
 --- !u!114 &756083015
 MonoBehaviour:
@@ -558,7 +558,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e08198f8256fa49be0c2b204ed84c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestLid: {fileID: 3932086269534143499}
-  storageUI: {fileID: 0}
-  inventoryUI: {fileID: 0}
   interactingText: {fileID: 428436875}
+  storageType: 0
