@@ -67,7 +67,7 @@ public class PlayerCtr : MonoBehaviour
     public bool CanControlPlayer = true;
     Vector3 curDir = Vector3.zero;
     float MovementControl;
-
+    [SerializeField,Range(0,4.0f)]
     float LerpingVelocity = 0.4f;
     Vector3 curvel;
     public CapsuleCollider col;
@@ -78,7 +78,11 @@ public class PlayerCtr : MonoBehaviour
     [Header("Componentes")]
     [SerializeField]
     GameObject PlayerVcam;
+    [SerializeField]
+    GameObject PlayerCamera;
     CinemachineVirtualCamera DialogueVcam;
+
+    public bool Is3Pesone = false;
     void Start()
     {
         AnalyticsResult a = Analytics.CustomEvent("TEST");
@@ -158,20 +162,49 @@ public class PlayerCtr : MonoBehaviour
     void move(float Xmove, float Ymove)
     {
 
-        MovementVec.x = Xmove;
-        MovementVec.y = 0;
-        MovementVec.z = Ymove;
-
-        transform.forward = Vector3.Lerp(MovementVec.normalized, transform.forward, LerpingVelocity);
-        rb.AddForce(transform.forward * CurrentSpeed * MovementControl * Time.deltaTime, WalkForceMode);
-        Vector3 rr = rb.velocity;
-        rr.y = 0;
-        if (rr.magnitude >= MaxSpeed)
+        if(Is3Pesone)
         {
-            Vector3 NewSpeed = rb.velocity.normalized * MaxSpeed;
-            NewSpeed.y = rb.velocity.y;
-            rb.velocity = NewSpeed;
+        
+
+            Vector3 Cforward = PlayerCamera.transform.right;
+            Cforward.y = 0;
+            Cforward *= Xmove;
+            Vector3 Croright = PlayerCamera.transform.forward;
+            Croright.y = 0;
+            Croright *= Ymove;
+
+            MovementVec = Cforward + Croright;
+            transform.forward = Vector3.Lerp(MovementVec.normalized, transform.forward, LerpingVelocity);
+            rb.AddForce(transform.forward * CurrentSpeed * MovementControl * Time.deltaTime, WalkForceMode);
+            Vector3 rr = rb.velocity;
+            rr.y = 0;
+            if (rr.magnitude >= MaxSpeed)
+            {
+                Vector3 NewSpeed = rb.velocity.normalized * MaxSpeed;
+                NewSpeed.y = rb.velocity.y;
+                rb.velocity = NewSpeed;
+            }
+
         }
+        else
+        {
+            MovementVec.x = Xmove;
+            MovementVec.y = 0;
+            MovementVec.z = Ymove;
+
+            transform.forward = Vector3.Lerp(MovementVec.normalized, transform.forward, LerpingVelocity);
+            rb.AddForce(transform.forward * CurrentSpeed * MovementControl * Time.deltaTime, WalkForceMode);
+            Vector3 rr = rb.velocity;
+            rr.y = 0;
+            if (rr.magnitude >= MaxSpeed)
+            {
+                Vector3 NewSpeed = rb.velocity.normalized * MaxSpeed;
+                NewSpeed.y = rb.velocity.y;
+                rb.velocity = NewSpeed;
+            }
+        }
+
+  
     }
     void SetFocus(Interactable newFocus)
     {
