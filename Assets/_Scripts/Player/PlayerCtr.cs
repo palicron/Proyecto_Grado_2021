@@ -82,7 +82,7 @@ public class PlayerCtr : MonoBehaviour
     GameObject PlayerCamera;
     CinemachineVirtualCamera DialogueVcam;
 
-    public bool Is3Pesone = false;
+   
     void Start()
     {
         AnalyticsResult a = Analytics.CustomEvent("TEST");
@@ -162,10 +162,6 @@ public class PlayerCtr : MonoBehaviour
     public void move(float Xmove, float Ymove)
     {
 
-        if(Is3Pesone)
-        {
-        
-
             Vector3 Cforward = PlayerCamera.transform.right;
             Cforward.y = 0;
             Cforward *= Xmove;
@@ -184,26 +180,6 @@ public class PlayerCtr : MonoBehaviour
                 NewSpeed.y = rb.velocity.y;
                 rb.velocity = NewSpeed;
             }
-
-        }
-        else
-        {
-            MovementVec.x = Xmove;
-            MovementVec.y = 0;
-            MovementVec.z = Ymove;
-
-            transform.forward = Vector3.Lerp(MovementVec.normalized, transform.forward, LerpingVelocity);
-            rb.AddForce(transform.forward * CurrentSpeed * MovementControl * Time.deltaTime, WalkForceMode);
-            Vector3 rr = rb.velocity;
-            rr.y = 0;
-            if (rr.magnitude >= MaxSpeed)
-            {
-                Vector3 NewSpeed = rb.velocity.normalized * MaxSpeed;
-                NewSpeed.y = rb.velocity.y;
-                rb.velocity = NewSpeed;
-            }
-        }
-
   
     }
     void SetFocus(Interactable newFocus)
@@ -257,7 +233,7 @@ public class PlayerCtr : MonoBehaviour
         }
 
         animator.SetBool("Grounded", isGrounded);
-        //Debug.Log(LastGroundedPos);
+      
     }
 
     public void ApliPlayerFoce(Vector3 force)
