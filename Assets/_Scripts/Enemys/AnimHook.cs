@@ -5,7 +5,10 @@ using UnityEngine;
 public class AnimHook : MonoBehaviour
 {
 
+
     Enemy_AI AI;
+    [SerializeField]
+    GameObject LeftHandTrigger;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +25,22 @@ public class AnimHook : MonoBehaviour
     {
       
         AI.resetAttack();
+    }
+
+    public void resetLooting()
+    {
+        AI.resetLooting();
+    }
+
+    public void LeftHandAttak(int attack)
+    {
+        if(attack==1)
+        {
+            LeftHandTrigger.SetActive(true);
+        }
+        else
+        {
+            LeftHandTrigger.SetActive(false);
+        }
     }
 }

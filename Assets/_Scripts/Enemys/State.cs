@@ -25,8 +25,11 @@ public class State
     protected healthsystems npcHealth;
     protected NavMeshAgent agent;
 
+    [SerializeField]
     float visDist = 10.0f;
+    [SerializeField]
     float visAngle = 30.0f;
+    [SerializeField]
     float attackDist = 2.0f;
 
 

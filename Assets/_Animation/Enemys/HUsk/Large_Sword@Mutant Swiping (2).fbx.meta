@@ -56,9 +56,9 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
+      keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
@@ -66,6 +66,20 @@ ModelImporter:
       events:
       - time: 0.82888526
         functionName: resetAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 5ac0976109429c44883510383fb7591f, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.44769877
+        functionName: LeftHandAttak
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 5ac0976109429c44883510383fb7591f, type: 3}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
+      - time: 0.57740587
+        functionName: LeftHandAttak
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 5ac0976109429c44883510383fb7591f, type: 3}
         floatParameter: 0

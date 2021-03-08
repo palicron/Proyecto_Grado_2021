@@ -67,8 +67,8 @@ public class PlayerCtr : MonoBehaviour
     public bool CanControlPlayer = true;
     Vector3 curDir = Vector3.zero;
     float MovementControl;
-    [SerializeField,Range(0,4.0f)]
-    float LerpingVelocity = 0.4f;
+    [SerializeField, Range(0, 10.0f)]
+    float LerpingVelocity;
     Vector3 curvel;
     public CapsuleCollider col;
 
@@ -170,7 +170,8 @@ public class PlayerCtr : MonoBehaviour
             Croright *= Ymove;
 
             MovementVec = Cforward + Croright;
-            transform.forward = Vector3.Lerp(MovementVec.normalized, transform.forward, LerpingVelocity);
+           // transform.forward = Vector3.Lerp(MovementVec.normalized, transform.forward, LerpingVelocity);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(MovementVec.normalized), Time.deltaTime * LerpingVelocity);
             rb.AddForce(transform.forward * CurrentSpeed * MovementControl * Time.deltaTime, WalkForceMode);
             Vector3 rr = rb.velocity;
             rr.y = 0;
@@ -214,14 +215,14 @@ public class PlayerCtr : MonoBehaviour
         {
             isGrounded = true;
             MovementControl = GroundControl;
-            LerpingVelocity = 0.4f;
+           
             LastGroundedPos = transform.position;
         }
         else
         {
             isGrounded = false;
             MovementControl = AirControl;
-            LerpingVelocity = 0.55f;
+           
         }
         if (Physics.Linecast(transform.position + new Vector3(0, 0.5f, 0), (transform.position + new Vector3(0, 0.5f, 0)) + (transform.forward * 1), WhatIsWall))
         {

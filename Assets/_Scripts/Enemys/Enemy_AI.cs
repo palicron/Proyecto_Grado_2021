@@ -10,7 +10,8 @@ public class Enemy_AI : MonoBehaviour
     healthsystems NpcHealth;
     Rigidbody rb;
     public Transform player;
-
+    [SerializeField]
+    float Damage = 10.0f;
     public List<GameObject> ArrayPoints;
     public GameObject lastCheckPoint;
     [SerializeField]
@@ -22,6 +23,7 @@ public class Enemy_AI : MonoBehaviour
 
     public bool IsPaytoling = false;
     bool isAttacking = false;
+    public bool IsLooting = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,5 +68,22 @@ public class Enemy_AI : MonoBehaviour
     {
         isAttacking = false;
         anim.ResetTrigger("Attack");
+    }
+    public void resetLooting()
+    {
+        IsLooting = false;
+        anim.ResetTrigger("LootingUp");
+        anim.ResetTrigger("LootingLow");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Playerhealthsystems hs = other.gameObject.GetComponent<Playerhealthsystems>();
+        if(hs)
+        {
+     
+            hs.TakeDmg(Damage);
+        }
+         
     }
 }

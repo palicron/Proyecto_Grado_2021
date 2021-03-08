@@ -5,7 +5,7 @@ using UnityEngine.AI;
 [System.Serializable]
 public class Attack : State
 {
-    public float RotationSpeed = 2.0f;
+    public float RotationSpeed = 4.5f;
     Enemy_AI Ai;
     public Attack(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player, healthsystems _heal) : base(_npc, _agent, _anim, _player, _heal)
     {
