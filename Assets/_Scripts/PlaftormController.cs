@@ -29,7 +29,7 @@ public class PlaftormController : MonoBehaviour
         TRIGGERTRANSLATE,
         TRIGGEREXIT,
         ROTATIVE,
-        ROTATIVETRIGGER
+        ROTATIVETRIGGER,
        
     }
 
@@ -55,6 +55,7 @@ public class PlaftormController : MonoBehaviour
         else if (type == PlatformType.ROTATIVETRIGGER) 
         {
             platformRB.DORotate(new Vector3(0, 0, 0), 0.5f, RotateMode.Fast);
+            
         }
     }
 
@@ -89,8 +90,8 @@ public class PlaftormController : MonoBehaviour
         }
         else if (type == PlatformType.ROTATIVETRIGGER)
         {
-            platformRB.DORotate(new Vector3(90,0,0),0.10f, RotateMode.Fast);
-            
+            platformRB.DORotate(new Vector3(90, 0, 0), 0.10f, RotateMode.Fast);
+
         }
     }
 
