@@ -61,10 +61,10 @@ public class InventorySlot : MonoBehaviour
 
     public void removeItem()
     {
-        if (lItem.quantity > 1)
+        if (lItem.quantity >= 2)
         {
             --lItem.quantity;
-            if (lItem.quantity > 1)
+            if (lItem.quantity >= 2)
             {
                 itemQuantity.text = "" + lItem.quantity;
             }

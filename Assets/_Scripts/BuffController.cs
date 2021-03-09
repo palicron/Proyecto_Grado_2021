@@ -8,7 +8,14 @@ public class BuffController : MonoBehaviour
     private PlayerCtr scriptPlayer;
     healthsystems hs = null;
     public BuffType type;
-    public bool isHealing = false;
+    [Header("Buff Values")]
+    public float SpeedBuff;
+    public float HealingBuff;
+    public float JumpBuff;
+    public float DashBuff;
+    public bool IsBuffed = false;
+  
+
 
     public enum BuffType
     {
@@ -18,6 +25,14 @@ public class BuffController : MonoBehaviour
         DASH,
     }
 
+     void Start()
+    {
+        SpeedBuff = 35f;
+        HealingBuff = 10f;
+        JumpBuff = 20f;
+        DashBuff = 5f;
+        
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -32,15 +47,18 @@ public class BuffController : MonoBehaviour
                 {
 
                     case BuffType.SPEED:
-                        scriptPlayer.CurrentSpeed = 25f;
+                        scriptPlayer.CurrentSpeed = SpeedBuff;
+                        IsBuffed = true;
                         break;
 
                     case BuffType.DASH:
-                        scriptPlayer.DashDistance = 5f;
+                        scriptPlayer.DashDistance = DashBuff;
+                        IsBuffed = true;
                         break;
 
                     case BuffType.JUMP:
-                        scriptPlayer.JumpForce = 25f;
+                        scriptPlayer.JumpForce = JumpBuff;
+                        IsBuffed = true;
                         break;
 
                 }
@@ -61,8 +79,8 @@ public class BuffController : MonoBehaviour
             {
 
                 case BuffType.HEALTH:
-                    isHealing = true;
-                    hs.Heal(5f);
+                    IsBuffed = true;
+                    hs.Heal(HealingBuff);
                     break;
 
             }
@@ -82,14 +100,17 @@ public class BuffController : MonoBehaviour
 
                     case BuffType.SPEED:
                         scriptPlayer.CurrentSpeed = scriptPlayer.Speed;
+                        IsBuffed = false;
                         break;
 
                     case BuffType.DASH:
                         scriptPlayer.DashDistance = scriptPlayer.InitialDashDistance;
+                        IsBuffed = false;
                         break;
 
                     case BuffType.JUMP:
                         scriptPlayer.JumpForce = scriptPlayer.InitialJumpForce;
+                        IsBuffed = false;
                         break;
                 }
 

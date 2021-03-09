@@ -10,16 +10,32 @@ public class DebufController : MonoBehaviour
     public DebufType type;
 
     [Header("DEBUFF VALUES")]
+    public float DammageDebuff;
+    public float SlowDebuff;
+    public float JumpDebuff;
+    public float DashDebuff;
+    public bool IsDebuffed = false;
+
+    [Header("TRAP VALUES")]
     public float BackForce;
-    public float Dammage;
-    public float SlowValue;
+    public bool IsDammageReal = false;
+
 
     public enum DebufType{
         SLOW,
-        HEALTH,
+        POISON,
         JUMP,
         DASH,
-        TRAP
+        STATICTRAMP
+    }
+
+
+    void Start() 
+    {
+        SlowDebuff = 15f;
+        DashDebuff = 1f;
+        JumpDebuff = 5f;
+    
     }
 
     void OnTriggerEnter(Collider other) 
@@ -34,18 +50,22 @@ public class DebufController : MonoBehaviour
                 switch (type){
 
                     case DebufType.SLOW:
-                        scriptPlayer.CurrentSpeed = SlowValue;
+                        scriptPlayer.CurrentSpeed = SlowDebuff;
+                        IsDebuffed = true;
                         break;
 
                     case DebufType.DASH:
-                        scriptPlayer.DashDistance = 1f;
+                        scriptPlayer.DashDistance = DashDebuff;
+                        IsDebuffed = true;
                         break;
 
                     case DebufType.JUMP:
-                        scriptPlayer.JumpForce = 5f;
+                        scriptPlayer.JumpForce = JumpDebuff;
+                        IsDebuffed = true;
                         break;
 
-                    case DebufType.TRAP:
+
+                    case DebufType.STATICTRAMP:
 
                         hs = other.GetComponent<healthsystems>();
                         if (hs)
@@ -73,8 +93,9 @@ public class DebufController : MonoBehaviour
             switch (type)
                 {
 
-                    case DebufType.HEALTH:
-                        hs.TakeDmg(Dammage);
+                    case DebufType.POISON:
+                    IsDammageReal = true;
+                    hs.TakeDmg(DammageDebuff);
                         break;
 
                 }
@@ -94,26 +115,23 @@ public class DebufController : MonoBehaviour
 
                     case DebufType.SLOW:
                         scriptPlayer.CurrentSpeed = scriptPlayer.Speed;
+                        IsDebuffed = false;
                         break;
 
                     case DebufType.DASH:
                         scriptPlayer.DashDistance = scriptPlayer.InitialDashDistance;
+                        IsDebuffed = false;
                         break;
 
                     case DebufType.JUMP:
                         scriptPlayer.JumpForce = scriptPlayer.InitialJumpForce;
+                        IsDebuffed = false;
                         break;
                 }
                 
             }
         }
 
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
