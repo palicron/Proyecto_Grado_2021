@@ -12,11 +12,11 @@ public class EquipmentSlot : MonoBehaviour
 
     GameObject equipUI;
 
+    GameObject inventoryUI;
+
     Equipment equipmentPiece;
 
     //public Button removeButton;
-
-    private bool inStorage;
 
     public EquipSlotUI slotType;
 
@@ -24,6 +24,7 @@ public class EquipmentSlot : MonoBehaviour
     {
         itemDescriptionUI = gameObject.GetComponentInParent<ItemDescriptionUI>();
         equipUI = GameObject.Find("Equipment");
+        inventoryUI = GameObject.Find("/PF_GameUI").transform.Find("Inventory").gameObject;
     }
 
     public void EquipItem(Equipment newItem)
@@ -75,7 +76,14 @@ public class EquipmentSlot : MonoBehaviour
 
     public void UseItem()
     {
-        removeItem();
+        if (inventoryUI.activeSelf)
+        {
+            removeItem();
+        }
+        else
+        {
+            itemDescriptionUI.setItem(equipmentPiece);
+        }
     }
 
 }
