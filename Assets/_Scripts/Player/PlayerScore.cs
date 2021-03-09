@@ -13,16 +13,14 @@ public class PlayerScore : MonoBehaviour
 
     void Start()
     {
+        //PlayerPrefsX.SetIntArray("Score", new int[4]);
         score = PlayerPrefsX.GetIntArray("Score", 0, 4);
         scoreUI = GameObject.Find("PF_GameUI/Score/Recipient");
         scoreUIText[0] = scoreUI.transform.Find("paper").transform.Find("Text").GetComponent<Text>();
         scoreUIText[1] = scoreUI.transform.Find("plastic").transform.Find("Text").GetComponent<Text>();
         scoreUIText[2] = scoreUI.transform.Find("glass").transform.Find("Text").GetComponent<Text>();
         scoreUIText[3] = scoreUI.transform.Find("metal").transform.Find("Text").GetComponent<Text>();
-        for(int i = 0; i < score.Length; i++)
-        {
-            UpdateScore(i, 0);
-        }
+        RefreshInterface();
     }
 
     public void UpdateScore(int element, int augment)
@@ -30,5 +28,24 @@ public class PlayerScore : MonoBehaviour
         score[element] += augment;
         scoreUIText[element].text = score[element].ToString();
         PlayerPrefsX.SetIntArray("Score", score);
+    }
+
+    public void SetScore(int[] newScore)
+    {
+        score = newScore;
+        PlayerPrefsX.SetIntArray("Score", score);
+        RefreshInterface();
+    }
+
+    public void RefreshInterface()
+    {
+        for (int i = 0; i < score.Length; i++)
+        {
+            UpdateScore(i, 0);
+        }
+    }
+    public int[] GetScore()
+    {
+        return score;
     }
 }

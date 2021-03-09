@@ -92,4 +92,12 @@ public class Inventory : MonoBehaviour
             onStorageCallBack.Invoke();
         }
     }
+
+    public void DebugInventory()
+    {
+        for(int  i = 0; i < items.Count; i++)
+        {
+            Debug.Log("Slot 1: " + items[i].item.name + " : " + items[i].quantity);
+        }
+    }
 }
