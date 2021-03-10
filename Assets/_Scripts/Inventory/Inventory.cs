@@ -100,4 +100,11 @@ public class Inventory : MonoBehaviour
             Debug.Log("Slot 1: " + items[i].item.name + " : " + items[i].quantity);
         }
     }
+
+    //Get The List of Items of the inventory
+    public List<ListItem> getInventory()
+    {
+        return items;
+    }
+
 }

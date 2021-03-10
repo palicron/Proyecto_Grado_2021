@@ -5,9 +5,10 @@ using DG.Tweening;
 
 public class PlaftormController : MonoBehaviour
 {
-
-    [Header("Platform Description")]
+    [Header("Platform Dependences")]
+    public Inventory PlayerInventory;
     public Rigidbody platformRB;
+    [Header("Platform Description")]
     public PlatformType type;
     [Header("Platform Movement")]
     public float platformSpeed;
@@ -25,6 +26,7 @@ public class PlaftormController : MonoBehaviour
     Quaternion angle_final = Quaternion.Euler(90, 0, 0);
     Quaternion angle_start = Quaternion.Euler(0, 0, 0);
     private Quaternion target;
+    public bool verify=false;
 
     public enum PlatformType{ 
         NORMAL,
@@ -53,6 +55,8 @@ public class PlaftormController : MonoBehaviour
     void Update()
     {
         if (active) {
+            List<ListItem> items = PlayerInventory.getInventory();
+            if (items.Count !=0 ) { verify = true; }
             MovePlatform();
         }
         else if (type == PlatformType.ROTATIVETRIGGER) 
