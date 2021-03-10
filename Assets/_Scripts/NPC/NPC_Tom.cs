@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class NPC_Tom : NPC
 {
     [SerializeField]
@@ -13,36 +13,57 @@ public class NPC_Tom : NPC
     float DistanceTotalk = 20.0f;
     [SerializeField]
     float MaxSpeed = 4;
+    [SerializeField]
+    bool MoveAtTheEnd = false;
+    [SerializeField]
+    GameObject EndPoint;
     Animator anim;
+
+    NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.stoppingDistance = DistanceTotalk - 0.1f;
     }
 
     // Update is called once per frame
     void Update()
     {
         ManageINputs();
+        Debug.Log(CurrentNearPlayer);
     }
 
     public override void EndDialogue()
     {
-        bIsInConversation = false;
-        CurrentNearPlayer.SetDialogue(false, Vector3.zero);
-        anim.SetBool("IsTalking", false);
+
+
+        StopAllCoroutines();
+        if (MoveAtTheEnd)
+        {
+
+        }
+        else
+        {
+            bIsInConversation = false;
+            CurrentNearPlayer.SetDialogue(false, Vector3.zero);
+            anim.SetBool("IsTalking", false);
+        }
+
     }
 
     protected override void Interect()
     {
         TriggerDialogue();
+        Debug.Log(CurrentNearPlayer);
     }
 
     protected override void TriggerDialogue()
     {
-        anim.SetBool("IsTalking", true); 
-        
+        anim.SetBool("IsTalking", true);
+
         CurrentNearPlayer.SetDialogue(true, this.transform.position);
         Vector3 looktarget = CurrentNearPlayer.transform.position;
         looktarget.y = transform.position.y;
@@ -75,18 +96,22 @@ public class NPC_Tom : NPC
 
     private void OnTriggerEnter(Collider other)
     {
-        CurrentNearPlayer = other.gameObject.GetComponent<PlayerCtr>();
-        if (CurrentNearPlayer)
+
+
+        if (other.gameObject.GetComponent<PlayerCtr>())
         {
+            CurrentNearPlayer = other.gameObject.GetComponent<PlayerCtr>();
             IsPlayerInrange = true;
         }
+
+
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.GetComponent<PlayerCtr>())
         {
-
+            Debug.Log("Me sali");
             CurrentNearPlayer = null;
             IsPlayerInrange = false;
         }
@@ -95,33 +120,42 @@ public class NPC_Tom : NPC
 
     IEnumerator WalkToplayer()
     {
-        CurrentNearPlayer.SetDialogue(true, this.transform.position);  
+        CurrentNearPlayer.SetDialogue(true, this.transform.position);
         bIsInConversation = true;
-        while (Vector3.Distance(this.transform.position, CurrentNearPlayer.transform.position) > DistanceTotalk)
+        agent.SetDestination(CurrentNearPlayer.transform.position);
+        // while (Vector3.Distance(this.transform.position, CurrentNearPlayer.transform.position) > DistanceTotalk)
+        //{
+        while (agent.remainingDistance > DistanceTotalk)
         {
 
-            Vector3 looktarget = CurrentNearPlayer.transform.position;
-            looktarget.y = transform.position.y;
-            lookAtTarget(looktarget);
-            rb.AddForce(transform.forward.normalized * Speed * Time.deltaTime, ForceMode.VelocityChange);
-         
-            Vector3 rr = rb.velocity;
-            rr.y = 0;
-            if (rr.magnitude >= MaxSpeed)
-            {
-                Vector3 NewSpeed = rb.velocity.normalized * MaxSpeed;
-                NewSpeed.y = rb.velocity.y;
-                rb.velocity = NewSpeed;
-                anim.SetFloat("Speed", rb.velocity.magnitude/ MaxSpeed);
-            }
+            //Vector3 looktarget = CurrentNearPlayer.transform.position;
+            //looktarget.y = transform.position.y;
+            //lookAtTarget(looktarget);
+            //rb.AddForce(transform.forward.normalized * Speed * Time.deltaTime, ForceMode.VelocityChange);
+            agent.SetDestination(CurrentNearPlayer.transform.position);
+            // Vector3 rr = rb.velocity;
+            // rr.y = 0;
+            // if (rr.magnitude >= MaxSpeed)
+            // {
+            //   Vector3 NewSpeed = rb.velocity.normalized * MaxSpeed;
+            //  NewSpeed.y = rb.velocity.y;
+            // rb.velocity = NewSpeed;
+            anim.SetFloat("Speed", (agent.velocity.magnitude / agent.speed));
+            //}
             yield return new WaitForEndOfFrame();
         }
-        
-        rb.velocity = Vector3.zero;
+
+
         anim.SetFloat("Speed", 0);
 
 
         TriggerDialogue();
     }
+
+    public override void midDialgueAction()
+    {
+        throw new System.NotImplementedException();
+    }
+
 
 }

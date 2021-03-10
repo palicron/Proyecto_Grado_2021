@@ -9,11 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424447273735420945}
-  - component: {fileID: 424447273735420951}
   - component: {fileID: 424447273735420944}
   - component: {fileID: 424447273735420950}
   - component: {fileID: 424447273735420949}
   - component: {fileID: 424447273735420948}
+  - component: {fileID: 659114189}
+  - component: {fileID: 659114195}
+  - component: {fileID: 2729466018932465666}
   m_Layer: 0
   m_Name: PF_Tom_NPX
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424447273735420946}
-  m_LocalRotation: {x: -0, y: -0.99631715, z: -0, w: 0.085744806}
+  m_LocalRotation: {x: 0, y: -0.9963169, z: 0, w: 0.08574731}
   m_LocalPosition: {x: -1.241, y: 0, z: -10.585}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -36,19 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -170.162, z: 0}
---- !u!65 &424447273735420951
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 424447273735420946}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9, y: 1.7, z: 0.8}
-  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!54 &424447273735420944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -95,7 +84,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.15
+  m_Radius: 4
   m_Center: {x: 0, y: 0.99, z: 0}
 --- !u!114 &424447273735420948
 MonoBehaviour:
@@ -112,10 +101,65 @@ MonoBehaviour:
   Dialogues:
   - {fileID: 11400000, guid: 692892028ce28b4428f1bc196003384f, type: 2}
   DialogueInRandomOrder: 0
+  SeePlayerWhenTalking: 0
   WalksToPlater: 1
   Speed: 20
-  DistanceTotalk: 1.2
+  DistanceTotalk: 1.8
   MaxSpeed: 2
+  MoveAtTheEnd: 0
+  EndPoint: {fileID: 0}
+--- !u!136 &659114189
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424447273735420946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.39
+  m_Height: 1.88
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.94, z: 0}
+--- !u!208 &659114195
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424447273735420946}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.74, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!195 &2729466018932465666
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424447273735420946}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1.5
+  m_Acceleration: 4
+  avoidancePriority: 50
+  m_AngularSpeed: 180
+  m_StoppingDistance: 1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &424447272403699155
 PrefabInstance:
   m_ObjectHideFlags: 0

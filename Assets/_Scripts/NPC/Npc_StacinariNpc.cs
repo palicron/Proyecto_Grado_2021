@@ -27,9 +27,13 @@ public class Npc_StacinariNpc : NPC
     protected override void TriggerDialogue()
     {
         CurrentNearPlayer.SetDialogue(true, this.transform.position,this.transform);
-        Vector3 looktarget = CurrentNearPlayer.transform.position;
-        looktarget.y = transform.position.y;
-        lookAtTarget(looktarget);
+        if(SeePlayerWhenTalking)
+        {
+            Vector3 looktarget = CurrentNearPlayer.transform.position;
+            looktarget.y = transform.position.y;
+            lookAtTarget(looktarget);
+        }
+     
         bIsInConversation = true;
         if (DialogueInRandomOrder)
         {
@@ -70,4 +74,8 @@ public class Npc_StacinariNpc : NPC
         }
     }
 
+    public override void midDialgueAction()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -67,8 +67,8 @@ public class PlayerCtr : MonoBehaviour
     public bool CanControlPlayer = true;
     Vector3 curDir = Vector3.zero;
     float MovementControl;
-    [SerializeField, Range(0, 10.0f)]
-    float LerpingVelocity;
+    [SerializeField, Range(0, 20.0f)]
+    float LerpingVelocity = 10.0f;
     Vector3 curvel;
     public CapsuleCollider col;
 
@@ -264,8 +264,7 @@ public class PlayerCtr : MonoBehaviour
             lookpos.y = transform.position.y;
             transform.LookAt(lookpos);
             PlayerVcam.SetActive(true);
-            Debug.Log(tolook);
-            Debug.Log(DialogueVcam);
+    
             DialogueVcam.LookAt = tolook;
         }
         else

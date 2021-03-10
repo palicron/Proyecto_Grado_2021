@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance { get { if (intance == null) { intance = new DialogueManager(); } return intance; } }
 
     public static bool WaitingAswer = false;
+
+    public static bool IsinConversation =false;
     Queue<string> senteces;
     [SerializeField]
     public GameObject DialoguePanel;
@@ -20,7 +22,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField, Range(0, 1)]
     float textSpeed;
 
-    bool IsinConversation;
+    //public bool IsinConversation;
     NPC CurrentNPCTalking = null;
 
     [SerializeField]
@@ -67,6 +69,7 @@ public class DialogueManager : MonoBehaviour
         DialoguePanel.SetActive(true);
         ActiveLineIndex = 0;
         CurrentConversation = Dialogue;
+        DialogueManager.IsinConversation = true;
         CharaterName.text = CurrentConversation.lines[ActiveLineIndex].LocutorName;
         CurrentNPCTalking = locutor;
 
@@ -181,6 +184,7 @@ public class DialogueManager : MonoBehaviour
     {
         DialoguePanel.SetActive(false);
         CurrentNPCTalking.EndDialogue();
+        DialogueManager.IsinConversation = false;
         CurrentNPCTalking = null;
         DialogueText.text = "";
         CharaterName.text = "";
@@ -188,6 +192,11 @@ public class DialogueManager : MonoBehaviour
         ActiveLineIndex = 0;
         CurrentConversation = null;
         ToEndConversation = false;
+        DialogueManager.WaitingAswer = false;
+        foreach (Button b in ASwerButton)
+        {
+            b.gameObject.SetActive(false);
+        }
 
     }
     IEnumerator TypeSentence(string sentece)
