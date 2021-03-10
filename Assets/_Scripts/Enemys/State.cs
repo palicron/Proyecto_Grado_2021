@@ -8,7 +8,7 @@ public class State
 {
     public enum STATE
     {
-        IDLE, PATROLING, LOOTING, PURSUING, ATTACKING, DYING
+        IDLE, PATROLING, LOOTING, PURSUING, ATTACKING, DYING,TALKING
     }
 
     public enum EVENT

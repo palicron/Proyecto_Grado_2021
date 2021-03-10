@@ -14,6 +14,8 @@ public abstract class NPC : MonoBehaviour
 
     [SerializeField]
     protected bool DialogueInRandomOrder =false;
+    [SerializeField]
+   protected bool SeePlayerWhenTalking = true;
 
     protected bool bIsInConversation =false;
 
@@ -21,7 +23,7 @@ public abstract class NPC : MonoBehaviour
 
     protected virtual void ManageINputs()
     {
-        if (Input.GetButtonDown("Interact") && IsPlayerInrange && !bIsInConversation)
+        if (Input.GetButtonDown("Interact") && IsPlayerInrange && !bIsInConversation && !DialogueManager.IsinConversation)
         {
             Interect();
 
@@ -30,7 +32,7 @@ public abstract class NPC : MonoBehaviour
         {
             DialogueManager.intance.DisplayNextSentence();
         }
-        else if (Input.GetKeyDown(KeyCode.X) && IsPlayerInrange && bIsInConversation)
+        else if (Input.GetKeyDown(KeyCode.C) && IsPlayerInrange && bIsInConversation)
         {
             DialogueManager.Instance.EndDialgue();
         }
@@ -41,9 +43,19 @@ public abstract class NPC : MonoBehaviour
 
     public abstract void EndDialogue();
 
+    public abstract void midDialgueAction();
+
+
+   
+
     protected virtual void lookAtTarget(Vector3 target)
     {
         //nesesita ahcerse que vovle smoot
         transform.LookAt(target);
+    }
+
+    public bool IsTalking()
+    {
+        return bIsInConversation;
     }
 }

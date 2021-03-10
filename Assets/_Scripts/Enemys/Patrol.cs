@@ -34,8 +34,7 @@ public class Patrol : State
 
     public override void Update()
     {
-        Debug.Log(agent.remainingDistance);
-
+      
         if (CanSeePlayer())
         {
             nextState = new Chase(npc, agent, anim, player, npcHealth);
