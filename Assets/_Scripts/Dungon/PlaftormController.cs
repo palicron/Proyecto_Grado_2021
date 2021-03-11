@@ -7,6 +7,8 @@ public class PlaftormController : MonoBehaviour
 {
     [Header("Platform Dependences")]
     public Inventory PlayerInventory;
+    public EquipmentManager Equipment;
+    public PlayerScore Score;
     public Rigidbody platformRB;
     [Header("Platform Description")]
     public PlatformType type;
@@ -19,13 +21,11 @@ public class PlaftormController : MonoBehaviour
     public float rotationZ;
     [Header("Platform Array")]
     public Transform[] positions;
+    public Transform[] rotations;
     private int actualPosition = 0;
     private int nextposition = 1;
     public bool moveToTheNext = true;
     public bool active = false;
-    Quaternion angle_final = Quaternion.Euler(90, 0, 0);
-    Quaternion angle_start = Quaternion.Euler(0, 0, 0);
-    private Quaternion target;
     public bool verify=false;
 
     public enum PlatformType{ 
@@ -35,12 +35,14 @@ public class PlaftormController : MonoBehaviour
         TRIGGEREXIT,
         ROTATIVE,
         ROTATIVETRIGGER,
-       
+        
     }
 
     void Start()
     {
-        target = angle_start;
+        PlayerInventory = GameObject.Find("Player").GetComponent<Inventory>() ;
+        Equipment = GameObject.Find("Player").GetComponent<EquipmentManager>();
+        Score = GameObject.Find("Player").GetComponent<PlayerScore>();
     }
 
 
@@ -99,11 +101,12 @@ public class PlaftormController : MonoBehaviour
         else if (type == PlatformType.ROTATIVE)
         {
             transform.Rotate(new Vector3(rotationX, rotationY, rotationZ) * platformSpeed * Time.deltaTime);
+           
         }
         else if (type == PlatformType.ROTATIVETRIGGER)
         {
-            platformRB.DORotate(new Vector3(90, 0, 0), 0.10f, RotateMode.Fast);
-
+            platformRB.DORotate(new Vector3(rotationX, rotationY, rotationZ), 0.10f, RotateMode.Fast);
+    
         }
     }
 

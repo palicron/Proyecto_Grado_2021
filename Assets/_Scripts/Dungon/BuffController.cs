@@ -23,15 +23,12 @@ public class BuffController : MonoBehaviour
         HEALTH,
         JUMP,
         DASH,
+        MULTI
     }
 
      void Start()
     {
-        SpeedBuff = 35f;
-        HealingBuff = 10f;
-        JumpBuff = 20f;
-        DashBuff = 5f;
-        
+      
     }
 
     void OnTriggerEnter(Collider other)
@@ -58,6 +55,15 @@ public class BuffController : MonoBehaviour
 
                     case BuffType.JUMP:
                         scriptPlayer.JumpForce = JumpBuff;
+                        IsBuffed = true;
+                        break;
+
+
+                    case BuffType.MULTI:
+                        if (JumpBuff != 0) { scriptPlayer.JumpForce = JumpBuff; }
+                        if (DashBuff != 0) { scriptPlayer.DashDistance = DashBuff; }
+                        if (JumpBuff != 0) { scriptPlayer.JumpForce = JumpBuff; }
+                        if (HealingBuff!=0) { OnTriggerStay(other); }
                         IsBuffed = true;
                         break;
 
@@ -109,6 +115,13 @@ public class BuffController : MonoBehaviour
                         break;
 
                     case BuffType.JUMP:
+                        scriptPlayer.JumpForce = scriptPlayer.InitialJumpForce;
+                        IsBuffed = false;
+                        break;
+
+                    case BuffType.MULTI:
+                        scriptPlayer.CurrentSpeed = scriptPlayer.Speed;
+                        scriptPlayer.DashDistance = scriptPlayer.InitialDashDistance;
                         scriptPlayer.JumpForce = scriptPlayer.InitialJumpForce;
                         IsBuffed = false;
                         break;
