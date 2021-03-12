@@ -60,7 +60,7 @@ public class BuffController : MonoBehaviour
 
 
                     case BuffType.MULTI:
-                        if (JumpBuff != 0) { scriptPlayer.JumpForce = JumpBuff; }
+                        if (JumpBuff != 0) { scriptPlayer.CurrentSpeed = SpeedBuff; }
                         if (DashBuff != 0) { scriptPlayer.DashDistance = DashBuff; }
                         if (JumpBuff != 0) { scriptPlayer.JumpForce = JumpBuff; }
                         if (HealingBuff!=0) { OnTriggerStay(other); }
