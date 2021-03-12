@@ -117,6 +117,6 @@ public class PlaftormController : MonoBehaviour
         moveToTheNext = true;
     }
 
-  
+
 
 }
