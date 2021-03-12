@@ -7,6 +7,7 @@ public class FallFloorController : MonoBehaviour
 {
     public GameObject QuestionField;
     public TextMeshPro actualQuestion;
+    public float speed;
     public int correctAwnser;
     public string[] questions;
     public bool finalQuestion;
@@ -24,8 +25,9 @@ public class FallFloorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!finalQuestion) { 
-            ChangeQuestion(correctAwnser); 
+        if (!finalQuestion)
+        {
+            ChangeQuestion(correctAwnser);
         }
       
     }
