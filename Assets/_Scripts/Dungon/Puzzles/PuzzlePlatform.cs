@@ -13,12 +13,14 @@ public class PuzzlePlatform : MonoBehaviour
     public float speed;
     public bool correct;
     public bool active;
+    public bool AlreadyActivated;
     public Vector3 initialPos;
 
     // Start is called before the first frame update
     void Start()
     {
         platformRB = this.GetComponent<Rigidbody>();
+        AlreadyActivated = false;
         initialPos = new Vector3(platformRB.position.x, platformRB.position.y, platformRB.position.z);
         FallFloorCtr=transform.GetComponentInParent<FallFloorController>();
     }

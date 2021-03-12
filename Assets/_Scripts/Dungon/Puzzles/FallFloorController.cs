@@ -15,6 +15,7 @@ public class FallFloorController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        correctAwnser = 0;
         QuestionField = transform.GetChild(0).gameObject;
         actualQuestion = QuestionField.GetComponent<TextMeshPro>();
         finalQuestion = false;
@@ -31,9 +32,13 @@ public class FallFloorController : MonoBehaviour
 
     void ChangeQuestion(int numberQuestion) 
     {
-        if (questions.Length == correctAwnser) { finalQuestion = true; }
+        if (questions.Length == correctAwnser) 
+        { 
+            finalQuestion = true;
+            actualQuestion.SetText("Completed");
+        }
         else { actualQuestion.SetText(questions[numberQuestion]); }  
     }
 
-    public void addCorrectAwnser() { correctAwnser++; }
+
 }

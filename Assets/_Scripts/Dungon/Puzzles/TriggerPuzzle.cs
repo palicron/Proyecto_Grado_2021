@@ -7,6 +7,13 @@ public class TriggerPuzzle : MonoBehaviour
 
     public PuzzleBotonController ButtonContr;
     public PuzzlePlatform PlatformCt;
+    public FallFloorController fallFloorController;
+
+
+    private void Start()
+    {
+        fallFloorController = transform.GetComponentInParent<FallFloorController>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,8 +26,13 @@ public class TriggerPuzzle : MonoBehaviour
             else if (PlatformCt!=null) 
             {
                 PlatformCt.active = true;
+                if (PlatformCt.correct && !PlatformCt.AlreadyActivated) 
+                {
+                    fallFloorController.correctAwnser++;
+                    PlatformCt.AlreadyActivated = true;
+                }
+                
             }
-            
         }
 
     }
