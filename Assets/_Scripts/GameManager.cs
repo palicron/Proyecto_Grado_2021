@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         {
             healthsystems hs =  Player.GetComponent<healthsystems>();
             hs.healthUpdate += Uimanager.UpdatePlayerLife;
-             hs.Init();
+            hs.Init();
             Uimanager.UpdatePlayerLife( hs.getHealthPorcentage());
             
         }
@@ -89,6 +89,10 @@ public class GameManager : MonoBehaviour
         {
              Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCtr>();
             Player.GetComponent<healthsystems>().healthUpdate += Uimanager.UpdatePlayerLife;
+            healthsystems hs = Player.GetComponent<healthsystems>();
+            hs.healthUpdate += Uimanager.UpdatePlayerLife;
+            hs.Init();
+            Uimanager.UpdatePlayerLife(hs.getHealthPorcentage());
         }
          
           
