@@ -22,6 +22,8 @@ public class EquipmentManager : MonoBehaviour
 
     public GameObject equipmentUI;
 
+    Inventory inventory;
+
     void Start()
     {
         currentEquipment = new Equipment[6];
@@ -39,6 +41,7 @@ public class EquipmentManager : MonoBehaviour
         {
             return false;
         }
+        if(newItem)
         currentEquipment[slotIndex] = newItem;
         
         if (onItemEquipedCallBack != null)

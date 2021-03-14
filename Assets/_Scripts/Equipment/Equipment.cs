@@ -8,6 +8,7 @@ public class Equipment : Item
     public EquipSlot slot;
     public int armorModifier;
     public int damageModifier;
+    public int velocityModifier;
 
     public override bool Use()
     {

@@ -20,6 +20,7 @@ public class Item : ScriptableObject
         VeryRare,
         UltraRare
     }
+    public int id = -1;
     new public string name = "New Item";
     public Sprite icon = null;
     public bool isMaterial = false;

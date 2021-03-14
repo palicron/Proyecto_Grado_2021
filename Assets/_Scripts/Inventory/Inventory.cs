@@ -30,10 +30,31 @@ public class Inventory : MonoBehaviour
 
     int space = 20;
 
+    int extraBagSpace = 10;
+
+    bool extraBag1;
+
+    bool extraBag2;
+
     public List<ListItem> items = new List<ListItem>();
+
+    void Start()
+    {
+        int numExtraBags = PlayerPrefs.SetInt("numExtraBags", 0);
+    }
 
     public bool Add (Item item)
     {
+        int actualSpace = space;
+        if(extraBag1)
+        {
+            space += extraBagSpace;
+        }
+        if(extraBag2)
+        {
+            space += extraBagSpace;
+        }
+        Debug.Log(actualSpace);
         bool added = false;
         if(items.Count >= space)
         {
@@ -84,15 +105,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void RecyclingDetected(Storage pStorage)
-    {
-        storage = pStorage;
-        if (onStorageCallBack != null)
-        {
-            onStorageCallBack.Invoke();
-        }
-    }
-
     public void DebugInventory()
     {
         for(int  i = 0; i < items.Count; i++)
@@ -107,4 +119,47 @@ public class Inventory : MonoBehaviour
         return items;
     }
 
+    public bool SetExtraBag(int i)
+    {
+        if(i == 4)
+        {
+            extraBag1 = true;
+            return true;
+        }
+        if (i == 5)
+        {
+            extraBag1 = true;
+            return true;
+        }
+        return false;
+    }
+
+    public bool RemoveExtraBag(int i)
+    {
+        int boolBag1 = extraBag1? extraBagSpace: 0;
+        int boolBag2 = extraBag2 ? extraBagSpace : 0;
+        if (i == 4 && (space + (extraBagSpace * boolBag2)) > items.Count )
+        {
+            extraBag1 = false;
+            return true;
+        }
+        if (i == 5 && (space + (extraBagSpace * boolBag1)) > items.Count )
+        {
+            extraBag2 = false;
+            return true;
+        }
+        return false;
+    }
+
+    public bool isThereExtraBag(int  i)
+    {
+        if(i==1)
+        {
+            return extraBag1;
+        }
+        else
+        {
+            return extraBag2;
+        }
+    }
 }
