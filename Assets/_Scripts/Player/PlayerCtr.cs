@@ -8,8 +8,19 @@ using UnityEngine.Analytics;
 using Cinemachine;
 public class PlayerCtr : MonoBehaviour
 {
+    // Related to equipment and added stats
+    int armorModifier = 0;
+    int damageModifier = 0;
+    int velocityModifier = 0;
 
-
+    public void ModifyStats(int a, int d, int v)
+    {
+        armorModifier = a;
+        damageModifier = d;
+        velocityModifier = v;
+        Debug.Log("a:" + armorModifier + " d:" + damageModifier + " v:" + velocityModifier);
+    }
+    // --------------------------------
 
     public Interactable focus;
     [Header("Player Movement")]
@@ -62,19 +73,21 @@ public class PlayerCtr : MonoBehaviour
     bool Indash = false;
     public bool isGrounded = false;
     bool canMove = true;
+    
+    
+    int jumpNum = 0;
     bool WallInfront = false;
+    [Header("Equipment Abilitis")]
+    public bool canDoubleJump;
     //Hacer el get y set bien
     public bool CanControlPlayer = true;
+
     Vector3 curDir = Vector3.zero;
     float MovementControl;
     [SerializeField, Range(0, 20.0f)]
-    float LerpingVelocity = 10.0f;
+    float LerpingVelocity = 15.0f;
     Vector3 curvel;
-    public CapsuleCollider col;
-
-    [SerializeField]
-    Vector3 LastGroundedPos;
-
+    CapsuleCollider col;
     [Header("Componentes")]
     [SerializeField]
     GameObject PlayerVcam;
@@ -128,7 +141,7 @@ public class PlayerCtr : MonoBehaviour
         }
 
         animator.SetBool("Rolling", Indash);
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") )
         {
             jump();
         }
@@ -202,8 +215,20 @@ public class PlayerCtr : MonoBehaviour
 
     void jump()
     {
-        animator.SetTrigger("Jump");
-        rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+        if(isGrounded)
+        {
+            animator.SetTrigger("Jump");
+            rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+            jumpNum++;
+        }
+        else if(!isGrounded && canDoubleJump && jumpNum<1)
+        {
+            animator.SetTrigger("Jump");
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+            jumpNum++;
+        }
+
     }
     void GroundCheck()
     {
@@ -215,8 +240,7 @@ public class PlayerCtr : MonoBehaviour
         {
             isGrounded = true;
             MovementControl = GroundControl;
-           
-            LastGroundedPos = transform.position;
+            jumpNum = 0;
         }
         else
         {
@@ -243,18 +267,6 @@ public class PlayerCtr : MonoBehaviour
     }
     //@TODO: cambiarlo fb
 
-
-
-    public Vector3 GetLastGroundPos(out Vector3 forward)
-    {
-        forward = curDir;
-        return LastGroundedPos;
-    }
-
-    public Vector3 GetLastGroundedPos()
-    {
-        return LastGroundedPos;
-    }
 
     public void SetDialogue(bool state, Vector3 lookpos, Transform tolook = null)
     {

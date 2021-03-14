@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager intance;
     public static GameManager Instance { get { if (intance == null) { intance = new GameManager(); } return intance; } }
     // Start is called before the first frame update
-    
-    
+
+    public static Vector3 CheckPoint = Vector3.zero;
     public GameObject[] salas;
     [SerializeField]
     public GameObject[,] Grid= new GameObject[2,2];
@@ -45,21 +45,13 @@ public class GameManager : MonoBehaviour
        
         if(Player.transform.position.y <= YkillZone)
         {
-            ResetPlayerOnfall();
+            Player.transform.position = GameManager.CheckPoint;
         }
     }
 
 
    
-    void ResetPlayerOnfall()
-    {
-    //el respaw luego de caer no esta funcinando 
-     Vector3 forward;
-     Vector3 newpost= Player.GetLastGroundPos(out forward);
-     newpost = newpost +(forward.normalized *-10f);
-     newpost.y = 2.0f;
-     Player.transform.position = Vector3.zero;
-    }
+
 
 
     public void PauseGame()
@@ -81,7 +73,7 @@ public class GameManager : MonoBehaviour
         {
             healthsystems hs =  Player.GetComponent<healthsystems>();
             hs.healthUpdate += Uimanager.UpdatePlayerLife;
-             hs.Init();
+            hs.Init();
             Uimanager.UpdatePlayerLife( hs.getHealthPorcentage());
             
         }
@@ -89,6 +81,10 @@ public class GameManager : MonoBehaviour
         {
              Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCtr>();
             Player.GetComponent<healthsystems>().healthUpdate += Uimanager.UpdatePlayerLife;
+            healthsystems hs = Player.GetComponent<healthsystems>();
+            hs.healthUpdate += Uimanager.UpdatePlayerLife;
+            hs.Init();
+            Uimanager.UpdatePlayerLife(hs.getHealthPorcentage());
         }
          
           
