@@ -40,6 +40,7 @@ public class CraftingPage : MonoBehaviour
         }
         else
         {
+            Debug.Log(pRecipe.item.name);
             gameObject.SetActive(true);
             recipe = pRecipe;
             icon.sprite = recipe.item.icon;
