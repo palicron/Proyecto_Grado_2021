@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        // Cursor.lockState = CursorLockMode.Confined;
+       // Cursor.lockState = CursorLockMode.Confined;
 
     }
     void Start()
