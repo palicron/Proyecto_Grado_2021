@@ -26,11 +26,15 @@ public class Inventory : MonoBehaviour
 
     public OnStorage onStorageCallBack;
 
+    public delegate void OnPocketAdded();
+
+    public OnPocketAdded onPocketAddedCallback;
+
     public Storage storage;
 
-    int space = 20;
+    int space = 8;
 
-    int extraBagSpace = 10;
+    int extraBagSpace = 4;
 
     bool extraBag1;
 
@@ -40,27 +44,58 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
-        int numExtraBags = PlayerPrefs.SetInt("numExtraBags", 0);
+        int numExtraBags = PlayerPrefs.GetInt("numExtraBags");
+        if(numExtraBags>=1)
+        {
+            extraBag1 = true;
+            if(numExtraBags==2)
+            {
+                extraBag2 = true;
+            }
+        }
+    }
+
+    private bool VerifyExtraBag()
+    {
+        if (extraBag1)
+        {
+            if (extraBag2)
+            {
+                return false;
+            }
+            PlayerPrefs.SetInt("numExtraBags", 2);
+            extraBag2 = true;
+            if (onPocketAddedCallback != null)
+            {
+                onPocketAddedCallback.Invoke();
+            }
+            return true;
+        }
+        PlayerPrefs.SetInt("numExtraBags", 1);
+        extraBag1 = true;
+        if (onPocketAddedCallback != null)
+        {
+            onPocketAddedCallback.Invoke();
+        }
+        return true;
     }
 
     public bool Add (Item item)
     {
+        if(item.name == "Bolsillo de Mochila")
+        {
+            return VerifyExtraBag();
+        }
         int actualSpace = space;
         if(extraBag1)
         {
-            space += extraBagSpace;
+            actualSpace += extraBagSpace;
         }
         if(extraBag2)
         {
-            space += extraBagSpace;
+            actualSpace += extraBagSpace;
         }
-        Debug.Log(actualSpace);
         bool added = false;
-        if(items.Count >= space)
-        {
-            Debug.Log("Inventory is full.");
-            return false;
-        }
         List<ListItem> resultItems = items.FindAll(pItem => pItem.item.name.Equals(item.name));
         if (resultItems.Count>=0)
         {
@@ -77,6 +112,11 @@ public class Inventory : MonoBehaviour
         }
         if (!added)
         {
+            if(items.Count >= actualSpace)
+            {
+                Debug.Log("Inventory is full.");
+                return false;
+            }
             items.Add(new ListItem(item));
         }
 

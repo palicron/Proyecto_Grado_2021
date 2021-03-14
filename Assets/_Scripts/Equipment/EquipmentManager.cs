@@ -22,12 +22,21 @@ public class EquipmentManager : MonoBehaviour
 
     public GameObject equipmentUI;
 
+    public PlayerCtr playerCtr;
+
     Inventory inventory;
+
+    int armorModifier = 0; 
+
+    int damageModifier = 0;
+
+    int velocityModifier = 0;
 
     void Start()
     {
         currentEquipment = new Equipment[6];
         equipmentUI = GameObject.Find("Equipment");
+        playerCtr = gameObject.GetComponent<PlayerCtr>();
     }
 
     public bool Equip (Equipment newItem)
@@ -41,8 +50,9 @@ public class EquipmentManager : MonoBehaviour
         {
             return false;
         }
-        if(newItem)
-        currentEquipment[slotIndex] = newItem;
+        if(newItem!=null) currentEquipment[slotIndex] = newItem;
+
+        UpdateStats(true, newItem);
         
         if (onItemEquipedCallBack != null)
         {
@@ -53,10 +63,20 @@ public class EquipmentManager : MonoBehaviour
 
     public void Unequip (int pSlot)
     {
+        UpdateStats(false, currentEquipment[pSlot]);
         currentEquipment[pSlot] = null;
         if (onItemEquipedCallBack != null)
         {
             onItemEquipedCallBack.Invoke();
         }
+    }
+
+    void UpdateStats(bool p, Equipment item)
+    {
+        int sign = p ? 1 : -1;
+        armorModifier += sign * item.armorModifier;
+        damageModifier += sign * item.damageModifier;
+        velocityModifier += sign * item.velocityModifier;
+        playerCtr.ModifyStats(armorModifier, damageModifier, velocityModifier);
     }
 }

@@ -22,6 +22,8 @@ public class ItemDescriptionUI : MonoBehaviour, IDragHandler
 
     public Text rarity;
 
+    public Text extraInfo;
+
     private string lastItem = "";
 
 
@@ -33,9 +35,11 @@ public class ItemDescriptionUI : MonoBehaviour, IDragHandler
 
         description.text = pItem.description;
 
-        type.text = "Type: " + pItem.type;
+        type.text = "Tipo: " + pItem.type;
 
-        rarity.text = "Rarity: " +  pItem.rarity;
+        rarity.text = "Rareza: " +  pItem.rarity;
+
+        extraInfo.text = pItem.extraInfo;
 
         if (name.text.Equals(lastItem) && itemDescUI.activeSelf == true)
         {

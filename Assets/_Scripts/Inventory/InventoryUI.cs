@@ -22,17 +22,16 @@ public class InventoryUI : MonoBehaviour
     void Start()
     {
         inventory = Inventory.instance;
-        isActiveBag1 = inventory.isThereExtraBag(1);
-        isActiveBag2 = inventory.isThereExtraBag(2);
         inventory.onItemChangedCallBack += UpdateUI;
         inventory.onStorageCallBack += UpdateStorage;
+        inventory.onPocketAddedCallback += UpdatePocketUI;
         InventorySlot[] principalSlots = itemsParent.GetComponentsInChildren<InventorySlot>();
         InventorySlot[] extraSlots1 = extraBag1.GetComponentsInChildren<InventorySlot>();
         InventorySlot[] extraSlots2 = extraBag2.GetComponentsInChildren<InventorySlot>();
         slots = new InventorySlot[(principalSlots.Length + extraSlots1.Length + extraSlots2.Length)];
         principalSlots.CopyTo(slots, 0);
         extraSlots1.CopyTo(slots, principalSlots.Length);
-        extraSlots2.CopyTo(slots, extraSlots1.Length);
+        extraSlots2.CopyTo(slots, extraSlots1.Length + principalSlots.Length);
     }
 
     // Update is called once per frame
@@ -42,15 +41,17 @@ public class InventoryUI : MonoBehaviour
         {
             bool active = !inventoryUI.activeSelf;  
             inventoryUI.SetActive(active);
-            extraBag1.SetActive(active && isActiveBag1);
-            extraBag2.SetActive(active && isActiveBag2);
         }
+    }
+
+    void UpdatePocketUI()
+    {
+        extraBag1.SetActive(inventory.isThereExtraBag(1));
+        extraBag2.SetActive(inventory.isThereExtraBag(2));
     }
 
     void UpdateUI()
     {
-        isActiveBag1 = inventory.isThereExtraBag(1);
-        isActiveBag2 = inventory.isThereExtraBag(2);
         for (int i=0;i<slots.Length;i++)
         {
             if(i<inventory.items.Count)

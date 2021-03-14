@@ -15,10 +15,10 @@ public class Item : ScriptableObject
 {
     public enum Rarity
     {
-        Common,
-        Rare,
-        VeryRare,
-        UltraRare
+        Común,
+        Raro,
+        MuyRaro,
+        UltraRaro
     }
     public int id = -1;
     new public string name = "New Item";
@@ -27,8 +27,9 @@ public class Item : ScriptableObject
     public int maxStack = 1;
     public GameObject pf = null;
     public string description = "This is a great item!";
+    public string extraInfo = "Extra info";
     public ItemType type = ItemType.Default;
-    public Rarity rarity = Rarity.Common;
+    public Rarity rarity = Rarity.Común;
     public virtual bool Use()
     {
         Debug.Log("Using " + name);

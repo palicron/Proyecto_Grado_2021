@@ -8,8 +8,19 @@ using UnityEngine.Analytics;
 using Cinemachine;
 public class PlayerCtr : MonoBehaviour
 {
+    // Related to equipment and added stats
+    int armorModifier = 0;
+    int damageModifier = 0;
+    int velocityModifier = 0;
 
-
+    public void ModifyStats(int a, int d, int v)
+    {
+        armorModifier = a;
+        damageModifier = d;
+        velocityModifier = v;
+        Debug.Log("a:" + armorModifier + " d:" + damageModifier + " v:" + velocityModifier);
+    }
+    // --------------------------------
 
     public Interactable focus;
     [Header("Player Movement")]
