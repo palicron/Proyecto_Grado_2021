@@ -10,9 +10,9 @@ public class FallFloorController : MonoBehaviour
     public float speed;
     public int correctAwnser;
     public string[] questions;
+    public Rigidbody[] rigidBodies;
+    public Transform[] positions;
     public bool finalQuestion;
-    public Rigidbody MovilePlatfrom;
-    public Transform newPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,6 @@ public class FallFloorController : MonoBehaviour
         correctAwnser = 0;
         speed = 5f;
         QuestionField = transform.GetChild(0).gameObject;
-        MovilePlatfrom = transform.GetChild(1).gameObject.GetComponent<Rigidbody>();
         actualQuestion = QuestionField.GetComponent<TextMeshPro>();
         finalQuestion = false;
     }
@@ -34,7 +33,12 @@ public class FallFloorController : MonoBehaviour
         }
         else if(finalQuestion)
         {
-            MovilePlatfrom.MovePosition(Vector3.MoveTowards(MovilePlatfrom.position, newPosition.position, speed* Time.deltaTime));
+            int i=0;
+            foreach (Rigidbody rb in rigidBodies)
+            {
+              rb.MovePosition(Vector3.MoveTowards(rb.position, positions[i].position, speed* Time.deltaTime));  
+              i++; 
+            }
         }
       
     }
