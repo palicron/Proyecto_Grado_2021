@@ -86,9 +86,26 @@ public class StorageInteraction : MonoBehaviour
         int totalScore = 0;
         for (int i = 0; i < items.Count; i++)
         {
-            totalScore += items[i].quantity;
+            totalScore += (items[i].quantity * GetPoints(items[i].item));
         }
         items = new List<ListItem>();
         playerScore.UpdateScore(((int)storageType) - 1, totalScore);
+    }
+
+    int GetPoints(Item item)
+    {
+        switch( (int) item.rarity)
+        {
+            case 0:
+                return 10;
+            case 1:
+                return 20;
+            case 2:
+                return 30;
+            case 3:
+                return 50;
+            default:
+                return 0;
+        }
     }
 }
