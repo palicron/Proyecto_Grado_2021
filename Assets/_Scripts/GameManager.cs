@@ -9,86 +9,119 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
 
     public static Vector3 CheckPoint = Vector3.zero;
-    public GameObject[] salas;
-    [SerializeField]
-    public GameObject[,] Grid= new GameObject[2,2];
-    
-    public PlayerCtr Player;
-    [SerializeField]
 
+    [SerializeField]
+    string[] Levels;
+    public GameObject[] salas;
+    public PlayerCtr Player;
+
+    [SerializeField]
     public EquipmentManager Equipment;
     [SerializeField]
 
     float YkillZone;
+  
 
-    UIManager Uimanager;
-    
+    public bool StarLoad = false;
+
     private void Awake()
     {
         intance = this;
-       // Cursor.lockState = CursorLockMode.Confined;
+        // Cursor.lockState = CursorLockMode.Confined;
         DontDestroyOnLoad(this.gameObject);
-      
+
     }
     void Start()
     {
-     
-      Uimanager = UIManager.Instance;
-      //recordad que esto solo e spara le nivel de prueba tiene que estar es cuando se carga un lvl
-      iniComponents();
-        
+
+
+        //recordad que esto solo e spara le nivel de prueba tiene que estar es cuando se carga un lvl
+        iniComponents();
+        if (StarLoad)
+        {
+            loadLevel(0);
+        }
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        if(Player.transform.position.y <= YkillZone)
+
+        if (Player && Player.transform.position.y <= YkillZone)
         {
             Player.transform.position = GameManager.CheckPoint;
         }
     }
 
 
-   
+
 
 
 
     public void PauseGame()
     {
-        if(UIManager.GameIsPaused)
+        if (UIManager.GameIsPaused)
         {
-            Uimanager.Resume();
+            UIManager.Instance.Resume();
         }
         else
         {
-            Uimanager.Pause();
+            UIManager.Instance.Pause();
         }
     }
 
     void iniComponents()
     {
-        
-        if(Player)
+
+        if (Player)
         {
-            healthsystems hs =  Player.GetComponent<healthsystems>();
-            hs.healthUpdate += Uimanager.UpdatePlayerLife;
+            healthsystems hs = Player.GetComponent<healthsystems>();
+            hs.healthUpdate += UIManager.Instance.UpdatePlayerLife;
             hs.Init();
-            Uimanager.UpdatePlayerLife( hs.getHealthPorcentage());
-            
+            UIManager.Instance.UpdatePlayerLife(hs.getHealthPorcentage());
+
         }
         else
         {
-             Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCtr>();
-            Player.GetComponent<healthsystems>().healthUpdate += Uimanager.UpdatePlayerLife;
+            GameObject playerObjet = GameObject.FindGameObjectWithTag("Player");
+            if (!playerObjet)
+                return;
+            Player = playerObjet.GetComponent<PlayerCtr>(); 
+            Player.GetComponent<healthsystems>().healthUpdate += UIManager.Instance.UpdatePlayerLife;
             healthsystems hs = Player.GetComponent<healthsystems>();
-            hs.healthUpdate += Uimanager.UpdatePlayerLife;
+            hs.healthUpdate += UIManager.Instance.UpdatePlayerLife;
             hs.Init();
-            Uimanager.UpdatePlayerLife(hs.getHealthPorcentage());
+            UIManager.Instance.UpdatePlayerLife(hs.getHealthPorcentage());
         }
-         
-          
+       
+
     }
 
+    public void loadLevel(int index)
+    {
+        StartCoroutine(LoadYourAsyncScene(index));
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    IEnumerator LoadYourAsyncScene(int index)
+    {
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Levels[index]);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+        iniComponents();
+
+    }
+
+
+
+  
 
 }

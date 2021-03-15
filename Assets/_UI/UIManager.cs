@@ -90,4 +90,10 @@ public class UIManager : MonoBehaviour
     }
 
 
+    public void LoadLevel(int index)
+    {
+        Resume();
+        GameManager.intance.loadLevel(index);
+    }
+
 }
