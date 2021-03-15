@@ -8,6 +8,7 @@ public class TriggerPuzzle : MonoBehaviour
     public PuzzleBotonController ButtonContr;
     public PuzzlePlatform PlatformCt;
     public FallFloorController fallFloorController;
+    public FloatingPuzzle floatingPuzzle;
 
 
     private void Start()
@@ -23,7 +24,7 @@ public class TriggerPuzzle : MonoBehaviour
             {
                 ButtonContr.active = true;
             }
-            else if (PlatformCt!=null) 
+            else if (PlatformCt!=null && fallFloorController!=null) 
             {
                 PlatformCt.active = true;
                 if (PlatformCt.correct && !PlatformCt.AlreadyActivated) 
@@ -33,6 +34,11 @@ public class TriggerPuzzle : MonoBehaviour
                 }
                 
             }
+            else if (floatingPuzzle != null)
+            {
+                floatingPuzzle.active = true;
+            }
+
         }
 
     }

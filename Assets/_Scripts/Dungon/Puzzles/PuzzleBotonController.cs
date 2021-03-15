@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class PuzzleBotonController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PuzzleBotonController : MonoBehaviour
     public Transform newPostion;
     public Rigidbody MovingObject;
     public Transform MovingPositon;
+    public TextMeshPro opcionText;
     [Header("Button Characteristics")]
     public float speed;
     public bool correct;
@@ -20,6 +22,7 @@ public class PuzzleBotonController : MonoBehaviour
     void Start()
     {
         buttonRigid = this.GetComponent<Rigidbody>();
+        opcionText = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
@@ -33,9 +36,11 @@ public class PuzzleBotonController : MonoBehaviour
 
     void MoveButton()
     {
-        buttonRigid.MovePosition(Vector3.MoveTowards(buttonRigid.position, newPostion.position, speed * Time.deltaTime));
+
+        StartCoroutine(MoveButton(1f));
         if (correct)
         {
+            opcionText.SetText("Correct !");
             StartCoroutine(MoveMovingObject(1f));
         }
 
@@ -45,5 +50,11 @@ public class PuzzleBotonController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         MovingObject.MovePosition(Vector3.MoveTowards(MovingObject.position, MovingPositon.position, speed * Time.deltaTime));
+    }
+
+    IEnumerator MoveButton(float time)
+    {
+        yield return new WaitForSeconds(time);
+        buttonRigid.MovePosition(Vector3.MoveTowards(buttonRigid.position, newPostion.position, speed * Time.deltaTime));
     }
 }
