@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-
 public class PuzzleBotonController : MonoBehaviour
 {
     [Header("Button  Dependences")]
