@@ -43,14 +43,18 @@ public class FallFloorController : MonoBehaviour
       
     }
 
-    void ChangeQuestion(int numberQuestion) 
+    void ChangeQuestion(int numberQuestion)
     {
-        if (questions.Length == correctAwnser) 
-        { 
+        if (questions.Length == correctAwnser)
+        {
             finalQuestion = true;
             actualQuestion.SetText("Completed");
         }
-        else { actualQuestion.SetText(questions[numberQuestion]); }  
+        else if (questions[numberQuestion]!=null)
+        {
+            actualQuestion.SetText(questions[numberQuestion]); 
+      
+        }  
     }
 
 
