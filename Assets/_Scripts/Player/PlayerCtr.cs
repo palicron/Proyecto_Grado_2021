@@ -98,8 +98,7 @@ public class PlayerCtr : MonoBehaviour
    
     void Start()
     {
-        AnalyticsResult a = Analytics.CustomEvent("TEST");
-        Debug.Log(a);
+     
         CurrentSpeed = Speed;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();

@@ -33,7 +33,7 @@ public class NPC_Tom : NPC
     void Update()
     {
         ManageINputs();
-        Debug.Log(CurrentNearPlayer);
+
     }
 
     public override void EndDialogue()

@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     string[] Levels;
+    [SerializeField]
+    string CurrentLevel;
     public GameObject[] salas;
     public PlayerCtr Player;
 
@@ -23,6 +25,8 @@ public class GameManager : MonoBehaviour
    
 
     public bool StarLoad = false;
+
+    float GameStarTime = 0.0f;
 
     private void Awake()
     {
@@ -79,6 +83,7 @@ public class GameManager : MonoBehaviour
         {
             healthsystems hs = Player.GetComponent<healthsystems>();
             hs.healthUpdate += UIManager.Instance.UpdatePlayerLife;
+            hs.deathNotify += PlayerDeath;
             hs.Init();
             UIManager.Instance.UpdatePlayerLife(hs.getHealthPorcentage());
 
@@ -92,6 +97,7 @@ public class GameManager : MonoBehaviour
             Player.GetComponent<healthsystems>().healthUpdate += UIManager.Instance.UpdatePlayerLife;
             healthsystems hs = Player.GetComponent<healthsystems>();
             hs.healthUpdate += UIManager.Instance.UpdatePlayerLife;
+            hs.deathNotify += PlayerDeath;
             hs.Init();
             UIManager.Instance.UpdatePlayerLife(hs.getHealthPorcentage());
         }
@@ -101,6 +107,7 @@ public class GameManager : MonoBehaviour
 
     public void loadLevel(int index)
     {
+        CurrentLevel = Levels[index];
         StartCoroutine(LoadYourAsyncScene(index));
     }
     public void ExitGame()
@@ -116,6 +123,11 @@ public class GameManager : MonoBehaviour
         {
             Player.GetComponent<healthsystems>().TakeDmg(Dmg);
         }
+    }
+
+    public void PlayerDeath()
+    {
+
     }
 
     IEnumerator LoadYourAsyncScene(int index)

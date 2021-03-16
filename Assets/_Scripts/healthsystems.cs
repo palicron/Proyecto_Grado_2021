@@ -23,7 +23,7 @@ public abstract class healthsystems : MonoBehaviour
     public OnhealthUpdate healthUpdate;
 
     public delegate void OnDeathNotify();
-    public static OnDeathNotify deathNotify;
+    public  OnDeathNotify deathNotify;
 
     public virtual void TakeDmg(float Damage)
     {

@@ -11,17 +11,22 @@ public class DialogueManager : MonoBehaviour
     public static bool WaitingAswer = false;
 
     public static bool IsinConversation =false;
-    Queue<string> senteces;
-    [SerializeField]
+ 
     public GameObject DialoguePanel;
+    public GameObject RemoteDialoguePanel;
     [SerializeField]
     Text CharaterName;
     [SerializeField]
     Text DialogueText;
+    [SerializeField]
+    Text RemoteCharaterName;
+    [SerializeField]
+    Text RemoteDialogueText;
 
     [SerializeField, Range(0, 1)]
     float textSpeed;
-
+    [SerializeField, Range(0, 1)]
+    float textAutoWait = 0.5f;
     //public bool IsinConversation;
     NPC CurrentNPCTalking = null;
 
@@ -146,7 +151,7 @@ public class DialogueManager : MonoBehaviour
             {
                 ActiveLineIndex++;
             }
-            Debug.Log(ActiveLineIndex);
+   
         }
         else
         {
@@ -158,6 +163,12 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    void DisplayAutoLine()
+    {
+             Currentsentece = CurrentConversation.lines[ActiveLineIndex].sentences;
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(Currentsentece));
+    }
     void DisplayQuestion()
     {
         CorrectAswer = CurrentConversation.lines[ActiveLineIndex].CorrectAnswer;
@@ -199,6 +210,22 @@ public class DialogueManager : MonoBehaviour
         }
 
     }
+    public void EndAutoDialgue()
+    {
+        RemoteDialoguePanel.SetActive(false);
+        DialogueManager.IsinConversation = false;
+        CurrentConversation = null;
+        ToEndConversation = false;
+        DialogueManager.WaitingAswer = false;
+        Currentsentece = "";
+        RemoteCharaterName.text = "";
+        RemoteCharaterName.text = "";
+        ActiveLineIndex = 0;
+        if (CurrentNPCTalking)
+        {
+            CurrentNPCTalking.EndDialogue();
+        }
+    }
     IEnumerator TypeSentence(string sentece)
     {
         IsTyping = true;
@@ -220,6 +247,20 @@ public class DialogueManager : MonoBehaviour
             ActiveLineIndex++;
         }
        
+    }
+
+    IEnumerator AutoTypeSentence(string sentece)
+    {
+        IsTyping = true;
+        RemoteDialogueText.text = "";
+        foreach (char letter in sentece.ToCharArray())
+        {
+            RemoteDialogueText.text += letter;
+            yield return new WaitForSeconds(textSpeed);
+        }
+
+        IsTyping = false;
+        ActiveLineIndex++;
     }
 
     public void SendAswer(int Number)
@@ -248,5 +289,34 @@ public class DialogueManager : MonoBehaviour
 
         DialogueManager.WaitingAswer = false;
         DisplayNextSentence();
+    }
+
+    public void AutomaticDialogue(SO_Dialogue Dialogue, NPC locutor)
+    {
+        RemoteDialoguePanel.SetActive(true);
+        ActiveLineIndex = 0;
+        CurrentConversation = Dialogue;
+        DialogueManager.IsinConversation = true;
+        CharaterName.text = CurrentConversation.lines[ActiveLineIndex].LocutorName;
+        CurrentNPCTalking = locutor;
+
+        StartCoroutine(AutoDialogueStar());
+    }
+
+
+    IEnumerator  AutoDialogueStar()
+    {
+        int leng = CurrentConversation.lines.Length;
+        Currentsentece = CurrentConversation.lines[ActiveLineIndex].sentences;
+       
+        while (CurrentConversation.lines[ActiveLineIndex].Type!= DialogueType.EndDialogue && ActiveLineIndex <= leng)
+        {
+            RemoteCharaterName.text = CurrentConversation.lines[ActiveLineIndex].LocutorName;
+            yield return StartCoroutine(AutoTypeSentence(Currentsentece));
+            yield return new WaitForSeconds(textAutoWait);
+  
+            Currentsentece = CurrentConversation.lines[ActiveLineIndex].sentences;
+        }
+        EndAutoDialgue();
     }
 }
