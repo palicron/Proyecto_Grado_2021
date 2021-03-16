@@ -35,7 +35,7 @@ public abstract class healthsystems : MonoBehaviour
             healthUpdate(getHealthPorcentage());
             if (currentHealh <= 0)
             {
-                deathNotify();
+        
                 Death();
             }
         }

@@ -15,7 +15,7 @@ public class Playerhealthsystems : healthsystems
 
     public override void Death()
     {
-        throw new System.NotImplementedException();
+        deathNotify();
     }
 
  

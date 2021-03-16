@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 public class GameManager : MonoBehaviour
 {
     public static GameManager intance;
@@ -10,11 +11,15 @@ public class GameManager : MonoBehaviour
 
     public static Vector3 CheckPoint = Vector3.zero;
 
+    public static string CheckPointName = "";
+    public static int CheckPointProgres = 0;
+    public static float TimeOfLastCheckPoint = 0;
+
+
     [SerializeField]
     string[] Levels;
-    [SerializeField]
-    string CurrentLevel;
-    public GameObject[] salas;
+
+   public  int CurrentLevelIndex;
     public PlayerCtr Player;
 
     [SerializeField]
@@ -22,8 +27,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
 
     float YkillZone;
-   
-
+    [SerializeField]
+    int YKillZoneDmg = 10;
     public bool StarLoad = false;
 
     float GameStarTime = 0.0f;
@@ -52,10 +57,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
         if (Player && Player.transform.position.y <= YkillZone)
         {
-            Player.transform.position = GameManager.CheckPoint;
+            resetPlayer(YKillZoneDmg);
         }
     }
 
@@ -107,11 +112,13 @@ public class GameManager : MonoBehaviour
 
     public void loadLevel(int index)
     {
-        CurrentLevel = Levels[index];
+        CurrentLevelIndex = index;
+        GameManager.CheckPointProgres = 0;
         StartCoroutine(LoadYourAsyncScene(index));
     }
     public void ExitGame()
     {
+
         Application.Quit();
     }
 
@@ -127,7 +134,16 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDeath()
     {
+        AnalyticsResult Result = Analytics.CustomEvent("Player_Death", new Dictionary<string, object>
+        {
+            { "Current_Level", CurrentLevelIndex},
+            {"Level_CheckPoint_Name",GameManager.CheckPointName },
+            {"Level_CheckPoint_Position" , GameManager.CheckPointProgres},
+            {"Play_Time_Until_death",Time.timeSinceLevelLoad }
+        });
 
+        Debug.Log(Result);
+        loadLevel(0);
     }
 
     IEnumerator LoadYourAsyncScene(int index)
@@ -139,6 +155,8 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         iniComponents();
+        GameManager.CheckPoint = Vector3.zero;
+        GameManager.CheckPointName = "StarCheckPoint";
 
     }
 

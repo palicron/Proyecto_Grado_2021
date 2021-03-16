@@ -36,7 +36,7 @@ public class AutoDialogueNPC : NPC
         if(other.gameObject.tag.Equals("Player"))
         {
             TriggerDialogue();
-            Debug.Log("entre");
+           
         }
     }
 
