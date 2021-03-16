@@ -21,12 +21,14 @@ public class PlaftormController : MonoBehaviour
     public float rotationZ;
     [Header("Platform Array")]
     public Transform[] positions;
+    public float[] speedVariation;
     public Transform[] rotations;
     private int actualPosition = 0;
     private int nextposition = 1;
+    private int actualSpeed=0;
     public bool moveToTheNext = true;
     public bool active = false;
-    public bool verify=false;
+    public float verify=0;
 
     public enum PlatformType{ 
         NORMAL,
@@ -35,11 +37,12 @@ public class PlaftormController : MonoBehaviour
         TRIGGEREXIT,
         ROTATIVE,
         ROTATIVETRIGGER,
-        
+        MULTIPLESPEED,
     }
 
     void Start()
     {
+  
         PlayerInventory = GameObject.Find("Player").GetComponent<Inventory>() ;
         Equipment = GameObject.Find("Player").GetComponent<EquipmentManager>();
         Score = GameObject.Find("Player").GetComponent<PlayerScore>();
@@ -47,7 +50,7 @@ public class PlaftormController : MonoBehaviour
 
 
     void Awake() {
-        if (type == PlatformType.TRANSLATE || type == PlatformType.ROTATIVE) { active = true; }
+        if (type == PlatformType.TRANSLATE || type == PlatformType.ROTATIVE || type == PlatformType.MULTIPLESPEED) { active = true; }
     }
 
   
@@ -57,8 +60,6 @@ public class PlaftormController : MonoBehaviour
     void Update()
     {
         if (active) {
-            List<ListItem> items = PlayerInventory.getInventory();
-            if (items.Count !=0 ) { verify = true; }
             MovePlatform();
         }
         else if (type == PlatformType.ROTATIVETRIGGER) 
@@ -77,7 +78,6 @@ public class PlaftormController : MonoBehaviour
 
     void MovePlatform() 
     {
-
         if (type == PlatformType.TRANSLATE || type == PlatformType.TRIGGERTRANSLATE || type == PlatformType.TRIGGEREXIT)
         {
             if (moveToTheNext)
@@ -98,15 +98,45 @@ public class PlaftormController : MonoBehaviour
                 }
             }
         }
+        else if (type == PlatformType.MULTIPLESPEED)
+        {
+            if (speedVariation.Length != 0) 
+            {
+                if (moveToTheNext)
+                {
+                    StopCoroutine(WaitForMove(0));
+                    platformSpeed = speedVariation[actualSpeed];
+                    platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
+                }
+
+                if (Vector3.Distance(platformRB.position, positions[nextposition].position) <= 0)
+                {
+                    StartCoroutine(WaitForMove(waitTime));
+                    actualPosition = nextposition;
+                    actualSpeed++;
+                    nextposition++;
+
+                    if (nextposition > positions.Length - 1)
+                    {
+                        nextposition = 0;
+                    }
+                    if (actualSpeed > speedVariation.Length-1) 
+                    {
+                        actualSpeed = 0;
+                    }
+                }
+            }
+
+        }
         else if (type == PlatformType.ROTATIVE)
         {
             transform.Rotate(new Vector3(rotationX, rotationY, rotationZ) * platformSpeed * Time.deltaTime);
-           
+
         }
         else if (type == PlatformType.ROTATIVETRIGGER)
         {
             platformRB.DORotate(new Vector3(rotationX, rotationY, rotationZ), 0.10f, RotateMode.Fast);
-    
+
         }
     }
 
