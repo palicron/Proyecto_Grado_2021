@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     string[] Levels;
 
-   public  int CurrentLevelIndex;
+     public  int CurrentLevelIndex;
     public PlayerCtr Player;
 
     [SerializeField]
