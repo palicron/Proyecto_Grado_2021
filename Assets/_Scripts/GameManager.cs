@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
 
     float YkillZone;
-  
+   
 
     public bool StarLoad = false;
 
@@ -106,6 +106,16 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+
+    public void resetPlayer(int Dmg =0)
+    {
+        Player.transform.position = GameManager.CheckPoint;
+        if(Dmg != 0)
+        {
+            Player.GetComponent<healthsystems>().TakeDmg(Dmg);
+        }
     }
 
     IEnumerator LoadYourAsyncScene(int index)
