@@ -1921,6 +1921,47 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125009728}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &127059447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6029828018251910985, guid: 8aa94c4140beb7a49acaa5e00eb7a7ad, type: 3}
+  m_PrefabInstance: {fileID: 1777092255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &127059452 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6028154330562441766, guid: 8aa94c4140beb7a49acaa5e00eb7a7ad, type: 3}
+  m_PrefabInstance: {fileID: 1777092255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &127059456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127059447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2592dafaaf1763240907369efd9659d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInventory: {fileID: 0}
+  Equipment: {fileID: 0}
+  Score: {fileID: 0}
+  platformRB: {fileID: 127059452}
+  type: 1
+  platformSpeed: 5
+  waitTime: 1.75
+  rotationX: 0
+  rotationY: 0
+  rotationZ: 0
+  positions:
+  - {fileID: 8237789720688287523}
+  - {fileID: 8237789720530253275}
+  - {fileID: 8237789720688287523}
+  speedVariation: []
+  rotations: []
+  moveToTheNext: 1
+  active: 0
+  verify: 0
 --- !u!1001 &136441928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4073,7 +4114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7821425305942096899, guid: cdcc0c9dc9c223f4089a920021bdd6ab, type: 3}
       propertyPath: m_RootOrder
-      value: 56
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 7821425305942096899, guid: cdcc0c9dc9c223f4089a920021bdd6ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4143,19 +4184,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.97329813
+      value: 0.9732982
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.048543856
+      value: -0.048543833
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.2240744
+      value: 0.22407441
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0111758495
+      value: 0.011175847
       objectReference: {fileID: 0}
     - target: {fileID: 368609291, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_DeadZoneWidth
@@ -4315,15 +4356,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.044159245
+      value: 0.04415927
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.22412246
+      value: 0.22412245
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.010166414
+      value: -0.010166424
       objectReference: {fileID: 0}
     - target: {fileID: 3847675374731446324, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_RootOrder
@@ -4431,15 +4472,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.048543878
+      value: -0.048543833
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.2240744
+      value: 0.22407445
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.011175854
+      value: 0.011175848
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190479, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_StopNaN
@@ -12646,7 +12687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6906054029094637411, guid: e753b573141d6d947b6ed47899bd0d3b, type: 3}
       propertyPath: m_RootOrder
-      value: 53
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 6906054029094637411, guid: e753b573141d6d947b6ed47899bd0d3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26186,10 +26227,10 @@ Transform:
   - {fileID: 1779749841}
   - {fileID: 1286966174}
   - {fileID: 475930953}
+  - {fileID: 236119133}
   - {fileID: 701279774}
   - {fileID: 1536111543}
   - {fileID: 1737246857}
-  - {fileID: 236119133}
   - {fileID: 1410594947}
   - {fileID: 316119390}
   - {fileID: 1736192139}
@@ -26715,7 +26756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6906054029094637411, guid: e753b573141d6d947b6ed47899bd0d3b, type: 3}
       propertyPath: m_RootOrder
-      value: 54
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 6906054029094637411, guid: e753b573141d6d947b6ed47899bd0d3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27323,6 +27364,47 @@ Transform:
   m_Father: {fileID: 35062769}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1632546355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6029828018251910985, guid: 8aa94c4140beb7a49acaa5e00eb7a7ad, type: 3}
+  m_PrefabInstance: {fileID: 2053782721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1632546360 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6028154330562441766, guid: 8aa94c4140beb7a49acaa5e00eb7a7ad, type: 3}
+  m_PrefabInstance: {fileID: 2053782721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1632546364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632546355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2592dafaaf1763240907369efd9659d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInventory: {fileID: 0}
+  Equipment: {fileID: 0}
+  Score: {fileID: 0}
+  platformRB: {fileID: 1632546360}
+  type: 1
+  platformSpeed: 2.5
+  waitTime: 2
+  rotationX: 0
+  rotationY: 0
+  rotationZ: 0
+  positions:
+  - {fileID: 1793787199}
+  - {fileID: 186821009}
+  - {fileID: 1793787199}
+  speedVariation: []
+  rotations: []
+  moveToTheNext: 1
+  active: 0
+  verify: 0
 --- !u!1 &1637524118
 GameObject:
   m_ObjectHideFlags: 0
@@ -28860,7 +28942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6906054029094637411, guid: e753b573141d6d947b6ed47899bd0d3b, type: 3}
       propertyPath: m_RootOrder
-      value: 55
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 6906054029094637411, guid: e753b573141d6d947b6ed47899bd0d3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29653,6 +29735,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1511982742}
     m_Modifications:
+    - target: {fileID: 6028154330562441766, guid: 8aa94c4140beb7a49acaa5e00eb7a7ad, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6029828018251910985, guid: 8aa94c4140beb7a49acaa5e00eb7a7ad, type: 3}
       propertyPath: m_Name
       value: Cola Can (1)
@@ -35736,6 +35822,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1511982742}
     m_Modifications:
+    - target: {fileID: 6028154330562441766, guid: 8aa94c4140beb7a49acaa5e00eb7a7ad, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028154330562441766, guid: 8aa94c4140beb7a49acaa5e00eb7a7ad, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6029828018251910985, guid: 8aa94c4140beb7a49acaa5e00eb7a7ad, type: 3}
       propertyPath: m_Name
       value: Cola Can (9)
