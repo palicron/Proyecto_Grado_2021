@@ -44,6 +44,7 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+        //PlayerPrefs.SetInt("numExtraBags", 0);
         int numExtraBags = PlayerPrefs.GetInt("numExtraBags");
         if(numExtraBags>=1)
         {
@@ -52,6 +53,10 @@ public class Inventory : MonoBehaviour
             {
                 extraBag2 = true;
             }
+        }
+        if (onPocketAddedCallback != null)
+        {
+            onPocketAddedCallback.Invoke();
         }
     }
 
@@ -96,7 +101,7 @@ public class Inventory : MonoBehaviour
             actualSpace += extraBagSpace;
         }
         bool added = false;
-        List<ListItem> resultItems = items.FindAll(pItem => pItem.item.name.Equals(item.name));
+        List<ListItem> resultItems = items.FindAll(pItem => pItem.id == item.id);
         if (resultItems.Count>=0)
         {
             for(int i = 0; i<resultItems.Count; i++)
@@ -129,7 +134,14 @@ public class Inventory : MonoBehaviour
 
     public void Remove (ListItem item)
     {
-        items.Remove(item);
+        if(item.quantity > 1)
+        {
+            item.quantity--;
+        }
+        else
+        {
+            items.Remove(item);
+        }
         if (onItemChangedCallBack != null)
         {
             onItemChangedCallBack.Invoke();
@@ -201,5 +213,19 @@ public class Inventory : MonoBehaviour
         {
             return extraBag2;
         }
+    }
+
+    public bool ContainsItem(int pId, bool remove)
+    {
+        ListItem itemSearched = items.Find(pItem => pItem.id == pId);
+        if(itemSearched != null)
+        {
+            if(remove)
+            {
+                Remove(itemSearched);
+            }
+            return true;
+        }
+        return false;
     }
 }

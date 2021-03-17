@@ -79,4 +79,16 @@ public class EquipmentManager : MonoBehaviour
         velocityModifier += sign * item.velocityModifier;
         playerCtr.ModifyStats(armorModifier, damageModifier, velocityModifier);
     }
+
+    bool ContainsEquipment(int pId)
+    {
+        for(int i = 0; i < currentEquipment.Length; i++)
+        {
+            if(currentEquipment[i].id == pId)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
