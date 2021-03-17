@@ -5,16 +5,25 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     public Item item;
+    bool pickedUp = false;
     void OnTriggerEnter(Collider collider)
     {
 
-        if(collider.gameObject.tag == "Player")
+        if(collider.gameObject.tag == "Player" && !pickedUp)
         {
-            bool pickedUp = Inventory.instance.Add(item);
+            pickedUp = Inventory.instance.Add(item);
             if(pickedUp)
             {
-                Destroy(gameObject);
+                gameObject.GetComponent<ParticleSystem>().Stop();
+                StartCoroutine(DestroyObject());
+                gameObject.transform.localScale = new Vector3(0,0,0);
             }
         }
+    }
+
+    IEnumerator DestroyObject()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
 }

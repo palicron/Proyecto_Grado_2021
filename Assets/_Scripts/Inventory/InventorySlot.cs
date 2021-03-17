@@ -35,6 +35,10 @@ public class InventorySlot : MonoBehaviour
         {
             itemQuantity.text = "" + lItem.quantity;
         }
+        else
+        {
+            itemQuantity.text = "";
+        }
     }
 
     public void ClearSlot ()
@@ -61,22 +65,7 @@ public class InventorySlot : MonoBehaviour
 
     public void removeItem()
     {
-        if (lItem.quantity >= 2)
-        {
-            --lItem.quantity;
-            if (lItem.quantity >= 2)
-            {
-                itemQuantity.text = "" + lItem.quantity;
-            }
-            else
-            {
-                itemQuantity.text = "";
-            }
-        }
-        else
-        {
-            Inventory.instance.Remove(lItem);
-        }
+        Inventory.instance.Remove(lItem);
     }
 
     public void UseItem()

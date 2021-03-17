@@ -13,8 +13,11 @@ public class StorageUI : MonoBehaviour
     void Start()
     {
         storage = Storage.instance;
-        storage.onStorageChangedCallBack += UpdateUI;
-        slots = itemsParent.GetComponentsInChildren<StorageSlot>();
+        if(storage!=null)
+        {
+            storage.onStorageChangedCallBack += UpdateUI;
+            slots = itemsParent.GetComponentsInChildren<StorageSlot>();
+        }
     }
 
     // Update is called once per frame
