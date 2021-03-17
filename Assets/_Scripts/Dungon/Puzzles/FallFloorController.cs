@@ -5,11 +5,13 @@ using TMPro;
 
 public class FallFloorController : MonoBehaviour
 {
-    public GameObject QuestionField;
+    public GameObject MovileQuestionScreen;
     public TextMeshPro actualQuestion;
+    public Rigidbody questionScreen;
     public float speed;
     public int correctAwnser;
     public string[] questions;
+    public Transform[] screenPositions;
     public Rigidbody[] rigidBodies;
     public Transform[] positions;
     public bool finalQuestion;
@@ -19,9 +21,10 @@ public class FallFloorController : MonoBehaviour
     {
         correctAwnser = 0;
         speed = 5f;
-        QuestionField = transform.GetChild(0).gameObject;
-        actualQuestion = QuestionField.GetComponent<TextMeshPro>();
         finalQuestion = false;
+        MovileQuestionScreen = GameObject.Find("QuestionScreen");
+        questionScreen = MovileQuestionScreen.GetComponent<Rigidbody>();
+        actualQuestion = MovileQuestionScreen.transform.GetChild(0).GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
@@ -36,7 +39,8 @@ public class FallFloorController : MonoBehaviour
             int i=0;
             foreach (Rigidbody rb in rigidBodies)
             {
-              rb.MovePosition(Vector3.MoveTowards(rb.position, positions[i].position, speed* Time.deltaTime));  
+                questionScreen.MovePosition(Vector3.MoveTowards(questionScreen.position, screenPositions[correctAwnser].position, speed * Time.deltaTime));
+                rb.MovePosition(Vector3.MoveTowards(rb.position, positions[i].position, speed* Time.deltaTime));  
               i++; 
             }
         }
@@ -49,10 +53,12 @@ public class FallFloorController : MonoBehaviour
         {
             finalQuestion = true;
             actualQuestion.SetText("Completed");
+
         }
         else if (questions[numberQuestion]!=null)
         {
-            actualQuestion.SetText(questions[numberQuestion]); 
+            actualQuestion.SetText(questions[numberQuestion]);
+            questionScreen.MovePosition(Vector3.MoveTowards(questionScreen.position, screenPositions[correctAwnser].position, speed*Time.deltaTime));
       
         }  
     }
