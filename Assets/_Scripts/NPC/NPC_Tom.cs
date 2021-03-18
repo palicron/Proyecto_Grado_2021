@@ -8,11 +8,7 @@ public class NPC_Tom : NPC
     bool WalksToPlater = false;
     Rigidbody rb;
     [SerializeField]
-    float Speed = 10.0f;
-    [SerializeField]
     float DistanceTotalk = 20.0f;
-    [SerializeField]
-    float MaxSpeed = 4;
     [SerializeField]
     bool MoveAtTheEnd = false;
     [SerializeField]
@@ -33,6 +29,10 @@ public class NPC_Tom : NPC
     void Update()
     {
         ManageINputs();
+      
+        anim.SetFloat("HorizontalSpeed", (agent.velocity.magnitude / agent.speed));
+       
+       
 
     }
 
@@ -41,15 +41,17 @@ public class NPC_Tom : NPC
 
 
         StopAllCoroutines();
+     
         if (MoveAtTheEnd)
         {
-
+            anim.SetBool("Talking", false);
+            StartCoroutine(walkToPoint());
         }
         else
         {
             bIsInConversation = false;
             CurrentNearPlayer.SetDialogue(false, Vector3.zero);
-            anim.SetBool("IsTalking", false);
+            anim.SetBool("Talking", false);
         }
 
     }
@@ -57,12 +59,12 @@ public class NPC_Tom : NPC
     protected override void Interect()
     {
         TriggerDialogue();
-        Debug.Log(CurrentNearPlayer);
+       
     }
 
     protected override void TriggerDialogue()
     {
-        anim.SetBool("IsTalking", true);
+        anim.SetBool("Talking", true);
 
         CurrentNearPlayer.SetDialogue(true, this.transform.position);
         Vector3 looktarget = CurrentNearPlayer.transform.position;
@@ -80,7 +82,7 @@ public class NPC_Tom : NPC
         }
     }
 
-    public void EstarConbersationEvent(PlayerCtr Player)
+    public void starConbersationEvent(PlayerCtr Player)
     {
         CurrentNearPlayer = Player;
 
@@ -109,9 +111,9 @@ public class NPC_Tom : NPC
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<PlayerCtr>())
+        if (other.gameObject.GetComponent<PlayerCtr>() && !IsPlayerInrange)
         {
-            Debug.Log("Me sali");
+        
             CurrentNearPlayer = null;
             IsPlayerInrange = false;
         }
@@ -123,33 +125,30 @@ public class NPC_Tom : NPC
         CurrentNearPlayer.SetDialogue(true, this.transform.position);
         bIsInConversation = true;
         agent.SetDestination(CurrentNearPlayer.transform.position);
-        // while (Vector3.Distance(this.transform.position, CurrentNearPlayer.transform.position) > DistanceTotalk)
-        //{
-        while (agent.remainingDistance > DistanceTotalk)
+   
+        while ((CurrentNearPlayer.transform.position-transform.position).magnitude > DistanceTotalk)
         {
 
-            //Vector3 looktarget = CurrentNearPlayer.transform.position;
-            //looktarget.y = transform.position.y;
-            //lookAtTarget(looktarget);
-            //rb.AddForce(transform.forward.normalized * Speed * Time.deltaTime, ForceMode.VelocityChange);
-            agent.SetDestination(CurrentNearPlayer.transform.position);
-            // Vector3 rr = rb.velocity;
-            // rr.y = 0;
-            // if (rr.magnitude >= MaxSpeed)
-            // {
-            //   Vector3 NewSpeed = rb.velocity.normalized * MaxSpeed;
-            //  NewSpeed.y = rb.velocity.y;
-            // rb.velocity = NewSpeed;
-            anim.SetFloat("Speed", (agent.velocity.magnitude / agent.speed));
-            //}
+           
+            agent.SetDestination(CurrentNearPlayer.gameObject.transform.position);
             yield return new WaitForEndOfFrame();
         }
-
-
-        anim.SetFloat("Speed", 0);
-
-
+        anim.SetFloat("HorizontalSpeed", 0);
+        agent.SetDestination(this.gameObject.transform.position);
         TriggerDialogue();
+    }
+
+    IEnumerator walkToPoint()
+    {
+        agent.SetDestination(EndPoint.transform.position);
+        while((EndPoint.transform.position - transform.position).magnitude >3)
+        {
+           
+            yield return new WaitForEndOfFrame();
+        }
+        StopAllCoroutines();
+        CurrentNearPlayer.SetDialogue(false, Vector3.zero);
+        Destroy(this.gameObject);
     }
 
     public override void midDialgueAction()

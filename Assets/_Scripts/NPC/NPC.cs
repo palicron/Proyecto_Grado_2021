@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public abstract class NPC : MonoBehaviour
 {
 
@@ -20,6 +22,9 @@ public abstract class NPC : MonoBehaviour
     protected bool bIsInConversation =false;
 
     protected PlayerCtr CurrentNearPlayer;
+
+ 
+
 
     protected virtual void ManageINputs()
     {
@@ -46,7 +51,8 @@ public abstract class NPC : MonoBehaviour
     public abstract void midDialgueAction();
 
 
-   
+
+
 
     protected virtual void lookAtTarget(Vector3 target)
     {

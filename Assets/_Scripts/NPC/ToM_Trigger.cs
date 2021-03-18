@@ -15,8 +15,9 @@ public class ToM_Trigger : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerCtr>())
         {
-            TargetTom.EstarConbersationEvent(other.gameObject.GetComponent<PlayerCtr>());
-            if(OneTime)
+            TargetTom.starConbersationEvent(other.gameObject.GetComponent<PlayerCtr>());
+         
+            if (OneTime)
             {
                 Destroy(this.gameObject);
             }

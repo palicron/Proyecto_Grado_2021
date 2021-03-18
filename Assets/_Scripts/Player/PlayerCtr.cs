@@ -95,7 +95,9 @@ public class PlayerCtr : MonoBehaviour
     GameObject PlayerCamera;
     CinemachineVirtualCamera DialogueVcam;
 
-   
+    bool CanAdvanceAttack = true;
+    bool nextAttack = true;
+    public GameObject Weapon;
     void Start()
     {
      
@@ -116,7 +118,7 @@ public class PlayerCtr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(CanAdvanceAttack);
         Xvel = Input.GetAxisRaw("Horizontal");
         Yvel = Input.GetAxisRaw("Vertical");
         curvel = rb.velocity;
@@ -148,6 +150,11 @@ public class PlayerCtr : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             GameManager.Instance.PauseGame();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            NextAttack();
         }
 
     }
@@ -245,6 +252,7 @@ public class PlayerCtr : MonoBehaviour
         {
             isGrounded = false;
             MovementControl = AirControl;
+            LastAttack();
            
         }
         if (Physics.Linecast(transform.position + new Vector3(0, 0.5f, 0), (transform.position + new Vector3(0, 0.5f, 0)) + (transform.forward * 1), WhatIsWall))
@@ -320,6 +328,54 @@ public class PlayerCtr : MonoBehaviour
         }
         animator.ResetTrigger("Chrashing");
         Indash = false;
+
+    }
+
+    public void ResetAttack()
+    {
+        if(!nextAttack)
+        {
+            animator.SetInteger("Attack", 0);
+            CanAdvanceAttack = true;
+            nextAttack = false;
+            Weapon.SetActive(false);
+        }
+
+
+    }
+
+    public void NextAttack()
+    {
+        if(CanAdvanceAttack && !Indash)
+        {
+            Weapon.SetActive(true);
+            animator.SetInteger("Attack", animator.GetInteger("Attack") + 1);
+            CanAdvanceAttack = false;
+            nextAttack = true;
+        }
+       
+    }
+
+    public void enableAttack()
+    {
+        CanAdvanceAttack = true;
+        nextAttack = false;
+    }
+
+    public void DisableAttack()
+    {
+      
+        CanAdvanceAttack = false;
+      
+
+    }
+
+    public void LastAttack()
+    {
+        animator.SetInteger("Attack", 0);
+        CanAdvanceAttack = true;
+        nextAttack = false;
+        Weapon.SetActive(false);
 
     }
 }

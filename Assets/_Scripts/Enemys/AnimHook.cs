@@ -43,4 +43,9 @@ public class AnimHook : MonoBehaviour
             LeftHandTrigger.SetActive(false);
         }
     }
+
+    public void test()
+    {
+        Debug.Log("ACA ESTOY CARAJO");
+    }
 }

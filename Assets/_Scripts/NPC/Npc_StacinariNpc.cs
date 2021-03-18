@@ -5,10 +5,29 @@ using UnityEngine;
 public class Npc_StacinariNpc : NPC
 {
 
+    Animator anim;
+    Quaternion StarRotation;
+
+    public LOOTING loot;
     // Start is called before the first frame update
     void Start()
     {
-       
+        anim = GetComponent<Animator>();
+        switch(loot)
+        {
+            case LOOTING.Low:
+                anim.SetInteger("Looting", 1);
+                break;
+            case LOOTING.Medium:
+                anim.SetInteger("Looting", 2);
+                break;
+            case LOOTING.Hight:
+                anim.SetInteger("Looting", 3);
+                break;
+
+        }
+     
+        StarRotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -32,6 +51,7 @@ public class Npc_StacinariNpc : NPC
             Vector3 looktarget = CurrentNearPlayer.transform.position;
             looktarget.y = transform.position.y;
             lookAtTarget(looktarget);
+            anim.SetBool("Talking", true);
         }
      
         bIsInConversation = true;
@@ -51,6 +71,8 @@ public class Npc_StacinariNpc : NPC
     {
         bIsInConversation = false;
         CurrentNearPlayer.SetDialogue(false, Vector3.zero);
+        transform.rotation = StarRotation;
+        anim.SetBool("Talking", false);
     }
 
     private void OnTriggerEnter(Collider other)

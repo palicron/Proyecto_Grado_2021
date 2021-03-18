@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
+public enum LOOTING
+{
+    Low,Medium,Hight
+}
 public class Npc_waderer : NPC
 {
 
@@ -11,13 +16,15 @@ public class Npc_waderer : NPC
 
     public float RandomPatrolDistance = 50.0f;
 
+    public LOOTING loot;
     NavMeshAgent agent;
     Animator anim;
     [SerializeField]
     LayerMask isRecoelPoint;
     [SerializeField]
     State CurrentState;
-
+    [SerializeField]
+    Material[] NpcMat;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -32,7 +39,10 @@ public class Npc_waderer : NPC
                 ArrayPoints.Add(h.transform.gameObject);
             }
         }
+        int ran = Random.Range(0, NpcMat.Length);
 
+       
+        GetComponentInChildren<Renderer>().material = NpcMat[ran];
 
         CurrentState = new Patrol_Wanderer(this.gameObject, agent, anim, 0);
     }
@@ -41,7 +51,8 @@ public class Npc_waderer : NPC
     {
         ManageINputs();
         CurrentState = CurrentState.Process();
-        // anim.SetFloat("Speed", (agent.velocity.magnitude / agent.speed));
+        anim.SetFloat("HorizontalSpeed", (agent.velocity.magnitude / agent.speed));
+     
     }
 
     public override void EndDialogue()
