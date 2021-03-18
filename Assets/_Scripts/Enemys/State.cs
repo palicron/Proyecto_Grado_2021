@@ -17,11 +17,11 @@ public class State
     }
 
     public STATE name;
-    protected EVENT stage;
+    public EVENT stage;
     protected GameObject npc;
     protected Animator anim;
     protected Transform player;
-    protected State nextState;
+    public State nextState;
     protected healthsystems npcHealth;
     protected NavMeshAgent agent;
 

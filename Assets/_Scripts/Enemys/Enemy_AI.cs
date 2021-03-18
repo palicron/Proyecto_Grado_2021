@@ -12,6 +12,8 @@ public class Enemy_AI : MonoBehaviour
     public Transform player;
     [SerializeField]
     float Damage = 10.0f;
+    [SerializeField]
+    public float Touchdis = 4.0f;
     public List<GameObject> ArrayPoints;
     public GameObject lastCheckPoint;
     [SerializeField]
@@ -24,6 +26,8 @@ public class Enemy_AI : MonoBehaviour
     public bool IsPaytoling = false;
     bool isAttacking = false;
     public bool IsLooting = false;
+
+    bool alive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,8 +54,18 @@ public class Enemy_AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CurrentState = CurrentState.Process();
-        anim.SetFloat("Speed", (agent.velocity.magnitude / agent.speed));
+        if(alive)
+        {
+            CurrentState = CurrentState.Process();
+            anim.SetFloat("Speed", (agent.velocity.magnitude / agent.speed));
+            if((player.position -this.transform.position).magnitude<Touchdis && CurrentState.name != State.STATE.ATTACKING)
+            {
+                CurrentState.nextState = new Attack(this.gameObject, agent, anim, player, NpcHealth);
+                CurrentState.stage = State.EVENT.EXIT;
+
+            }
+        }
+  
     }
 
     public void Attack()
@@ -74,6 +88,12 @@ public class Enemy_AI : MonoBehaviour
         IsLooting = false;
         anim.ResetTrigger("LootingUp");
         anim.ResetTrigger("LootingLow");
+    }
+
+    public void death()
+    {
+        anim.SetTrigger("Die");
+        alive = false;
     }
 
     private void OnTriggerEnter(Collider other)
