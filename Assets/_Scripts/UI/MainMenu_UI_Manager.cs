@@ -4,7 +4,8 @@ using UnityEngine;
 using Cinemachine;
 public class MainMenu_UI_Manager : MonoBehaviour
 {
-   
+
+    public GameObject info_ui;
 
     public void loandTutorial()
     {
@@ -18,7 +19,7 @@ public class MainMenu_UI_Manager : MonoBehaviour
 
    public void infoButton()
     {
-       //@TODO implementar transicion
+        info_ui.SetActive(true);
     }
     public void exit()
     {

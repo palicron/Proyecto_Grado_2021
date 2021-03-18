@@ -40,7 +40,6 @@ public class CraftingPage : MonoBehaviour
         }
         else
         {
-            Debug.Log(pRecipe.item.name);
             gameObject.SetActive(true);
             recipe = pRecipe;
             icon.sprite = recipe.item.icon;
@@ -62,7 +61,7 @@ public class CraftingPage : MonoBehaviour
         if (newScore.Length==4)
         {
             playerScore.SetScore(newScore);
-            pText.text = "Item crafted succesfully!";
+            pText.text = "Se recicló el item con éxito!";
             pText.color = green;
         }
         else
@@ -70,12 +69,12 @@ public class CraftingPage : MonoBehaviour
             confirmText.SetActive(true);
             if(newScore.Length==0)
             {
-                pText.text = "Insufficient materials";
+                pText.text = "Materiales insuficientes...";
                 pText.color = red;
             }
             else
             {
-                pText.text = "Inventory is full";
+                pText.text = "El inventario está lleno...";
                 pText.color = red;
             }
         }
