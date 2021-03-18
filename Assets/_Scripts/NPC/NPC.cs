@@ -33,7 +33,7 @@ public abstract class NPC : MonoBehaviour
             Interect();
 
         }
-        else if (Input.GetButtonDown("Interact") && IsPlayerInrange && bIsInConversation && !DialogueManager.WaitingAswer)
+        else if (Input.GetButtonDown("Interact")  && bIsInConversation && !DialogueManager.WaitingAswer)
         {
             DialogueManager.intance.DisplayNextSentence();
         }
