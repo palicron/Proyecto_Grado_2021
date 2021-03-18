@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
         });
 
         Debug.Log(Result);
-        loadLevel(0);
+      //  loadLevel(0);
     }
 
     IEnumerator LoadYourAsyncScene(int index)
