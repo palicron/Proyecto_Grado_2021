@@ -14,8 +14,12 @@ public class EnemyHs : healthsystems
     public override void Init()
     {
         currentHealh = MaxHelath;
-      
+        anim = GetComponent<Animator>();
+
+
     }
+
+
 
     // Start is called before the first frame update
     void Start()

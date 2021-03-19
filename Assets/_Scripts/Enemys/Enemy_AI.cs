@@ -22,7 +22,8 @@ public class Enemy_AI : MonoBehaviour
     public float RandomPatrolDistance = 50.0f;
     [SerializeField]
     LayerMask isRecoelPoint;
-
+    [SerializeField]
+    Material[] NpcMat;
     public bool IsPaytoling = false;
     bool isAttacking = false;
     public bool IsLooting = false;
@@ -48,6 +49,11 @@ public class Enemy_AI : MonoBehaviour
             }
         }
 
+        int ran = Random.Range(0, NpcMat.Length);
+
+
+        GetComponentInChildren<Renderer>().material = NpcMat[ran];
+
         CurrentState = new Idle(this.gameObject, agent, anim, player, NpcHealth);
     }
 
@@ -57,7 +63,7 @@ public class Enemy_AI : MonoBehaviour
         if(alive)
         {
             CurrentState = CurrentState.Process();
-            anim.SetFloat("Speed", (agent.velocity.magnitude / agent.speed));
+            anim.SetFloat("Speed", (agent.velocity.magnitude / 4.5f));
             if((player.position -this.transform.position).magnitude<Touchdis && CurrentState.name != State.STATE.ATTACKING)
             {
                 CurrentState.nextState = new Attack(this.gameObject, agent, anim, player, NpcHealth);
@@ -98,12 +104,12 @@ public class Enemy_AI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Playerhealthsystems hs = other.gameObject.GetComponent<Playerhealthsystems>();
-        if(hs)
-        {
+        //Playerhealthsystems hs = other.gameObject.GetComponent<Playerhealthsystems>();
+        //if(hs)
+        //{
      
-            hs.TakeDmg(Damage);
-        }
+          //  hs.TakeDmg(Damage);
+        //}
          
     }
 }
