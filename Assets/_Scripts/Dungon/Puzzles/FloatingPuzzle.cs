@@ -12,7 +12,7 @@ public class FloatingPuzzle : MonoBehaviour
     public bool correct;
     public bool active;
     public Vector3 initialPos;
-
+    public AudioClip CorrectSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +26,10 @@ public class FloatingPuzzle : MonoBehaviour
         if (active && !correct)
         {
             MovePlatform();
+        }
+        else if(active)
+        {
+            GameManager.intance.playSound(CorrectSound);
         }
     }
 
