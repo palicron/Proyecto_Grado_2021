@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f450dec53465c4ab22560f8b560a95, type: 3}
+  m_Name: Dialogue_Tom_remote 1
+  m_EditorClassIdentifier: 
+  bIsRandomDialogue: 0
+  DialoguePriority: 1
+  lines:
+  - DialogueDescription: Shift
+    LocutorName: Tom Radio
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: Cuidado esos tubos parecen muy bajos , usa <color=red> Shift </color>
+      para hacer un roll hacia alfrente.
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 

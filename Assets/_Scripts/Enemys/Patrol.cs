@@ -40,7 +40,7 @@ public class Patrol : State
             nextState = new Chase(npc, agent, anim, player, npcHealth);
             stage = EVENT.EXIT;
         }
-        else if (agent.remainingDistance < 1f && !ai.IsLooting)
+        else if (agent.remainingDistance < 1f && !ai.IsLooting && waypoints.Count>0)
         {
 
             if (NeedTocheck && (Random.Range(0.0f, 1.0f) < 0.5) && FirtPoint)

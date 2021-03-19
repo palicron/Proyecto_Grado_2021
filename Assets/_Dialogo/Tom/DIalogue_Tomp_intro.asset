@@ -19,8 +19,24 @@ MonoBehaviour:
     LocutorName: Tom
     JumpQuestion: 0
     JumpTo: 0
-    sentences: "Hola, y bienvenido al basurero m\xE1s grande del mundo, Yo soy Tom
-      y soy un veterano del reciclaje "
+    sentences: "Hola, veo una cara nueva en este lugar, me presento mi Nombre es
+      Tom y soy un reciclador Veterano y dirijo a todos los dem\xE1s recicladores
+      que ves a tu alrededor."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - DialogueDescription: Intro 2
+    LocutorName: Tom
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "Como ya sabr\xE1s este no es el \xFAnico basurero del mundo, y hay
+      muchos m\xE1s alrededor del mundo debido a que las personan se olvidaron sobre
+      el reciclaje."
     Type: 0
     Answers: []
     CorrectAnswer: 0
@@ -33,9 +49,9 @@ MonoBehaviour:
     LocutorName: Tom
     JumpQuestion: 0
     JumpTo: 0
-    sentences: "Estamos en el basurero m\xE1s grande de nuestro planeta, el cual
-      se extiende miles de kil\xF3metros en todas direcciones, te gustar\xEDa que
-      te cuente como llegamos a esto? "
+    sentences: Ya lo debes saber pero el reciclaje es una parte esencial en el proceso
+      de la 3R el cual significa <color=green>REDUCIR, REUSAR Y RECICLAR</color>.
+      quiere que te explique cada una de ellas?
     Type: 5
     Answers: []
     CorrectAnswer: 0
@@ -43,15 +59,61 @@ MonoBehaviour:
     InCorrectJump: 0
     elementNeded: 
     About:
-    - si
-    - no
-    WhereToJumpInfo: 0200000004000000
-  - DialogueDescription: info
+    - Si por supuesto
+    - No ya las conozco
+    WhereToJumpInfo: 0300000006000000
+  - DialogueDescription: info yes 1
     LocutorName: Tom
     JumpQuestion: 0
     JumpTo: 0
-    sentences: "Hace d\xE9cadas la humanidad abandono el reciclaje en busca de m\xE1s
-      dinero."
+    sentences: "Reducir significa disminuir nuestro consumo de productos como pl\xE1sticos
+      o materiales no reciclajes, y de esta forma disminuir el total de desperdicio
+      de cada uno."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - DialogueDescription: info yes 2
+    LocutorName: Tom
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "Reusar, quiere decir que cada persona debe tratar de reutilizar lo
+      que m\xE1s pueda los objetos, te doy un ejemplo podr\xEDa reusar una botella
+      de PET para beber liquido env\xE9s de estar comprando una nueva cada vez que
+      quieras algo."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - DialogueDescription: info yes 3
+    LocutorName: Tom
+    JumpQuestion: 1
+    JumpTo: 8
+    sentences: "El ultimo y por el motivo que estamos ac\xE1 es Reciclar, el cual
+      comprende clasificar y someter los materiales a un proceso que permita el re\xFAso
+      de estos mismo para distintos fines."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - DialogueDescription: info no
+    LocutorName: Tom
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: Me alegra que ya coscas las <color=green>3R</color> y puedas unirte
+      a nuestro grupo
     Type: 0
     Answers: []
     CorrectAnswer: 0
@@ -64,9 +126,22 @@ MonoBehaviour:
     LocutorName: Tom
     JumpQuestion: 0
     JumpTo: 0
-    sentences: "El mundo se surgi\xF3 de basura, como este hay sin fin de basureros
-      a nivel mundial donde la gente trata de ganarse la vida buscando objetos para
-      reciclar y as\xED poder salvar el planeta."
+    sentences: "Todos ac\xE1 estamos comprometidos a salvar el planeta por medio
+      del reciclaje y las 3R, pero este no es un lugar amigable para las personas."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - DialogueDescription: Info3
+    LocutorName: Tom
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: Como jefe de los recicladores te guiare por esta parte del basurero
+      hasta nuestra base principal, la cual puede ver a lo lejos.
     Type: 0
     Answers: []
     CorrectAnswer: 0
@@ -79,9 +154,8 @@ MonoBehaviour:
     LocutorName: Tom
     JumpQuestion: 0
     JumpTo: 0
-    sentences: "Ya que estas ac\xE1 asumo que quiere ser un nuevo reciclador, pero
-      ten cuidado este lugar esta lleno de peligros aun para veterano como yo, te
-      guiare en esta primera parte de tu aventura."
+    sentences: "Sigue el camino hacia la f\xE1brica, hay empezara t\xFA ventura en
+      el reciclaje, y aprender c\xF3mo se puede salvar este planeta."
     Type: 0
     Answers: []
     CorrectAnswer: 0
