@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f450dec53465c4ab22560f8b560a95, type: 3}
+  m_Name: Dialogue_Tom_fabric_3
+  m_EditorClassIdentifier: 
+  bIsRandomDialogue: 0
+  DialoguePriority: 1
+  lines:
+  - DialogueDescription: Entrando a la fabrica de metal
+    LocutorName: Tom
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "Lo lograste, felicitaciones por llegar hasta ac\xE1, mas adelante
+      esta la parte de reciclaje de metales y pl\xE1sticos, tengo que advertirte
+      esta zona es un poco m\xE1s peligrosa que esta."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - DialogueDescription: Entrando a la fabrica de metal 2
+    LocutorName: Tom
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "Te recuerdo que hables con mi equipo ellos te dar\xE1n informaci\xF3n
+      \xFAtil sobre las 3R."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - DialogueDescription: Entrando a la fabrica de metal 3
+    LocutorName: Tom
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: Pero hablando de metales sabias que <color=green> Existen 7 tipos
+      de metales los cuales </color>
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - DialogueDescription: Entrando a la fabrica de metal 4
+    LocutorName: Tom
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "\xBFQuieres que te de otro dato curioso acerca de los metales?"
+    Type: 5
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About:
+    - Si me encantaria
+    - No gracias ya lo se t
+    WhereToJumpInfo: 0500000006000000
+  - DialogueDescription: Entrando a la fabrica de metal datos curiosos
+    LocutorName: Tom
+    JumpQuestion: 1
+    JumpTo: 0
+    sentences: Sabias que actualmente solo el 30% de los metales son reciclados,
+      <color=green> y que el metal mas reciclado es el aluminio.</color>
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About:
+    - Si me encantaria
+    - No gracias ya lo se t
+    WhereToJumpInfo: 
+  - DialogueDescription: Entrando a la fabrica de metal datos curiosos
+    LocutorName: Tom
+    JumpQuestion: 1
+    JumpTo: 0
+    sentences: "Bueno no te quito mas tiempo te espero al otro lado de esta fabrica
+      donde te ense\xF1are a reciclar y a reusar estos materiales para el beneficio
+      de la gente."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About:
+    - Si me encantaria
+    - No gracias ya lo se t
+    WhereToJumpInfo: 

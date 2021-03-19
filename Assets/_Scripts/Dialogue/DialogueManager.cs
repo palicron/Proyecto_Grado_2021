@@ -92,7 +92,7 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
 
-        if (ActiveLineIndex < CurrentConversation.lines.Length && !ToEndConversation)
+        if (CurrentConversation && ActiveLineIndex < CurrentConversation.lines.Length && !ToEndConversation)
         {
 
 
