@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class EnemyHs : healthsystems
 {
+
+    public Enemy_AI ai;
     public override void Death()
     {
-        throw new System.NotImplementedException();
+        ai.death();
     }
 
     public override void Init()
     {
-        throw new System.NotImplementedException();
+        currentHealh = MaxHelath;
+        anim = GetComponent<Animator>();
+
+
     }
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Init();
     }
 
     // Update is called once per frame

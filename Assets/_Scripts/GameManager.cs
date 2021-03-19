@@ -33,11 +33,13 @@ public class GameManager : MonoBehaviour
 
     float GameStarTime = 0.0f;
 
+    AudioSource audio;
     private void Awake()
     {
         intance = this;
         // Cursor.lockState = CursorLockMode.Confined;
         DontDestroyOnLoad(this.gameObject);
+        audio = GetComponent<AudioSource>();
 
     }
     void Start()
@@ -143,7 +145,7 @@ public class GameManager : MonoBehaviour
         });
 
         Debug.Log(Result);
-        loadLevel(0);
+      //  loadLevel(0);
     }
 
     IEnumerator LoadYourAsyncScene(int index)
@@ -158,6 +160,11 @@ public class GameManager : MonoBehaviour
         GameManager.CheckPoint = Vector3.zero;
         GameManager.CheckPointName = "StarCheckPoint";
 
+    }
+
+    public void playSound(AudioClip sound)
+    {
+        audio.PlayOneShot(sound);
     }
 
 

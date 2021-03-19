@@ -12,6 +12,8 @@ public class Enemy_AI : MonoBehaviour
     public Transform player;
     [SerializeField]
     float Damage = 10.0f;
+    [SerializeField]
+    public float Touchdis = 4.0f;
     public List<GameObject> ArrayPoints;
     public GameObject lastCheckPoint;
     [SerializeField]
@@ -20,10 +22,13 @@ public class Enemy_AI : MonoBehaviour
     public float RandomPatrolDistance = 50.0f;
     [SerializeField]
     LayerMask isRecoelPoint;
-
+    [SerializeField]
+    Material[] NpcMat;
     public bool IsPaytoling = false;
     bool isAttacking = false;
     public bool IsLooting = false;
+
+    bool alive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,14 +49,29 @@ public class Enemy_AI : MonoBehaviour
             }
         }
 
+        int ran = Random.Range(0, NpcMat.Length);
+
+
+        GetComponentInChildren<Renderer>().material = NpcMat[ran];
+
         CurrentState = new Idle(this.gameObject, agent, anim, player, NpcHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
-        CurrentState = CurrentState.Process();
-        anim.SetFloat("Speed", (agent.velocity.magnitude / agent.speed));
+        if(alive)
+        {
+            CurrentState = CurrentState.Process();
+            anim.SetFloat("Speed", (agent.velocity.magnitude / 4.5f));
+            if((player.position -this.transform.position).magnitude<Touchdis && CurrentState.name != State.STATE.ATTACKING)
+            {
+                CurrentState.nextState = new Attack(this.gameObject, agent, anim, player, NpcHealth);
+                CurrentState.stage = State.EVENT.EXIT;
+
+            }
+        }
+  
     }
 
     public void Attack()
@@ -76,14 +96,20 @@ public class Enemy_AI : MonoBehaviour
         anim.ResetTrigger("LootingLow");
     }
 
+    public void death()
+    {
+        anim.SetTrigger("Die");
+        alive = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        Playerhealthsystems hs = other.gameObject.GetComponent<Playerhealthsystems>();
-        if(hs)
-        {
+        //Playerhealthsystems hs = other.gameObject.GetComponent<Playerhealthsystems>();
+        //if(hs)
+        //{
      
-            hs.TakeDmg(Damage);
-        }
+          //  hs.TakeDmg(Damage);
+        //}
          
     }
 }

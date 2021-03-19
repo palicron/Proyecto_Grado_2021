@@ -24,20 +24,30 @@ public abstract class healthsystems : MonoBehaviour
 
     public delegate void OnDeathNotify();
     public  OnDeathNotify deathNotify;
+    public GameObject particle;
 
+    protected Animator anim;
     public virtual void TakeDmg(float Damage)
     {
+
+        anim.SetTrigger("Hit");
 
         if (Time.time - lastTimeHit > invisivilitiTime)
         {
             lastTimeHit = Time.time;
             currentHealh = Mathf.Clamp((currentHealh - Damage), 0, MaxHelath);
-            healthUpdate(getHealthPorcentage());
+            GameObject.Instantiate(particle, this.gameObject.transform.position+ new Vector3(0,0,0.8f), Quaternion.identity);
+            if(this.gameObject.tag.Equals("Player"))
+            {
+                healthUpdate(getHealthPorcentage());
+            }
+         
             if (currentHealh <= 0)
             {
         
                 Death();
             }
+            GetComponent<Animator>().ResetTrigger("Hit");
         }
 
     }
