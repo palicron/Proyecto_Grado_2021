@@ -17,6 +17,7 @@ public class Playerhealthsystems : healthsystems
     public override void Death()
     {
         deathNotify();
+        GetComponent<Animator>().SetTrigger("Die");
     }
 
  

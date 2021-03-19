@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f450dec53465c4ab22560f8b560a95, type: 3}
+  m_Name: Dialogue_NPC_Basurero_3
+  m_EditorClassIdentifier: 
+  bIsRandomDialogue: 0
+  DialoguePriority: 1
+  lines:
+  - DialogueDescription: Basurero Papel
+    LocutorName: Reciclador
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: Recuerda el azul es el color para el papel, el periodico y el carton
+      puede ira en esta, pero <color=red>el papel higienico, el papel para fax, y
+      cartones de bebidas</color> no van en esta
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 

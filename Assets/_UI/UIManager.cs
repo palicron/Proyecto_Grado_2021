@@ -21,6 +21,11 @@ public class UIManager : MonoBehaviour
     GameObject PauseMenu;
     [SerializeField]
     float LifeBarSpeedDecrese = 0.2f;
+
+    [SerializeField]
+    GameObject DeathMenu;
+    [SerializeField]
+    GameObject FinishMenu;
     private void Awake()
     {
         instance = this;
@@ -94,6 +99,15 @@ public class UIManager : MonoBehaviour
     {
         Resume();
         GameManager.intance.loadLevel(index);
+    }
+
+    public void DeathMenuEnable()
+    {
+        DeathMenu.SetActive(true);
+    }
+    public void endlevel()
+    {
+        FinishMenu.SetActive(true);
     }
 
 }
