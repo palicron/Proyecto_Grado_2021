@@ -111,7 +111,7 @@ public class NPC_Tom : NPC
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<PlayerCtr>() && !IsPlayerInrange)
+        if (other.gameObject.GetComponent<PlayerCtr>() && !bIsInConversation)
         {
         
             CurrentNearPlayer = null;
