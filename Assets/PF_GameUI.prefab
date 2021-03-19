@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0.49019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7254902}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -507,7 +507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' X para cancelar'
+  m_Text: ' C para cancelar'
 --- !u!1 &186045295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3433,7 +3433,7 @@ MonoBehaviour:
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 1
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -5717,7 +5717,7 @@ MonoBehaviour:
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -9459,8 +9459,8 @@ MonoBehaviour:
   DialogueText: {fileID: 1797018447}
   RemoteCharaterName: {fileID: 3491181142093662587}
   RemoteDialogueText: {fileID: 2454673990368623138}
-  textSpeed: 0.01
-  textAutoWait: 0.5
+  textSpeed: 0.3
+  textAutoWait: 1
   ASwerButton:
   - {fileID: 465678536}
   - {fileID: 1642168718}

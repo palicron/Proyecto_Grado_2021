@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Analytics;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager intance;
@@ -10,8 +10,8 @@ public class DialogueManager : MonoBehaviour
 
     public static bool WaitingAswer = false;
 
-    public static bool IsinConversation =false;
- 
+    public static bool IsinConversation = false;
+
     public GameObject DialoguePanel;
     public GameObject RemoteDialoguePanel;
     [SerializeField]
@@ -143,7 +143,7 @@ public class DialogueManager : MonoBehaviour
             StopAllCoroutines();
             DialogueText.text = CurrentConversation.lines[ActiveLineIndex].sentences;
             IsTyping = false;
-            if(CurrentConversation.lines[ActiveLineIndex].JumpQuestion)
+            if (CurrentConversation.lines[ActiveLineIndex].JumpQuestion)
             {
                 ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex].JumpTo;
             }
@@ -151,7 +151,7 @@ public class DialogueManager : MonoBehaviour
             {
                 ActiveLineIndex++;
             }
-   
+
         }
         else
         {
@@ -165,9 +165,9 @@ public class DialogueManager : MonoBehaviour
 
     void DisplayAutoLine()
     {
-             Currentsentece = CurrentConversation.lines[ActiveLineIndex].sentences;
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(Currentsentece));
+        Currentsentece = CurrentConversation.lines[ActiveLineIndex].sentences;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(Currentsentece));
     }
     void DisplayQuestion()
     {
@@ -246,7 +246,7 @@ public class DialogueManager : MonoBehaviour
         {
             ActiveLineIndex++;
         }
-       
+
     }
 
     IEnumerator AutoTypeSentence(string sentece)
@@ -265,20 +265,34 @@ public class DialogueManager : MonoBehaviour
 
     public void SendAswer(int Number)
     {
-       if(CurrentConversation.lines[ActiveLineIndex-1].Type == DialogueType.Question)
+        if (CurrentConversation.lines[ActiveLineIndex - 1].Type == DialogueType.Question)
         {
             if (Number == CorrectAswer)
             {
                 ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex - 1].CorrectJump;
+
+                Analytics.CustomEvent("Inforamation_question", new Dictionary<string, object>
+        {
+            {"Current_Level", GameManager.intance.CurrentLevelIndex},
+            {"Play_time",Time.timeSinceLevelLoad },
+            {"Repusta a mas informacion","Si"}
+        });
 
             }
             else
             {
                 ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex - 1].InCorrectJump;
 
+                Analytics.CustomEvent("Inforamation_question", new Dictionary<string, object>
+        {
+            {"Current_Level", GameManager.intance.CurrentLevelIndex},
+            {"Play_time",Time.timeSinceLevelLoad },
+            {"Repusta a mas informacion","no"}
+        });
+
             }
         }
-       else
+        else
         {
             ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex - 1].WhereToJumpInfo[Number];
         }
@@ -304,18 +318,22 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    IEnumerator  AutoDialogueStar()
+    IEnumerator AutoDialogueStar()
     {
         int leng = CurrentConversation.lines.Length;
         Currentsentece = CurrentConversation.lines[ActiveLineIndex].sentences;
-       
-        while (CurrentConversation.lines[ActiveLineIndex].Type!= DialogueType.EndDialogue && ActiveLineIndex <= leng)
+
+        while (ActiveLineIndex < leng)
         {
             RemoteCharaterName.text = CurrentConversation.lines[ActiveLineIndex].LocutorName;
             yield return StartCoroutine(AutoTypeSentence(Currentsentece));
+
             yield return new WaitForSeconds(textAutoWait);
-  
-            Currentsentece = CurrentConversation.lines[ActiveLineIndex].sentences;
+            if (ActiveLineIndex < leng)
+            {
+                Currentsentece = CurrentConversation.lines[ActiveLineIndex].sentences;
+            }
+
         }
         EndAutoDialgue();
     }
