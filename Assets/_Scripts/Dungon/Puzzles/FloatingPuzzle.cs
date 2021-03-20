@@ -27,7 +27,7 @@ public class FloatingPuzzle : MonoBehaviour
         {
             MovePlatform();
         }
-        else if(active)
+        else if(active && correct)
         {
             GameManager.intance.playSound(CorrectSound);
         }
@@ -37,7 +37,7 @@ public class FloatingPuzzle : MonoBehaviour
     void MovePlatform()
     {
         platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, newPostion.position, speed * Time.deltaTime));
-        StartCoroutine(MoveMovingObject(2f));
+        StartCoroutine(MoveMovingObject(1f));
 
     }
 
