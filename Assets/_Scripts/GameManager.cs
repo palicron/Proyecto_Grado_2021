@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
+        Cursor.lockState = CursorLockMode.Confined;
 
         //recordad que esto solo e spara le nivel de prueba tiene que estar es cuando se carga un lvl
         iniComponents();
@@ -145,7 +146,9 @@ public class GameManager : MonoBehaviour
         });
 
         Debug.Log(Result);
-      //  loadLevel(0);
+        Player.CanControlPlayer = false;
+        UIManager.instance.DeathMenuEnable();
+     
     }
 
     IEnumerator LoadYourAsyncScene(int index)

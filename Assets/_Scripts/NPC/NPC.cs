@@ -37,7 +37,7 @@ public abstract class NPC : MonoBehaviour
         {
             DialogueManager.intance.DisplayNextSentence();
         }
-        else if (Input.GetKeyDown(KeyCode.C) && IsPlayerInrange && bIsInConversation)
+        else if (Input.GetKeyDown(KeyCode.C) && bIsInConversation)
         {
             DialogueManager.Instance.EndDialgue();
         }

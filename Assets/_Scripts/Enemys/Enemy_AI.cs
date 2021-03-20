@@ -27,8 +27,9 @@ public class Enemy_AI : MonoBehaviour
     public bool IsPaytoling = false;
     bool isAttacking = false;
     public bool IsLooting = false;
-
+    public GameObject DamgeTrigger;
     bool alive = true;
+    bool dmgT = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -111,5 +112,11 @@ public class Enemy_AI : MonoBehaviour
           //  hs.TakeDmg(Damage);
         //}
          
+    }
+
+    public void ToggleAttack()
+    {
+        dmgT = !dmgT;
+        DamgeTrigger.SetActive(dmgT);
     }
 }

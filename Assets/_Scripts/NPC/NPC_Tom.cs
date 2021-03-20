@@ -85,6 +85,7 @@ public class NPC_Tom : NPC
     public void starConbersationEvent(PlayerCtr Player)
     {
         CurrentNearPlayer = Player;
+     
 
         if (!WalksToPlater)
         {
@@ -149,6 +150,7 @@ public class NPC_Tom : NPC
         StopAllCoroutines();
         CurrentNearPlayer.SetDialogue(false, Vector3.zero);
         Destroy(this.gameObject);
+      
     }
 
     public override void midDialgueAction()
