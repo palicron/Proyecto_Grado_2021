@@ -27,6 +27,7 @@ public class FloatingPuzzle : MonoBehaviour
         {
             MovePlatform();
         }
+        else if (!active) { platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, initialPos, speed * Time.deltaTime)); }
         else if(active && correct)
         {
             GameManager.intance.playSound(CorrectSound);
@@ -36,16 +37,14 @@ public class FloatingPuzzle : MonoBehaviour
 
     void MovePlatform()
     {
-        platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, newPostion.position, speed * Time.deltaTime));
         StartCoroutine(MoveMovingObject(1f));
-
     }
 
 
     IEnumerator MoveMovingObject(float time)
     {
         yield return new WaitForSeconds(time);
-        platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, initialPos, speed * Time.deltaTime));
-        active = false;
+        platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, newPostion.position, speed * Time.deltaTime));
+
     }
 }

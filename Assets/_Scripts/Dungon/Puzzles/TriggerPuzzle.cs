@@ -43,7 +43,19 @@ public class TriggerPuzzle : MonoBehaviour
 
     }
 
-  
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+             if (floatingPuzzle != null)
+            {
+                floatingPuzzle.active = false;
+            }
+
+        }
+
+    }
+
 
     // Update is called once per frame
     void Update()
