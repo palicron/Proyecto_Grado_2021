@@ -19,7 +19,7 @@ MonoBehaviour:
     LocutorName: Rafael
     JumpQuestion: 0
     JumpTo: 0
-    sentences: Cual es el color del conetendor para desechos organicos?
+    sentences: "\xBFCual es el color del conetendor para desechos organicos?"
     Type: 2
     Answers:
     - Roja
@@ -29,6 +29,8 @@ MonoBehaviour:
     CorrectJump: 1
     InCorrectJump: 2
     elementNeded: 
+    About: []
+    WhereToJumpInfo: 
   - DialogueDescription: Respuesta correcta
     LocutorName: Rafael
     JumpQuestion: 1
@@ -40,6 +42,8 @@ MonoBehaviour:
     CorrectJump: 0
     InCorrectJump: 0
     elementNeded: 
+    About: []
+    WhereToJumpInfo: 
   - DialogueDescription: Respuesta incorrecta
     LocutorName: Rafael
     JumpQuestion: 1
@@ -51,6 +55,8 @@ MonoBehaviour:
     CorrectJump: 0
     InCorrectJump: 0
     elementNeded: 
+    About: []
+    WhereToJumpInfo: 
   - DialogueDescription: Continuacion 1
     LocutorName: Rafael
     JumpQuestion: 0
@@ -62,37 +68,43 @@ MonoBehaviour:
     CorrectJump: 0
     InCorrectJump: 0
     elementNeded: 
+    About: []
+    WhereToJumpInfo: 
   - DialogueDescription: Pregunta 2
     LocutorName: Rafael
     JumpQuestion: 0
     JumpTo: 0
-    sentences: 'el aluminio enq ue contenedor va '
+    sentences: "\xBFEl aluminio en  que contenedor deberia depositarse para ser reciclado?"
     Type: 2
     Answers:
-    - blanco
-    - amarillo
-    CorrectAnswer: 1
+    - Rojo
+    - Amarillo
+    CorrectAnswer: 0
     CorrectJump: 5
     InCorrectJump: 4
     elementNeded: 
+    About: []
+    WhereToJumpInfo: 
   - DialogueDescription: Pregunta 3
     LocutorName: Rafael
     JumpQuestion: 0
     JumpTo: 0
-    sentences: el plastico va en la caneca?
+    sentences: "\xBFQue color tiene la caneca para reciclar plastico?"
     Type: 2
     Answers:
-    - azul
-    - roja
+    - Azul
+    - Roja
     CorrectAnswer: 0
     CorrectJump: 6
     InCorrectJump: 5
     elementNeded: 
+    About: []
+    WhereToJumpInfo: 
   - DialogueDescription: Continuacion4
     LocutorName: Rafael
     JumpQuestion: 0
     JumpTo: 0
-    sentences: buent rabajo
+    sentences: Increible tus conocimientos han podido superar mis preguntas.
     Type: 0
     Answers:
     - azul
@@ -101,3 +113,5 @@ MonoBehaviour:
     CorrectJump: 0
     InCorrectJump: 0
     elementNeded: 
+    About: []
+    WhereToJumpInfo: 
