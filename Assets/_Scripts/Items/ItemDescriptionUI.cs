@@ -24,11 +24,13 @@ public class ItemDescriptionUI : MonoBehaviour, IDragHandler
 
     public Text extraInfo;
 
-    private string lastItem = "";
+    private int lastItem = -2;
 
 
     public void setItem(Item pItem)
     {
+        int actualId = pItem.id;
+
         icon.sprite = pItem.icon;
 
         name.text = pItem.name;
@@ -37,25 +39,28 @@ public class ItemDescriptionUI : MonoBehaviour, IDragHandler
 
         type.text = "Tipo: " + pItem.type;
 
-        rarity.text = "Rareza: " +  pItem.rarity;
+        rarity.text = "Rareza: " + pItem.rarity;
 
         extraInfo.text = pItem.extraInfo;
 
-        if (name.text.Equals(lastItem) && itemDescUI.activeSelf == true)
+        if (actualId == lastItem && itemDescUI.activeSelf == true)
         {
             itemDescUI.SetActive(false);
+            UI_Status.instance.SetOpen(false, MenuType.Description);
         }
         else
         {
             itemDescUI.SetActive(true);
+            UI_Status.instance.SetOpen(true, MenuType.Description);
         }
 
-        lastItem = name.text;
+        lastItem = actualId;
     }
 
     public void closeButton()
     {
         itemDescUI.SetActive(false);
+        UI_Status.instance.SetOpen(false, MenuType.Description);
     }
 
     public void OnDrag(PointerEventData eventData)

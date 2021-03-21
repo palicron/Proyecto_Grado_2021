@@ -24,7 +24,9 @@ public class EquipmentUI : MonoBehaviour
     {
         if (Input.GetButtonDown("Equipment"))
         {
-            equipmentUI.SetActive(!equipmentUI.activeSelf);
+            bool active = !equipmentUI.activeSelf;
+            equipmentUI.SetActive(active);
+            UI_Status.instance.SetOpen(active, MenuType.Equipment);
         }
     }
 

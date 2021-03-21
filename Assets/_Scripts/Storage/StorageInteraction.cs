@@ -49,6 +49,7 @@ public class StorageInteraction : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             storageUI.SetActive(false);
+            UI_Status.instance.SetOpen(false, MenuType.Storage);
             chestOpened = false;
             playerClose = false;
             playerInteracting = false;
@@ -78,6 +79,8 @@ public class StorageInteraction : MonoBehaviour
             storage.SetContent(ref items, storageType);
             storageUI.SetActive(chestOpened);
             inventoryUI.SetActive(chestOpened);
+            UI_Status.instance.SetOpen(chestOpened, MenuType.Inventory);
+            UI_Status.instance.SetOpen(chestOpened, MenuType.Storage);
         }
     }
 

@@ -171,37 +171,37 @@ public class Inventory : MonoBehaviour
         return items;
     }
 
-    public bool SetExtraBag(int i)
-    {
-        if(i == 4)
-        {
-            extraBag1 = true;
-            return true;
-        }
-        if (i == 5)
-        {
-            extraBag1 = true;
-            return true;
-        }
-        return false;
-    }
+    //public bool SetExtraBag(int i)
+    //{
+    //    if(i == 4)
+    //    {
+    //        extraBag1 = true;
+    //        return true;
+    //    }
+    //    if (i == 5)
+    //    {
+    //        extraBag1 = true;
+    //        return true;
+    //    }
+    //    return false;
+    //}
 
-    public bool RemoveExtraBag(int i)
-    {
-        int boolBag1 = extraBag1? extraBagSpace: 0;
-        int boolBag2 = extraBag2 ? extraBagSpace : 0;
-        if (i == 4 && (space + (extraBagSpace * boolBag2)) > items.Count )
-        {
-            extraBag1 = false;
-            return true;
-        }
-        if (i == 5 && (space + (extraBagSpace * boolBag1)) > items.Count )
-        {
-            extraBag2 = false;
-            return true;
-        }
-        return false;
-    }
+    //public bool RemoveExtraBag(int i)
+    //{
+    //    int boolBag1 = extraBag1? extraBagSpace: 0;
+    //    int boolBag2 = extraBag2 ? extraBagSpace : 0;
+    //    if (i == 4 && (space + (extraBagSpace * boolBag2)) > items.Count )
+    //    {
+    //        extraBag1 = false;
+    //        return true;
+    //    }
+    //    if (i == 5 && (space + (extraBagSpace * boolBag1)) > items.Count )
+    //    {
+    //        extraBag2 = false;
+    //        return true;
+    //    }
+    //    return false;
+    //}
 
     public bool isThereExtraBag(int  i)
     {

@@ -91,10 +91,17 @@ public class EquipmentManager : MonoBehaviour
     public void Unequip (int pSlot)
     {
         UpdateStats(false, currentEquipment[pSlot]);
-        if(currentEquipment[pSlot].isWeapon)
+        if(currentEquipment[pSlot].slot == EquipSlot.Tool)
         {
-            playerCtr.SetWeapon(null, false);
-            weaponEquipped = false;
+            if (currentEquipment[pSlot].isWeapon)
+            {
+                playerCtr.SetWeapon(null, false);
+                weaponEquipped = false;
+            }
+            else
+            {
+                playerCtr.SetTool(null, false);
+            }
         }
         currentEquipment[pSlot] = null;
         if (onItemEquipedCallBack != null)

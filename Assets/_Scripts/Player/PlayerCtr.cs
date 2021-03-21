@@ -14,6 +14,7 @@ public class PlayerCtr : MonoBehaviour
     int velocityModifier = 0;
     bool hasWeapon = false;
     bool menuOpen = false;
+    UI_Status menuStatus;
 
     public void ModifyStats(int a, int d, int v)
     {
@@ -24,26 +25,38 @@ public class PlayerCtr : MonoBehaviour
 
     public void SetWeapon(GameObject pWeapon, bool equip)
     {
-        GameObject aWeapon = Instantiate(pWeapon);
         hasWeapon = equip;
         if(WeaponVisual != null)
         {
-            WeaponVisual.transform.parent = null;
+            Destroy(WeaponVisual);
         }
-        aWeapon.transform.SetParent(Weapon.transform, false);
-        WeaponVisual = aWeapon;
+        if (pWeapon != null)
+        {
+            GameObject aWeapon = Instantiate(pWeapon);
+            aWeapon.transform.SetParent(Weapon.transform, false);
+            WeaponVisual = aWeapon;
+        }
     }
 
     public void SetTool(GameObject pTool, bool equip)
     {
-        GameObject aTool = Instantiate(pTool);
         if (ToolVisual != null)
         {
-            ToolVisual.transform.parent = null;
+            Destroy(ToolVisual);
         }
-        aTool.transform.SetParent(Tool.transform, false);
-        ToolVisual = aTool;
+        if (pTool != null)
+        {
+            GameObject aTool = Instantiate(pTool);
+            aTool.transform.SetParent(Tool.transform, false);
+            ToolVisual = aTool;
+        }
     }
+
+    void changeMenuStatus()
+    {
+        menuOpen = menuStatus.IsMenuOpen();
+    }
+
     // --------------------------------
     public Interactable focus;
     [Header("Player Movement")]
@@ -126,7 +139,8 @@ public class PlayerCtr : MonoBehaviour
     GameObject WeaponVisual;
     void Start()
     {
-     
+        menuStatus = UI_Status.instance;
+        menuStatus.onMenusChangedCallBack += changeMenuStatus;
         CurrentSpeed = Speed;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
@@ -180,7 +194,7 @@ public class PlayerCtr : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if(hasWeapon && !UI_Status.instance.IsMenuOpen())
+            if(hasWeapon && !menuOpen)
             {
                 NextAttack();
             }

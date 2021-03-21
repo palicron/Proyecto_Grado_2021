@@ -39,8 +39,9 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetButtonDown("Inventory"))
         {
-            bool active = !inventoryUI.activeSelf;  
+            bool active = !inventoryUI.activeSelf;
             inventoryUI.SetActive(active);
+            UI_Status.instance.SetOpen(active, MenuType.Inventory);
         }
     }
 

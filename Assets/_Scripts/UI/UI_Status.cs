@@ -11,21 +11,51 @@ public class UI_Status : MonoBehaviour
     void Awake()
     {
         instance = this;
+        isOpened = false;
+        menus = new bool[5];
     }
     #endregion
 
-    public GameObject[] menus;
+    bool isOpened;
+    bool[] menus;
+    public delegate void OnMenusChanged();
+    public OnMenusChanged onMenusChangedCallBack;
 
     public bool IsMenuOpen()
     {
-        for(int i = 0; i < menus.Length; i++)
+        return isOpened;
+    }
+
+    public void SetOpen(bool p, MenuType i)
+    {
+        menus[(int)i] = p;
+        UpdateBoolean();
+        if (onMenusChangedCallBack != null)
         {
-            if(menus[i].activeSelf)
+            onMenusChangedCallBack.Invoke();
+        }
+    }
+
+    void UpdateBoolean()
+    {
+        isOpened = false;
+        for (int i = 0; i<menus.Length;i++)
+        {
+            Debug.Log(((MenuType)i)+": "+menus[i]);
+            isOpened = isOpened || menus[i];
+            if(isOpened == true)
             {
-                Debug.Log("Can't attack with an opened menu");
-                return true;
+                //return;
             }
         }
-        return false;
     }
+}
+
+public enum MenuType
+{
+    Crafting,
+    Equipment,
+    Inventory,
+    Description,
+    Storage,
 }
