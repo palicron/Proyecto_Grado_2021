@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &165780252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165780253}
+  m_Layer: 9
+  m_Name: Tool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &165780253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165780252}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8542153197236841012}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &571700512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 571700513}
+  m_Layer: 9
+  m_Name: Weapon_Visual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &571700513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571700512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 791989673}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &791989672
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +69,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 791989673}
-  - component: {fileID: 791989676}
   - component: {fileID: 791989675}
   - component: {fileID: 791989674}
   - component: {fileID: 791989677}
@@ -32,18 +91,11 @@ Transform:
   m_LocalRotation: {x: 0.041527893, y: 0.002741705, z: -0.748662, w: 0.6616443}
   m_LocalPosition: {x: -1.6, y: 1.07, z: 0.25}
   m_LocalScale: {x: 0.4854816, y: 1.8309453, z: 0.4854816}
-  m_Children: []
+  m_Children:
+  - {fileID: 571700513}
   m_Father: {fileID: 758060918542599077}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 3.386, y: -3.363, z: -97.161}
---- !u!33 &791989676
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791989672}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &791989675
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -552,10 +604,11 @@ MonoBehaviour:
   isGrounded: 0
   canDoubleJump: 0
   CanControlPlayer: 1
-  LerpingVelocity: 17
+  LerpingVelocity: 5
   PlayerVcam: {fileID: 927678895}
   PlayerCamera: {fileID: 0}
   Weapon: {fileID: 791989672}
+  WeaponVisual: {fileID: 571700512}
 --- !u!114 &2611549101238117223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,6 +1020,11 @@ Transform:
 --- !u!4 &758060918542599077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2412161367050800168, guid: 37821c7d16bd1664abb113f376e077ad, type: 3}
+  m_PrefabInstance: {fileID: 3169579315841814413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8542153197236841012 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6734931530170869177, guid: 37821c7d16bd1664abb113f376e077ad, type: 3}
   m_PrefabInstance: {fileID: 3169579315841814413}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8257780195403880417

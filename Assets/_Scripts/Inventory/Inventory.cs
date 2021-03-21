@@ -119,7 +119,7 @@ public class Inventory : MonoBehaviour
         {
             if(items.Count >= actualSpace)
             {
-                Debug.Log("Inventory is full.");
+                ErrorDialog.instance.ThrowError("El inventario está lleno");
                 return false;
             }
             items.Add(new ListItem(item));

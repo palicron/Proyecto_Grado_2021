@@ -17,8 +17,9 @@ public class Item : ScriptableObject
     {
         Común,
         Raro,
-        MuyRaro,
-        UltraRaro
+        UltraRaro,
+        Legendario,
+        Único
     }
     public int id = -1;
     new public string name = "New Item";

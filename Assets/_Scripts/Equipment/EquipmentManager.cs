@@ -32,6 +32,8 @@ public class EquipmentManager : MonoBehaviour
 
     int velocityModifier = 0;
 
+    bool weaponEquipped = false; 
+
     void Start()
     {
         currentEquipment = new Equipment[6];
@@ -50,7 +52,32 @@ public class EquipmentManager : MonoBehaviour
         {
             return false;
         }
-        if(newItem!=null) currentEquipment[slotIndex] = newItem;
+
+        if (newItem != null)
+        {
+            if(newItem.slot == EquipSlot.Tool)
+            {
+                if (newItem.isWeapon)
+                {
+                    if (weaponEquipped)
+                    {
+                        ErrorDialog.instance.ThrowError("¡Ya tienes un arma equipada!");
+                        return false;
+                    }
+                    playerCtr.SetWeapon(((Tool)newItem).toolEquippedView, true);
+                    weaponEquipped = true;
+                }
+                else
+                {
+                    GameObject pfView = ((Tool)newItem).toolEquippedView;
+                    if(pfView != null)
+                    {
+                        playerCtr.SetTool(pfView, true);
+                    }
+                }
+            }
+            currentEquipment[slotIndex] = newItem;
+        }
 
         UpdateStats(true, newItem);
         
@@ -64,6 +91,11 @@ public class EquipmentManager : MonoBehaviour
     public void Unequip (int pSlot)
     {
         UpdateStats(false, currentEquipment[pSlot]);
+        if(currentEquipment[pSlot].isWeapon)
+        {
+            playerCtr.SetWeapon(null, false);
+            weaponEquipped = false;
+        }
         currentEquipment[pSlot] = null;
         if (onItemEquipedCallBack != null)
         {
