@@ -9,6 +9,7 @@ public class PuzzleBotonController : MonoBehaviour
     [Header("Button  Dependences")]
     public Rigidbody buttonRigid;
     public Transform newPostion;
+    [Header("Button  Correct Variables")]
     public Rigidbody MovingObject;
     public Transform MovingPositon;
     public TextMeshPro opcionText;
