@@ -885,8 +885,9 @@ GameObject:
   - component: {fileID: 41618720}
   - component: {fileID: 41618719}
   - component: {fileID: 41618717}
+  - component: {fileID: 41618718}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaPlatino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -925,7 +926,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &41618718
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41618715}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &41618719
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3508,8 +3527,9 @@ GameObject:
   - component: {fileID: 171292347}
   - component: {fileID: 171292346}
   - component: {fileID: 171292344}
+  - component: {fileID: 171292345}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaPaladio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3548,7 +3568,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &171292345
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171292342}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &171292346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4294,8 +4332,9 @@ GameObject:
   - component: {fileID: 187633860}
   - component: {fileID: 187633859}
   - component: {fileID: 187633857}
+  - component: {fileID: 187633858}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaPlo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4334,7 +4373,25 @@ MonoBehaviour:
   speed: 14
   correct: 1
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &187633858
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187633855}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &187633859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4919,8 +4976,9 @@ GameObject:
   - component: {fileID: 224756626}
   - component: {fileID: 224756625}
   - component: {fileID: 224756623}
+  - component: {fileID: 224756624}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaCobre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4959,7 +5017,25 @@ MonoBehaviour:
   speed: 14
   correct: 1
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &224756624
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224756621}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &224756625
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5369,19 +5445,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000014032273
+      value: 0.25998512
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000006998683
+      value: -0.012966912
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99875855
+      value: 0.9643269
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.049813703
+      value: 0.048096366
       objectReference: {fileID: 0}
     - target: {fileID: 368609291, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_DeadZoneWidth
@@ -5457,19 +5533,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000013874923
+      value: 0.26029778
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000012483609
+      value: 0.0023419529
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9999595
+      value: 0.9654865
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0089968825
+      value: -0.008686681
       objectReference: {fileID: 0}
     - target: {fileID: 1902527299, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_IsActive
@@ -5529,7 +5605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -130.54001
+      value: -130.21468
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5537,7 +5613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -290.41
+      value: -192.89536
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5553,19 +5629,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000013855121
+      value: 0.2600409
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0000000628482
+      value: 0.011795713
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9989728
+      value: 0.9645338
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.045314413
+      value: -0.043752205
       objectReference: {fileID: 0}
     - target: {fileID: 3847675374731446324, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_RootOrder
@@ -5661,7 +5737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -130.54001
+      value: -130.21468
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5669,23 +5745,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -290.41
+      value: -192.89536
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000014203143
+      value: 0.25998506
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000007083908
+      value: -0.0129669085
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99875855
+      value: 0.9643269
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.049813714
+      value: 0.048096363
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190479, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_StopNaN
@@ -5964,8 +6040,9 @@ GameObject:
   - component: {fileID: 303298634}
   - component: {fileID: 303298633}
   - component: {fileID: 303298631}
+  - component: {fileID: 303298632}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaOro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6004,7 +6081,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &303298632
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303298629}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &303298633
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8153,8 +8248,9 @@ GameObject:
   - component: {fileID: 402825234}
   - component: {fileID: 402825233}
   - component: {fileID: 402825231}
+  - component: {fileID: 402825232}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaBronce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8193,7 +8289,25 @@ MonoBehaviour:
   speed: 14
   correct: 1
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &402825232
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402825229}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &402825233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8639,8 +8753,9 @@ GameObject:
   - component: {fileID: 415929335}
   - component: {fileID: 415929334}
   - component: {fileID: 415929332}
+  - component: {fileID: 415929333}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaMercurio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8679,7 +8794,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &415929333
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415929330}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &415929334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8848,8 +8981,9 @@ GameObject:
   - component: {fileID: 431572303}
   - component: {fileID: 431572302}
   - component: {fileID: 431572300}
+  - component: {fileID: 431572301}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaTitanio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8888,7 +9022,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &431572301
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431572298}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &431572302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8972,7 +9124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -130.54
+      value: -127.45
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8980,7 +9132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -295.91
+      value: -197.65
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9760,8 +9912,9 @@ GameObject:
   - component: {fileID: 481615942}
   - component: {fileID: 481615941}
   - component: {fileID: 481615939}
+  - component: {fileID: 481615940}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaNiquel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9800,7 +9953,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &481615940
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481615937}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &481615941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11236,8 +11407,9 @@ GameObject:
   - component: {fileID: 560471364}
   - component: {fileID: 560471363}
   - component: {fileID: 560471361}
+  - component: {fileID: 560471362}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaCromo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11276,7 +11448,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &560471362
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560471359}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &560471363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18852,8 +19042,9 @@ GameObject:
   - component: {fileID: 689084128}
   - component: {fileID: 689084127}
   - component: {fileID: 689084125}
+  - component: {fileID: 689084126}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaLaton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18892,7 +19083,25 @@ MonoBehaviour:
   speed: 14
   correct: 1
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &689084126
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689084123}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &689084127
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19763,6 +19972,7 @@ GameObject:
   - component: {fileID: 703053984}
   - component: {fileID: 703053983}
   - component: {fileID: 703053982}
+  - component: {fileID: 703053986}
   m_Layer: 6
   m_Name: PlataformaPlata
   m_TagString: Untagged
@@ -19803,7 +20013,9 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
 --- !u!65 &703053983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19866,6 +20078,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703053980}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &703053986
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703053980}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &704469230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41837,8 +42065,9 @@ GameObject:
   - component: {fileID: 851159956}
   - component: {fileID: 851159955}
   - component: {fileID: 851159953}
+  - component: {fileID: 851159954}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaRodio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41877,7 +42106,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &851159954
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851159951}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &851159955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66360,8 +66607,9 @@ GameObject:
   - component: {fileID: 1287016886}
   - component: {fileID: 1287016885}
   - component: {fileID: 1287016883}
+  - component: {fileID: 1287016884}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: "PlataformaEsta\xF1o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66400,7 +66648,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &1287016884
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287016881}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &1287016885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69968,6 +70234,7 @@ GameObject:
   - component: {fileID: 1497901768}
   - component: {fileID: 1497901767}
   - component: {fileID: 1497901765}
+  - component: {fileID: 1497901766}
   m_Layer: 6
   m_Name: PlataformaAluminio
   m_TagString: Untagged
@@ -70008,7 +70275,25 @@ MonoBehaviour:
   speed: 14
   correct: 1
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &1497901766
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497901763}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &1497901767
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74434,8 +74719,9 @@ GameObject:
   - component: {fileID: 1774040489}
   - component: {fileID: 1774040488}
   - component: {fileID: 1774040486}
+  - component: {fileID: 1774040487}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaZinc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74474,7 +74760,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &1774040487
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774040484}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &1774040488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76575,8 +76879,9 @@ GameObject:
   - component: {fileID: 1837958738}
   - component: {fileID: 1837958737}
   - component: {fileID: 1837958735}
+  - component: {fileID: 1837958736}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaCobalto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76615,7 +76920,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &1837958736
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837958733}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &1837958737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76934,8 +77257,9 @@ GameObject:
   - component: {fileID: 1862501199}
   - component: {fileID: 1862501198}
   - component: {fileID: 1862501196}
+  - component: {fileID: 1862501197}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaLitio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76974,7 +77298,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &1862501197
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862501194}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &1862501198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77895,6 +78237,7 @@ GameObject:
   - component: {fileID: 1920589426}
   - component: {fileID: 1920589425}
   - component: {fileID: 1920589428}
+  - component: {fileID: 1920589429}
   m_Layer: 6
   m_Name: PlataformaMagnesio
   m_TagString: Untagged
@@ -77997,7 +78340,25 @@ MonoBehaviour:
   speed: 14
   correct: 0
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &1920589429
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920589423}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1923207246
 GameObject:
   m_ObjectHideFlags: 0
@@ -78510,8 +78871,9 @@ GameObject:
   - component: {fileID: 1948079122}
   - component: {fileID: 1948079121}
   - component: {fileID: 1948079119}
+  - component: {fileID: 1948079120}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaAcero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78550,7 +78912,25 @@ MonoBehaviour:
   speed: 14
   correct: 1
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &1948079120
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948079117}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &1948079121
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82656,8 +83036,9 @@ GameObject:
   - component: {fileID: 2101530161}
   - component: {fileID: 2101530160}
   - component: {fileID: 2101530158}
+  - component: {fileID: 2101530159}
   m_Layer: 6
-  m_Name: Plataforma
+  m_Name: PlataformaHierro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82696,7 +83077,25 @@ MonoBehaviour:
   speed: 14
   correct: 1
   active: 0
+  volverAlInicial: 0
   initialPos: {x: 0, y: 0, z: 0}
+  CorrectSound: {fileID: 0}
+--- !u!54 &2101530159
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101530156}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &2101530160
 BoxCollider:
   m_ObjectHideFlags: 0

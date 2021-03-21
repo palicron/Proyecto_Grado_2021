@@ -11,14 +11,16 @@ public class FloatingPuzzle : MonoBehaviour
     public float speed;
     public bool correct;
     public bool active;
+    public bool volverAlInicial;
     public Vector3 initialPos;
-   // public AudioClip CorrectSound;
+    public AudioClip CorrectSound;
     // Start is called before the first frame update
     void Start()
     {
         platformRB = this.GetComponent<Rigidbody>();
-        initialPos = new Vector3(platformRB.position.x, platformRB.position.y, platformRB.position.z);
+        volverAlInicial = false;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -27,25 +29,29 @@ public class FloatingPuzzle : MonoBehaviour
         {
             MovePlatform();
         }
-        //else if (!active) { platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, initialPos, speed * Time.deltaTime)); }
-    //    else if(active && correct)
-     //   {
-         //   GameManager.intance.playSound(CorrectSound);
-      //  }
+       //else if(active && correct)
+       // {
+       //    GameManager.intance.playSound(CorrectSound);
+       //}
+        else if (volverAlInicial) 
+        {
+            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, initialPos, speed * Time.deltaTime));
+            volverAlInicial = false;
+        }
     }
 
 
     void MovePlatform()
     {
-        StartCoroutine(MoveMovingObject(1f));
+        platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, newPostion.position, speed * Time.deltaTime));
+        StartCoroutine(MoveMovingObject(3f));
     }
 
 
     IEnumerator MoveMovingObject(float time)
     {
         yield return new WaitForSeconds(time);
-        transform.position = Vector3.MoveTowards(transform.position, newPostion.position, speed * Time.deltaTime);
-       // platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, newPostion.position, speed * Time.deltaTime));
-
+        active = false;
+        volverAlInicial = true;
     }
 }

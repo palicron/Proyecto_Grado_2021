@@ -36,6 +36,7 @@ public class TriggerPuzzle : MonoBehaviour
             }
             else if (floatingPuzzle != null)
             {
+                floatingPuzzle.initialPos = new Vector3(floatingPuzzle.platformRB.position.x, floatingPuzzle.platformRB.position.y, floatingPuzzle.platformRB.position.z);
                 floatingPuzzle.active = true;
             }
 
