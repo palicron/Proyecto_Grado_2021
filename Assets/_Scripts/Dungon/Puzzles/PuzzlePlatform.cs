@@ -16,7 +16,7 @@ public class PuzzlePlatform : MonoBehaviour
     public bool AlreadyActivated;
     public bool volverInicio;
     public Vector3 initialPos;
-    public string[] opciones;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,7 @@ public class PuzzlePlatform : MonoBehaviour
         {
             MovePlatform();
         }
+        else if (!active) { platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, initialPos, speed * Time.deltaTime)); }
     }
 
 
@@ -48,7 +49,6 @@ public class PuzzlePlatform : MonoBehaviour
     IEnumerator MoveMovingObject(float time)
     {
         yield return new WaitForSeconds(time);
-        platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, initialPos, speed * Time.deltaTime));
         active = false;
     }
 }
