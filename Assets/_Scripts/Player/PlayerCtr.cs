@@ -12,16 +12,39 @@ public class PlayerCtr : MonoBehaviour
     int armorModifier = 0;
     int damageModifier = 0;
     int velocityModifier = 0;
+    bool hasWeapon = false;
+    bool menuOpen = false;
 
     public void ModifyStats(int a, int d, int v)
     {
         armorModifier = a;
         damageModifier = d;
         velocityModifier = v;
-        Debug.Log("a:" + armorModifier + " d:" + damageModifier + " v:" + velocityModifier);
+    }
+
+    public void SetWeapon(GameObject pWeapon, bool equip)
+    {
+        GameObject aWeapon = Instantiate(pWeapon);
+        hasWeapon = equip;
+        if(WeaponVisual != null)
+        {
+            WeaponVisual.transform.parent = null;
+        }
+        aWeapon.transform.SetParent(Weapon.transform, false);
+        WeaponVisual = aWeapon;
+    }
+
+    public void SetTool(GameObject pTool, bool equip)
+    {
+        GameObject aTool = Instantiate(pTool);
+        if (ToolVisual != null)
+        {
+            ToolVisual.transform.parent = null;
+        }
+        aTool.transform.SetParent(Tool.transform, false);
+        ToolVisual = aTool;
     }
     // --------------------------------
-
     public Interactable focus;
     [Header("Player Movement")]
     // Start is called before the first frame update
@@ -97,7 +120,10 @@ public class PlayerCtr : MonoBehaviour
 
     bool CanAdvanceAttack = true;
     bool nextAttack = true;
+    public GameObject Tool;
+    GameObject ToolVisual;
     public GameObject Weapon;
+    GameObject WeaponVisual;
     void Start()
     {
      
@@ -118,7 +144,7 @@ public class PlayerCtr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(CanAdvanceAttack);
+        //Debug.Log(CanAdvanceAttack);
         Xvel = Input.GetAxisRaw("Horizontal");
         Yvel = Input.GetAxisRaw("Vertical");
         curvel = rb.velocity;
@@ -154,7 +180,10 @@ public class PlayerCtr : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            NextAttack();
+            if(hasWeapon && !UI_Status.instance.IsMenuOpen())
+            {
+                NextAttack();
+            }
         }
 
     }
@@ -346,6 +375,7 @@ public class PlayerCtr : MonoBehaviour
 
     public void NextAttack()
     {
+        Debug.Log(CanAdvanceAttack+" "+ !Indash);
         if(CanAdvanceAttack && !Indash)
         {
             Weapon.SetActive(true);
