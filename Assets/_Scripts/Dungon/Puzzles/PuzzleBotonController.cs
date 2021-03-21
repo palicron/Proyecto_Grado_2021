@@ -16,7 +16,7 @@ public class PuzzleBotonController : MonoBehaviour
     public float speed;
     public bool correct;
     public bool active;
-    public AudioClip CorrectSound;
+    //public AudioClip CorrectSound;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class PuzzleBotonController : MonoBehaviour
         {
             opcionText.SetText("Ok");
             StartCoroutine(MoveMovingObject(1f));
-            GameManager.intance.playSound(CorrectSound);
+          //  GameManager.intance.playSound(CorrectSound);
         }
 
     }

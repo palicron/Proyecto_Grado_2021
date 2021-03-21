@@ -172,6 +172,7 @@ public class GameManager : MonoBehaviour
 
     public void playSound(AudioClip sound)
     {
+        audio.volume = 0.08f;
         audio.PlayOneShot(sound);
     }
 

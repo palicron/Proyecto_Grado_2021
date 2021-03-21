@@ -12,7 +12,7 @@ public class FloatingPuzzle : MonoBehaviour
     public bool correct;
     public bool active;
     public Vector3 initialPos;
-    public AudioClip CorrectSound;
+   // public AudioClip CorrectSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +27,11 @@ public class FloatingPuzzle : MonoBehaviour
         {
             MovePlatform();
         }
-        else if (!active) { platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, initialPos, speed * Time.deltaTime)); }
-        else if(active && correct)
-        {
-            GameManager.intance.playSound(CorrectSound);
-        }
+        //else if (!active) { platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, initialPos, speed * Time.deltaTime)); }
+    //    else if(active && correct)
+     //   {
+         //   GameManager.intance.playSound(CorrectSound);
+      //  }
     }
 
 
@@ -44,7 +44,8 @@ public class FloatingPuzzle : MonoBehaviour
     IEnumerator MoveMovingObject(float time)
     {
         yield return new WaitForSeconds(time);
-        platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, newPostion.position, speed * Time.deltaTime));
+        transform.position = Vector3.MoveTowards(transform.position, newPostion.position, speed * Time.deltaTime);
+       // platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, newPostion.position, speed * Time.deltaTime));
 
     }
 }
