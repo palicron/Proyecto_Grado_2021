@@ -9,17 +9,17 @@ public class PlayerScore : MonoBehaviour
 
     GameObject scoreUI;
 
-    public Text[] scoreUIText = new Text[4];
+    Text[] scoreUIText = new Text[4];
 
     void Start()
     {
         //PlayerPrefsX.SetIntArray("Score", new int[4]);
         score = PlayerPrefsX.GetIntArray("Score", 0, 4);
         scoreUI = GameObject.Find("PF_GameUI/Score/Recipient");
-        scoreUIText[0] = scoreUI.transform.Find("paper").transform.Find("Text").GetComponent<Text>();
-        scoreUIText[1] = scoreUI.transform.Find("plastic").transform.Find("Text").GetComponent<Text>();
-        scoreUIText[2] = scoreUI.transform.Find("glass").transform.Find("Text").GetComponent<Text>();
-        scoreUIText[3] = scoreUI.transform.Find("metal").transform.Find("Text").GetComponent<Text>();
+        scoreUIText[0] = scoreUI.transform.Find("paper").transform.Find("Quantity").GetComponent<Text>();
+        scoreUIText[1] = scoreUI.transform.Find("plastic").transform.Find("Quantity").GetComponent<Text>();
+        scoreUIText[2] = scoreUI.transform.Find("glass").transform.Find("Quantity").GetComponent<Text>();
+        scoreUIText[3] = scoreUI.transform.Find("metal").transform.Find("Quantity").GetComponent<Text>();
         RefreshInterface();
     }
 
