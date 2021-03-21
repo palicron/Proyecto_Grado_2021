@@ -34,12 +34,15 @@ public class GameManager : MonoBehaviour
     float GameStarTime = 0.0f;
 
     AudioSource audio;
+    [SerializeField]
+    AudioClip pushSound;
     private void Awake()
     {
         intance = this;
         // Cursor.lockState = CursorLockMode.Confined;
         DontDestroyOnLoad(this.gameObject);
         audio = GetComponent<AudioSource>();
+        audio.volume = 0.35f;
 
     }
     void Start()
@@ -77,10 +80,12 @@ public class GameManager : MonoBehaviour
         if (UIManager.GameIsPaused)
         {
             UIManager.Instance.Resume();
+            audio.PlayOneShot(pushSound);
         }
         else
         {
             UIManager.Instance.Pause();
+            audio.PlayOneShot(pushSound);
         }
     }
 
