@@ -177,7 +177,7 @@ public class PlayerCtr : MonoBehaviour
         }
         else
         {
-            rb.drag = 2.0f;
+            //rb.drag = 2.0f;
 
         }
 
@@ -208,7 +208,7 @@ public class PlayerCtr : MonoBehaviour
         GroundCheck();
         if (!isGrounded)
         {
-            rb.AddForce(Vector2.down * NoGroundDownForce, ForceDownTipe);
+            rb.AddForce(Vector2.down * NoGroundDownForce*Time.deltaTime, ForceDownTipe);
         }
 
         if (!CanControlPlayer)
@@ -290,13 +290,14 @@ public class PlayerCtr : MonoBehaviour
             isGrounded = true;
             MovementControl = GroundControl;
             jumpNum = 0;
+           
         }
         else
         {
             isGrounded = false;
             MovementControl = AirControl;
             LastAttack();
-           
+         
         }
         if (Physics.Linecast(transform.position + new Vector3(0, 0.5f, 0), (transform.position + new Vector3(0, 0.5f, 0)) + (transform.forward * 1), WhatIsWall))
         {
