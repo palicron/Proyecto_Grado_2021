@@ -13,6 +13,7 @@ public class TriggerPlatform : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             platformCt.active = true;
+   
         }
     }
 

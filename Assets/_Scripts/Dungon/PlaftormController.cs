@@ -10,11 +10,14 @@ public class PlaftormController : MonoBehaviour
     public EquipmentManager Equipment;
     public PlayerScore Score;
     public Rigidbody platformRB;
+    public Rigidbody playerRigid;
+    public PlayerCtr plactr;
     [Header("Platform Description")]
     public PlatformType type;
     [Header("Platform Movement")]
     public float platformSpeed;
     public float waitTime;
+    public Vector3 velocityActual;
     [Header("Platform Rotations")]
     public float rotationX;
     public float rotationY;
@@ -29,6 +32,7 @@ public class PlaftormController : MonoBehaviour
     public bool moveToTheNext = true;
     public bool active = false;
     public float verify=0;
+    
 
     public enum PlatformType{ 
         NORMAL,
@@ -42,7 +46,7 @@ public class PlaftormController : MonoBehaviour
 
     void Start()
     {
-  
+        plactr = GameObject.Find("Player").GetComponent<PlayerCtr>();
         PlayerInventory = GameObject.Find("Player").GetComponent<Inventory>() ;
         Equipment = GameObject.Find("Player").GetComponent<EquipmentManager>();
         Score = GameObject.Find("Player").GetComponent<PlayerScore>();
@@ -53,12 +57,14 @@ public class PlaftormController : MonoBehaviour
         if (type == PlatformType.TRANSLATE || type == PlatformType.ROTATIVE || type == PlatformType.MULTIPLESPEED) { active = true; }
     }
 
-  
+
+
 
 
     // Update is called once per frame
     void Update()
     {
+
         if (active) {
             MovePlatform();
         }
@@ -74,7 +80,10 @@ public class PlaftormController : MonoBehaviour
         }
     }
 
-
+    private void FixedUpdate()
+    {
+        velocityActual = platformRB.velocity;
+    }
 
     void MovePlatform() 
     {
