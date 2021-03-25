@@ -104,8 +104,8 @@ public class PlayerCtr : MonoBehaviour
     Vector3 MovementVec = Vector3.zero;
     Rigidbody rb;
     healthsystems healthsystems;
-    float Xvel = 0;
-    float Yvel = 0;
+    public float Xvel = 0;
+    public float Yvel = 0;
     bool Indash = false;
     public bool isGrounded = false;
     bool canMove = true;
@@ -314,7 +314,7 @@ public class PlayerCtr : MonoBehaviour
 
     public void ApliPlayerFoce(Vector3 force)
     {
-        rb.AddForce(force, ForceMode.Impulse);
+        rb.AddForce(force, ForceMode.Acceleration);
     }
     //@TODO: cambiarlo fb
 

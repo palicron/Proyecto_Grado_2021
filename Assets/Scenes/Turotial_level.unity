@@ -285,11 +285,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 10765680}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 2
   platformSpeed: 5
   waitTime: 0
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -3373,11 +3374,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 164805214}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 4
   waitTime: 1
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -5544,19 +5546,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.027763857
+      value: -0.4247808
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0013847393
+      value: 0.021186192
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9983726
+      value: 0.90392476
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.049794443
+      value: 0.045083776
       objectReference: {fileID: 0}
     - target: {fileID: 368609291, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_DeadZoneWidth
@@ -5632,19 +5634,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.027797256
+      value: -0.4252915
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00025009832
+      value: -0.0038264424
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9995731
+      value: 0.9050117
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.008993392
+      value: -0.008142592
       objectReference: {fileID: 0}
     - target: {fileID: 1902527299, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_IsActive
@@ -5704,15 +5706,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -139.69434
+      value: -139.27582
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.658
+      value: 3.728
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -67.5085
+      value: -69.72976
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5724,23 +5726,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0000076293945
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.027769845
+      value: -0.4248719
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0012596654
+      value: -0.019272614
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9985868
+      value: 0.90411866
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.04529691
+      value: -0.04101173
       objectReference: {fileID: 0}
     - target: {fileID: 3847675374731446324, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_RootOrder
@@ -5836,31 +5838,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -139.69434
+      value: -139.27582
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.658
+      value: 3.728
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -67.5085
+      value: -69.72976
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.027763838
+      value: -0.42478085
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.001384739
+      value: 0.021186192
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9983726
+      value: 0.90392476
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.04979446
+      value: 0.045083784
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190479, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_StopNaN
@@ -8272,11 +8274,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 401696656}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
-  platformSpeed: 2.5
+  platformSpeed: 6
   waitTime: 2
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -9268,15 +9271,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -140
+      value: -143.51
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2.07
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -73
+      value: -73.24
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11960,11 +11963,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 588656342}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 2
   platformSpeed: 5
   waitTime: 0
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -12789,11 +12793,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 644014438}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 5
   waitTime: 2.5
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -20706,11 +20711,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 731064811}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 2
   platformSpeed: 5
   waitTime: 0
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -21607,11 +21613,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 764823201}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 4
   waitTime: 1
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -22364,11 +22371,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 807483731}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 4
   waitTime: 1
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -41962,11 +41970,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 847261092}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 2
   platformSpeed: 5
   waitTime: 1
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -62865,11 +62874,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 1092251873}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 2
   platformSpeed: 5
   waitTime: 0
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -63560,11 +63570,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 1112053140}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 2
   platformSpeed: 5
   waitTime: 0
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -65600,11 +65611,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 1212676428}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 2
   platformSpeed: 5
   waitTime: 0
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -66401,11 +66413,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 1277144769}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 2
   platformSpeed: 5
   waitTime: 0
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -68021,11 +68034,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 1370069711}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 0
   platformSpeed: 4
   waitTime: 1
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -69648,11 +69662,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 1464263105}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 2
   platformSpeed: 5
   waitTime: 0
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -69881,11 +69896,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 1476010004}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 3
   waitTime: 2
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -74506,11 +74522,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 1747744476}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 2
   platformSpeed: 5
   waitTime: 0
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -75834,7 +75851,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh78284
+  m_Name: pb_Mesh42002
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -76632,11 +76649,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 1835837839}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 2
   platformSpeed: 5
   waitTime: 0
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -82680,11 +82698,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 2089507197}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 2.5
   waitTime: 2
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -83100,11 +83119,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 2094720886}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 5
   waitTime: 2.5
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -84060,11 +84080,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 2124097344}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 5
   waitTime: 2.5
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -94892,11 +94913,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 2783235076070524447}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 5
   waitTime: 1.75
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -113680,8 +113702,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.4397897, z: 1}
+  m_Center: {x: 0, y: -0.21989498, z: 0}
 --- !u!54 &8237789719092745270
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113715,11 +113737,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 8237789719092745270}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 3
   waitTime: 1.5
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -113886,11 +113909,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 8237789719148313574}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 5
   waitTime: 2.5
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -114079,11 +114103,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 8237789719175962223}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 4
   waitTime: 1
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -114193,11 +114218,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 8237789719448898368}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 3.5
   waitTime: 2
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -114422,7 +114448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &8237789719599403813
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -114827,11 +114853,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 8237789720539860149}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 5
   waitTime: 1.75
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
@@ -115105,11 +115132,12 @@ MonoBehaviour:
   Score: {fileID: 0}
   platformRB: {fileID: 8237789720819657086}
   playerRigid: {fileID: 0}
+  playerOnPlat: 0
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 3
   waitTime: 2
-  velocityActual: {x: 0, y: 0, z: 0}
+  VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0

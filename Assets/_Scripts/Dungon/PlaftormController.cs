@@ -11,13 +11,14 @@ public class PlaftormController : MonoBehaviour
     public PlayerScore Score;
     public Rigidbody platformRB;
     public Rigidbody playerRigid;
+    public bool playerOnPlat;
     public PlayerCtr plactr;
     [Header("Platform Description")]
     public PlatformType type;
     [Header("Platform Movement")]
     public float platformSpeed;
     public float waitTime;
-    public Vector3 velocityActual;
+    public Vector3 VelocityVector;
     [Header("Platform Rotations")]
     public float rotationX;
     public float rotationY;
@@ -50,6 +51,7 @@ public class PlaftormController : MonoBehaviour
         PlayerInventory = GameObject.Find("Player").GetComponent<Inventory>() ;
         Equipment = GameObject.Find("Player").GetComponent<EquipmentManager>();
         Score = GameObject.Find("Player").GetComponent<PlayerScore>();
+        playerOnPlat = false;
     }
 
 
@@ -57,32 +59,40 @@ public class PlaftormController : MonoBehaviour
         if (type == PlatformType.TRANSLATE || type == PlatformType.ROTATIVE || type == PlatformType.MULTIPLESPEED) { active = true; }
     }
 
-
-
-
-
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionExit(Collision collision)
     {
+        playerOnPlat = false;
+        playerRigid = null;
+    }
 
-        if (active) {
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        playerOnPlat = true;
+        playerRigid = collision.gameObject.GetComponent<Rigidbody>(); 
+    }
+
+
+
+
+    private void FixedUpdate()
+    {
+        VelocityVector = platformRB.velocity;
+
+        if (active)
+        {
             MovePlatform();
         }
-        else if (type == PlatformType.ROTATIVETRIGGER) 
+        else if (type == PlatformType.ROTATIVETRIGGER)
         {
             platformRB.DORotate(new Vector3(0, 0, 0), 0.5f, RotateMode.Fast);
-            
+
         }
         else if (type == PlatformType.TRIGGEREXIT)
         {
             //RESETEA LA PLATAFORMA AL PRIMER PUNTO DONDE SE POSICIONO 
-            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position,platformSpeed*Time.deltaTime));
+            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
         }
-    }
-
-    private void FixedUpdate()
-    {
-        velocityActual = platformRB.velocity;
     }
 
     void MovePlatform() 
@@ -93,14 +103,33 @@ public class PlaftormController : MonoBehaviour
             {
                 StopCoroutine(WaitForMove(0));
                 platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
+                if (playerOnPlat)
+                {
+                    float xComponent = playerRigid.velocity.x;
+                    float yComponent = playerRigid.velocity.y;
+                    float ZComponent = playerRigid.velocity.y;
+                    Vector3 newVelocity = new Vector3(xComponent, yComponent, ZComponent);
+                    if (plactr.Xvel==0 && plactr.Yvel==0)
+                    {
+                        xComponent = playerRigid.velocity.normalized.x + VelocityVector.x;
+                        yComponent = playerRigid.velocity.y;
+                        ZComponent = playerRigid.velocity.normalized.z + VelocityVector.z;
+                        newVelocity = new Vector3(xComponent, yComponent, ZComponent);
+                      
+                    }
+                    playerRigid.velocity = newVelocity;
+                }
             }
 
             if (Vector3.Distance(platformRB.position, positions[nextposition].position) <= 0)
             {
+                if (playerOnPlat)
+                {  
+                    playerRigid.velocity = playerRigid.velocity.normalized;
+                }
                 StartCoroutine(WaitForMove(waitTime));
                 actualPosition = nextposition;
                 nextposition++;
-
                 if (nextposition > positions.Length - 1)
                 {
                     nextposition = 0;
@@ -148,7 +177,6 @@ public class PlaftormController : MonoBehaviour
 
         }
     }
-
 
     IEnumerator WaitForMove(float time) {
         moveToTheNext = false;
