@@ -63,13 +63,15 @@ public class PlaftormController : MonoBehaviour
     {
         playerOnPlat = false;
         playerRigid = null;
+        plactr.CurrentSpeed = plactr.Speed;
     }
 
 
     private void OnCollisionEnter(Collision collision)
     {
         playerOnPlat = true;
-        playerRigid = collision.gameObject.GetComponent<Rigidbody>(); 
+        playerRigid = collision.gameObject.GetComponent<Rigidbody>();
+       
     }
 
 
@@ -93,6 +95,7 @@ public class PlaftormController : MonoBehaviour
             //RESETEA LA PLATAFORMA AL PRIMER PUNTO DONDE SE POSICIONO 
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
         }
+
     }
 
     void MovePlatform() 
@@ -105,19 +108,22 @@ public class PlaftormController : MonoBehaviour
                 platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
                 if (playerOnPlat)
                 {
+
                     float xComponent = playerRigid.velocity.x;
                     float yComponent = playerRigid.velocity.y;
-                    float ZComponent = playerRigid.velocity.y;
+                    float ZComponent = playerRigid.velocity.z;
                     Vector3 newVelocity = new Vector3(xComponent, yComponent, ZComponent);
                     if (plactr.Xvel==0 && plactr.Yvel==0)
                     {
-                        xComponent = playerRigid.velocity.normalized.x + VelocityVector.x;
+                        xComponent = VelocityVector.x;
                         yComponent = playerRigid.velocity.y;
-                        ZComponent = playerRigid.velocity.normalized.z + VelocityVector.z;
+                        ZComponent = VelocityVector.z;
                         newVelocity = new Vector3(xComponent, yComponent, ZComponent);
                       
                     }
+
                     playerRigid.velocity = newVelocity;
+             
                 }
             }
 
@@ -125,7 +131,7 @@ public class PlaftormController : MonoBehaviour
             {
                 if (playerOnPlat)
                 {  
-                    playerRigid.velocity = playerRigid.velocity.normalized;
+                    playerRigid.velocity = new Vector3(0,0,0);
                 }
                 StartCoroutine(WaitForMove(waitTime));
                 actualPosition = nextposition;
