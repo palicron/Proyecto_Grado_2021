@@ -57,7 +57,7 @@ public class EquipmentManager : MonoBehaviour
         {
             if(newItem.slot == EquipSlot.Tool)
             {
-                if (newItem.isWeapon)
+                if (((Tool)newItem).isWeapon)
                 {
                     if (weaponEquipped)
                     {
@@ -93,7 +93,7 @@ public class EquipmentManager : MonoBehaviour
         UpdateStats(false, currentEquipment[pSlot]);
         if(currentEquipment[pSlot].slot == EquipSlot.Tool)
         {
-            if (currentEquipment[pSlot].isWeapon)
+            if (((Tool)currentEquipment[pSlot]).isWeapon)
             {
                 playerCtr.SetWeapon(null, false);
                 weaponEquipped = false;

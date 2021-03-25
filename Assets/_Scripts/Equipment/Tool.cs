@@ -5,5 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Equipment", menuName = "Inventory/Tool")]
 public class Tool : Equipment
 {
-   public GameObject toolEquippedView;
+    public GameObject toolEquippedView;
+    public bool isWeapon;
+
+    public void Reset()
+    {
+        type = ItemType.Equipment;
+    }
 }

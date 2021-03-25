@@ -9,7 +9,11 @@ public class Equipment : Item
     public int armorModifier;
     public int damageModifier;
     public int velocityModifier;
-    public bool isWeapon;
+
+    public void Reset()
+    {
+        type = ItemType.Equipment;
+    }
 
     public override bool Use()
     {
