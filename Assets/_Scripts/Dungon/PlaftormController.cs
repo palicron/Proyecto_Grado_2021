@@ -125,7 +125,14 @@ public class PlaftormController : MonoBehaviour
                         newVelocity = new Vector3(xComponent, yComponent, ZComponent);
 
                     }
+                    else if (plactr.Xvel > 0 || plactr.Yvel > 0)
+                    {
+                         xComponent = playerRigid.velocity.x+ platformRB.velocity.x;
+                         yComponent = playerRigid.velocity.y;
+                         ZComponent = playerRigid.velocity.z + platformRB.velocity.x;
+                        newVelocity = new Vector3(xComponent, yComponent, ZComponent);
 
+                    }
                     playerRigid.velocity = newVelocity;
 
                 }
