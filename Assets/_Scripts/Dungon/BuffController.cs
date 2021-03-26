@@ -44,25 +44,25 @@ public class BuffController : MonoBehaviour
                 {
 
                     case BuffType.SPEED:
-                        scriptPlayer.CurrentSpeed = SpeedBuff;
+                        scriptPlayer.CurrentSpeed += SpeedBuff;
                         IsBuffed = true;
                         break;
 
                     case BuffType.DASH:
-                        scriptPlayer.DashDistance = DashBuff;
+                        scriptPlayer.DashDistance += DashBuff;
                         IsBuffed = true;
                         break;
 
                     case BuffType.JUMP:
-                        scriptPlayer.JumpForce = JumpBuff;
+                        scriptPlayer.JumpForce += JumpBuff;
                         IsBuffed = true;
                         break;
 
 
                     case BuffType.MULTI:
-                        if (JumpBuff != 0) { scriptPlayer.CurrentSpeed = SpeedBuff; }
-                        if (DashBuff != 0) { scriptPlayer.DashDistance = DashBuff; }
-                        if (JumpBuff != 0) { scriptPlayer.JumpForce = JumpBuff; }
+                        if (JumpBuff != 0) { scriptPlayer.CurrentSpeed += SpeedBuff; }
+                        if (DashBuff != 0) { scriptPlayer.DashDistance += DashBuff; }
+                        if (JumpBuff != 0) { scriptPlayer.JumpForce += JumpBuff; }
                         if (HealingBuff!=0) { OnTriggerStay(other); }
                         IsBuffed = true;
                         break;
@@ -96,6 +96,7 @@ public class BuffController : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
+        scriptPlayer = other.gameObject.GetComponent<PlayerCtr>();
         if (other.gameObject.tag == "Player")
         {
             if (scriptPlayer != null)
@@ -105,24 +106,24 @@ public class BuffController : MonoBehaviour
                 {
 
                     case BuffType.SPEED:
-                        scriptPlayer.CurrentSpeed = scriptPlayer.Speed;
+                        scriptPlayer.CurrentSpeed += -SpeedBuff;
                         IsBuffed = false;
                         break;
 
                     case BuffType.DASH:
-                        scriptPlayer.DashDistance = scriptPlayer.InitialDashDistance;
+                        scriptPlayer.DashDistance += -DashBuff;
                         IsBuffed = false;
                         break;
 
                     case BuffType.JUMP:
-                        scriptPlayer.JumpForce = scriptPlayer.InitialJumpForce;
+                        scriptPlayer.JumpForce += -JumpBuff;
                         IsBuffed = false;
                         break;
 
                     case BuffType.MULTI:
-                        scriptPlayer.CurrentSpeed = scriptPlayer.Speed;
-                        scriptPlayer.DashDistance = scriptPlayer.InitialDashDistance;
-                        scriptPlayer.JumpForce = scriptPlayer.InitialJumpForce;
+                        if (JumpBuff != 0) { scriptPlayer.CurrentSpeed += -SpeedBuff; }
+                        if (DashBuff != 0) { scriptPlayer.DashDistance += -DashBuff; }
+                        if (JumpBuff != 0) { scriptPlayer.JumpForce += -JumpBuff; }
                         IsBuffed = false;
                         break;
                 }
