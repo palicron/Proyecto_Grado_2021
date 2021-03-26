@@ -16,6 +16,7 @@ public class PuzzleBotonController : MonoBehaviour
     [Header("Button Characteristics")]
     public float speed;
     public bool correct;
+    public bool isNotCorrect;
     public bool active;
     //public AudioClip CorrectSound;
 
@@ -24,6 +25,10 @@ public class PuzzleBotonController : MonoBehaviour
     {
         buttonRigid = this.GetComponent<Rigidbody>();
         opcionText = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
+        if (!correct) 
+        {
+            isNotCorrect = true;
+        }
     }
 
     // Update is called once per frame
@@ -38,12 +43,18 @@ public class PuzzleBotonController : MonoBehaviour
     void MoveButton()
     {
 
-        StartCoroutine(MoveButton(1f));
+      
         if (correct)
         {
-            opcionText.SetText("Ok");
+            StartCoroutine(MoveButton(1f));
+            opcionText.SetText("R");
             StartCoroutine(MoveMovingObject(1f));
-          //  GameManager.intance.playSound(CorrectSound);
+            //  GameManager.intance.playSound(CorrectSound);
+        }
+        else if (isNotCorrect) 
+        {
+            StartCoroutine(MoveButton(0f));
+            opcionText.SetText("X");
         }
 
     }
