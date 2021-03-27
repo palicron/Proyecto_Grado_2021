@@ -85,7 +85,7 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
-    public bool Add (Item item)
+    public bool Add (Item item, bool isSwitch = false)
     {
         if(item.name == "Bolsillo de Mochila")
         {
@@ -117,7 +117,7 @@ public class Inventory : MonoBehaviour
         }
         if (!added)
         {
-            if(items.Count >= actualSpace)
+            if(items.Count >= actualSpace && !isSwitch)
             {
                 ErrorDialog.instance.ThrowError("El inventario está lleno");
                 return false;

@@ -32,7 +32,9 @@ public class EquipmentManager : MonoBehaviour
 
     int velocityModifier = 0;
 
-    bool weaponEquipped = false; 
+    bool weaponEquipped = false;
+
+    bool callback = true;
 
     void Start()
     {
@@ -76,6 +78,11 @@ public class EquipmentManager : MonoBehaviour
                     }
                 }
             }
+            if (currentEquipment[slotIndex] != null)
+            {
+                callback = false;
+                Unequip(slotIndex);
+            }
             currentEquipment[slotIndex] = newItem;
         }
 
@@ -104,6 +111,11 @@ public class EquipmentManager : MonoBehaviour
             }
         }
         currentEquipment[pSlot] = null;
+        if(!callback)
+        {
+            callback = true;
+            return;
+        }
         if (onItemEquipedCallBack != null)
         {
             onItemEquipedCallBack.Invoke();

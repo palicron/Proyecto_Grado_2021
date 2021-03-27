@@ -3,10 +3,10 @@ using UnityEngine;
 public enum ItemType
 {
     Default,
-    Consumable,
-    Paper,
-    Plastic,
-    Glass,
+    Consumible,
+    Papel,
+    Plástico,
+    Vidrio,
     Metal,
     Equipment
 }
