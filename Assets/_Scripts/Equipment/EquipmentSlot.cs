@@ -31,10 +31,7 @@ public class EquipmentSlot : MonoBehaviour
     {
         if(equipmentPiece!=null && newItem != equipmentPiece)
         {
-            if(!Inventory.instance.Add(equipmentPiece))
-            {
-                return;
-            }
+            Inventory.instance.Add(equipmentPiece, true);
         }
         equipmentPiece = newItem;
         icon.sprite = newItem.icon;
