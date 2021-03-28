@@ -37,13 +37,14 @@ public class PlaftormController : MonoBehaviour
 
     public enum PlatformType{ 
         NORMAL,
-        TRANSLATE,
+        TRANSLATEPATH,
         TRIGGERTRANSLATE,
         TRIGGEREXIT,
         ROTATIVE,
         ROTATIVETRIGGER,
         MULTIPLESPEED,
         MOVEMENTESCREENTRIGGERED,
+        TRANSLATEMOVEMENT
     }
 
     void Start()
@@ -57,7 +58,7 @@ public class PlaftormController : MonoBehaviour
 
 
     void Awake() {
-        if (type == PlatformType.TRANSLATE || type == PlatformType.ROTATIVE || type == PlatformType.MULTIPLESPEED) { active = true; }
+        if (type == PlatformType.TRANSLATEPATH || type == PlatformType.ROTATIVE || type == PlatformType.MULTIPLESPEED) { active = true; }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -104,7 +105,7 @@ public class PlaftormController : MonoBehaviour
         //TRANSLATE PLATFORM MOVES THROUGH DIFERENT POINTS WITHOUT ANY TRIGGER 
         //TRIGGER TRANSLATE PLATFORM MOVES THROUGH DIFERENT POINTS WITH A TRIGGER 
         //TIGGER EXIT TRANSLATE PLATFORM MOVES THROUGH DIFERENT POINTS WITH A TRIGGER THAT STOPS WHEN PLAYER GETS OUT THE PLATFORM
-        if (type == PlatformType.TRANSLATE || type == PlatformType.TRIGGERTRANSLATE || type == PlatformType.TRIGGEREXIT)
+        if (type == PlatformType.TRANSLATEPATH || type == PlatformType.TRIGGERTRANSLATE || type == PlatformType.TRIGGEREXIT)
         {
             if (moveToTheNext)
             {
@@ -200,6 +201,25 @@ public class PlaftormController : MonoBehaviour
         else if (type == PlatformType.MOVEMENTESCREENTRIGGERED) 
         {
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
+        }
+        else if (type == PlatformType.TRANSLATEMOVEMENT) 
+        {
+                if (moveToTheNext)
+                {
+                    StopCoroutine(WaitForMove(0));
+                    platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
+                }
+
+                if (Vector3.Distance(platformRB.position, positions[nextposition].position) <= 0)
+                {
+                    StartCoroutine(WaitForMove(waitTime));
+                    actualPosition = nextposition;
+                    nextposition++;
+                    if (nextposition > positions.Length - 1)
+                    {
+                        moveToTheNext=false;   
+                    }
+                }
         }
     }
 

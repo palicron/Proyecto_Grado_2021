@@ -20,7 +20,7 @@ public class DoorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(oldDoorScript!=null){ IncorrectAccountant = oldDoorScript.incorrect;}
+       
         DoorRB = this.gameObject.GetComponent<Rigidbody>();
         isChosed = false;
         speed= 10f;
@@ -29,6 +29,7 @@ public class DoorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+         if(oldDoorScript!=null){ IncorrectAccountant = oldDoorScript.incorrect;}
           if (isChosed)
         {
             if(correct){ MoveDoor();}
