@@ -15,24 +15,30 @@ public class DoorMovilePuzzle : MonoBehaviour
     private int actualPosition = 0;
     private int nextposition = 1;
     public bool moveToTheNext = true;
-     [Header("Movile Information")]
-     public int incorrect=0;
-
+    [Header("Movile Information")]
+    public int incorrect=0;
     public bool isActivated=false;
+    public bool GiveSpeedDoors=false;
             
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
         if(isActivated)
         {
+            if (GiveSpeedDoors) 
+            {
+                foreach (DoorScript doors in Doors)
+                {
+                    doors.IncorrectAccountant = incorrect;
+                    doors.waitTime = doors.waitTime + (incorrect * 0.1f)  ;
+                }
+                GiveSpeedDoors = false;
+            }
             MoveMovileSystem();
         }
     }
+
 
     void MoveMovileSystem()
     {
@@ -59,4 +65,5 @@ public class DoorMovilePuzzle : MonoBehaviour
         yield return new WaitForSeconds(time);
         moveToTheNext = true;
     }
+
 }

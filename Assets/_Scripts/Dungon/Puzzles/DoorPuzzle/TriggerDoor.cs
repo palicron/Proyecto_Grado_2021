@@ -7,7 +7,6 @@ public class TriggerDoor : MonoBehaviour
 
     public DoorScript doorScript;
     public DoorMovilePuzzle movileScript;
-    private GameObject parent;
 
  private void Start()
     {
@@ -22,7 +21,7 @@ public class TriggerDoor : MonoBehaviour
         {
             doorScript.isChosed=true;
             if(doorScript.correct==false)
-            {   
+            {
                 movileScript.incorrect++;
             }
         }

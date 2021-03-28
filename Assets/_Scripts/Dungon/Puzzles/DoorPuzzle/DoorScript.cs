@@ -7,20 +7,18 @@ public class DoorScript : MonoBehaviour
     [Header("Door Dependences")]
     public Rigidbody DoorRB;
     public Transform newPosition;
-    public DoorMovilePuzzle oldDoorScript;
 
     [Header("Door Characteristics")]
-
     public float speed;
-  
     public int IncorrectAccountant;
+    public float waitTime;
     public bool isChosed;
     public bool correct;
    
     // Start is called before the first frame update
     void Start()
     {
-       
+        waitTime = 0.2f;
         DoorRB = this.gameObject.GetComponent<Rigidbody>();
         isChosed = false;
         speed= 10f;
@@ -29,11 +27,10 @@ public class DoorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if(oldDoorScript!=null){ IncorrectAccountant = oldDoorScript.incorrect;}
           if (isChosed)
         {
             if(correct){ MoveDoor();}
-            else if(!correct){StartCoroutine(WaitForMove(0.3f)); }
+            else if(!correct){StartCoroutine(WaitForMove(waitTime)); }
            
         }
     }
