@@ -49,7 +49,7 @@ public class PlaftormController : MonoBehaviour
         MULTIPLESPEED,
         MOVEMENTESCREENTRIGGERED,
         TRANSLATEMOVEMENT,
-        TRANSPORTPLAYER
+        TRANSPORTPLAYER,
     }
 
     void Start()
