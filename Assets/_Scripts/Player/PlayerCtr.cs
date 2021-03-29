@@ -16,6 +16,7 @@ public class PlayerCtr : MonoBehaviour
     bool menuOpen = false;
     UI_Status menuStatus;
 
+    GameObject CurrentWepoanPb;
     public void ModifyStats(int a, int d, int v)
     {
         armorModifier = a;
@@ -29,13 +30,19 @@ public class PlayerCtr : MonoBehaviour
         if(WeaponVisual != null)
         {
             Destroy(WeaponVisual);
+            CurrentWepoanPb = null;
         }
         if (pWeapon != null)
         {
             GameObject aWeapon = Instantiate(pWeapon);
+            CurrentWepoanPb = pWeapon;
             aWeapon.transform.SetParent(Weapon.transform, false);
             WeaponVisual = aWeapon;
         }
+    }
+     public GameObject getWeapon()
+    {
+        return CurrentWepoanPb;
     }
 
     public void SetTool(GameObject pTool, bool equip)
@@ -200,6 +207,7 @@ public class PlayerCtr : MonoBehaviour
             }
         }
 
+       
     }
 
     private void FixedUpdate()

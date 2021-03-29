@@ -118,11 +118,11 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void loadLevel(int index)
+    public void loadLevel(int index,bool TransferInv=false)
     {
         CurrentLevelIndex = index;
         GameManager.CheckPointProgres = 0;
-        StartCoroutine(LoadYourAsyncScene(index));
+        StartCoroutine(LoadYourAsyncScene(index, TransferInv));
     }
     public void ExitGame()
     {
@@ -156,15 +156,23 @@ public class GameManager : MonoBehaviour
      
     }
 
-    IEnumerator LoadYourAsyncScene(int index)
+    IEnumerator LoadYourAsyncScene(int index, bool TransferInv= false)
     {
-
+        List<ListItem> inv = Inventory.instance.items;
+        int[] CurrentScore = Player.gameObject.GetComponent<PlayerScore>().GetScore();
+        GameObject weapon = Player.getWeapon();
+        Equipment[] currentE = Player.gameObject.GetComponent<EquipmentManager>().currentEquipment;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Levels[index]);
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
+
         iniComponents();
+        if (TransferInv)
+        {
+            TrasnferInvetory(inv, CurrentScore, weapon, currentE);
+        }
         GameManager.CheckPoint = Vector3.zero;
         GameManager.CheckPointName = "StarCheckPoint";
 
@@ -176,7 +184,20 @@ public class GameManager : MonoBehaviour
         audio.PlayOneShot(sound);
     }
 
+    private void TrasnferInvetory(List<ListItem> inventory, int[] CurrentScore, GameObject wep, Equipment[] equip)
+    {
+        Player.gameObject.GetComponent<EquipmentManager>().currentEquipment = equip;
+        Player.gameObject.GetComponent<EquipmentManager>().onItemEquipedCallBack();
+        if (wep)
+        {
+            Player.SetWeapon(wep, true);
+        }
+        Inventory.instance.items = inventory;
+        Inventory.instance.onItemChangedCallBack();
+        PlayerScore ps =   Player.gameObject.GetComponent<PlayerScore>();
+        ps.SetScore(CurrentScore);
 
+    }
 
   
 
