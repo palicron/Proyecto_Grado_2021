@@ -32,7 +32,9 @@ public class EquipmentManager : MonoBehaviour
 
     int velocityModifier = 0;
 
-    bool weaponEquipped = false; 
+    bool weaponEquipped = false;
+
+    bool callback = true;
 
     void Start()
     {
@@ -57,7 +59,7 @@ public class EquipmentManager : MonoBehaviour
         {
             if(newItem.slot == EquipSlot.Tool)
             {
-                if (newItem.isWeapon)
+                if (((Tool)newItem).isWeapon)
                 {
                     if (weaponEquipped)
                     {
@@ -76,6 +78,11 @@ public class EquipmentManager : MonoBehaviour
                     }
                 }
             }
+            if (currentEquipment[slotIndex] != null)
+            {
+                callback = false;
+                Unequip(slotIndex);
+            }
             currentEquipment[slotIndex] = newItem;
         }
 
@@ -93,7 +100,7 @@ public class EquipmentManager : MonoBehaviour
         UpdateStats(false, currentEquipment[pSlot]);
         if(currentEquipment[pSlot].slot == EquipSlot.Tool)
         {
-            if (currentEquipment[pSlot].isWeapon)
+            if (((Tool)currentEquipment[pSlot]).isWeapon)
             {
                 playerCtr.SetWeapon(null, false);
                 weaponEquipped = false;
@@ -104,6 +111,11 @@ public class EquipmentManager : MonoBehaviour
             }
         }
         currentEquipment[pSlot] = null;
+        if(!callback)
+        {
+            callback = true;
+            return;
+        }
         if (onItemEquipedCallBack != null)
         {
             onItemEquipedCallBack.Invoke();

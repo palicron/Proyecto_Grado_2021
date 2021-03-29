@@ -12,11 +12,11 @@ public class ItemPickup : MonoBehaviour
         if(collider.gameObject.tag == "Player" && !pickedUp)
         {
             pickedUp = Inventory.instance.Add(item);
-            if(pickedUp)
+            if (pickedUp)
             {
                 gameObject.GetComponent<ParticleSystem>().Stop();
                 StartCoroutine(DestroyObject());
-                gameObject.transform.localScale = new Vector3(0,0,0);
+                gameObject.transform.localScale = new Vector3(0, 0, 0);
             }
         }
     }
