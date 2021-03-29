@@ -217,7 +217,7 @@ public class PlaftormController : MonoBehaviour
                     nextposition++;
                     if (nextposition > positions.Length - 1)
                     {
-                        moveToTheNext=false;   
+                        active = false;
                     }
                 }
         }
