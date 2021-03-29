@@ -23,6 +23,10 @@ public class PlaftormController : MonoBehaviour
     public float rotationX;
     public float rotationY;
     public float rotationZ;
+    [Header("Platform Velocity ")]
+    public float VelX;
+    public float Vely;
+    public float Velz;
     [Header("Platform Array")]
     public Transform[] positions;
     public float[] speedVariation;
@@ -44,7 +48,8 @@ public class PlaftormController : MonoBehaviour
         ROTATIVETRIGGER,
         MULTIPLESPEED,
         MOVEMENTESCREENTRIGGERED,
-        TRANSLATEMOVEMENT
+        TRANSLATEMOVEMENT,
+        TRANSPORTPLAYER
     }
 
     void Start()
@@ -58,7 +63,7 @@ public class PlaftormController : MonoBehaviour
 
 
     void Awake() {
-        if (type == PlatformType.TRANSLATEPATH || type == PlatformType.ROTATIVE || type == PlatformType.MULTIPLESPEED) { active = true; }
+        if (type == PlatformType.TRANSLATEPATH || type == PlatformType.ROTATIVE || type == PlatformType.MULTIPLESPEED || type == PlatformType.TRANSPORTPLAYER) { active = true; }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -130,7 +135,7 @@ public class PlaftormController : MonoBehaviour
                     {
                          xComponent = playerRigid.velocity.x+ platformRB.velocity.x;
                          yComponent = playerRigid.velocity.y;
-                         ZComponent = playerRigid.velocity.z + platformRB.velocity.x;
+                         ZComponent = playerRigid.velocity.z + platformRB.velocity.z;
                         newVelocity = new Vector3(xComponent, yComponent, ZComponent);
 
                     }
@@ -220,6 +225,35 @@ public class PlaftormController : MonoBehaviour
                         active = false;
                     }
                 }
+        }
+        else if (type == PlatformType.TRANSPORTPLAYER)
+        {
+             if (playerOnPlat)
+                {
+
+                    float xComponent = playerRigid.velocity.x;
+                    float yComponent = playerRigid.velocity.y;
+                    float ZComponent = playerRigid.velocity.z;
+                    Vector3 newVelocity = new Vector3(xComponent, yComponent, ZComponent);
+                if (plactr.Xvel == 0 && plactr.Yvel == 0)
+                {
+                    xComponent = VelX;
+                    yComponent = Vely;
+                    ZComponent = Velz;
+                    newVelocity = new Vector3(xComponent, yComponent, ZComponent);
+
+                }
+                else if (plactr.Xvel != 0 && plactr.Yvel != 0)
+                {
+                    xComponent = VelX + playerRigid.velocity.x;
+                    yComponent = playerRigid.velocity.y + Vely;
+                    ZComponent = Velz + playerRigid.velocity.z;
+                    newVelocity = new Vector3(xComponent, yComponent, ZComponent);
+                }
+       
+                playerRigid.velocity = newVelocity;
+                }
+           
         }
     }
 
