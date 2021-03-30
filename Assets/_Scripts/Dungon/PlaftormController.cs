@@ -50,6 +50,7 @@ public class PlaftormController : MonoBehaviour
         MOVEMENTESCREENTRIGGERED,
         TRANSLATEMOVEMENT,
         TRANSPORTPLAYER,
+        WALLPATHSPEEDVAR
     }
 
     void Start()
@@ -213,16 +214,48 @@ public class PlaftormController : MonoBehaviour
                 {
                     StopCoroutine(WaitForMove(0));
                     platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
-                }
+                    if (playerOnPlat)
+                    {
+
+                        float xComponent = playerRigid.velocity.x;
+                        float yComponent = playerRigid.velocity.y;
+                        float ZComponent = playerRigid.velocity.z;
+                        Vector3 newVelocity = new Vector3(xComponent, yComponent, ZComponent);
+                        if (plactr.Xvel == 0 && plactr.Yvel == 0)
+                        {
+                            xComponent = VelocityVector.x;
+                            yComponent = playerRigid.velocity.y;
+                            ZComponent = VelocityVector.z;
+                            newVelocity = new Vector3(xComponent, yComponent, ZComponent);
+
+                        }
+                        else if (plactr.Xvel > 0 || plactr.Yvel > 0)
+                        {
+                            xComponent = playerRigid.velocity.x + platformRB.velocity.x;
+                            yComponent = playerRigid.velocity.y;
+                            ZComponent = playerRigid.velocity.z + platformRB.velocity.z;
+                            newVelocity = new Vector3(xComponent, yComponent, ZComponent);
+
+                        }
+                        playerRigid.velocity = newVelocity;
+
+                    }
+
+            }
 
                 if (Vector3.Distance(platformRB.position, positions[nextposition].position) <= 0)
                 {
-                    StartCoroutine(WaitForMove(waitTime));
+                    if (playerOnPlat)
+                    {
+                        playerRigid.velocity = new Vector3(0, 0, 0);
+                    }
+                StartCoroutine(WaitForMove(waitTime));
                     actualPosition = nextposition;
                     nextposition++;
                     if (nextposition > positions.Length - 1)
                     {
-                        active = false;
+                    nextposition = 0;
+                    active = false;
                     }
                 }
         }
@@ -255,6 +288,38 @@ public class PlaftormController : MonoBehaviour
                 }
            
         }
+        //PLATFORM THAT CHANGES THE SPEED DEPENDENDING IN THE POINTS IT IS TRAVELING 
+        else if (type == PlatformType.WALLPATHSPEEDVAR)
+        {
+            if (speedVariation.Length != 0)
+            {
+                if (moveToTheNext)
+                {
+                    StopCoroutine(WaitForMove(0));
+                    platformSpeed = speedVariation[actualSpeed];
+                    platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
+                }
+
+                if (Vector3.Distance(platformRB.position, positions[nextposition].position) <= 0)
+                {
+                    StartCoroutine(WaitForMove(waitTime));
+                    actualPosition = nextposition;
+                    actualSpeed++;
+                    nextposition++;
+                    if (actualSpeed > speedVariation.Length - 1)
+                    {
+                        actualSpeed = 0;
+                    }
+                    if (nextposition > positions.Length - 1)
+                    {
+                        nextposition = 0;
+                        active = false;
+                    }
+                }
+            }
+
+        }
+
     }
 
     IEnumerator WaitForMove(float time) {
