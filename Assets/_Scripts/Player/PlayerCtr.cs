@@ -62,6 +62,18 @@ public class PlayerCtr : MonoBehaviour
     void changeMenuStatus()
     {
         menuOpen = menuStatus.IsMenuOpen();
+        if(menuOpen)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            freeeLockCamera.m_YAxis.m_MaxSpeed = 0;
+             freeeLockCamera.m_XAxis.m_MaxSpeed = 0;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            freeeLockCamera.m_YAxis.m_MaxSpeed = CamYvel;
+            freeeLockCamera.m_XAxis.m_MaxSpeed = CamXvel;
+        }
     }
 
     // --------------------------------
@@ -137,6 +149,8 @@ public class PlayerCtr : MonoBehaviour
     [SerializeField]
     GameObject PlayerCamera;
     CinemachineVirtualCamera DialogueVcam;
+    [SerializeField]
+    CinemachineFreeLook freeeLockCamera;
 
     bool CanAdvanceAttack = true;
     bool nextAttack = true;
@@ -144,6 +158,8 @@ public class PlayerCtr : MonoBehaviour
     GameObject ToolVisual;
     public GameObject Weapon;
     GameObject WeaponVisual;
+    private float CamYvel;
+    private float CamXvel;
     void Start()
     {
         menuStatus = UI_Status.instance;
@@ -155,7 +171,9 @@ public class PlayerCtr : MonoBehaviour
         MovementControl = GroundControl;
         healthsystems = GetComponent<healthsystems>();
         DialogueVcam = PlayerVcam.GetComponent<CinemachineVirtualCamera>();
-
+        Cursor.lockState = CursorLockMode.Locked;
+        CamYvel = freeeLockCamera.m_YAxis.m_MaxSpeed;
+        CamXvel = freeeLockCamera.m_XAxis.m_MaxSpeed;
         if (healthsystems)
         {
             healthsystems.Init();
@@ -170,7 +188,21 @@ public class PlayerCtr : MonoBehaviour
         Yvel = Input.GetAxisRaw("Vertical");
         curvel = rb.velocity;
         curvel.y = 0;
-        animator.SetFloat("HorizontalSpeed", Mathf.Abs(curvel.magnitude / MaxSpeed));
+        if(Mathf.Abs(Xvel)<=0.01 && Mathf.Abs(Yvel) <= 0.01)
+        {
+            animator.SetFloat("HorizontalSpeed",0);
+            if(isGrounded)
+            {
+                rb.drag = 4.0f;
+            }
+            
+        }
+        else
+        {
+            rb.drag = 0.8f;
+            animator.SetFloat("HorizontalSpeed", Mathf.Abs(curvel.magnitude / MaxSpeed));
+
+        }
 
 
         if (!CanControlPlayer)
@@ -182,11 +214,7 @@ public class PlayerCtr : MonoBehaviour
             curDir = transform.forward.normalized;
             Dash();
         }
-        else
-        {
-            //rb.drag = 2.0f;
-
-        }
+ 
 
         animator.SetBool("Rolling", Indash);
         if (Input.GetButtonDown("Jump") )
@@ -355,12 +383,14 @@ public class PlayerCtr : MonoBehaviour
         bool cantmove = false;
         MaxSpeed *= DashSpeedMultiplied;
         col.height = col.height / 2;
+        col.center = new Vector3(0, 0.5f, 0);
         while (Vector3.Distance(StarPos, transform.position) <= DashDistance && !crash)
         {
             DashForce();
             if (WallInfront || cantmove)
             {
                 col.height = col.height * 2;
+                col.center = new Vector3(0, 1f, 0);
                 animator.SetTrigger("Chrashing");
                 cantmove = true;
                 canMove = false;
@@ -375,6 +405,7 @@ public class PlayerCtr : MonoBehaviour
         if (!crash)
         {
             col.height = col.height * 2;
+            col.center = new Vector3(0, 1f, 0);
             rb.velocity = rb.velocity.normalized * MaxSpeed;
             rb.AddForce(curDir * 10, ForceMode.VelocityChange);
         }
@@ -430,6 +461,18 @@ public class PlayerCtr : MonoBehaviour
         nextAttack = false;
         Weapon.SetActive(false);
 
+    }
+
+    public void cancelAllMovment()
+    {
+        rb.velocity = Vector3.zero;
+        if(Indash)
+        {
+            StopAllCoroutines();
+            Indash = false;
+            col.height = col.height * 2;
+            col.center = new Vector3(0, 1f, 0);
+        }
     }
 }
 

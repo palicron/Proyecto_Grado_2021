@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         intance = this;
-        // Cursor.lockState = CursorLockMode.Confined;
+       
         DontDestroyOnLoad(this.gameObject);
         audio = GetComponent<AudioSource>();
         audio.volume = 0.35f;
@@ -48,14 +48,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.lockState = CursorLockMode.Confined;
 
         //recordad que esto solo e spara le nivel de prueba tiene que estar es cuando se carga un lvl
         iniComponents();
-        //if (StarLoad)
-        //{
-        //    loadLevel(0);
-        //}
+        if (StarLoad)
+        {
+           loadLevel(0);
+        }
 
 
     }
@@ -81,11 +81,13 @@ public class GameManager : MonoBehaviour
         {
             UIManager.Instance.Resume();
             audio.PlayOneShot(pushSound);
+            
         }
         else
         {
             UIManager.Instance.Pause();
             audio.PlayOneShot(pushSound);
+         
         }
     }
 

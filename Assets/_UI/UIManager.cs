@@ -43,6 +43,7 @@ public class UIManager : MonoBehaviour
         GameIsPaused = false;
         PauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Pause()
@@ -50,6 +51,7 @@ public class UIManager : MonoBehaviour
         GameIsPaused = true;
         PauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
+        Cursor.lockState = CursorLockMode.Confined;
 
     }
 
