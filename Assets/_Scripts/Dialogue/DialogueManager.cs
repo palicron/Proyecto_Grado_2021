@@ -25,8 +25,8 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField, Range(0, 1)]
     float textSpeed;
-    [SerializeField, Range(0, 1)]
-    float textAutoWait = 0.5f;
+    [SerializeField, Range(0, 10)]
+    float textAutoWait = 5f;
     //public bool IsinConversation;
     NPC CurrentNPCTalking = null;
 
@@ -71,6 +71,10 @@ public class DialogueManager : MonoBehaviour
     {
 
         //   senteces.Clear();
+        if(RemoteDialoguePanel)
+        {
+            EndAutoDialgue();
+        }
         DialoguePanel.SetActive(true);
         ActiveLineIndex = 0;
         CurrentConversation = Dialogue;
@@ -233,7 +237,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentece.ToCharArray())
         {
             DialogueText.text += letter;
-            yield return new WaitForSeconds(textSpeed);
+            yield return new WaitForEndOfFrame();
         }
 
         IsTyping = false;

@@ -67,6 +67,7 @@ public class NPC_Tom : NPC
         anim.SetBool("Talking", true);
 
         CurrentNearPlayer.SetDialogue(true, this.transform.position);
+        CurrentNearPlayer.cancelAllMovment();
         Vector3 looktarget = CurrentNearPlayer.transform.position;
         looktarget.y = transform.position.y;
         lookAtTarget(looktarget);
