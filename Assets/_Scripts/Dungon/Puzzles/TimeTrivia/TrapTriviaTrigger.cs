@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrapTriviaTrigger : MonoBehaviour
 {
-   public PlaftormController[] platforms; 
+   public PlaftormController[] platforms;
    public TriviaManager manager;
    public bool used;
 
@@ -32,13 +32,6 @@ public class TrapTriviaTrigger : MonoBehaviour
             else 
             {
                 used = false;
-                if (manager!=null) 
-                {
-                    if (manager.QaA.Count > 0)
-                    {
-                        manager.changeQuestion();
-                    }
-                }
             }
         }
 

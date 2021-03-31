@@ -10,17 +10,27 @@ public class TriviaManager : MonoBehaviour
     public GameObject[] options;
     public int current;
     public int correctAnwser;
- 
+    public Rigidbody movileCompleted;
+    public Transform movilePoints;
+    public bool completed;
+
 
 
     private void Start()
     {
+        completed = false;
         generateQuestion();
     }
 
     public void changeQuestion() 
     {
         generateQuestion(); 
+    }
+
+    private void Update()
+    {
+        if (completed) { movileCompleted.MovePosition(Vector3.MoveTowards(movileCompleted.position, movilePoints.position, 5f * Time.deltaTime)); }
+       
     }
 
     void SetAwnsers() 

@@ -36,6 +36,10 @@ public class TriggerTime : MonoBehaviour
                     {
                         manager.changeQuestion();
                     }
+                    else if (manager.QaA.Count == 0) 
+                    {
+                        manager.completed = true;
+                    }
                 }
             }
         }
