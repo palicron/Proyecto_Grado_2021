@@ -69,6 +69,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StarDialogue(SO_Dialogue Dialogue, NPC locutor)
     {
+        Cursor.lockState = CursorLockMode.Confined;
 
         //   senteces.Clear();
         if (RemoteDialoguePanel)
@@ -197,6 +198,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialgue()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         DialoguePanel.SetActive(false);
         CurrentNPCTalking.EndDialogue();
         DialogueManager.IsinConversation = false;
