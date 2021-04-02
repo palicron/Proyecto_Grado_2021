@@ -24,8 +24,6 @@ public class StorageInteraction : MonoBehaviour
 
     public List<ListItem> items = new List<ListItem>();
 
-    PlayerScore playerScore;
-
     void Start()
     {
         storage = GetComponentInParent<Storage>();
@@ -37,7 +35,6 @@ public class StorageInteraction : MonoBehaviour
 
         if (collider.gameObject.tag == "Player")
         {
-            playerScore = collider.gameObject.GetComponent<PlayerScore>();
             playerClose = true;
             interactingText.GetComponent<Animator>().SetBool("isInteracting", true);
         }
@@ -92,7 +89,7 @@ public class StorageInteraction : MonoBehaviour
             totalScore += (items[i].quantity * GetPoints(items[i].item));
         }
         items = new List<ListItem>();
-        playerScore.UpdateScore(((int)storageType) - 1, totalScore);
+        PlayerScore.instance.UpdateScore(((int)storageType) - 1, totalScore);
     }
 
     int GetPoints(Item item)

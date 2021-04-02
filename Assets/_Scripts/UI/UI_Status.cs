@@ -12,7 +12,7 @@ public class UI_Status : MonoBehaviour
     {
         instance = this;
         isOpened = false;
-        menus = new bool[5];
+        menus = new bool[System.Enum.GetNames(typeof(MenuType)).Length];
     }
     #endregion
 
@@ -43,9 +43,9 @@ public class UI_Status : MonoBehaviour
         {
             Debug.Log(((MenuType)i)+": "+menus[i]);
             isOpened = isOpened || menus[i];
-            if(isOpened == true)
+            if(isOpened)
             {
-                //return;
+                return;
             }
         }
     }
@@ -58,4 +58,5 @@ public enum MenuType
     Inventory,
     Description,
     Storage,
+    MiniGame
 }
