@@ -30,6 +30,7 @@ public class PlaftormController : MonoBehaviour
     public float playerVelx;
     public float playerVely;
     public float playerVelz;
+    public float playerDrag;
     [Header("Platform Array")]
     public Transform[] positions;
     public float[] speedVariation;
@@ -74,12 +75,13 @@ public class PlaftormController : MonoBehaviour
     {
         playerOnPlat = true;
         playerRigid = collision.gameObject.GetComponent<Rigidbody>();
-       
+        playerRigid.drag = 0.6f;
     }
 
 
     private void OnCollisionExit(Collision collision)
     {
+        playerRigid.drag = 1f;
         playerOnPlat = false;
         playerRigid = null;
     }
@@ -99,7 +101,7 @@ public class PlaftormController : MonoBehaviour
         {
             platformRB.DORotate(new Vector3(0, 0, 0), 0.5f, RotateMode.Fast);
 
-        }
+        } 
     }
 
     void MovePlatform() 
@@ -115,27 +117,14 @@ public class PlaftormController : MonoBehaviour
                 platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
                 if (playerOnPlat)
                 {
-
-                    float xComponent = playerRigid.velocity.x;
-                    float yComponent = playerRigid.velocity.y;
-                    float ZComponent = playerRigid.velocity.z;
-                    Vector3 newVelocity = new Vector3(xComponent, yComponent, ZComponent);
-                    if (plactr.Xvel == 0 && plactr.Yvel == 0)
+                    playerVelx = VelocityVector.x;
+                    playerVelz = VelocityVector.z;
+                    if (plactr.Xvel != 0 || plactr.Yvel != 0)
                     {
-                        xComponent = VelocityVector.x;
-                        yComponent = playerRigid.velocity.y;
-                        ZComponent = VelocityVector.z;
-                        newVelocity = new Vector3(xComponent, yComponent, ZComponent);
-
+                        playerVelx = playerRigid.velocity.x;
+                        playerVelz = playerRigid.velocity.z;
                     }
-                    else if (plactr.Xvel > 0 || plactr.Yvel > 0)
-                    {
-                         xComponent = playerRigid.velocity.x+ platformRB.velocity.x;
-                         yComponent = playerRigid.velocity.y;
-                         ZComponent = playerRigid.velocity.z + platformRB.velocity.z;
-                        newVelocity = new Vector3(xComponent, yComponent, ZComponent);
-
-                    }
+                    Vector3 newVelocity = new Vector3(playerVelx, playerRigid.velocity.y, playerVelz);
                     playerRigid.velocity = newVelocity;
 
                 }
@@ -166,10 +155,29 @@ public class PlaftormController : MonoBehaviour
                     StopCoroutine(WaitForMove(0));
                     platformSpeed = speedVariation[actualSpeed];
                     platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
+                    if (playerOnPlat)
+                    {
+                        playerVelx = VelocityVector.x;
+                        playerVelz = VelocityVector.z;
+                        if (plactr.Xvel != 0 || plactr.Yvel != 0)
+                        {
+                            playerVelx = playerRigid.velocity.x;
+                            playerVely = playerRigid.velocity.y;
+                            playerVelz = playerRigid.velocity.z;
+                        }
+                        Vector3 newVelocity = new Vector3(playerVelx, 0, playerVelz);
+                        playerRigid.velocity = newVelocity;
+
+                    }
                 }
 
                 if (Vector3.Distance(platformRB.position, positions[nextposition].position) <= 0)
                 {
+
+                    if (playerOnPlat)
+                    {
+                        playerRigid.velocity = new Vector3(0, 0, 0);
+                    }
                     StartCoroutine(WaitForMove(waitTime));
                     actualPosition = nextposition;
                     actualSpeed++;
@@ -210,32 +218,20 @@ public class PlaftormController : MonoBehaviour
                 {
                     StopCoroutine(WaitForMove(0));
                     platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
-                    if (playerOnPlat)
+                if (playerOnPlat)
+                {
+                    playerVelx = VelocityVector.x;
+                    playerVelz = VelocityVector.z;
+                    if (plactr.Xvel != 0 || plactr.Yvel != 0)
                     {
-
-                        float xComponent = playerRigid.velocity.x;
-                        float yComponent = playerRigid.velocity.y;
-                        float ZComponent = playerRigid.velocity.z;
-                        Vector3 newVelocity = new Vector3(xComponent, yComponent, ZComponent);
-                        if (plactr.Xvel == 0 && plactr.Yvel == 0)
-                        {
-                            xComponent = VelocityVector.x;
-                            yComponent = playerRigid.velocity.y;
-                            ZComponent = VelocityVector.z;
-                            newVelocity = new Vector3(xComponent, yComponent, ZComponent);
-
-                        }
-                        else if (plactr.Xvel > 0 || plactr.Yvel > 0)
-                        {
-                            xComponent = playerRigid.velocity.x + platformRB.velocity.x;
-                            yComponent = playerRigid.velocity.y;
-                            ZComponent = playerRigid.velocity.z + platformRB.velocity.z;
-                            newVelocity = new Vector3(xComponent, yComponent, ZComponent);
-
-                        }
-                        playerRigid.velocity = newVelocity;
-
+                        playerVelx = playerRigid.velocity.x;
+                        playerVely = playerRigid.velocity.y;
+                        playerVelz = playerRigid.velocity.z;
                     }
+                    Vector3 newVelocity = new Vector3(playerVelx, 0, playerVelz);
+                    playerRigid.velocity = newVelocity;
+
+                }
 
             }
 

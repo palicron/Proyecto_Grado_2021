@@ -193,7 +193,7 @@ public class PlayerCtr : MonoBehaviour
             animator.SetFloat("HorizontalSpeed",0);
             if(isGrounded)
             {
-                rb.drag = 4.0f;
+                rb.drag = 1.0f;
             }
             
         }
