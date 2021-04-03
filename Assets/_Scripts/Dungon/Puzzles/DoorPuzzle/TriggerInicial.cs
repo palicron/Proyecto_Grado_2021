@@ -11,6 +11,7 @@ public class TriggerInicial : MonoBehaviour
     public DoorMovilePuzzle OldMovileScript;
     public DoorMovilePuzzle NextMovileScript;
  
+
      private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
