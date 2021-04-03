@@ -23,6 +23,14 @@ public class PlaftormController : MonoBehaviour
     public float rotationX;
     public float rotationY;
     public float rotationZ;
+    [Header("Platform Velocity ")]
+    public float VelX;
+    public float Vely;
+    public float Velz;
+    public float playerVelx;
+    public float playerVely;
+    public float playerVelz;
+    public float playerDrag;
     [Header("Platform Array")]
     public Transform[] positions;
     public float[] speedVariation;
@@ -44,7 +52,9 @@ public class PlaftormController : MonoBehaviour
         ROTATIVETRIGGER,
         MULTIPLESPEED,
         MOVEMENTESCREENTRIGGERED,
-        TRANSLATEMOVEMENT
+        TRANSLATEMOVEMENT,
+        TRANSPORTPLAYER,
+        WALLPATHSPEEDVAR
     }
 
     void Start()
@@ -58,22 +68,22 @@ public class PlaftormController : MonoBehaviour
 
 
     void Awake() {
-        if (type == PlatformType.TRANSLATEPATH || type == PlatformType.ROTATIVE || type == PlatformType.MULTIPLESPEED) { active = true; }
+        if (type == PlatformType.TRANSLATEPATH || type == PlatformType.ROTATIVE || type == PlatformType.MULTIPLESPEED || type == PlatformType.TRANSPORTPLAYER) { active = true; }
     }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        playerOnPlat = false;
-        playerRigid = null;
-        plactr.CurrentSpeed = plactr.Speed;
-    }
-
 
     private void OnCollisionEnter(Collision collision)
     {
         playerOnPlat = true;
         playerRigid = collision.gameObject.GetComponent<Rigidbody>();
-       
+        playerRigid.drag = 0.6f;
+    }
+
+
+    private void OnCollisionExit(Collision collision)
+    {
+        playerRigid.drag = 1f;
+        playerOnPlat = false;
+        playerRigid = null;
     }
 
 
@@ -91,13 +101,7 @@ public class PlaftormController : MonoBehaviour
         {
             platformRB.DORotate(new Vector3(0, 0, 0), 0.5f, RotateMode.Fast);
 
-        }
-        else if (type == PlatformType.TRIGGEREXIT)
-        {
-            //RESETEA LA PLATAFORMA AL PRIMER PUNTO DONDE SE POSICIONO 
-            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
-        }
-
+        } 
     }
 
     void MovePlatform() 
@@ -113,27 +117,14 @@ public class PlaftormController : MonoBehaviour
                 platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
                 if (playerOnPlat)
                 {
-
-                    float xComponent = playerRigid.velocity.x;
-                    float yComponent = playerRigid.velocity.y;
-                    float ZComponent = playerRigid.velocity.z;
-                    Vector3 newVelocity = new Vector3(xComponent, yComponent, ZComponent);
-                    if (plactr.Xvel == 0 && plactr.Yvel == 0)
+                    playerVelx = VelocityVector.x;
+                    playerVelz = VelocityVector.z;
+                    if (plactr.Xvel != 0 || plactr.Yvel != 0)
                     {
-                        xComponent = VelocityVector.x;
-                        yComponent = playerRigid.velocity.y;
-                        ZComponent = VelocityVector.z;
-                        newVelocity = new Vector3(xComponent, yComponent, ZComponent);
-
+                        playerVelx = playerRigid.velocity.x;
+                        playerVelz = playerRigid.velocity.z;
                     }
-                    else if (plactr.Xvel > 0 || plactr.Yvel > 0)
-                    {
-                         xComponent = playerRigid.velocity.x+ platformRB.velocity.x;
-                         yComponent = playerRigid.velocity.y;
-                         ZComponent = playerRigid.velocity.z + platformRB.velocity.x;
-                        newVelocity = new Vector3(xComponent, yComponent, ZComponent);
-
-                    }
+                    Vector3 newVelocity = new Vector3(playerVelx, playerRigid.velocity.y, playerVelz);
                     playerRigid.velocity = newVelocity;
 
                 }
@@ -164,10 +155,29 @@ public class PlaftormController : MonoBehaviour
                     StopCoroutine(WaitForMove(0));
                     platformSpeed = speedVariation[actualSpeed];
                     platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
+                    if (playerOnPlat)
+                    {
+                        playerVelx = VelocityVector.x;
+                        playerVelz = VelocityVector.z;
+                        if (plactr.Xvel != 0 || plactr.Yvel != 0)
+                        {
+                            playerVelx = playerRigid.velocity.x;
+                            playerVely = playerRigid.velocity.y;
+                            playerVelz = playerRigid.velocity.z;
+                        }
+                        Vector3 newVelocity = new Vector3(playerVelx, 0, playerVelz);
+                        playerRigid.velocity = newVelocity;
+
+                    }
                 }
 
                 if (Vector3.Distance(platformRB.position, positions[nextposition].position) <= 0)
                 {
+
+                    if (playerOnPlat)
+                    {
+                        playerRigid.velocity = new Vector3(0, 0, 0);
+                    }
                     StartCoroutine(WaitForMove(waitTime));
                     actualPosition = nextposition;
                     actualSpeed++;
@@ -208,19 +218,98 @@ public class PlaftormController : MonoBehaviour
                 {
                     StopCoroutine(WaitForMove(0));
                     platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
+                if (playerOnPlat)
+                {
+                    playerVelx = VelocityVector.x;
+                    playerVelz = VelocityVector.z;
+                    if (plactr.Xvel != 0 || plactr.Yvel != 0)
+                    {
+                        playerVelx = playerRigid.velocity.x;
+                        playerVely = playerRigid.velocity.y;
+                        playerVelz = playerRigid.velocity.z;
+                    }
+                    Vector3 newVelocity = new Vector3(playerVelx, 0, playerVelz);
+                    playerRigid.velocity = newVelocity;
+
+                }
+
+            }
+
+                if (Vector3.Distance(platformRB.position, positions[nextposition].position) <= 0)
+                {
+                    if (playerOnPlat)
+                    {
+                        playerRigid.velocity = new Vector3(0, 0, 0);
+                    }
+                StartCoroutine(WaitForMove(waitTime));
+                    actualPosition = nextposition;
+                    nextposition++;
+                    if (nextposition > positions.Length - 1)
+                    {
+                    nextposition = 0;
+                    active = false;
+                    }
+                }
+        }
+        //TRASNPORT PLATFORM THAT MOVES PLAEYR WITHOUT MOVING
+        else if (type == PlatformType.TRANSPORTPLAYER)
+        { 
+            if (playerOnPlat)
+               {
+                    playerVelx = VelX;
+                    playerVelz = Velz;
+                   
+                    if (plactr.Yvel !=0 && plactr.Xvel==0)
+                    {
+                    playerVelx = playerRigid.velocity.x;
+                    }
+                    else if (plactr.Xvel != 0 && plactr.Yvel==0)
+                    {
+                        playerVelz = playerRigid.velocity.z;
+                    }
+                    else if (plactr.Yvel != 0 && plactr.Xvel != 0)
+                    {
+                        playerVelz = playerRigid.velocity.z;
+                        playerVelx = playerRigid.velocity.x;
+                    }
+                    playerVely = playerRigid.velocity.y;
+                    Vector3 newVelocity = new Vector3(playerVelx, playerVely, playerVelz);
+                    playerRigid.velocity = newVelocity;
+               }
+           
+        }
+        //PLATFORM THAT CHANGES THE SPEED DEPENDENDING IN THE POINTS IT IS TRAVELING 
+        else if (type == PlatformType.WALLPATHSPEEDVAR)
+        {
+            if (speedVariation.Length != 0)
+            {
+                if (moveToTheNext)
+                {
+                    StopCoroutine(WaitForMove(0));
+                    platformSpeed = speedVariation[actualSpeed];
+                    platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
                 }
 
                 if (Vector3.Distance(platformRB.position, positions[nextposition].position) <= 0)
                 {
                     StartCoroutine(WaitForMove(waitTime));
                     actualPosition = nextposition;
+                    actualSpeed++;
                     nextposition++;
+                    if (actualSpeed > speedVariation.Length - 1)
+                    {
+                        actualSpeed = 0;
+                    }
                     if (nextposition > positions.Length - 1)
                     {
-                        moveToTheNext=false;   
+                        nextposition = 0;
+                        active = false;
                     }
                 }
+            }
+
         }
+
     }
 
     IEnumerator WaitForMove(float time) {

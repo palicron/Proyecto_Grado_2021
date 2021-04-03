@@ -8,7 +8,8 @@ public class EndLevel : MonoBehaviour
     {
         if(other.gameObject.tag.Equals("Player"))
         {
-            UIManager.instance.endlevel();
+            // UIManager.instance.endlevel();
+            GameManager.intance.loadLevel(2,true);
         }
     }
 }

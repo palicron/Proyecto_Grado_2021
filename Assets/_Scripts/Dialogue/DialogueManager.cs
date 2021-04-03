@@ -25,8 +25,8 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField, Range(0, 1)]
     float textSpeed;
-    [SerializeField, Range(0, 1)]
-    float textAutoWait = 0.5f;
+    [SerializeField, Range(0, 10)]
+    float textAutoWait = 5f;
     //public bool IsinConversation;
     NPC CurrentNPCTalking = null;
 
@@ -69,8 +69,13 @@ public class DialogueManager : MonoBehaviour
 
     public void StarDialogue(SO_Dialogue Dialogue, NPC locutor)
     {
+        Cursor.lockState = CursorLockMode.Confined;
 
         //   senteces.Clear();
+        if (RemoteDialoguePanel)
+        {
+            EndAutoDialgue();
+        }
         DialoguePanel.SetActive(true);
         ActiveLineIndex = 0;
         CurrentConversation = Dialogue;
@@ -193,6 +198,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialgue()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         DialoguePanel.SetActive(false);
         CurrentNPCTalking.EndDialogue();
         DialogueManager.IsinConversation = false;
@@ -233,7 +239,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentece.ToCharArray())
         {
             DialogueText.text += letter;
-            yield return new WaitForSeconds(textSpeed);
+            yield return new WaitForEndOfFrame();
         }
 
         IsTyping = false;
@@ -271,24 +277,24 @@ public class DialogueManager : MonoBehaviour
             {
                 ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex - 1].CorrectJump;
 
-                Analytics.CustomEvent("Inforamation_question", new Dictionary<string, object>
-        {
+             Analytics.CustomEvent("Inforamation_question", new Dictionary<string, object>
+            {
             {"Current_Level", GameManager.intance.CurrentLevelIndex},
             {"Play_time",Time.timeSinceLevelLoad },
             {"Repusta a mas informacion","Si"}
-        });
+            });
 
             }
             else
             {
                 ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex - 1].InCorrectJump;
 
-                Analytics.CustomEvent("Inforamation_question", new Dictionary<string, object>
-        {
+            Analytics.CustomEvent("Inforamation_question", new Dictionary<string, object>
+            {
             {"Current_Level", GameManager.intance.CurrentLevelIndex},
             {"Play_time",Time.timeSinceLevelLoad },
             {"Repusta a mas informacion","no"}
-        });
+            });
 
             }
         }

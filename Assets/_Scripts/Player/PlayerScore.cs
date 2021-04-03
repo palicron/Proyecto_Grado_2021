@@ -5,6 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
 {
+    #region Singleton
+    public static PlayerScore instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one playerScore instance found");
+        }
+        instance = this;
+    }
+    #endregion
+
     private int[] score;
 
     GameObject scoreUI;
@@ -13,7 +26,8 @@ public class PlayerScore : MonoBehaviour
 
     void Start()
     {
-        //PlayerPrefsX.SetIntArray("Score", new int[4]);
+        int[] p = { 1000, 1000, 1000, 1000 };
+        PlayerPrefsX.SetIntArray("Score", p );
         score = PlayerPrefsX.GetIntArray("Score", 0, 4);
         scoreUI = GameObject.Find("PF_GameUI/Score/Recipient");
         scoreUIText[0] = scoreUI.transform.Find("paper").transform.Find("Quantity").GetComponent<Text>();
@@ -48,4 +62,5 @@ public class PlayerScore : MonoBehaviour
     {
         return score;
     }
+
 }

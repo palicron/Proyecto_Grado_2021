@@ -61,8 +61,11 @@ public class Patrol : State
             }
 
 
-
-            agent.SetDestination(waypoints[currentIndex].transform.position);
+            if(waypoints.Count>0)
+            {
+                agent.SetDestination(waypoints[currentIndex].transform.position);
+            }
+          
             FirtPoint = true;
             agent.isStopped = false;
         }

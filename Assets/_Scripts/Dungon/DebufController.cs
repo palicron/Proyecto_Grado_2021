@@ -30,13 +30,6 @@ public class DebufController : MonoBehaviour
     }
 
 
-    void Start() 
-    {
-        SlowDebuff = 15f;
-        DashDebuff = 1f;
-        JumpDebuff = 5f;
-    
-    }
 
     void OnTriggerEnter(Collider other) 
     {
