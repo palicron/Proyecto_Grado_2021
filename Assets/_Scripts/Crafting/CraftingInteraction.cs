@@ -40,6 +40,7 @@ public class CraftingInteraction : MonoBehaviour
             interacting = false;
             playerClose = false;
             interactingText.GetComponent<Animator>().SetBool("isInteracting", false);
+            UI_Status.instance.SetOpen(false, MenuType.Crafting);
         }
     }
 
@@ -48,7 +49,8 @@ public class CraftingInteraction : MonoBehaviour
         if (playerClose && Input.GetButtonDown("Interaction"))
         {
             interacting = !interacting;
-            craftingUI.SetActive(!craftingUI.activeSelf);
+            craftingUI.SetActive(interacting);
+            UI_Status.instance.SetOpen(interacting, MenuType.Crafting);
         }
     }
 }
