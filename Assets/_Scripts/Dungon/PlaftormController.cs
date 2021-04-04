@@ -81,7 +81,7 @@ public class PlaftormController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        playerRigid.drag = 1f;
+        if(playerRigid!=null){playerRigid.drag = 1f;}
         playerOnPlat = false;
         playerRigid = null;
     }

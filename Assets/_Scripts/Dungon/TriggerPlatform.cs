@@ -29,7 +29,7 @@ public class TriggerPlatform : MonoBehaviour
         }
     }
 
-     IEnumerator WaitForMove(float time) {
+     IEnumerator WaitForMove(float time) {  
         yield return new WaitForSeconds(time);
          platformCt.active = true;
         }
