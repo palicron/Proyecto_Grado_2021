@@ -52,10 +52,10 @@ public class GameManager : MonoBehaviour
 
         //recordad que esto solo e spara le nivel de prueba tiene que estar es cuando se carga un lvl
         iniComponents();
-        if (StarLoad)
-        {
-           loadLevel(0);
-        }
+        //if (StarLoad)
+       // {
+       //    loadLevel(0);
+       // }
 
 
     }

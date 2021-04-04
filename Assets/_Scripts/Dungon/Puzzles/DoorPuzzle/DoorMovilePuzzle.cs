@@ -31,7 +31,7 @@ public class DoorMovilePuzzle : MonoBehaviour
                 foreach (DoorScript doors in Doors)
                 {
                     doors.IncorrectAccountant = incorrect;
-                    doors.waitTime = doors.waitTime + (incorrect * 0.1f)  ;
+                    doors.waitTime = doors.waitTime + (incorrect * 0.15f)  ;
                 }
                 GiveSpeedDoors = false;
             }

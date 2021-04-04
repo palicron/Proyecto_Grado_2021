@@ -42,7 +42,7 @@ public class FinalDoorSystem : MonoBehaviour
     {
       
         Screen.SetText(" Completed ");
-        StartCoroutine(WaitForMove(1F));
+        StartCoroutine(WaitForMove(1f));
        
     }
 

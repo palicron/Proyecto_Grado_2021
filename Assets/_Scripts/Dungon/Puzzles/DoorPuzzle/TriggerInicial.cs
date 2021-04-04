@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,7 +27,7 @@ public class TriggerInicial : MonoBehaviour
             if (NextMovileScript!=null)
             {
                 NextMovileScript.isActivated = true;
-                NextMovileScript.MovileSpeed = NextMovileScript.MovileSpeed + NextMovileScript.incorrect;
+                NextMovileScript.MovileSpeed = NextMovileScript.MovileSpeed + (4*NextMovileScript.incorrect);
                 NextMovileScript.GiveSpeedDoors = true;
             }
             if (finalDoorSystemScript!= null && OldMovileScript != null) 

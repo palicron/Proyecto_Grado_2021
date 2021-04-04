@@ -7,9 +7,11 @@ public class TriggerDoor : MonoBehaviour
 
     public DoorScript doorScript;
     public DoorMovilePuzzle movileScript;
+    public bool alreadyTriggered;
 
  private void Start()
     {
+        alreadyTriggered=false;
         doorScript = this.GetComponentInParent<DoorScript>();
         movileScript = doorScript.gameObject.GetComponentInParent<DoorMovilePuzzle>();
     }
@@ -20,9 +22,13 @@ public class TriggerDoor : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             doorScript.isChosed=true;
-            if(doorScript.correct==false)
+            if(!alreadyTriggered)
             {
+                if(doorScript.correct==false)
+                {
                 movileScript.incorrect++;
+                }
+                alreadyTriggered=true;
             }
         }
 
