@@ -258,9 +258,15 @@ public class PlaftormController : MonoBehaviour
                {
                     playerVelx = VelX;
                     playerVelz = Velz;
-                    if (plactr.Yvel !=0 && plactr.Xvel==0)
+                    if (VelX==0 && Velz==0)
                     {
                     playerVelx = playerRigid.velocity.x;
+                    playerVelz = playerRigid.velocity.z;
+
+                    }
+                    else if (plactr.Yvel !=0 && plactr.Xvel==0)
+                    {
+                        playerVelx = playerRigid.velocity.x;
                     }
                     else if (plactr.Xvel != 0 && plactr.Yvel==0)
                     {

@@ -6,7 +6,9 @@ public class TriggerPlatform : MonoBehaviour
 {
 
     public PlaftormController platformCt;
-
+    [Header("ON/OFF VALUES")]
+    public float Velx;
+    public float Velz;
 
     void OnTriggerEnter(Collider other)
     {
@@ -17,7 +19,18 @@ public class TriggerPlatform : MonoBehaviour
              platformCt.active = false;
             StartCoroutine(WaitForMove(2f));
             }
-            else{platformCt.active = true;} 
+            else if (platformCt.type == PlaftormController.PlatformType.TRANSPORTPLAYER)
+            {
+                if (Velx!=0) 
+                {
+                    platformCt.VelX = Velx;
+                }
+                if (Velz != 0)
+                {
+                    platformCt.Velz = Velz;
+                }
+            }
+            else {platformCt.active = true;} 
         }
         
     }
