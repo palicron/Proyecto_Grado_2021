@@ -808,15 +808,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.04970596
+      value: -0.049705986
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.06565817
+      value: -0.065658204
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.003274742
+      value: -0.003274746
       objectReference: {fileID: 0}
     - target: {fileID: 368609291, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_DeadZoneWidth
@@ -992,11 +992,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.045216367
+      value: 0.04521639
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.06567228
+      value: -0.06567224
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1108,19 +1108,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99659806
+      value: 0.996598
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.049705938
+      value: -0.04970599
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.06565815
+      value: -0.06565821
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0032747402
+      value: -0.0032747472
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190479, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_StopNaN
@@ -2018,8 +2018,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6298,8 +6298,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7171,8 +7171,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11840,8 +11840,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12205,30 +12205,103 @@ MonoBehaviour:
     - Rojo
     - Amarillo
     CorrectAwnser: 0
-  - question: Pregunta2
+  - question: De que color es el contenedor del metal
     Awnsers:
-    - Op4
-    - Op5
-    - Op6
+    - Azul
+    - Rojo
+    - Amarillo
     CorrectAwnser: 1
-  - question: Pregunta3
+  - question: En que caneca se debe depositar el plastico
     Awnsers:
-    - Op7
-    - Op8
-    - Op9
+    - Azul
+    - Rojo
+    - Plastico
     CorrectAwnser: 2
-  - question: Pregunta4
+  - question: Cual color no pertenece a un contenedor
     Awnsers:
-    - Op10
-    - Op11
-    - Op12
+    - Verde
+    - Purpura
+    - Gris
     CorrectAwnser: 1
-  - question: Pregunta5
+  - question: Una categoria para reciclar es?
     Awnsers:
-    - Op13
-    - Op14
-    - Op15
+    - Aluminio
+    - PET
+    - Papel
+    CorrectAwnser: 2
+  - question: Cual de estos materiales se demora mas en degradarse
+    Awnsers:
+    - Plastico
+    - Vidrio
+    - Poliestireno
+    CorrectAwnser: 2
+  - question: Cual de estos materiales se demora mas en degradarse
+    Awnsers:
+    - Papel
+    - Plastico
+    - Vidrio
     CorrectAwnser: 1
+  - question: Cual de estos papeles se puede reciclar sin problema
+    Awnsers:
+    - Papel Higienico
+    - Revista
+    - Papel de foto
+    CorrectAwnser: 1
+  - question: 'Reciclar 1 tonelada de papel equivale a '
+    Awnsers:
+    - 17 Arboles
+    - 10 Arboles
+    - 40 Arboles
+    CorrectAwnser: 0
+  - question: El material que mas consume arboles para su produccion es
+    Awnsers:
+    - Papel de impresion
+    - Cajas de carton
+    - "Pa\xF1ales higienicos"
+    CorrectAwnser: 2
+  - question: Una familia en promedio usa 6 arboles de papel durante
+    Awnsers:
+    - "1 a\xF1o"
+    - 1 mes
+    - 6 meses
+    CorrectAwnser: 0
+  - question: Cual es la tercera industria que utiliza mas energia para producir
+      su producto
+    Awnsers:
+    - Plastico
+    - Papel
+    - Metal
+    CorrectAwnser: 1
+  - question: Cuantas veces maximo se puede llegar a reciclar el mismo papel
+    Awnsers:
+    - 5
+    - 11
+    - 20
+    CorrectAwnser: 1
+  - question: Al reciclar el papel se disminuye el consumo de
+    Awnsers:
+    - Aire
+    - Madera
+    - Plastico
+    CorrectAwnser: 1
+  - question: 'Existen varios tipos de papel: de primer uso, reciclado y'
+    Awnsers:
+    - Ecologico
+    - Segundo uso
+    - Reutilizable
+    CorrectAwnser: 0
+  - question: El papel puede reciclarse a menos que este
+    Awnsers:
+    - Doblado
+    - Picado
+    - Arrugado
+    CorrectAwnser: 1
+  - question: Cuantos tipos de papel se pueden reciclar
+    Awnsers:
+    - 3
+    - 5
+    - 6
+    CorrectAwnser: 2
   options:
   - {fileID: 731348075}
   - {fileID: 1931436856}
@@ -21651,8 +21724,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
