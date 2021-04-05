@@ -16,10 +16,12 @@ public class DoorMovilePuzzle : MonoBehaviour
     private int nextposition = 1;
     public bool moveToTheNext = true;
     [Header("Movile Information")]
+    public int correctAnwser=-1;
     public int incorrect=0;
     public bool isActivated=false;
     public bool GiveSpeedDoors=false;
-            
+    
+  
 
     // Update is called once per frame
     void Update()
@@ -28,10 +30,16 @@ public class DoorMovilePuzzle : MonoBehaviour
         {
             if (GiveSpeedDoors) 
             {
+                int i=0;
                 foreach (DoorScript doors in Doors)
-                {
+                {   
                     doors.IncorrectAccountant = incorrect;
                     doors.waitTime = doors.waitTime + (incorrect * 0.15f)  ;
+                    if(i==correctAnwser)
+                    {
+                        doors.correct=true;
+                    }
+                    i++;
                 }
                 GiveSpeedDoors = false;
             }
