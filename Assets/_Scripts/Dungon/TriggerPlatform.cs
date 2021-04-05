@@ -21,6 +21,12 @@ public class TriggerPlatform : MonoBehaviour
                 platformCt.active = false;
                 StartCoroutine(WaitForMove(2f));
             }
+            else if (platformCt.type == PlaftormController.PlatformType.ROTATIVE)
+            {
+
+                platformCt.platformSpeed = 0;
+            }
+
             else if (platformCt.type == PlaftormController.PlatformType.TRANSPORTPLAYER)
             {
                 if (Velx != 0)
