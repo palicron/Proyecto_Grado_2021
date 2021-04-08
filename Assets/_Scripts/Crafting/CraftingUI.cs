@@ -34,6 +34,7 @@ public class CraftingUI : MonoBehaviour
         }
         page1.SetPageUI(recipes[actualIndex]);
         page2.SetPageUI(recipes.Count > actualIndex+1 ? recipes[actualIndex+1] : null);
+        UI_SFX.instance.PlayTurnPage();
         return true;
     }
 

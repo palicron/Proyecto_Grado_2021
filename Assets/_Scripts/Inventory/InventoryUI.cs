@@ -42,6 +42,7 @@ public class InventoryUI : MonoBehaviour
             bool active = !inventoryUI.activeSelf;
             inventoryUI.SetActive(active);
             UI_Status.instance.SetOpen(active, MenuType.Inventory);
+            UI_SFX.instance.PlayInventory(active);
         }
     }
 

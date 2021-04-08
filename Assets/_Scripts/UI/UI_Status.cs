@@ -41,7 +41,6 @@ public class UI_Status : MonoBehaviour
         isOpened = false;
         for (int i = 0; i<menus.Length;i++)
         {
-            Debug.Log(((MenuType)i)+": "+menus[i]);
             isOpened = isOpened || menus[i];
             if(isOpened)
             {
