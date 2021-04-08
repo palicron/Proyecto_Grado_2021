@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3349217023873141179}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0021712363, y: -0.0023276496, z: 0.029508738}
-  m_LocalScale: {x: 0.74245656, y: 0.74245656, z: 0.0614709}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6906054029094637411}
   m_RootOrder: 2
@@ -107,8 +107,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6039856505638361836}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0021712363, y: -0.0018184829, z: -0.0009833169}
-  m_LocalScale: {x: 1.2494347, y: 1.0237551, z: 2.0344746}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6906054029094637411}
   m_RootOrder: 0
@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 1281145863204399739}
   - component: {fileID: 4375168190080811039}
   - component: {fileID: 1608049775025792290}
+  - component: {fileID: 5026593396965192226}
   m_Layer: 0
   m_Name: Sanitizer
   m_TagString: Untagged
@@ -193,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 6097006518918911449}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12, y: 12, z: 12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7757060163523728390}
   - {fileID: 317283303502459577}
@@ -228,8 +229,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.026, y: 0.023, z: 0.053}
-  m_Center: {x: 0.0024, y: -0.0015, z: 0.0048520067}
+  m_Size: {x: 0.2, y: 0.2, z: 0.48}
+  m_Center: {x: 0.0024, y: 0, z: 0.05}
 --- !u!65 &1878167668863954862
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -241,8 +242,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.03, y: 0.03, z: 0.06}
-  m_Center: {x: 0.0024, y: -0.0015, z: 0.0048520067}
+  m_Size: {x: 0.3, y: 0.3, z: 0.55}
+  m_Center: {x: 0, y: 0, z: 0.05}
 --- !u!114 &1281145863204399739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5066,6 +5067,25 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!95 &5026593396965192226
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6097006518918911449}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a43fe7aa230b3e340a12b0d6c049f7a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7702467530062898824
 GameObject:
   m_ObjectHideFlags: 0
@@ -5092,8 +5112,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7702467530062898824}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0021712363, y: -0.0023276496, z: 0.024148392}
-  m_LocalScale: {x: 0.74245656, y: 0.74245656, z: 0.49468225}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6906054029094637411}
   m_RootOrder: 1

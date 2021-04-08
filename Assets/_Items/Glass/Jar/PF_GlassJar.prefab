@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 6782603322205482489}
   - component: {fileID: 3048356710895706940}
   - component: {fileID: 5594242796535538195}
+  - component: {fileID: -7788809728864573475}
   m_Layer: 0
   m_Name: PF_GlassJar
   m_TagString: Untagged
@@ -359,7 +360,7 @@ Transform:
   m_GameObject: {fileID: 5915822591107809988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4226755878004196041}
   - {fileID: 2266955175406117934}
@@ -5265,6 +5266,25 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!95 &-7788809728864573475
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5915822591107809988}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a43fe7aa230b3e340a12b0d6c049f7a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8482022918992128486
 GameObject:
   m_ObjectHideFlags: 0

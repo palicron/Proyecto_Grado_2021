@@ -70,6 +70,11 @@ public class Minigame : MonoBehaviour
             bonusSprite.sprite = icons[actualMaterial];
             iconBonus.GetComponent<Animator>().SetBool("correct", true);
             questionArray[actualMaterial].list.RemoveAt(actualQuestion);
+            UI_SFX.instance.PlayAnswer(true);
+        }
+        else
+        {
+            UI_SFX.instance.PlayAnswer(false);
         }
         resultGmO.text = resultText;
 

@@ -16,7 +16,7 @@ public class PlayerCtr : MonoBehaviour
     bool menuOpen = false;
     UI_Status menuStatus;
 
-    GameObject CurrentWepoanPb;
+    GameObject CurrentWeaponPb;
     public void ModifyStats(int a, int d, int v)
     {
         armorModifier = a;
@@ -30,19 +30,19 @@ public class PlayerCtr : MonoBehaviour
         if(WeaponVisual != null)
         {
             Destroy(WeaponVisual);
-            CurrentWepoanPb = null;
+            CurrentWeaponPb = null;
         }
         if (pWeapon != null)
         {
             GameObject aWeapon = Instantiate(pWeapon);
-            CurrentWepoanPb = pWeapon;
+            CurrentWeaponPb = pWeapon;
             aWeapon.transform.SetParent(Weapon.transform, false);
             WeaponVisual = aWeapon;
         }
     }
      public GameObject getWeapon()
     {
-        return CurrentWepoanPb;
+        return CurrentWeaponPb;
     }
 
     public void SetTool(GameObject pTool, bool equip)
@@ -65,14 +65,14 @@ public class PlayerCtr : MonoBehaviour
         if(menuOpen)
         {
             Cursor.lockState = CursorLockMode.Confined;
-            freeeLockCamera.m_YAxis.m_MaxSpeed = 0;
-             freeeLockCamera.m_XAxis.m_MaxSpeed = 0;
+            freeLockCamera.m_YAxis.m_MaxSpeed = 0;
+            freeLockCamera.m_XAxis.m_MaxSpeed = 0;
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
-            freeeLockCamera.m_YAxis.m_MaxSpeed = CamYvel;
-            freeeLockCamera.m_XAxis.m_MaxSpeed = CamXvel;
+            freeLockCamera.m_YAxis.m_MaxSpeed = CamYvel;
+            freeLockCamera.m_XAxis.m_MaxSpeed = CamXvel;
         }
     }
 
@@ -150,7 +150,7 @@ public class PlayerCtr : MonoBehaviour
     GameObject PlayerCamera;
     CinemachineVirtualCamera DialogueVcam;
     [SerializeField]
-    CinemachineFreeLook freeeLockCamera;
+    CinemachineFreeLook freeLockCamera;
 
     bool CanAdvanceAttack = true;
     bool nextAttack = true;
@@ -172,8 +172,8 @@ public class PlayerCtr : MonoBehaviour
         healthsystems = GetComponent<healthsystems>();
         DialogueVcam = PlayerVcam.GetComponent<CinemachineVirtualCamera>();
         Cursor.lockState = CursorLockMode.Locked;
-        CamYvel = freeeLockCamera.m_YAxis.m_MaxSpeed;
-        CamXvel = freeeLockCamera.m_XAxis.m_MaxSpeed;
+        CamYvel = freeLockCamera.m_YAxis.m_MaxSpeed;
+        CamXvel = freeLockCamera.m_XAxis.m_MaxSpeed;
         if (healthsystems)
         {
             healthsystems.Init();

@@ -27,6 +27,7 @@ public class EquipmentUI : MonoBehaviour
             bool active = !equipmentUI.activeSelf;
             equipmentUI.SetActive(active);
             UI_Status.instance.SetOpen(active, MenuType.Equipment);
+            UI_SFX.instance.PlayEquipment(active);
         }
     }
 
