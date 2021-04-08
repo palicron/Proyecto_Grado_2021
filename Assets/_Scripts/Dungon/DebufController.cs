@@ -37,6 +37,7 @@ public class DebufController : MonoBehaviour
         if (other.gameObject.tag == "Player") 
         {
             // other.gameObject.SetActive(false);
+            IsDebuffed = true;
             scriptPlayer = other.gameObject.GetComponent<PlayerCtr>();
             if (scriptPlayer != null)
             {

@@ -11,6 +11,10 @@ public class TriggerPlatform : MonoBehaviour
     public TextMeshPro state;
     public float Velx;
     public float Velz;
+    [Header("ON/OFF ROT VALUES")]
+    public float Rotx;
+    public float Roty;
+    public float Rotz;
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,7 +27,6 @@ public class TriggerPlatform : MonoBehaviour
             }
             else if (platformCt.type == PlaftormController.PlatformType.ROTATIVE)
             {
-
                 platformCt.platformSpeed = 0;
             }
 
@@ -43,6 +46,33 @@ public class TriggerPlatform : MonoBehaviour
                 platformCt.active = true;
                 state.text = "ON";  
             }
+            else if (platformCt.type == PlaftormController.PlatformType.ROTATIVETRIGGER)
+            {
+                if (Rotx !=0 && Roty == 0 && Rotz == 0) 
+                {
+                    platformCt.rotationX = Rotx;
+                    platformCt.rotationY = 0;
+                    platformCt.rotationZ = 0;
+             
+                }
+                if (Roty != 0 && Rotx == 0 && Rotz == 0)
+                {
+                    platformCt.rotationY = Roty;
+                    platformCt.rotationZ = 0;
+                    platformCt.rotationX = 0;
+                  
+
+                }
+                if (Rotz != 0 && Roty == 0 && Rotx == 0)
+                {
+                    platformCt.rotationZ = Rotz;
+                    platformCt.rotationY = 0;
+                    platformCt.rotationX = 0;
+                    
+
+                }
+                platformCt.active = true;
+            }
             else {platformCt.active = true;} 
         }
         
@@ -52,6 +82,11 @@ public class TriggerPlatform : MonoBehaviour
         if (platformCt.type == PlaftormController.PlatformType.ROTATIVETRIGGER)
         {
             platformCt.active = false;
+        }
+        else if (platformCt.type == PlaftormController.PlatformType.TRIGGEREXIT)
+        {
+            platformCt.active = false;
+
         }
     }
 

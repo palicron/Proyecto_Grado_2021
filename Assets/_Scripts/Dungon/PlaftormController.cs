@@ -102,7 +102,7 @@ public class PlaftormController : MonoBehaviour
         }
         else if (type == PlatformType.ROTATIVETRIGGER)
         {
-            platformRB.DORotate(new Vector3(0, 0, 0), 0.5f, RotateMode.Fast);
+            platformRB.DORotate(new Vector3(0, 0, 0), platformSpeed, RotateMode.Fast);
 
         }
         else if (type == PlatformType.ROTATIONTIMER)
