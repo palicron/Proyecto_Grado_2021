@@ -34,10 +34,12 @@ public class PlaftormController : MonoBehaviour
     [Header("Platform Array")]
     public Transform[] positions;
     public float[] speedVariation;
+    public float[] waitVariation;
     public Transform[] rotations;
     private int actualPosition = 0;
     private int nextposition = 1;
     private int actualSpeed=0;
+    private int actualWait = 0;
     public bool moveToTheNext = true;
     public bool active = false;
     public float verify=0;
@@ -54,7 +56,8 @@ public class PlaftormController : MonoBehaviour
         MOVEMENTESCREENTRIGGERED,
         TRANSLATEMOVEMENT,
         TRANSPORTPLAYER,
-        WALLPATHSPEEDVAR
+        WALLPATHSPEEDVAR,
+        ROTATIONTIMER
     }
 
     void Start()
@@ -68,7 +71,7 @@ public class PlaftormController : MonoBehaviour
 
 
     void Awake() {
-        if (type == PlatformType.TRANSLATEPATH || type == PlatformType.ROTATIVE || type == PlatformType.MULTIPLESPEED || type == PlatformType.TRANSPORTPLAYER) { active = true; }
+        if (type == PlatformType.TRANSLATEPATH || type == PlatformType.ROTATIVE || type == PlatformType.MULTIPLESPEED || type == PlatformType.TRANSPORTPLAYER || type == PlatformType.ROTATIONTIMER) { active = true; }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -101,7 +104,17 @@ public class PlaftormController : MonoBehaviour
         {
             platformRB.DORotate(new Vector3(0, 0, 0), 0.5f, RotateMode.Fast);
 
-        } 
+        }
+        else if (type == PlatformType.ROTATIONTIMER)
+        {
+            platformRB.DORotate(new Vector3(0, 0, 0), platformSpeed/2, RotateMode.Fast);
+
+        }
+        else if (active ==false && type == PlatformType.TRIGGEREXIT)
+        {
+            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
+
+        }
     }
 
     void MovePlatform() 
@@ -156,19 +169,19 @@ public class PlaftormController : MonoBehaviour
                     platformSpeed = speedVariation[actualSpeed];
                     platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
                     if (playerOnPlat)
+                     if (playerOnPlat)
+                {
+                    playerVelx = VelocityVector.x;
+                    playerVelz = VelocityVector.z;
+                    if (plactr.Xvel != 0 || plactr.Yvel != 0)
                     {
-                        playerVelx = VelocityVector.x;
-                        playerVelz = VelocityVector.z;
-                        if (plactr.Xvel != 0 || plactr.Yvel != 0)
-                        {
-                            playerVelx = playerRigid.velocity.x;
-                            playerVely = playerRigid.velocity.y;
-                            playerVelz = playerRigid.velocity.z;
-                        }
-                        Vector3 newVelocity = new Vector3(playerVelx, 0, playerVelz);
-                        playerRigid.velocity = newVelocity;
-
+                        playerVelx = playerRigid.velocity.x;
+                        playerVelz = playerRigid.velocity.z;
                     }
+                    Vector3 newVelocity = new Vector3(playerVelx, playerRigid.velocity.y, playerVelz);
+                    playerRigid.velocity = newVelocity;
+
+                }
                 }
 
                 if (Vector3.Distance(platformRB.position, positions[nextposition].position) <= 0)
@@ -178,7 +191,15 @@ public class PlaftormController : MonoBehaviour
                     {
                         playerRigid.velocity = new Vector3(0, 0, 0);
                     }
-                    StartCoroutine(WaitForMove(waitTime));
+                    if (waitVariation.Length != 0)
+                    {
+                        waitTime = waitVariation[actualSpeed];
+                        StartCoroutine(WaitForMove(waitVariation[actualSpeed]));
+                    }
+                    else 
+                    {
+                        StartCoroutine(WaitForMove(waitTime));
+                    }
                     actualPosition = nextposition;
                     actualSpeed++;
                     nextposition++;
@@ -204,7 +225,15 @@ public class PlaftormController : MonoBehaviour
         //PLATFORM THAT ROTATE WHEN THE PLAYER GETS OVER IT, THE PLATFORM ACTS LIKE A ROOFTRAP
         else if (type == PlatformType.ROTATIVETRIGGER)
         {
-            platformRB.DORotate(new Vector3(rotationX, rotationY, rotationZ), 0.10f, RotateMode.Fast);
+            platformRB.DORotate(new Vector3(rotationX, rotationY, rotationZ), platformSpeed, RotateMode.Fast);
+
+        }
+        //PLATFORM THAT ROTATES DURING CERTAIN TIME
+        else if (type == PlatformType.ROTATIONTIMER)
+        {
+            platformRB.DORotate(new Vector3(rotationX, rotationY, rotationZ), platformSpeed, RotateMode.FastBeyond360);
+            StartCoroutine(WaitForRotation(waitTime));
+ 
 
         }
         //PLATFORM THAT MOVES A RIGIDBODY TO A DETERMINED POSITION WHEN IS TRIGERED 
@@ -314,14 +343,26 @@ public class PlaftormController : MonoBehaviour
             }
 
         }
+   
 
     }
+
 
     IEnumerator WaitForMove(float time) {
         moveToTheNext = false;
         yield return new WaitForSeconds(time);
         moveToTheNext = true;
     }
+
+
+    IEnumerator WaitForRotation(float time)
+    {
+        yield return new WaitForSeconds(time/2);
+        active = false;
+        yield return new WaitForSeconds(time);
+        active = true;
+    }
+
 
 
 
