@@ -23,7 +23,6 @@ public class TriggerTime : MonoBehaviour
                 foreach (PlaftormController platctr in platforms)
                 {
                   platctr.active = true;
-                    
                 }
                 used = true;
             }
@@ -32,13 +31,13 @@ public class TriggerTime : MonoBehaviour
                 used = false;
                 if (manager!=null) 
                 {
-                    if (manager.QaA.Count > 0)
-                    {
-                        manager.changeQuestion();
-                    }
-                    else if (manager.QaA.Count == 0) 
+
+                    if (manager.preguntasRespondidasCorrectamente == manager.cantidadDePreguntas)
                     {
                         manager.completed = true;
+                    }
+                    else {
+                        manager.changeQuestion();
                     }
                 }
             }

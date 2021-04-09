@@ -7,6 +7,9 @@ public class TrapTriviaTrigger : MonoBehaviour
    public PlaftormController[] platforms;
    public TriviaManager manager;
    public bool used;
+   public int incorrectPosition=1;
+    public int correctAnwsers; 
+   public bool choosedAPlatform;
 
 
     private void Start()
@@ -22,18 +25,41 @@ public class TrapTriviaTrigger : MonoBehaviour
             {
                 for (int i=0; i < platforms.Length; i++) 
                 {
-                    if (i+1 == manager.correctAnwser) { platforms[i].active = false; }
-                    else { platforms[i].active = true; }
+                    if (i == manager.correctAnwser)
+                    {
+                        if (platforms[i].playerOnPlat) { 
+                            choosedAPlatform = true;
+                            manager.preguntasRespondidasCorrectamente++;
+                        }
+                        
+                        platforms[i].active = false;
+                    }
+                    else 
+                    {
+
+                        platforms[i].positionTrap = incorrectPosition;
+                        platforms[i].active = true;
+                        if (platforms[i].playerOnPlat)
+                        {
+                            choosedAPlatform = true;
+                            incorrectPosition++;
+                        }
+                    }
                     
                 }
             
                 used = true;
             }
-            else 
+            if (!choosedAPlatform) 
             {
-                used = false;
+                incorrectPosition++;
             }
         }
 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        used = false;
     }
 }

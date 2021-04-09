@@ -31,6 +31,8 @@ public class PlaftormController : MonoBehaviour
     public float playerVely;
     public float playerVelz;
     public float playerDrag;
+    [Header("TrapPlatform")]
+    public int positionTrap;
     [Header("Platform Array")]
     public Transform[] positions;
     public float[] speedVariation;
@@ -57,7 +59,9 @@ public class PlaftormController : MonoBehaviour
         TRANSLATEMOVEMENT,
         TRANSPORTPLAYER,
         WALLPATHSPEEDVAR,
-        ROTATIONTIMER
+        ROTATIONTIMER,
+        TRAPFALLINGPLATFORM,
+        BUTTONTRIGGERTRAP
     }
 
     void Start()
@@ -67,6 +71,7 @@ public class PlaftormController : MonoBehaviour
         Equipment = GameObject.Find("Player").GetComponent<EquipmentManager>();
         Score = GameObject.Find("Player").GetComponent<PlayerScore>();
         playerOnPlat = false;
+        positionTrap = 1;
     }
 
 
@@ -100,17 +105,17 @@ public class PlaftormController : MonoBehaviour
         {
             MovePlatform();
         }
-        else if (type == PlatformType.ROTATIVETRIGGER)
-        {
-            platformRB.DORotate(new Vector3(0, 0, 0), platformSpeed, RotateMode.Fast);
-
-        }
         else if (type == PlatformType.ROTATIONTIMER)
         {
             platformRB.DORotate(new Vector3(0, 0, 0), platformSpeed/2, RotateMode.Fast);
 
         }
-        else if (active ==false && type == PlatformType.TRIGGEREXIT)
+        else if (type == PlatformType.TRIGGEREXIT)
+        {
+            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
+
+        }
+        else if (type == PlatformType.TRAPFALLINGPLATFORM)
         {
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
 
@@ -231,7 +236,7 @@ public class PlaftormController : MonoBehaviour
         //PLATFORM THAT ROTATES DURING CERTAIN TIME
         else if (type == PlatformType.ROTATIONTIMER)
         {
-            platformRB.DORotate(new Vector3(rotationX, rotationY, rotationZ), platformSpeed, RotateMode.FastBeyond360);
+            platformRB.DORotate(new Vector3(rotationX, rotationY, rotationZ), platformSpeed, RotateMode.Fast);
             StartCoroutine(WaitForRotation(waitTime));
  
 
@@ -246,7 +251,8 @@ public class PlaftormController : MonoBehaviour
                 if (moveToTheNext)
                 {
                     StopCoroutine(WaitForMove(0));
-                    platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
+                if (speedVariation.Length!=0) { platformSpeed = speedVariation[actualSpeed]; }
+                 platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
                 if (playerOnPlat)
                 {
                     playerVelx = VelocityVector.x;
@@ -254,10 +260,10 @@ public class PlaftormController : MonoBehaviour
                     if (plactr.Xvel != 0 || plactr.Yvel != 0)
                     {
                         playerVelx = playerRigid.velocity.x;
-                        playerVely = playerRigid.velocity.y;
                         playerVelz = playerRigid.velocity.z;
                     }
-                    Vector3 newVelocity = new Vector3(playerVelx, 0, playerVelz);
+                    playerVely = playerRigid.velocity.y;
+                    Vector3 newVelocity = new Vector3(playerVelx, playerVely, playerVelz);
                     playerRigid.velocity = newVelocity;
 
                 }
@@ -272,13 +278,22 @@ public class PlaftormController : MonoBehaviour
                     }
                 StartCoroutine(WaitForMove(waitTime));
                     actualPosition = nextposition;
+                    actualSpeed++;
                     nextposition++;
                     if (nextposition > positions.Length - 1)
                     {
                     nextposition = 0;
                     active = false;
                     }
-                }
+                    if (speedVariation.Length != 0)
+                    {
+                        if (actualSpeed > speedVariation.Length - 1)
+                        {
+                            actualSpeed = 0;
+                        }
+                    }
+                
+            }
         }
         //TRASNPORT PLATFORM THAT MOVES PLAEYR WITHOUT MOVING
         else if (type == PlatformType.TRANSPORTPLAYER)
@@ -343,8 +358,35 @@ public class PlaftormController : MonoBehaviour
             }
 
         }
-   
 
+        else if (type == PlatformType.TRAPFALLINGPLATFORM)
+        {
+            if (positionTrap < positions.Length)
+            {
+                platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[positionTrap].position, platformSpeed * Time.deltaTime));
+            }
+            else 
+            {
+                platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[positions.Length-1].position, platformSpeed * Time.deltaTime));
+            }
+            if (playerOnPlat)
+               {
+                    playerVelx = VelocityVector.x;
+                    playerVelz = VelocityVector.z;
+                    if (plactr.Xvel != 0 || plactr.Yvel != 0)
+                    {
+                        playerVelx = playerRigid.velocity.x;
+                        playerVelz = playerRigid.velocity.z;
+                    }
+                    Vector3 newVelocity = new Vector3(playerVelx, playerRigid.velocity.y, playerVelz);
+                    playerRigid.velocity = newVelocity;
+               }
+            StartCoroutine(WaitForReset(waitTime));
+        }
+        else if (type == PlatformType.BUTTONTRIGGERTRAP)
+        {
+            
+        }
     }
 
 
@@ -363,6 +405,11 @@ public class PlaftormController : MonoBehaviour
         active = true;
     }
 
+    IEnumerator WaitForReset(float time)
+    {
+        yield return new WaitForSeconds(time);
+        active = false;
+    }
 
 
 

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
+
 
 public class TriggerPlatform : MonoBehaviour
 {
@@ -22,8 +24,7 @@ public class TriggerPlatform : MonoBehaviour
         {
             if (platformCt.type == PlaftormController.PlatformType.TRIGGEREXIT)
             {
-                platformCt.active = false;
-                StartCoroutine(WaitForMove(2f));
+                platformCt.active = true;
             }
             else if (platformCt.type == PlaftormController.PlatformType.ROTATIVE)
             {
@@ -81,6 +82,7 @@ public class TriggerPlatform : MonoBehaviour
     void OnTriggerExit(Collider other) {
         if (platformCt.type == PlaftormController.PlatformType.ROTATIVETRIGGER)
         {
+            platformCt.platformRB.DORotate(new Vector3(0, 0, 0), platformCt.platformSpeed, RotateMode.Fast);
             platformCt.active = false;
         }
         else if (platformCt.type == PlaftormController.PlatformType.TRIGGEREXIT)

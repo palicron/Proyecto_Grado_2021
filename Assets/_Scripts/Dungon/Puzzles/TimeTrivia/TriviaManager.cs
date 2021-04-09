@@ -12,6 +12,8 @@ public class TriviaManager : MonoBehaviour
     public int correctAnwser;
     public Rigidbody movileCompleted;
     public Transform movilePoints;
+    public int preguntasRespondidasCorrectamente;
+    public int cantidadDePreguntas;
     public bool completed;
 
 
@@ -35,16 +37,14 @@ public class TriviaManager : MonoBehaviour
 
     void SetAwnsers() 
     {
-        for (int i =0; i < options.Length; i++) 
+        for (int i =0; i < QaA[current].Awnsers.Length; i++) 
         {
-            options[i].GetComponent<AnswerScript>().isCorrect = false;
             options[i].GetComponent<TextMeshPro>().text = QaA[current].Awnsers[i];
 
             if (QaA[current].CorrectAwnser==i+1) 
             {
                 correctAnwser = i+1 ;
-                options[i].GetComponent<AnswerScript>().isCorrect = true;
-
+               
             }
         }
     }
@@ -55,7 +55,6 @@ public class TriviaManager : MonoBehaviour
 
         Questiontxt.text = QaA[current].question;
         SetAwnsers();
-
         QaA.RemoveAt(current);
     }
 }
