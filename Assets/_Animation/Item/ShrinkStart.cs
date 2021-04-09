@@ -8,7 +8,9 @@ public class ShrinkStart : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Destroy(animator.GetComponent<Rigidbody>());
-        animator.transform.Translate(Vector3.up * 100F * Time.deltaTime);
+        animator.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        animator.transform.Translate(0, 100F * Time.deltaTime,0);
+        animator.transform.localRotation = Quaternion.Euler(35, 0, 0);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

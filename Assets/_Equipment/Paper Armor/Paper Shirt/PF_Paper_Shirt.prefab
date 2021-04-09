@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1504960255103721460}
   - component: {fileID: -6977421113678866841}
   - component: {fileID: 5074002867269070839}
+  - component: {fileID: 3869081964752542569}
   m_Layer: 0
   m_Name: PF_Paper_Shirt
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829234338541498199}
-  m_LocalRotation: {x: -0.71299356, y: -0.0008925029, z: -0.00080774876, w: 0.7011696}
+  m_LocalRotation: {x: -0.7129928, y: -0.0008938905, z: -0.0008090852, w: 0.7011703}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -45,7 +46,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829234338541498199}
-  m_Mesh: {fileID: 6339600005411648603, guid: c8fe7b835998bc94383b051c88424b38, type: 3}
+  m_Mesh: {fileID: 6339600005411648603, guid: dbd5c2b8a18720343b79f8020128c9fd, type: 3}
 --- !u!23 &716363552432415777
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -112,7 +113,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.60388196, y: 0.45154715, z: 0.26486182}
-  m_Center: {x: 0.0046462417, y: 0.9766097, z: -0.0027995703}
+  m_Center: {x: 0.0046462417, y: 0, z: -0.0027995703}
 --- !u!65 &1157721256201506732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -125,7 +126,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.6, z: 0.4}
-  m_Center: {x: 0.0046462417, y: 0.9766097, z: -0.0027995703}
+  m_Center: {x: 0.0046462417, y: 0, z: -0.0027995703}
 --- !u!199 &1504960255103721460
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -291,7 +292,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -841,9 +842,9 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.5
-    m_Position: {x: 3.7042425e-10, y: 0.9770619, z: -0.000000111622036}
-    m_Rotation: {x: -0.00032840585, y: -0.0000005511743, z: -0.00000046272052}
-    m_Scale: {x: 0.100000255, y: 0.10000001, z: 0.1}
+    m_Position: {x: 0, y: -0.11, z: 0.025}
+    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Scale: {x: 0.10000037, y: 0.10000001, z: 0.1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -4952,3 +4953,22 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!95 &3869081964752542569
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829234338541498199}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a43fe7aa230b3e340a12b0d6c049f7a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
