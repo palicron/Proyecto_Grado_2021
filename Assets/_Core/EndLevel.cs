@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class EndLevel : MonoBehaviour
 {
+    public int nextLevel;
+    public bool singInventory;
+
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag.Equals("Player"))
         {
-            // UIManager.instance.endlevel();
-            GameManager.intance.loadLevel(2,true);
+            endLevel();
         }
+    }
+
+    public void endLevel()
+    {
+        GameManager.progress[GameManager.intance.CurrentLevelIndex] = true;
+        GameManager.intance.loadLevel(nextLevel, singInventory);
+
     }
 }
