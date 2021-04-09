@@ -25,7 +25,7 @@ public class TriggerMultipleRigid : MonoBehaviour
             }
             if (anuncio!=null) 
             {
-                anuncio.fontSize = sizeText;
+                anuncio.fontSize = sizeText ;
                 anuncio.text = textoAnuncio;
             }
         }
