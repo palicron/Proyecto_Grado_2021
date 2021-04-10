@@ -51,15 +51,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        //Cursor.lockState = CursorLockMode.Confined;
-
-        //recordad que esto solo e spara le nivel de prueba tiene que estar es cuando se carga un lvl
+     
         iniComponents();
         if (StarLoad)
          {
            loadLevel(0);
          }
-
+      
 
     }
 
@@ -119,14 +117,20 @@ public class GameManager : MonoBehaviour
             hs.Init();
             UIManager.Instance.UpdatePlayerLife(hs.getHealthPorcentage());
         }
-       
+
+        if (CurrentLevelIndex == 2)
+        {
+            Debug.Log("entro ");
+            HubClear();
+        }
+
 
     }
 
     public void loadLevel(int index,bool TransferInv=false)
     {
-
         CurrentLevelIndex = index;
+ 
         GameManager.CheckPointProgres = 0;
         StartCoroutine(LoadYourAsyncScene(index, TransferInv));
     }
@@ -164,6 +168,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoadYourAsyncScene(int index, bool TransferInv= false)
     {
+        Debug.Log("LODING" + index);
         List<ListItem> inv = Inventory.instance.items;
         int[] CurrentScore = Player.gameObject.GetComponent<PlayerScore>().GetScore();
         GameObject weapon = Player.getWeapon();
@@ -181,10 +186,8 @@ public class GameManager : MonoBehaviour
         }
         GameManager.CheckPoint = Vector3.zero;
         GameManager.CheckPointName = "StarCheckPoint";
-        if(index == 2 && GameManager.progress[CurrentLevelIndex] == true)
-        {
-            HubClear();
-        }
+    
+   
 
     }
 
@@ -211,7 +214,8 @@ public class GameManager : MonoBehaviour
 
     private void HubClear()
     {
-
+        Debug.Log("GameManager");
+        HUB_Controler.intance.starHub();
     }
 
   
