@@ -53,10 +53,10 @@ public class GameManager : MonoBehaviour
 
      
         iniComponents();
-        if (StarLoad)
-         {
-           loadLevel(0);
-         }
+       // if (StarLoad)
+       //  {
+       //    loadLevel(0);
+       //  }
       
 
     }
