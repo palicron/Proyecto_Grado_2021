@@ -277,26 +277,28 @@ public class DialogueManager : MonoBehaviour
             {
                 ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex - 1].CorrectJump;
 
-             Analytics.CustomEvent("Inforamation_question", new Dictionary<string, object>
+            Analytics.CustomEvent("Inforamation_question", new Dictionary<string, object>
             {
             {"Current_Level", GameManager.intance.CurrentLevelIndex},
             {"Play_time",Time.timeSinceLevelLoad },
             {"Repusta a mas informacion","Si"}
             });
-
+             
             }
             else
             {
                 ActiveLineIndex = CurrentConversation.lines[ActiveLineIndex - 1].InCorrectJump;
 
-            Analytics.CustomEvent("Inforamation_question", new Dictionary<string, object>
+            AnalyticsResult Result = Analytics.CustomEvent("Inforamation_question", new Dictionary<string, object>
             {
             {"Current_Level", GameManager.intance.CurrentLevelIndex},
             {"Play_time",Time.timeSinceLevelLoad },
             {"Repusta a mas informacion","no"}
             });
-
+                Debug.Log(Result);
             }
+
+          
         }
         else
         {
