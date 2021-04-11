@@ -10,9 +10,12 @@ public class ItemPickup : MonoBehaviour
     float speed = 0.001F;
     float directionSymbol = 1.0F;
     float acceleration = 1.0F;
+    Animator animator;
 
     void Start()
     {
+        animator = gameObject.GetComponent<Animator>();
+        animator.enabled = false;
         StartCoroutine(StartP());
     }
 
@@ -43,6 +46,8 @@ public class ItemPickup : MonoBehaviour
             pickedUp = Inventory.instance.Add(item);
             if (pickedUp)
             {
+                Destroy(gameObject.GetComponent<BoxCollider>());
+                hover = false;
                 UI_SFX.instance.PlayPickUp();
                 gameObject.GetComponent<ParticleSystem>().Stop();
                 StartCoroutine(DestroyObject());
@@ -52,8 +57,6 @@ public class ItemPickup : MonoBehaviour
 
     IEnumerator DestroyObject()
     {
-        Destroy(gameObject.GetComponent<BoxCollider>());
-        Destroy(gameObject.GetComponent<BoxCollider>());
         gameObject.GetComponent<Animator>().SetBool("pickedUp", true);
         yield return new WaitForSeconds(5);
         Destroy(gameObject);
@@ -62,6 +65,7 @@ public class ItemPickup : MonoBehaviour
     IEnumerator StartP()
     {
         yield return new WaitForSeconds(2);
+        animator.enabled = true;
         gameObject.GetComponent<Animator>().SetBool("start", true);
     }
 }
