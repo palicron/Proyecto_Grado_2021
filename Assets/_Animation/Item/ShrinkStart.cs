@@ -12,6 +12,7 @@ public class ShrinkStart : StateMachineBehaviour
         animator.transform.localRotation = Quaternion.Euler(0, 0, 0);
         animator.transform.Translate(0, 100F * Time.deltaTime,0);
         animator.transform.localRotation = Quaternion.Euler(35, 0, 0);
+        Destroy(animator.GetComponent<BoxCollider>());
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
