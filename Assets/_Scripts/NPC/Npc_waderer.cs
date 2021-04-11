@@ -38,6 +38,7 @@ public class Npc_waderer : NPC
             {
                 ArrayPoints.Add(h.transform.gameObject);
             }
+            Shuffle();
         }
         int ran = Random.Range(0, NpcMat.Length);
 
@@ -114,4 +115,14 @@ public class Npc_waderer : NPC
         }
     }
 
+    void Shuffle()
+    {
+        for (int i = 0; i < ArrayPoints.Count; i++)
+        {
+            int rnd = Random.Range(0, ArrayPoints.Count);
+            GameObject tempGO = ArrayPoints[rnd];
+            ArrayPoints[rnd] = ArrayPoints[i];
+            ArrayPoints[i] = tempGO;
+        }
+    }
 }
