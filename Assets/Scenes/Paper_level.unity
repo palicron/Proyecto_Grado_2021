@@ -185,6 +185,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1001 &22700303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -383,6 +385,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &47095601
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -840,6 +844,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &82109801
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1149,15 +1155,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.034554034
+      value: -0.034554027
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7194036
+      value: -0.7194035
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.035880715
+      value: -0.035880707
       objectReference: {fileID: 0}
     - target: {fileID: 368609291, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_DeadZoneWidth
@@ -1333,7 +1339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.031433024
+      value: 0.031433016
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1341,7 +1347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.032639865
+      value: 0.032639857
       objectReference: {fileID: 0}
     - target: {fileID: 3847675374731446324, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_RootOrder
@@ -1449,19 +1455,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6928039
+      value: 0.692804
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.034554046
+      value: -0.034554027
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7194035
+      value: -0.71940345
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.035880722
+      value: -0.035880703
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190479, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_StopNaN
@@ -1838,6 +1844,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &159773000
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2180,6 +2188,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &177666807
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2556,6 +2566,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &205172762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3866,6 +3878,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &276400937
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4077,6 +4091,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &311810493
 GameObject:
   m_ObjectHideFlags: 0
@@ -5965,6 +5981,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &490022001
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6476,6 +6494,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &525333835
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6538,6 +6558,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &531544307
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6802,6 +6824,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &565992448
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6987,6 +7011,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &588380068
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7822,6 +7848,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &646328063
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8084,6 +8112,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &659320833
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9753,6 +9783,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &765089112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9909,6 +9941,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &768782545
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10433,6 +10467,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &788215757
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11383,6 +11419,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &854147564
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12560,6 +12598,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &983505120
 GameObject:
   m_ObjectHideFlags: 0
@@ -14184,6 +14224,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1041562211
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14365,6 +14407,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 25
+  direction: 1
 --- !u!54 &1054744637
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15270,66 +15314,88 @@ MonoBehaviour:
     - Rojo
     - Amarillo
     CorrectAwnser: 0
+    opciones: []
+    type: 0
   - question: De que color es el contenedor del metal
     Awnsers:
     - Azul
     - Rojo
     - Amarillo
     CorrectAwnser: 1
+    opciones: []
+    type: 0
   - question: De que color es el contenedor del palstico
     Awnsers:
     - Azul
     - Rojo
     - Amarillo
     CorrectAwnser: 2
+    opciones: []
+    type: 0
   - question: Cual color no pertenece a un contenedor
     Awnsers:
     - Verde
     - Purpura
     - Gris
     CorrectAwnser: 1
+    opciones: []
+    type: 0
   - question: Una categoria para reciclar es?
     Awnsers:
     - Aluminio
     - PET
     - Papel
     CorrectAwnser: 2
+    opciones: []
+    type: 0
   - question: Cual de estos materiales se demora mas en degradarse
     Awnsers:
     - Plastico
     - Vidrio
     - Poliestireno
     CorrectAwnser: 2
+    opciones: []
+    type: 0
   - question: Cual de estos materiales se demora mas en degradarse
     Awnsers:
     - Papel
     - Plastico
     - Vidrio
     CorrectAwnser: 1
+    opciones: []
+    type: 0
   - question: Cual de estos papeles se puede reciclar sin problema
     Awnsers:
     - Papel Higienico
     - Revista
     - Papel de foto
     CorrectAwnser: 1
+    opciones: []
+    type: 0
   - question: 'Reciclar 1 tonelada de papel equivale a '
     Awnsers:
     - 17 Arboles
     - 10 Arboles
     - 40 Arboles
     CorrectAwnser: 0
+    opciones: []
+    type: 0
   - question: El material que mas consume arboles para su produccion es
     Awnsers:
     - Papel de impresion
     - Cajas de carton
     - "Pa\xF1ales higienicos"
     CorrectAwnser: 2
+    opciones: []
+    type: 0
   - question: Una familia en promedio usa 6 arboles de papel durante
     Awnsers:
     - "1 a\xF1o"
     - 1 mes
     - 6 meses
     CorrectAwnser: 0
+    opciones: []
+    type: 0
   - question: Cual es la tercera industria que utiliza mas energia para producir
       su producto
     Awnsers:
@@ -15337,36 +15403,48 @@ MonoBehaviour:
     - Papel
     - Metal
     CorrectAwnser: 1
+    opciones: []
+    type: 0
   - question: Cuantas veces maximo se puede llegar a reciclar el mismo papel
     Awnsers:
     - 5
     - 11
     - 20
     CorrectAwnser: 1
+    opciones: []
+    type: 0
   - question: Al reciclar el papel se disminuye el consumo de
     Awnsers:
     - Aire
     - Madera
     - Plastico
     CorrectAwnser: 1
+    opciones: []
+    type: 0
   - question: 'Existen varios tipos de papel: de primer uso, reciclado y'
     Awnsers:
     - Ecologico
     - Segundo uso
     - Reutilizable
     CorrectAwnser: 0
+    opciones: []
+    type: 0
   - question: El papel puede reciclarse a menos que este
     Awnsers:
     - Doblado
     - Picado
     - Arrugado
     CorrectAwnser: 1
+    opciones: []
+    type: 0
   - question: Cuantos tipos de papel se pueden reciclar
     Awnsers:
     - 3
     - 5
     - 6
     CorrectAwnser: 2
+    opciones: []
+    type: 0
   options:
   - {fileID: 731348075}
   - {fileID: 1931436856}
@@ -15838,6 +15916,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1103489050
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16349,6 +16429,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1136125620
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17104,6 +17186,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &1202210525
 GameObject:
   m_ObjectHideFlags: 0
@@ -17216,6 +17300,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1222210955
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17345,6 +17431,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1223576348
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17921,6 +18009,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1255910686
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18695,6 +18785,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1300934754
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19089,6 +19181,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1372426516
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19342,6 +19436,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1409866178
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19507,6 +19603,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1424914536
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19890,6 +19988,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1465052478
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20050,6 +20150,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1477716944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20309,6 +20411,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!65 &1499375241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21591,6 +21695,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1603910342
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21746,6 +21852,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1610797610
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23062,6 +23170,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1709677231
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23737,6 +23847,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1748932522
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24008,6 +24120,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1773238293
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24266,6 +24380,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1774102456
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24345,6 +24461,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1783296789
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24867,6 +24985,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1846705866
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25079,6 +25199,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1867286514
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25733,13 +25855,9 @@ PrefabInstance:
       propertyPath: freeLockCamera
       value: 
       objectReference: {fileID: 495291814}
-    - target: {fileID: 3169579316793145574, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
-      propertyPath: freeeLockCamera
-      value: 
-      objectReference: {fileID: 495291814}
     - target: {fileID: 3169579316793145575, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_Drag
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_RootOrder
@@ -26479,6 +26597,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1998268649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26571,6 +26691,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &2010691319
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26897,6 +27019,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &2018713584
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27611,6 +27735,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &2034455256
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28676,6 +28802,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &2065173042
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29352,6 +29480,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &2116694966
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29750,6 +29880,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &2146122689
 Rigidbody:
   m_ObjectHideFlags: 0

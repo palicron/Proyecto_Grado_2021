@@ -13,6 +13,7 @@ public class TriggerPlatform : MonoBehaviour
     public TextMeshPro state;
     public float Velx;
     public float Velz;
+
     [Header("ON/OFF ROT VALUES")]
     public float Rotx;
     public float Roty;
@@ -33,6 +34,9 @@ public class TriggerPlatform : MonoBehaviour
 
             else if (platformCt.type == PlaftormController.PlatformType.TRANSPORTPLAYER)
             {
+
+                platformCt.BandaSpeed = Velx;
+
                 if (Velx != 0)
                 {
                     platformCt.VelX = Velx;
