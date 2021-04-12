@@ -15,17 +15,6 @@ public class TriviaManager : MonoBehaviour
     public int preguntasRespondidasCorrectamente;
     public int cantidadDePreguntas;
     public bool completed;
-    public QuestionType type;
-
-    public enum QuestionType
-    {
-        NORMAL,
-        SIMPLE,
-        MULTPIPLE,
-        VoF,
-        COMPLETAR
-    }
-
     private void Start()
     {
         completed = false;
@@ -46,11 +35,19 @@ public class TriviaManager : MonoBehaviour
     void SetAwnsers() 
     {
         
-        if (type == QuestionType.SIMPLE)
+        if (QaA[current].type == QandA.QuestionType.SIMPLE)
         {
-            int randomOption = Random.Range(0, QaA[current].opciones.Length);
-
-
+            int randomOption = 0;
+            for (int i = 0; i < options.Length; i++)
+            {
+                randomOption = Random.Range(0, QaA[current].opciones.Count);
+                options[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto; ;
+                if (QaA[current].opciones[randomOption].correct) 
+                {
+                    correctAnwser = i;
+                }
+                QaA[current].opciones.RemoveAt(randomOption);
+            }
         }
         else {
             for (int i = 0; i < QaA[current].Awnsers.Length; i++)

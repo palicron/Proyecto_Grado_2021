@@ -8,7 +8,6 @@ public class TrapTriviaTrigger : MonoBehaviour
    public TriviaManager manager;
    public bool used;
    public int incorrectPosition=1;
-    public int correctAnwsers; 
    public bool choosedAPlatform;
 
 
