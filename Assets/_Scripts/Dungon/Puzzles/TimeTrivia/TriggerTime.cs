@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TriggerTime : MonoBehaviour
 {
@@ -37,6 +38,13 @@ public class TriggerTime : MonoBehaviour
                         manager.completed = true;
                     }
                     else {
+                        if (manager.panelVF.Length!=0)
+                        {
+                            foreach (GameObject gobj in manager.panelVF)
+                            {
+                                gobj.GetComponent<TextMeshPro>().text = "";
+                            }
+                        }
                         manager.changeQuestion();
                     }
                 }

@@ -584,6 +584,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &100889277
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +789,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &103809963
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1895,6 +1899,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &168725380
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2642,6 +2648,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &190962179
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2800,6 +2808,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &197064738
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3103,6 +3113,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &209972055
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,6 +3469,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &237823722
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3823,6 +3837,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &257261126
 GameObject:
   m_ObjectHideFlags: 0
@@ -4219,6 +4235,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &278824831
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4502,6 +4520,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &306316648
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4632,6 +4652,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &307616481
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5203,6 +5225,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &381882745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5430,6 +5454,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &394419630
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5689,6 +5715,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &399664980
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6124,6 +6152,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &419379880
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6462,6 +6492,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &438584675
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6878,6 +6910,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &485114031
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7012,172 +7046,175 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Questiontxt: {fileID: 2118708092}
-  QaA:
-  - question: Cual es el metal que se puede reciclar en su totalidad
-    Awnsers: []
-    CorrectAwnser: 0
-    opciones:
-    - correct: 1
-      respuestaTexto: Aluminio
-    - correct: 0
-      respuestaTexto: Hierro
-    - correct: 0
-      respuestaTexto: Cobre
-    - correct: 0
-      respuestaTexto: Bronce
-    type: 1
-  - question: El vidrio se debe de introducir en la caneca
-    Awnsers: []
-    CorrectAwnser: 0
-    opciones:
-    - correct: 1
-      respuestaTexto: Verde
-    - correct: 0
-      respuestaTexto: Naranja
-    - correct: 0
-      respuestaTexto: Roja
-    - correct: 0
-      respuestaTexto: Amarilla
-    type: 1
-  - question: Cual de estas es una categoria del plastico
-    Awnsers: []
-    CorrectAwnser: 0
-    opciones:
-    - correct: 1
-      respuestaTexto: PET
-    - correct: 0
-      respuestaTexto: PBC
-    - correct: 0
-      respuestaTexto: PDBE
-    - correct: 0
-      respuestaTexto: PEAS
-    type: 1
-  - question: El plastico PET se usa para que producto
-    Awnsers: []
-    CorrectAwnser: 0
-    opciones:
-    - correct: 1
-      respuestaTexto: Botellas
-    - correct: 0
-      respuestaTexto: Detergentes
-    - correct: 0
-      respuestaTexto: Ventanas
-    - correct: 0
-      respuestaTexto: Bolsas de pan
-    type: 1
-  - question: El PET reciclado se usa en
-    Awnsers:
-    - Aislantes
-    - Muebles
-    - "Ca\xF1erias"
-    - "Se\xF1ales Luminosas"
-    CorrectAwnser: 1
-    opciones: []
-    type: 0
-  - question: Cual de estos no es un uso del PET reciclado
-    Awnsers:
-    - Fibras Textiles
-    - Envases
-    - Muebles
-    - Paneles
-    CorrectAwnser: 0
-    opciones: []
-    type: 0
-  - question: Cual no es una categoria del plastico
-    Awnsers:
-    - PP
-    - PVC
-    - LDPE
-    - PED
-    CorrectAwnser: 3
-    opciones: []
-    type: 0
-  - question: Cual categoria del plastico tiene en su designacion el numero 2
-    Awnsers:
-    - PVC
-    - PP
-    - PEAD
-    - PET
-    CorrectAwnser: 2
-    opciones: []
-    type: 0
-  - question: Cual es un  tipo de plastico que existe diferente a Termpoplasticos
-    Awnsers:
-    - Termoestables
-    - Termodinamicos
-    - Elasticos
-    - Reciclables
-    CorrectAwnser: 0
-    opciones: []
-    type: 0
-  - question: Cual de estos no es el origen de desechos plasticos
-    Awnsers:
-    - Domestico
-    - Consumible
-    - Industrial
-    - Comercial
-    CorrectAwnser: 1
-    opciones: []
-    type: 0
-  - question: Asi como el reciclaje mecanico existe el reciclaje
-    Awnsers:
-    - Automatico
-    - Constante
-    - Quimico
-    - Termico
-    CorrectAwnser: 2
-    opciones: []
-    type: 0
-  - question: Cual no es una fase del reciclaje mecanico del plastico
-    Awnsers:
-    - Lavado
-    - Trituracion
-    - Granceado
-    - Mezclado
-    CorrectAwnser: 3
-    opciones: []
-    type: 0
-  - question: La mayoria de las latas estan hechas de que metal
-    Awnsers:
-    - HIerro
-    - Bronce
-    - Alumino
-    - Latom
-    CorrectAwnser: 2
-    opciones: []
-    type: 0
-  - question: Cual es la categoria de plastico mas dificil de reciclar
-    Awnsers:
-    - PS
-    - PET
-    - PVC
-    - PEBD
-    CorrectAwnser: 0
-    opciones: []
-    type: 0
-  - question: Los elastomeros son plasticos con una gran
-    Awnsers:
-    - Densidad
-    - Durabilidad
-    - Fortaleza
-    - Elasticidad
-    CorrectAwnser: 3
-    opciones: []
-    type: 0
-  - question: Cuantas categorias de plastico reciclaje hay
-    Awnsers:
-    - 5
-    - 8
-    - 7
-    - 10
-    CorrectAwnser: 1
-    opciones: []
-    type: 0
-  options:
+  panelOpciones:
   - {fileID: 666289274}
   - {fileID: 995593267}
   - {fileID: 1693289939}
   - {fileID: 268394616}
+  panelVF: []
+  CantRespCorrectas: 1
+  correctOrder: []
+  QaA:
+  - question: Cual es el metal que se puede reciclar en su totalidad
+    hint: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Aluminio
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Hierro
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Cobre
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Bronce
+      numeroOrden: 0
+    type: 1
+  - question: El vidrio se debe de introducir en la caneca
+    hint: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Verde
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Naranja
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Roja
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Amarilla
+      numeroOrden: 0
+    type: 1
+  - question: Cual de estas es una categoria del plastico
+    hint: 
+    opciones:
+    - correct: 1
+      respuestaTexto: PET
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PBC
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PDBE
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PEAS
+      numeroOrden: 0
+    type: 1
+  - question: El plastico PET se usa para que producto
+    hint: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Botellas
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Detergentes
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Ventanas
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Bolsas de pan
+      numeroOrden: 0
+    type: 1
+  - question: El PET reciclado se usa en
+    hint: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Muebles
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Aislantes
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: "Ca\xF1erias"
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: "Se\xF1ales Luminosas"
+      numeroOrden: 0
+    type: 1
+  - question: Cual de estos no es un uso del PET reciclado
+    hint: 
+    opciones:
+    - correct: 0
+      respuestaTexto: Fibras Textiles
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Envases
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Muebles
+      numeroOrden: 0
+    - correct: 1
+      respuestaTexto: Paneles
+      numeroOrden: 0
+    type: 1
+  - question: Cual no es una categoria del plastico
+    hint: 
+    opciones:
+    - correct: 0
+      respuestaTexto: LDPE
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PP
+      numeroOrden: 0
+    - correct: 1
+      respuestaTexto: PAT
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PVC
+      numeroOrden: 0
+    type: 1
+  - question: Cual categoria del plastico tiene en su designacion el numero 2
+    hint: 
+    opciones:
+    - correct: 0
+      respuestaTexto: PVC
+      numeroOrden: 0
+    - correct: 1
+      respuestaTexto: PEAD
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PP
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PET
+      numeroOrden: 0
+    type: 1
+  - question: Cual es un  tipo de plastico que existe diferente a Termpoplasticos
+    hint: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Termoestables
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Termodinamicos
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Elasticos
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Reciclables
+      numeroOrden: 0
+    type: 1
+  - question: Cual de estos no es el origen de desechos plasticos
+    hint: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Consumible
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Comercial
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Industrial
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Domestico
+      numeroOrden: 0
+    type: 1
   current: 0
   correctAnwser: 0
   movileCompleted: {fileID: 1733342167}
@@ -7718,6 +7755,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &536951543
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8003,6 +8042,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!65 &555022278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9478,6 +9519,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &689634562
 GameObject:
   m_ObjectHideFlags: 0
@@ -9807,6 +9850,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &701431939
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10089,15 +10134,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.049813453
+      value: -0.049813442
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0031066178
+      value: -0.0031066176
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00015494444
+      value: -0.00015494441
       objectReference: {fileID: 0}
     - target: {fileID: 1691807237, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10261,7 +10306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.04981345
+      value: -0.049813442
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -10269,7 +10314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00015494532
+      value: -0.0001549453
       objectReference: {fileID: 0}
     - target: {fileID: 4078643985135607696, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -10439,6 +10484,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &730105401
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10847,6 +10894,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &740834703
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12997,6 +13046,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!114 &755650762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13062,6 +13113,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &761321668
 GameObject:
   m_ObjectHideFlags: 0
@@ -13879,6 +13932,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &830057742
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14036,6 +14091,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &833055573
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14789,6 +14846,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &885762503
 GameObject:
   m_ObjectHideFlags: 0
@@ -15615,6 +15674,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &921005590
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16881,6 +16942,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1002599540
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17818,6 +17881,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1091579429
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18288,6 +18353,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1159867578
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18610,6 +18677,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1180133362
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19118,6 +19187,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &1208285270
 GameObject:
   m_ObjectHideFlags: 0
@@ -19343,6 +19414,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &1218134990
 GameObject:
   m_ObjectHideFlags: 0
@@ -19550,6 +19623,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1251769176
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20320,6 +20395,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1321219113
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21010,6 +21087,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1364964354
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21351,6 +21430,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1391212203
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21538,6 +21619,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1410895474
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22085,6 +22168,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1456119644
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22447,6 +22532,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &1483621227 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -516098083770646512, guid: d79c52472e9ad2f41bb8af1fe8950f3d, type: 3}
@@ -23033,6 +23120,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1547290827
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23376,6 +23465,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1570571440
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23505,6 +23596,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1598272119
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23599,6 +23692,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1607842182
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23777,6 +23872,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1624497471
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24080,6 +24177,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1639741348
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24766,6 +24865,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1686621100
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25175,6 +25276,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1730479739
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25359,6 +25462,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1733342167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25537,6 +25642,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!1 &1754983389
 GameObject:
   m_ObjectHideFlags: 0
@@ -25868,6 +25975,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1770891834
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26461,21 +26570,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Questiontxt: {fileID: 1080740743}
-  QaA:
-  - question: Prueba
-    Awnsers:
-    - 1
-    - 2
-    - 3
-    - 4
-    CorrectAwnser: 0
-    opciones: []
-    type: 0
-  options:
+  panelOpciones:
   - {fileID: 1981180966}
   - {fileID: 140990265}
   - {fileID: 402005182}
   - {fileID: 209972055}
+  panelVF: []
+  CantRespCorrectas: 1
+  correctOrder: []
+  QaA:
+  - question: Prueba
+    hint: 
+    opciones: []
+    type: 0
   current: 0
   correctAnwser: 0
   movileCompleted: {fileID: 555022276}
@@ -26618,6 +26725,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1891883806
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27154,6 +27263,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1924251014
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27897,6 +28008,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &1989837815
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27967,6 +28080,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &2001815717
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28064,6 +28179,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 1
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &2016074346
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28399,6 +28516,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &2071661329
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28566,6 +28685,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &2074190483
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28883,6 +29004,8 @@ MonoBehaviour:
   moveToTheNext: 1
   active: 0
   verify: 0
+  BandaSpeed: 15
+  direction: 1
 --- !u!54 &2078906718
 Rigidbody:
   m_ObjectHideFlags: 0
