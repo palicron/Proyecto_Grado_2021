@@ -38,9 +38,9 @@ public class TriggerTime : MonoBehaviour
                         manager.completed = true;
                     }
                     else {
-                        if (manager.panelOpcion.Length!=0)
+                        if (manager.panelVF.Length!=0)
                         {
-                            foreach (GameObject gobj in manager.panelOpcion)
+                            foreach (GameObject gobj in manager.panelVF)
                             {
                                 gobj.GetComponent<TextMeshPro>().text = "";
                             }
