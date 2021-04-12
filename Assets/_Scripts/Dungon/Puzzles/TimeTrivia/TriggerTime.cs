@@ -37,14 +37,11 @@ public class TriggerTime : MonoBehaviour
                     {
                         manager.completed = true;
                     }
+                    else if(manager.QaA.Count==0)
+                    {
+                        //TODO
+                    }
                     else {
-                        if (manager.panelVF.Length!=0)
-                        {
-                            foreach (GameObject gobj in manager.panelVF)
-                            {
-                                gobj.GetComponent<TextMeshPro>().text = "";
-                            }
-                        }
                         manager.changeQuestion();
                     }
                 }

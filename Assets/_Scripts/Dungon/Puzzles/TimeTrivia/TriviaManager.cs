@@ -14,6 +14,7 @@ public class TriviaManager : MonoBehaviour
     public GameObject[] panelVF;
     [Header("Multiawnsers Dependences")]
     public int CantRespCorrectas;
+    public List<int> listOfAwnsers;
     [Header("Order Dependences")]
     public string[] correctOrder;
     [Header("Questions/Anwsers")]
@@ -48,7 +49,7 @@ public class TriviaManager : MonoBehaviour
 
     void SetAwnsers() 
     {
-
+        listOfAwnsers = new List<int>();
         if (QaA[current].type == QandA.QuestionType.SIMPLEANSWER || QaA[current].type == QandA.QuestionType.COMPLETAR)
         {
             CantRespCorrectas = 1;
@@ -59,26 +60,27 @@ public class TriviaManager : MonoBehaviour
                 panelOpciones[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto; ;
                 if (QaA[current].opciones[randomOption].correct)
                 {
-                    correctAnwser = i;
+                    listOfAwnsers.Add(i);   
                 }
                 QaA[current].opciones.RemoveAt(randomOption);
             }
         }
         else if (QaA[current].type == QandA.QuestionType.VF)
         {
-            CantRespCorrectas = 1;
-            int randomOption = 0;
-            for (int i = 0; i < panelVF.Length; i++)
-            {
-                randomOption = Random.Range(0, panelVF.Length);
-                panelVF[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
-
-                if (QaA[current].opciones[randomOption].correct)
+                CantRespCorrectas = 1;
+                int randomOption = 0;
+                 int i = 0;
+                foreach (GameObject gameojb in panelVF) 
                 {
-                    correctAnwser = i;
-                }
-                QaA[current].opciones.RemoveAt(randomOption);
-            }
+                    randomOption = Random.Range(0, QaA[current].opciones.Count);
+                    gameojb.GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
+                    if (QaA[current].opciones[randomOption].correct)
+                    {
+                        listOfAwnsers.Add(i); 
+                    }
+                    i++;
+                    QaA[current].opciones.RemoveAt(randomOption);
+                 }             
         }
         else if (QaA[current].type == QandA.QuestionType.MULTPIPLEANSWERS)
         {
@@ -86,25 +88,14 @@ public class TriviaManager : MonoBehaviour
             int randomOption = 0;
             for (int i = 0; i < panelOpciones.Length; i++)
             {
-                randomOption = Random.Range(0, panelOpciones.Length);
+                randomOption = Random.Range(0, QaA[current].opciones.Count);
                 panelOpciones[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
                 if (QaA[current].opciones[randomOption].correct)
                 {
+                    listOfAwnsers.Add(i);
                     CantRespCorrectas++;
                     correctAnwser = i;
                 }
-                QaA[current].opciones.RemoveAt(randomOption);
-            }
-        }
-        else if (QaA[current].type == QandA.QuestionType.ORDENAR)
-        {
-            int randomOption = 0;
-            correctOrder =new string[QaA[current].opciones.Count];
-            for (int i = 0; i < panelOpciones.Length; i++)
-            {
-                randomOption = Random.Range(0, panelOpciones.Length);
-                panelOpciones[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
-                correctOrder[QaA[current].opciones[randomOption].numeroOrden] = QaA[current].opciones[randomOption].respuestaTexto;
                 QaA[current].opciones.RemoveAt(randomOption);
             }
         }
@@ -114,6 +105,10 @@ public class TriviaManager : MonoBehaviour
     {
         current = Random.Range(0, QaA.Count);
         Questiontxt.text = QaA[current].question;
+        for (int i = 0; i < panelOpciones.Length; i++)
+        {   
+            panelOpciones[i].GetComponent<TextMeshPro>().text = "";
+        }
         SetAwnsers();
         QaA.RemoveAt(current);
     }

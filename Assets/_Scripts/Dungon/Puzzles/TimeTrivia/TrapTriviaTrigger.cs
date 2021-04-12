@@ -24,14 +24,14 @@ public class TrapTriviaTrigger : MonoBehaviour
             {
                 for (int i=0; i < platforms.Length; i++) 
                 {
-                    if (i == manager.correctAnwser)
+                     if (manager.listOfAwnsers.Contains(i))
                     {
                         if (platforms[i].playerOnPlat) { 
                             choosedAPlatform = true;
                             manager.preguntasRespondidasCorrectamente++;
                         }
                         
-                        platforms[i].active = false;
+                        
                     }
                     else 
                     {
