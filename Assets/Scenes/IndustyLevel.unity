@@ -7014,8 +7014,7 @@ MonoBehaviour:
   Questiontxt: {fileID: 2118708092}
   QaA:
   - question: Cual es el metal que se puede reciclar en su totalidad
-    Awnsers: []
-    CorrectAwnser: 0
+    hint: 
     opciones:
     - correct: 1
       respuestaTexto: Aluminio
@@ -7027,8 +7026,7 @@ MonoBehaviour:
       respuestaTexto: Bronce
     type: 1
   - question: El vidrio se debe de introducir en la caneca
-    Awnsers: []
-    CorrectAwnser: 0
+    hint: 
     opciones:
     - correct: 1
       respuestaTexto: Verde
@@ -7040,8 +7038,7 @@ MonoBehaviour:
       respuestaTexto: Amarilla
     type: 1
   - question: Cual de estas es una categoria del plastico
-    Awnsers: []
-    CorrectAwnser: 0
+    hint: 
     opciones:
     - correct: 1
       respuestaTexto: PET
@@ -7053,8 +7050,7 @@ MonoBehaviour:
       respuestaTexto: PEAS
     type: 1
   - question: El plastico PET se usa para que producto
-    Awnsers: []
-    CorrectAwnser: 0
+    hint: 
     opciones:
     - correct: 1
       respuestaTexto: Botellas
@@ -7066,113 +7062,77 @@ MonoBehaviour:
       respuestaTexto: Bolsas de pan
     type: 1
   - question: El PET reciclado se usa en
-    Awnsers:
-    - Aislantes
-    - Muebles
-    - "Ca\xF1erias"
-    - "Se\xF1ales Luminosas"
-    CorrectAwnser: 1
-    opciones: []
-    type: 0
+    hint: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Muebles
+    - correct: 0
+      respuestaTexto: Aislantes
+    - correct: 0
+      respuestaTexto: "Ca\xF1erias"
+    - correct: 0
+      respuestaTexto: "Se\xF1ales Luminosas"
+    type: 1
   - question: Cual de estos no es un uso del PET reciclado
-    Awnsers:
-    - Fibras Textiles
-    - Envases
-    - Muebles
-    - Paneles
-    CorrectAwnser: 0
-    opciones: []
-    type: 0
+    hint: 
+    opciones:
+    - correct: 0
+      respuestaTexto: Fibras Textiles
+    - correct: 0
+      respuestaTexto: Envases
+    - correct: 0
+      respuestaTexto: Muebles
+    - correct: 1
+      respuestaTexto: Paneles
+    type: 1
   - question: Cual no es una categoria del plastico
-    Awnsers:
-    - PP
-    - PVC
-    - LDPE
-    - PED
-    CorrectAwnser: 3
-    opciones: []
-    type: 0
+    hint: 
+    opciones:
+    - correct: 0
+      respuestaTexto: LDPE
+    - correct: 0
+      respuestaTexto: PP
+    - correct: 1
+      respuestaTexto: PAT
+    - correct: 0
+      respuestaTexto: PVC
+    type: 1
   - question: Cual categoria del plastico tiene en su designacion el numero 2
-    Awnsers:
-    - PVC
-    - PP
-    - PEAD
-    - PET
-    CorrectAwnser: 2
-    opciones: []
-    type: 0
+    hint: 
+    opciones:
+    - correct: 0
+      respuestaTexto: PVC
+    - correct: 1
+      respuestaTexto: PEAD
+    - correct: 0
+      respuestaTexto: PP
+    - correct: 0
+      respuestaTexto: PET
+    type: 1
   - question: Cual es un  tipo de plastico que existe diferente a Termpoplasticos
-    Awnsers:
-    - Termoestables
-    - Termodinamicos
-    - Elasticos
-    - Reciclables
-    CorrectAwnser: 0
-    opciones: []
-    type: 0
+    hint: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Termoestables
+    - correct: 0
+      respuestaTexto: Termodinamicos
+    - correct: 0
+      respuestaTexto: Elasticos
+    - correct: 0
+      respuestaTexto: Reciclables
+    type: 1
   - question: Cual de estos no es el origen de desechos plasticos
-    Awnsers:
-    - Domestico
-    - Consumible
-    - Industrial
-    - Comercial
-    CorrectAwnser: 1
-    opciones: []
-    type: 0
-  - question: Asi como el reciclaje mecanico existe el reciclaje
-    Awnsers:
-    - Automatico
-    - Constante
-    - Quimico
-    - Termico
-    CorrectAwnser: 2
-    opciones: []
-    type: 0
-  - question: Cual no es una fase del reciclaje mecanico del plastico
-    Awnsers:
-    - Lavado
-    - Trituracion
-    - Granceado
-    - Mezclado
-    CorrectAwnser: 3
-    opciones: []
-    type: 0
-  - question: La mayoria de las latas estan hechas de que metal
-    Awnsers:
-    - HIerro
-    - Bronce
-    - Alumino
-    - Latom
-    CorrectAwnser: 2
-    opciones: []
-    type: 0
-  - question: Cual es la categoria de plastico mas dificil de reciclar
-    Awnsers:
-    - PS
-    - PET
-    - PVC
-    - PEBD
-    CorrectAwnser: 0
-    opciones: []
-    type: 0
-  - question: Los elastomeros son plasticos con una gran
-    Awnsers:
-    - Densidad
-    - Durabilidad
-    - Fortaleza
-    - Elasticidad
-    CorrectAwnser: 3
-    opciones: []
-    type: 0
-  - question: Cuantas categorias de plastico reciclaje hay
-    Awnsers:
-    - 5
-    - 8
-    - 7
-    - 10
-    CorrectAwnser: 1
-    opciones: []
-    type: 0
+    hint: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Consumible
+    - correct: 0
+      respuestaTexto: Comercial
+    - correct: 0
+      respuestaTexto: Industrial
+    - correct: 0
+      respuestaTexto: Domestico
+    type: 1
   options:
   - {fileID: 666289274}
   - {fileID: 995593267}
@@ -10089,15 +10049,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.049813453
+      value: -0.049813442
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0031066178
+      value: -0.0031065836
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00015494444
+      value: -0.00015494271
       objectReference: {fileID: 0}
     - target: {fileID: 1691807237, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10161,15 +10121,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.04531421
+      value: 0.045314193
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0031072844
+      value: -0.003107249
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00014094962
+      value: 0.00014094796
       objectReference: {fileID: 0}
     - target: {fileID: 2176437046675016371, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -10261,15 +10221,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.04981345
+      value: -0.049813442
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0031066353
+      value: -0.0031065661
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00015494532
+      value: -0.00015494185
       objectReference: {fileID: 0}
     - target: {fileID: 4078643985135607696, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -26463,12 +26423,7 @@ MonoBehaviour:
   Questiontxt: {fileID: 1080740743}
   QaA:
   - question: Prueba
-    Awnsers:
-    - 1
-    - 2
-    - 3
-    - 4
-    CorrectAwnser: 0
+    hint: 
     opciones: []
     type: 0
   options:

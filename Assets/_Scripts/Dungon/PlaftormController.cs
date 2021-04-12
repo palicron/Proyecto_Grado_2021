@@ -297,7 +297,7 @@ public class PlaftormController : MonoBehaviour
         }
         //TRASNPORT PLATFORM THAT MOVES PLAEYR WITHOUT MOVING
         else if (type == PlatformType.TRANSPORTPLAYER)
-        { 
+        {
             if (playerOnPlat)
                {
                     playerVelx = VelX;
@@ -385,7 +385,7 @@ public class PlaftormController : MonoBehaviour
         }
         else if (type == PlatformType.BUTTONTRIGGERTRAP)
         {
-            
+            //TODO 
         }
     }
 

@@ -5,18 +5,32 @@ using TMPro;
 
 public class TriviaManager : MonoBehaviour
 {
+
+
+    [Header("Question Dependences")]
     public TextMeshPro Questiontxt;
+    public GameObject[] panelOpciones;
+    [Header("True/Flase Dependences")]
+    public GameObject[] panelVF;
+    [Header("Multiawnsers Dependences")]
+    public int CantRespCorrectas;
+    [Header("Order Dependences")]
+    public string[] correctOrder;
+    [Header("Questions/Anwsers")]
     public List<QandA> QaA;
-    public GameObject[] options;
     public int current;
     public int correctAnwser;
+    [Header("Task Completed")]
     public Rigidbody movileCompleted;
     public Transform movilePoints;
     public int preguntasRespondidasCorrectamente;
     public int cantidadDePreguntas;
     public bool completed;
+
+
     private void Start()
     {
+        CantRespCorrectas = 0;
         completed = false;
         generateQuestion();
     }
@@ -34,34 +48,66 @@ public class TriviaManager : MonoBehaviour
 
     void SetAwnsers() 
     {
-        
-        if (QaA[current].type == QandA.QuestionType.SIMPLE)
+
+        if (QaA[current].type == QandA.QuestionType.SIMPLEANSWER || QaA[current].type == QandA.QuestionType.COMPLETAR)
         {
+            CantRespCorrectas = 1;
             int randomOption = 0;
-            for (int i = 0; i < options.Length; i++)
+            for (int i = 0; i < panelOpciones.Length; i++)
             {
                 randomOption = Random.Range(0, QaA[current].opciones.Count);
-                options[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto; ;
-                if (QaA[current].opciones[randomOption].correct) 
+                panelOpciones[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto; ;
+                if (QaA[current].opciones[randomOption].correct)
                 {
                     correctAnwser = i;
                 }
                 QaA[current].opciones.RemoveAt(randomOption);
             }
         }
-        else {
-            for (int i = 0; i < QaA[current].Awnsers.Length; i++)
+        else if (QaA[current].type == QandA.QuestionType.VF)
+        {
+            CantRespCorrectas = 1;
+            int randomOption = 0;
+            for (int i = 0; i < panelVF.Length; i++)
             {
-                options[i].GetComponent<TextMeshPro>().text = QaA[current].Awnsers[i];
+                randomOption = Random.Range(0, panelVF.Length);
+                panelVF[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
 
-                if (QaA[current].CorrectAwnser == i + 1)
+                if (QaA[current].opciones[randomOption].correct)
                 {
-                    correctAnwser = i + 1;
-
+                    correctAnwser = i;
                 }
+                QaA[current].opciones.RemoveAt(randomOption);
             }
         }
-
+        else if (QaA[current].type == QandA.QuestionType.MULTPIPLEANSWERS)
+        {
+            CantRespCorrectas = 0;
+            int randomOption = 0;
+            for (int i = 0; i < panelOpciones.Length; i++)
+            {
+                randomOption = Random.Range(0, panelOpciones.Length);
+                panelOpciones[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
+                if (QaA[current].opciones[randomOption].correct)
+                {
+                    CantRespCorrectas++;
+                    correctAnwser = i;
+                }
+                QaA[current].opciones.RemoveAt(randomOption);
+            }
+        }
+        else if (QaA[current].type == QandA.QuestionType.ORDENAR)
+        {
+            int randomOption = 0;
+            correctOrder =new string[QaA[current].opciones.Count];
+            for (int i = 0; i < panelOpciones.Length; i++)
+            {
+                randomOption = Random.Range(0, panelOpciones.Length);
+                panelOpciones[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
+                correctOrder[QaA[current].opciones[randomOption].numeroOrden] = QaA[current].opciones[randomOption].respuestaTexto;
+                QaA[current].opciones.RemoveAt(randomOption);
+            }
+        }
     }
 
     void generateQuestion() 

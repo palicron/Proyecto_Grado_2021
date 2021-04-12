@@ -25,7 +25,11 @@ public class QuestionManager : MonoBehaviour
     {
         for (int i =0; i < options.Length; i++) 
         {
-            options[i].GetComponent<TextMeshPro>().text = QaA[current].Awnsers[i];
+            options[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[i].respuestaTexto;
+            if (QaA[current].opciones[i].correct) 
+            {
+                DoorMovileCtr.correctAnwser = i;
+            }
         }
     }
 
@@ -36,7 +40,6 @@ public class QuestionManager : MonoBehaviour
 
         Questiontxt.text = QaA[current].question;
         SetAwnsers();
-        DoorMovileCtr.correctAnwser = QaA[current].CorrectAwnser;
 
         QaA.RemoveAt(current);
     }

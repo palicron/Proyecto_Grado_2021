@@ -6,21 +6,21 @@ using System.Collections.Generic;
 public class QandA
 {
     public string question;
-    public string[] Awnsers;
-    public int CorrectAwnser;
-
-
+    public string hint;
     public List<AnswerScript> opciones;
     public QuestionType type;
+
 
 
     public enum QuestionType
     {
         NORMAL,
-        SIMPLE,
-        MULTPIPLE,
-        VoF,
-        COMPLETAR
+        SIMPLEANSWER,
+        MULTPIPLEANSWERS,
+        VF,
+        COMPLETAR,
+        ORDENAR
     }
+
 
 }
