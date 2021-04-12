@@ -45,7 +45,12 @@ public class PlaftormController : MonoBehaviour
     public bool moveToTheNext = true;
     public bool active = false;
     public float verify=0;
-    
+    [Header("banda Trasportadora")]
+   
+    public float BandaSpeed=15.0f;
+    [SerializeField]
+    bool direction=true;
+    int directInt = 1;
 
     public enum PlatformType{ 
         NORMAL,
@@ -72,6 +77,10 @@ public class PlaftormController : MonoBehaviour
         Score = GameObject.Find("Player").GetComponent<PlayerScore>();
         playerOnPlat = false;
         positionTrap = 1;
+        if(!direction)
+        {
+            directInt = -1;
+        }
     }
 
 
@@ -300,31 +309,35 @@ public class PlaftormController : MonoBehaviour
         {
             if (playerOnPlat)
                {
-                    playerVelx = VelX;
-                    playerVelz = Velz;
-                    if (VelX==0 && Velz==0)
-                    {
-                    playerVelx = playerRigid.velocity.x;
-                    playerVelz = playerRigid.velocity.z;
 
-                    }
-                    else if (plactr.Yvel !=0 && plactr.Xvel==0)
-                    {
-                        playerVelx = playerRigid.velocity.x;
-                    }
-                    else if (plactr.Xvel != 0 && plactr.Yvel==0)
-                    {
-                        playerVelz = playerRigid.velocity.z;
-                    }
-                    else if (plactr.Yvel != 0 && plactr.Xvel != 0)
-                    {
-                        playerVelz = playerRigid.velocity.z;
-                        playerVelx = playerRigid.velocity.x;
-                    }
-                    playerVely = playerRigid.velocity.y;
-                    Vector3 newVelocity = new Vector3(playerVelx, playerVely, playerVelz);
-                    playerRigid.velocity = newVelocity;
-               }
+                playerRigid.AddForce(transform.right * directInt * BandaSpeed,ForceMode.Acceleration);
+                    //playerVelx = VelX;
+                    //playerVelz = Velz;
+                    //if (VelX==0 && Velz==0)
+                    //{
+                    //playerVelx = playerRigid.velocity.x;
+                    //playerVelz = playerRigid.velocity.z;
+
+                //}
+                //else if (plactr.Yvel !=0 && plactr.Xvel==0)
+                //{
+                //    playerVelx = playerRigid.velocity.x;
+                //}
+                //else if (plactr.Xvel != 0 && plactr.Yvel==0)
+                //{
+                //    playerVelz = playerRigid.velocity.z;
+                //}
+                //else if (plactr.Yvel != 0 && plactr.Xvel != 0)
+                //{
+                //    playerVelz = playerRigid.velocity.z;
+                //    playerVelx = playerRigid.velocity.x;
+                //}
+                //playerVely = playerRigid.velocity.y;
+                //Vector3 newVelocity = new Vector3(playerVelx, playerVely, playerVelz);
+                //playerRigid.velocity = newVelocity;
+
+
+            }
            
         }
         //PLATFORM THAT CHANGES THE SPEED DEPENDENDING IN THE POINTS IT IS TRAVELING 
