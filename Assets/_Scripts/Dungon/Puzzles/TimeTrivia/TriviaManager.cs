@@ -17,6 +17,11 @@ public class TriviaManager : MonoBehaviour
     public List<int> listOfAwnsers;
     [Header("Order Dependences")]
     public string[] correctOrder;
+    [Header("TimeQuestion Dependences")]
+    public float  tiempoInicial;
+    public float  tiempoRestante;
+    public TextMeshPro PanelTiempo;
+    public bool CuentaRegresiva;
     [Header("Questions/Anwsers")]
     public List<QandA> QaA;
     public int current;
@@ -31,6 +36,7 @@ public class TriviaManager : MonoBehaviour
 
     private void Start()
     {
+        CuentaRegresiva = false;
         CantRespCorrectas = 0;
         completed = false;
         generateQuestion();
@@ -44,6 +50,20 @@ public class TriviaManager : MonoBehaviour
     private void Update()
     {
         if (completed) { movileCompleted.MovePosition(Vector3.MoveTowards(movileCompleted.position, movilePoints.position, 5f * Time.deltaTime)); }
+        if (CuentaRegresiva) 
+        {
+            if (tiempoRestante >= 1)
+            {
+                tiempoRestante -= Time.deltaTime;
+                PanelTiempo.text = "" + tiempoRestante.ToString("f0");
+            }
+            else 
+            {
+                PanelTiempo.text = "Se acabo el tiempo";
+                changeQuestion();
+                CuentaRegresiva = false;
+            }
+        }
        
     }
 
@@ -94,7 +114,42 @@ public class TriviaManager : MonoBehaviour
                 {
                     listOfAwnsers.Add(i);
                     CantRespCorrectas++;
-                    correctAnwser = i;
+                   
+                }
+                QaA[current].opciones.RemoveAt(randomOption);
+            }
+        }
+        else if (QaA[current].type == QandA.QuestionType.CUENTAREGRESIVA)
+        {
+            CantRespCorrectas = 0;
+            int randomOption = 0;
+            for (int i = 0; i < panelOpciones.Length; i++)
+            {
+                randomOption = Random.Range(0, QaA[current].opciones.Count);
+                panelOpciones[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
+                if (QaA[current].opciones[randomOption].correct)
+                {
+
+                    listOfAwnsers.Add(i);
+                    
+                }
+                QaA[current].opciones.RemoveAt(randomOption);
+            }
+            CuentaRegresiva = true;
+        }
+        else if (QaA[current].type == QandA.QuestionType.ORDENAR)
+        {
+            CantRespCorrectas = 0;
+            int randomOption = 0;
+            for (int i = 0; i < panelOpciones.Length; i++)
+            {
+                randomOption = Random.Range(0, QaA[current].opciones.Count);
+                panelOpciones[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
+                if (QaA[current].opciones[randomOption].correct)
+                {
+
+                    listOfAwnsers.Add(i);
+
                 }
                 QaA[current].opciones.RemoveAt(randomOption);
             }
@@ -105,11 +160,19 @@ public class TriviaManager : MonoBehaviour
     {
         current = Random.Range(0, QaA.Count);
         Questiontxt.text = QaA[current].question;
+        if (QaA[current].type == QandA.QuestionType.ORDENAR)
+        {   
+            Questiontxt.text = QaA[current].question + " : " + QaA[current].Anagrama();
+        }
         for (int i = 0; i < panelOpciones.Length; i++)
         {   
             panelOpciones[i].GetComponent<TextMeshPro>().text = "";
         }
+        tiempoRestante = tiempoInicial;
         SetAwnsers();
         QaA.RemoveAt(current);
     }
+
+
+    
 }
