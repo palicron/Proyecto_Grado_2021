@@ -18,6 +18,7 @@ public class UI_Status : MonoBehaviour
 
     bool isOpened;
     bool[] menus;
+    public GameObject[] gMenus;
     public delegate void OnMenusChanged();
     public OnMenusChanged onMenusChangedCallBack;
 
@@ -45,6 +46,17 @@ public class UI_Status : MonoBehaviour
             if(isOpened)
             {
                 return;
+            }
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("CloseMenus"))
+        {
+            for (int i = 0; i < menus.Length; i++)
+            {
+                gMenus[i].SetActive(false);
             }
         }
     }

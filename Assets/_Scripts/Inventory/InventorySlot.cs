@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour
 {
@@ -68,7 +69,7 @@ public class InventorySlot : MonoBehaviour
         Inventory.instance.Remove(lItem);
     }
 
-    public void UseItem()
+    public void UseItem(PointerEventData eventData)
     {
         if(lItem != null)
         {
@@ -81,7 +82,7 @@ public class InventorySlot : MonoBehaviour
             }
             else 
             {
-                if (lItem.item.type == ItemType.Equipment && equipUI.activeSelf)
+                if (lItem.item.type == ItemType.Equipment && eventData.button == PointerEventData.InputButton.Right)
                 {
                     if (lItem.item.Use())
                     {
