@@ -13,11 +13,16 @@ public class TriggerPlatform : MonoBehaviour
     public TextMeshPro state;
     public float Velx;
     public float Velz;
+    public Material MovingMat;
+    public GameObject Banda;
 
     [Header("ON/OFF ROT VALUES")]
     public float Rotx;
     public float Roty;
     public float Rotz;
+
+
+ 
 
     void OnTriggerEnter(Collider other)
     {
@@ -36,15 +41,26 @@ public class TriggerPlatform : MonoBehaviour
             {
 
                 platformCt.BandaSpeed = Velx;
+                if(MovingMat)
+                {
+                   
+                    Renderer[] obj = platformCt.gameObject.GetComponentsInChildren<Renderer>();
 
-                if (Velx != 0)
-                {
-                    platformCt.VelX = Velx;
+                    foreach(Renderer x in obj)
+                    {
+                        x.GetComponent<Renderer>().material = MovingMat;
+                    }
                 }
-                if (Velz != 0)
-                {
-                    platformCt.Velz = Velz;
-                }
+                    
+
+                //if (Velx != 0)
+                //{
+                //    platformCt.VelX = Velx;
+                //}
+                //if (Velz != 0)
+                //{
+                //    platformCt.Velz = Velz;
+                //}
             }
             else if(state!=null)
             {
