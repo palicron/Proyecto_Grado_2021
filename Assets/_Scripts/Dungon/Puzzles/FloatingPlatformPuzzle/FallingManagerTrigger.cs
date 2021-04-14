@@ -19,6 +19,7 @@ public class FallingManagerTrigger : MonoBehaviour
                 if (manager.ActualFloatingPosition <= manager.managers.Count && !optionActual.active)
                 {
                     manager.ActualFloatingPosition++;
+                   
                     StartCoroutine(waitForMove(optionActual.waitTime));
                    
                 }
