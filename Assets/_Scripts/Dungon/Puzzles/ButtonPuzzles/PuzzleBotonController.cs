@@ -51,7 +51,7 @@ public class PuzzleBotonController : MonoBehaviour
             StartCoroutine(MoveMovingObject(1f));
             //  GameManager.intance.playSound(CorrectSound);
         }
-        else if (isNotCorrect) 
+        else
         {
             StartCoroutine(MoveButton(0f));
             opcionText.SetText("X");
