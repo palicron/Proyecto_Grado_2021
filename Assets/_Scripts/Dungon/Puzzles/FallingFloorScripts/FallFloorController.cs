@@ -22,9 +22,8 @@ public class FallFloorController : MonoBehaviour
         correctAwnser = 0;
         speed = 5f;
         finalQuestion = false;
-        MovileQuestionScreen = GameObject.Find("QuestionScreen");
+        MovileQuestionScreen = GameObject.Find("FallingFloorQuestionScreen");
         questionScreen = MovileQuestionScreen.GetComponent<Rigidbody>();
-        actualQuestion = MovileQuestionScreen.transform.GetChild(0).GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
