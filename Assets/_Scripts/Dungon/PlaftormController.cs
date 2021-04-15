@@ -261,6 +261,7 @@ public class PlaftormController : MonoBehaviour
                 {
                     StopCoroutine(WaitForMove(0));
                 if (speedVariation.Length!=0) { platformSpeed = speedVariation[actualSpeed]; }
+                if (waitVariation.Length != 0) { waitTime = waitVariation[actualWait]; }
                  platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[nextposition].position, platformSpeed * Time.deltaTime));
                 if (playerOnPlat)
                 {
@@ -288,6 +289,7 @@ public class PlaftormController : MonoBehaviour
                 StartCoroutine(WaitForMove(waitTime));
                     actualPosition = nextposition;
                     actualSpeed++;
+                    actualWait++;
                     nextposition++;
                     if (nextposition > positions.Length - 1)
                     {
@@ -301,7 +303,14 @@ public class PlaftormController : MonoBehaviour
                             actualSpeed = 0;
                         }
                     }
-                
+                    if (waitVariation.Length != 0)
+                    {
+                        if (actualWait > waitVariation.Length - 1)
+                        {
+                            actualWait = 0;
+                        }
+                    }
+
             }
         }
         //TRASNPORT PLATFORM THAT MOVES PLAEYR WITHOUT MOVING
