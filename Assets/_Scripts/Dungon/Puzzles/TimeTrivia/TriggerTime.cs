@@ -6,13 +6,14 @@ using TMPro;
 public class TriggerTime : MonoBehaviour
 {
     public PlaftormController[] platforms;
+    public PlaftormController[] panelesElevadizos;
     public TriviaManager manager;
     public bool used;
 
 
     private void Start()
     {
-        used = false;
+        used = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,6 +43,14 @@ public class TriggerTime : MonoBehaviour
                         //TODO
                     }
                     else {
+                        if (panelesElevadizos.Length!=0)
+                        {
+                            foreach (PlaftormController platctr in panelesElevadizos)
+                            {
+                                platctr.active = true;
+                            }
+                        }
+                       
                         manager.changeQuestion();
                     }
                 }

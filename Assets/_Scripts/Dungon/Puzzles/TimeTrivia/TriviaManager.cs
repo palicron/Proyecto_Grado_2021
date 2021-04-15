@@ -10,6 +10,7 @@ public class TriviaManager : MonoBehaviour
     [Header("Question Dependences")]
     public TextMeshPro Questiontxt;
     public GameObject[] panelOpciones;
+    public bool Inicializar;
     [Header("True/Flase Dependences")]
     public GameObject[] panelVF;
     [Header("Multiawnsers Dependences")]
@@ -39,7 +40,8 @@ public class TriviaManager : MonoBehaviour
         CuentaRegresiva = false;
         CantRespCorrectas = 0;
         completed = false;
-        generateQuestion();
+        if (Inicializar) { generateQuestion(); }
+//        generateQuestion();
     }
 
     public void changeQuestion() 
