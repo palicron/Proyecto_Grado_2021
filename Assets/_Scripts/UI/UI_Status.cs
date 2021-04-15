@@ -54,7 +54,7 @@ public class UI_Status : MonoBehaviour
     {
         if (Input.GetButtonDown("CloseMenus"))
         {
-            for (int i = 0; i < menus.Length; i++)
+            for (int i = 0; i < gMenus.Length; i++)
             {
                 gMenus[i].SetActive(false);
             }

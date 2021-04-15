@@ -20,6 +20,7 @@ public class Minigame_Interaction : MonoBehaviour
 
         minigameUI = gameUI.transform.Find("MiniGame").gameObject;
     }
+
     void OnTriggerEnter(Collider collider)
     {
 
@@ -27,6 +28,16 @@ public class Minigame_Interaction : MonoBehaviour
         {
             playerClose = true;
             interactingText.GetComponent<Animator>().SetBool("isInteracting", true);
+        }
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+
+        if (collider.gameObject.tag == "Player")
+        {
+            playerClose = false;
+            interactingText.GetComponent<Animator>().SetBool("isInteracting", false);
         }
     }
 

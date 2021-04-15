@@ -44,7 +44,7 @@ public class UI_SFX : MonoBehaviour
     public void PlayInventory(bool p)
     {
         Debug.Log("Sonando inventario");
-        audio.volume = 0.3f;
+        audio.volume = 0.15f;
         if (p)
         {
             audio.PlayOneShot(openInventory);
@@ -57,7 +57,7 @@ public class UI_SFX : MonoBehaviour
     public void PlayEquipment(bool p)
     {
         Debug.Log("Sonando equipamiento");
-        audio.volume = 0.2f;
+        audio.volume = 0.08f;
         if (p)
         {
             audio.PlayOneShot(openEquipment);
