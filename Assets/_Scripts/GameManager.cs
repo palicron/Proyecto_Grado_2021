@@ -53,10 +53,10 @@ public class GameManager : MonoBehaviour
 
      
         iniComponents();
-       // if (StarLoad)
-       //  {
-       //    loadLevel(0);
-       //  }
+       if (StarLoad)
+        {
+           loadLevel(0);
+         }
       
 
     }
@@ -214,7 +214,7 @@ public class GameManager : MonoBehaviour
 
     private void HubClear()
     {
-        Debug.Log("GameManager");
+      
         HUB_Controler.intance.starHub();
     }
 

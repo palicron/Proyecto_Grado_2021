@@ -31,5 +31,10 @@ public class HUB_Controler : MonoBehaviour
         {
             Destroy(TomsTrigger);
         }
+
+    if(GameManager.progress[2])
+        {
+            Destroy(IndutryDorr);
+        }
     }
 }
