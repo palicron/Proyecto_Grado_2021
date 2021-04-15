@@ -14,8 +14,8 @@ public class RandomItem : MonoBehaviour
         GameObject item = Instantiate(items[Random.Range(0, items.Length)], transform.position, Quaternion.identity);
         if(isFloating)
         {
-            Destroy(item.GetComponent<Rigidbody>());
-            item.GetComponent<BoxCollider>().enabled = false;
+            item.GetComponent<Rigidbody>().isKinematic = true;
+            item.GetComponent<BoxCollider>().isTrigger = true;
         }
         item.transform.parent = gameObject.transform;
     }

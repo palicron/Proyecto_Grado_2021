@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 599997363235955685}
   - component: {fileID: 599997363235955684}
   - component: {fileID: 599997363235955227}
-  - component: {fileID: 599997363235955226}
   - component: {fileID: 940646525069702006}
   - component: {fileID: 3607221558040495063}
   - component: {fileID: 7445629356038355980}
@@ -52,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 69e43fbcade5f6d488e06a81ae6d9be3, type: 2}
+  hover: 0
 --- !u!54 &599997363235955684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -80,19 +80,6 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.25, y: 1.1624217, z: 0.25}
-  m_Center: {x: 0, y: 0.45, z: -0.02}
---- !u!65 &599997363235955226
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329598116587413321}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.375, y: 1.25, z: 0.4}
   m_Center: {x: 0, y: 0.45, z: -0.02}
 --- !u!199 &940646525069702006
 ParticleSystemRenderer:

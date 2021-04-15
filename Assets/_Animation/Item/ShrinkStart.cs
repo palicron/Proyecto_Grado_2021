@@ -9,10 +9,9 @@ public class ShrinkStart : StateMachineBehaviour
     {
         Destroy(animator.GetComponent<Rigidbody>());
         animator.GetComponent<ItemPickup>().hover = true;
-        animator.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        animator.transform.Translate(0, 100F * Time.deltaTime,0);
+        animator.transform.Translate(0, 40F * Time.deltaTime,0);
         animator.transform.localRotation = Quaternion.Euler(35, 0, 0);
-        Destroy(animator.GetComponent<BoxCollider>());
+        animator.GetComponent<BoxCollider>().isTrigger = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

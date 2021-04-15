@@ -46,7 +46,6 @@ public class ItemPickup : MonoBehaviour
             pickedUp = Inventory.instance.Add(item);
             if (pickedUp)
             {
-                Destroy(gameObject.GetComponent<BoxCollider>());
                 hover = false;
                 UI_SFX.instance.PlayPickUp();
                 gameObject.GetComponent<ParticleSystem>().Stop();
@@ -57,7 +56,7 @@ public class ItemPickup : MonoBehaviour
 
     IEnumerator DestroyObject()
     {
-        gameObject.GetComponent<Animator>().SetBool("pickedUp", true);
+        animator.SetBool("pickedUp", true);
         yield return new WaitForSeconds(5);
         Destroy(gameObject);
     }
@@ -66,6 +65,7 @@ public class ItemPickup : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         animator.enabled = true;
-        gameObject.GetComponent<Animator>().SetBool("start", true);
+        animator.applyRootMotion = true;
+        animator.SetBool("start", true);
     }
 }
