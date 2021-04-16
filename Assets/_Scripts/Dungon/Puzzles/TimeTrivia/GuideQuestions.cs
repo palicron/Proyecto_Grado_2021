@@ -16,6 +16,14 @@ public class GuideQuestions : MonoBehaviour
     {
         faltantes = manager.cantidadDePreguntas - manager.preguntasRespondidasCorrectamente;
         anuncioAlto.text = "Correctas: " + manager.preguntasRespondidasCorrectamente;
-        anuncioBajo.text = "Faltan" + faltantes;
+        anuncioBajo.text = "Faltan: " + faltantes;
+
+        if(manager.completed){
+
+             anuncioAlto.text = " ";
+            anuncioBajo.text = " ";
+
+
+        }
     }
 }

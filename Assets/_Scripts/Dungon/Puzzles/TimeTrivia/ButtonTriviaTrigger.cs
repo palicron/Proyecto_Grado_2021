@@ -5,35 +5,47 @@ using TMPro;
 
 public class ButtonTriviaTrigger : MonoBehaviour
 {
-    public PlaftormController platform;
-    public PlaftormController[] movilePlatforms;
+    [Header("Trivia Movement")]
     public TriviaManager manager;
-    public TextMeshPro anuncio;
     public int cantidadPreguntasTrivia;
-    public int option;
-    [Header("Fail Trivia Dependences")]
     public Rigidbody PuzzleRigid;
-    public Transform newPostion;
+    public Transform[] PuzzlePoints;
+    public TextMeshPro[] OtrosOpciones;
     public float speed;
+    [Header("Button Information")]
+    public TextMeshPro anuncio;
+    public int option;
+    [Header("Completed Dependencies")]
+    public float waitTime;
 
     private void Start()
     {
         cantidadPreguntasTrivia = manager.cantidadDePreguntas;
     }
 
+    void Update()
+    {
+        if(PuzzlePoints.Length>0 && manager.preguntasRespondidasCorrectamente < PuzzlePoints.Length) 
+        {
+            PuzzleRigid.MovePosition(Vector3.MoveTowards(PuzzleRigid.position, PuzzlePoints[manager.preguntasRespondidasCorrectamente].position, speed*Time.deltaTime));
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            if (option == manager.correctAnwser)
+            if (manager.listOfAwnsers.Contains(option))
             {
                 manager.preguntasRespondidasCorrectamente++;
                 anuncio.text = "Correcto";
-                if (manager.preguntasRespondidasCorrectamente < movilePlatforms.Length) { movilePlatforms[manager.preguntasRespondidasCorrectamente].active = true; }
+                foreach(TextMeshPro ops in OtrosOpciones)
+                {
+                ops.text="Incorrecto";
+                }
                 if (cantidadPreguntasTrivia == manager.preguntasRespondidasCorrectamente)
                 {
                     manager.completed = true;
-
                 }
             }
             else {
@@ -43,17 +55,34 @@ public class ButtonTriviaTrigger : MonoBehaviour
 
     }
 
-    private void OnTriggerExit(Collider other)
+       private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            if (manager.QaA.Count > 0) { manager.changeQuestion(); }
-            else {
-                PuzzleRigid.MovePosition(Vector3.MoveTowards(PuzzleRigid.position, newPostion.position, speed* Time.deltaTime ));
+            if(manager.QaA.Count > 0 && manager.completed==false)
+            {
+                StartCoroutine(WaitToChangeQuestion(waitTime));
             }
-
-           
         }
-       
+
     }
+
+
+     
+
+    IEnumerator WaitToChangeQuestion(float time) {
+        if(OtrosOpciones.Length!=0)
+        {
+            foreach(TextMeshPro ops in OtrosOpciones)
+            {
+                ops.text="";
+            }
+        }
+        anuncio.text="";
+        yield return new WaitForSeconds(time);
+        manager.changeQuestion();
+
+    }
+
+
 }
