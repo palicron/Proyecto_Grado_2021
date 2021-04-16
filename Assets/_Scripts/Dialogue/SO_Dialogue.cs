@@ -18,6 +18,7 @@ public enum DialogueType
 [System.Serializable]
 public class line
 {
+    public int id = -1;
     public string DialogueDescription;
     public string LocutorName;
     public bool JumpQuestion;
