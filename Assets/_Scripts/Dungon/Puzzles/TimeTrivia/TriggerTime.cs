@@ -7,6 +7,7 @@ public class TriggerTime : MonoBehaviour
 {
     public PlaftormController[] platforms;
     public PlaftormController[] panelesElevadizos;
+    public TextMeshPro[] TextopanelOpciones;
     public TriviaManager manager;
     public bool used;
 
@@ -26,6 +27,14 @@ public class TriggerTime : MonoBehaviour
                 {
                   platctr.active = true;
                 }
+                if(TextopanelOpciones.Length!=0)
+                {
+                    foreach (TextMeshPro textField in TextopanelOpciones)
+                    {
+                    textField.text = "";
+                    }
+                }
+               
                 used = true;
             }
             else 
@@ -36,6 +45,7 @@ public class TriggerTime : MonoBehaviour
 
                     if (manager.preguntasRespondidasCorrectamente == manager.cantidadDePreguntas)
                     {
+                       
                         manager.completed = true;
                     }
                     else if(manager.QaA.Count==0)

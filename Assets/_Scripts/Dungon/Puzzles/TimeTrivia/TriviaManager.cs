@@ -28,8 +28,7 @@ public class TriviaManager : MonoBehaviour
     public int current;
     public int correctAnwser;
     [Header("Task Completed")]
-    public Rigidbody movileCompleted;
-    public Transform movilePoints;
+    public PlaftormController[] movileCompleted;
     public int preguntasRespondidasCorrectamente;
     public int cantidadDePreguntas;
     public bool completed;
@@ -51,7 +50,16 @@ public class TriviaManager : MonoBehaviour
 
     private void Update()
     {
-        if (completed) { movileCompleted.MovePosition(Vector3.MoveTowards(movileCompleted.position, movilePoints.position, 5f * Time.deltaTime)); }
+        if (completed) 
+        { 
+            Questiontxt.text= "Completado";
+            for(int i=0; i < movileCompleted.Length; i++)
+            {
+                movileCompleted[i].active=true;
+
+            }
+            
+        }
         if (CuentaRegresiva) 
         {
             if (tiempoRestante >= 1)
