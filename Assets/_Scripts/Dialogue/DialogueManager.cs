@@ -32,8 +32,11 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField]
     Button[] ASwerButton;
-
+    [SerializeField]
+    int textSizeFinal = 20;
     bool IsTyping = false;
+    [SerializeField]
+    int textGrowSpeed = 1;
 
     private int ActiveLineIndex = 0;
 
@@ -147,6 +150,7 @@ public class DialogueManager : MonoBehaviour
         {
             StopAllCoroutines();
             DialogueText.text = CurrentConversation.lines[ActiveLineIndex].sentences;
+            DialogueText.fontSize = textSizeFinal;
             IsTyping = false;
             if (CurrentConversation.lines[ActiveLineIndex].JumpQuestion)
             {
@@ -232,15 +236,24 @@ public class DialogueManager : MonoBehaviour
             CurrentNPCTalking.EndDialogue();
         }
     }
-    IEnumerator TypeSentence(string sentece)
+    IEnumerator TypeSentence(string letter)
     {
+        int currentsize = 0;
         IsTyping = true;
-        DialogueText.text = "";
-        foreach (char letter in sentece.ToCharArray())
+        DialogueText.text = letter;
+        DialogueText.fontSize = currentsize;
+
+        while (currentsize <= textSizeFinal)
         {
-            DialogueText.text += letter;
+            currentsize+= textGrowSpeed;
+            DialogueText.fontSize = currentsize;
             yield return new WaitForEndOfFrame();
         }
+       // foreach (char letter in sentece.ToCharArray())
+       // {
+          //  DialogueText.text += letter;
+         //   yield return new WaitForEndOfFrame();
+       // }
 
         IsTyping = false;
 
@@ -257,13 +270,21 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator AutoTypeSentence(string sentece)
     {
+        int currentsize = 0;
         IsTyping = true;
-        RemoteDialogueText.text = "";
-        foreach (char letter in sentece.ToCharArray())
+        RemoteDialogueText.text = sentece;
+        DialogueText.fontSize = currentsize;
+        while (currentsize <= textSizeFinal)
         {
-            RemoteDialogueText.text += letter;
-            yield return new WaitForSeconds(textSpeed);
+            currentsize += textGrowSpeed;
+            DialogueText.fontSize = currentsize;
+            yield return new WaitForEndOfFrame();
         }
+     //   foreach (char letter in sentece.ToCharArray())
+     //   {
+      //      RemoteDialogueText.text += letter;
+      //      yield return new WaitForSeconds(textSpeed);
+     //   }
 
         IsTyping = false;
         ActiveLineIndex++;
