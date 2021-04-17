@@ -15,8 +15,8 @@ public class GuideQuestions : MonoBehaviour
     void Update()
     {
         faltantes = manager.cantidadDePreguntas - manager.preguntasRespondidasCorrectamente;
-        anuncioAlto.text = "Correctas: " + manager.preguntasRespondidasCorrectamente;
-        anuncioBajo.text = "Faltan: " + faltantes;
+        anuncioAlto.text = "Faltan: " + faltantes;
+        anuncioBajo.text = "Incorrectas: " + manager.ContIncorrectas;
 
         if(manager.completed){
 

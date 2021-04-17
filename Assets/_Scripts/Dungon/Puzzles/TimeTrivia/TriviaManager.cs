@@ -9,6 +9,7 @@ public class TriviaManager : MonoBehaviour
 
     [Header("Question Dependences")]
     public TextMeshPro Questiontxt;
+    public TextMeshPro hintTxt;
     public GameObject[] panelOpciones;
     public bool Inicializar;
     [Header("True/Flase Dependences")]
@@ -29,7 +30,10 @@ public class TriviaManager : MonoBehaviour
     public int correctAnwser;
     [Header("Task Completed")]
     public PlaftormController[] movileCompleted;
+    public float waitTimeCompleted;
     public int preguntasRespondidasCorrectamente;
+    public int ContIncorrectas;
+    public int LimiteIncorrectas;
     public int cantidadDePreguntas;
     public bool completed;
 
@@ -53,11 +57,7 @@ public class TriviaManager : MonoBehaviour
         if (completed) 
         { 
             Questiontxt.text= "Completado";
-            for(int i=0; i < movileCompleted.Length; i++)
-            {
-                movileCompleted[i].active=true;
-
-            }
+            StartCoroutine(WaitForMove(waitTimeCompleted));
             
         }
         if (CuentaRegresiva) 
@@ -180,9 +180,19 @@ public class TriviaManager : MonoBehaviour
         }
         tiempoRestante = tiempoInicial;
         SetAwnsers();
+        hintTxt.text= QaA[current].hint;
         QaA.RemoveAt(current);
     }
 
+
+    IEnumerator WaitForMove(float time) {
+        yield return new WaitForSeconds(time);
+           for(int i=0; i < movileCompleted.Length; i++)
+            {
+                movileCompleted[i].active=true;
+
+            }
+    }
 
     
 }
