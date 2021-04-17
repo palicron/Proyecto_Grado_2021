@@ -7774,6 +7774,175 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &460146899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 460146900}
+  - component: {fileID: 460146902}
+  - component: {fileID: 460146901}
+  m_Layer: 6
+  m_Name: TextoTipo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &460146900
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460146899}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.52}
+  m_LocalScale: {x: 0.0139394915, y: 0.039679125, z: 1}
+  m_Children: []
+  m_Father: {fileID: 488660087}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.278}
+  m_SizeDelta: {x: 20, y: 5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &460146901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460146899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 16
+  m_fontSizeBase: 16
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 0
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 460146902}
+  m_maskType: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
+--- !u!23 &460146902
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460146899}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &466453013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8028,6 +8197,7 @@ Transform:
   m_Children:
   - {fileID: 2118708091}
   - {fileID: 436597562}
+  - {fileID: 460146900}
   m_Father: {fileID: 1619875800}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8106,6 +8276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Questiontxt: {fileID: 2118708092}
+  hintTxt: {fileID: 460146901}
   panelOpciones:
   - {fileID: 666289274}
   - {fileID: 995593267}
@@ -8121,41 +8292,234 @@ MonoBehaviour:
   PanelTiempo: {fileID: 0}
   CuentaRegresiva: 0
   QaA:
-  - question: Cual es el metal que se puede reciclar en su totalidad
+  - question: "Cual de estos tipos de papeles no deber\xEDa introducirse en la caneca
+      gris"
     hint: 
     PalabraAnagrama: 
     opciones:
     - correct: 1
-      respuestaTexto: Aluminio
+      respuestaTexto: Papel Higienico
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Hierro
+      respuestaTexto: Copias de papel
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Cobre
+      respuestaTexto: Periodico
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Bronce
+      respuestaTexto: Panfletos
       numeroOrden: 0
     type: 1
-  - question: El vidrio se debe de introducir en la caneca
+  - question: "Cual de estos tipos objetos no deber\xEDa introducirse en la caneca
+      gris"
     hint: 
     PalabraAnagrama: 
     opciones:
     - correct: 1
-      respuestaTexto: Verde
+      respuestaTexto: Papel de fax
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Naranja
+      respuestaTexto: Revistas
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Roja
+      respuestaTexto: Carton
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Amarilla
+      respuestaTexto: Periodico
       numeroOrden: 0
     type: 1
-  - question: Cual de estas es una categoria del plastico
+  - question: Dentro de los tipos de papel se encuentra el papel de primer uso, el
+      reciclable y el
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Ecologico
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: No reciclable
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Segundo uso
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Degradable
+      numeroOrden: 0
+    type: 1
+  - question: "Cual de estos productos tiene una mayor cantidad de consumo de \xE1rboles
+      para su producci\xF3n"
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: "Pa\xF1ales"
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Libros
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Cajas
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Periodico
+      numeroOrden: 0
+    type: 1
+  - question: " Al reducir el uso de papel cu\xE1l de estos recursos no tiene un
+      cambio en su consumo "
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Aire
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Agua
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Madera
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Energia
+      numeroOrden: 0
+    type: 1
+  - question: Cuanto dura en promedio en degradarse el papel
+    hint: Rotacion alrededor del sol
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: "1 A\xF1o"
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 6 meses
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: "10 a\xF1os"
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: "2  a\xF1os"
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el material que se degrada con mayor facilidad
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Papel
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Plastico
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Metal
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Vidrio
+      numeroOrden: 0
+    type: 1
+  - question: "Para la producci\xF3n del papel cu\xE1l de estos recursos no es utilizado"
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Combustible
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Agua
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Madera
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Energia
+      numeroOrden: 0
+    type: 1
+  - question: "En promedio cuantas veces se puede reciclar el papel en diferentes
+      tipos de papel o cart\xF3n"
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: 11
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 8
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 15
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 5
+      numeroOrden: 0
+    type: 1
+  - question: Cual de estos no es un metodo para blanquear el papel
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: PTC
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PFC
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: TFC
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: ECF
+      numeroOrden: 0
+    type: 1
+  - question: "Cu\xE1ntos  \xE1rboles en promedio usa una familia"
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: 6 arboles
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 12 arboles
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 8 arboles
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 4 arboles
+      numeroOrden: 0
+    type: 1
+  - question: 1 Tonelada de papel es producida con
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: 17 arboles
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 22 arboles
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 10 arboles
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 3 arboles
+      numeroOrden: 0
+    type: 1
+  - question: En cuantos tipos se clasifican los plasticos
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: 7
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 5
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 8
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: 9
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el tipo de plastico que tiene asignado el numero 1
     hint: 
     PalabraAnagrama: 
     opciones:
@@ -8163,132 +8527,353 @@ MonoBehaviour:
       respuestaTexto: PET
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: PBC
+      respuestaTexto: PVC
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: PDBE
+      respuestaTexto: PS
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: PEAS
+      respuestaTexto: PS
       numeroOrden: 0
     type: 1
-  - question: El plastico PET se usa para que producto
+  - question: Cual es el tipo de plastico que tiene asignado el numero 2
     hint: 
     PalabraAnagrama: 
     opciones:
     - correct: 1
-      respuestaTexto: Botellas
+      respuestaTexto: HDPE
       numeroOrden: 0
-    - correct: 0
-      respuestaTexto: Detergentes
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: Ventanas
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: Bolsas de pan
-      numeroOrden: 0
-    type: 1
-  - question: El PET reciclado se usa en
-    hint: 
-    PalabraAnagrama: 
-    opciones:
-    - correct: 1
-      respuestaTexto: Muebles
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: Aislantes
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: "Ca\xF1erias"
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: "Se\xF1ales Luminosas"
-      numeroOrden: 0
-    type: 1
-  - question: Cual de estos no es un uso del PET reciclado
-    hint: 
-    PalabraAnagrama: 
-    opciones:
-    - correct: 0
-      respuestaTexto: Fibras Textiles
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: Envases
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: Muebles
-      numeroOrden: 0
-    - correct: 1
-      respuestaTexto: Paneles
-      numeroOrden: 0
-    type: 1
-  - question: Cual no es una categoria del plastico
-    hint: 
-    PalabraAnagrama: 
-    opciones:
     - correct: 0
       respuestaTexto: LDPE
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: PP
-      numeroOrden: 0
-    - correct: 1
-      respuestaTexto: PAT
+      respuestaTexto: PET
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: PVC
+      respuestaTexto: PS
       numeroOrden: 0
     type: 1
-  - question: Cual categoria del plastico tiene en su designacion el numero 2
+  - question: Cual es el tipo de plastico que tiene asignado el numero 3
     hint: 
     PalabraAnagrama: 
     opciones:
-    - correct: 0
+    - correct: 1
       respuestaTexto: PVC
       numeroOrden: 0
-    - correct: 1
-      respuestaTexto: PEAD
-      numeroOrden: 0
     - correct: 0
-      respuestaTexto: PP
+      respuestaTexto: HDPE
       numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
       numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PS
+      numeroOrden: 0
     type: 1
-  - question: Cual es un  tipo de plastico que existe diferente a Termpoplasticos
+  - question: Cual es el tipo de plastico que tiene asignado el numero 4
     hint: 
     PalabraAnagrama: 
     opciones:
     - correct: 1
-      respuestaTexto: Termoestables
+      respuestaTexto: LDPE
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Termodinamicos
+      respuestaTexto: HDPE
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Elasticos
+      respuestaTexto: PVC
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Reciclables
+      respuestaTexto: PS
       numeroOrden: 0
     type: 1
-  - question: Cual de estos no es el origen de desechos plasticos
+  - question: Cual es el tipo de plastico que tiene asignado el numero 5
     hint: 
     PalabraAnagrama: 
     opciones:
     - correct: 1
-      respuestaTexto: Consumible
+      respuestaTexto: PP
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Comercial
+      respuestaTexto: HDPE
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Industrial
+      respuestaTexto: PVC
       numeroOrden: 0
     - correct: 0
-      respuestaTexto: Domestico
+      respuestaTexto: PS
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el tipo de plastico que tiene asignado el numero 6
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: PS
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: HDPE
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PVC
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PS
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el tipo de plastico que tiene asignado el numero 7
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Otros
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: HDPE
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PVC
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PS
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el tipo de plsatico con mayor facilidad de reciclaje
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: PET
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PS
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PVC
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PP
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el plastico con mayor dificultad de reciclaje
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: PVC
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PS
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PP
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: LDPE
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el tipo de palstico usado en las botellas de refresco
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: PET
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PS
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PP
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: LDPE
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el tipo de palstico usado en las bolsas de mercado
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: HDPE
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PET
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PP
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: LDPE
+      numeroOrden: 0
+    type: 1
+  - question: "Cual es el tipo de palstico usado en las ca\xF1erias"
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: PVC
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PET
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: LDPE
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Otros
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el tipo de palstico usado en los pitillos
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: PP
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PVC
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: LDPE
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: LDPE
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el tipo de palstico usado en las bolsas de basura
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: LDPE
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PET
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: PVC
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: HDPE
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el tipo de palstico usado en los platos desechables
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: PS
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Otros
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: LDPE
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: HDPE
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el tipo de palstico usado en los telefonos
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Otros
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Otros
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: LDPE
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: HDPE
+      numeroOrden: 0
+    type: 1
+  - question: Cual de estos es un lugar de procedencia del plastico
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Sal natural
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Madera
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Hicopor
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Lana
+      numeroOrden: 0
+    type: 1
+  - question: Cuanto se demora en degradarse el plastico en promedio
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: "700 a\xF1os"
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: "300 a\xF1os"
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: "500 a\xF1os"
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: "800 a\xF1os"
+      numeroOrden: 0
+    type: 1
+  - question: Entre los productos plasticos mas contamienantes del planeta se encuentra
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Bolsa plastica
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Botellas plasticas
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Platos desechables
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Telefonos
+      numeroOrden: 0
+    type: 1
+  - question: Cuando puede demorarse en descomponerse el poliestireno
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Nunca
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: "400 a\xF1os"
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: "600 a\xF1os"
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: "800 a\xF1os"
+      numeroOrden: 0
+    type: 1
+  - question: Cual es el material que demora mas en descomponerse
+    hint: 
+    PalabraAnagrama: 
+    opciones:
+    - correct: 1
+      respuestaTexto: Plastico
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Papel
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Vidrio
+      numeroOrden: 0
+    - correct: 0
+      respuestaTexto: Organicos
       numeroOrden: 0
     type: 1
   current: 0
@@ -11503,15 +12088,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.049813706
+      value: -0.0498137
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017453006
+      value: 0.000000017051883
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.704794e-10
+      value: 8.5047314e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1691807237, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11527,15 +12112,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.008996884
+      value: 0.008996879
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -9.31285e-10
+      value: -6.2226485e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.379002e-12
+      value: 5.5986682e-12
       objectReference: {fileID: 0}
     - target: {fileID: 1902527300, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_Follow
@@ -11551,11 +12136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.158
+      value: 3.178
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.26
+      value: -11.6
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11575,7 +12160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.045314413
+      value: 0.04531441
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -11583,7 +12168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -7.8576473e-10
+      value: -7.857647e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2176437046675016371, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11663,11 +12248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.158
+      value: 3.178
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.26
+      value: -11.6
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11675,15 +12260,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0498137
+      value: -0.04981371
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000003450481
+      value: 0.00000003450485
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000017209487
+      value: 0.000000001720951
       objectReference: {fileID: 0}
     - target: {fileID: 4078643985135607696, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -28440,6 +29025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Questiontxt: {fileID: 1080740743}
+  hintTxt: {fileID: 0}
   panelOpciones:
   - {fileID: 1981180966}
   - {fileID: 140990265}
@@ -32124,14 +32710,14 @@ RectTransform:
   m_GameObject: {fileID: 2118708090}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0.52}
-  m_LocalScale: {x: 0.040139057, y: 0.09333629, z: 1}
+  m_LocalScale: {x: 0.04164026, y: 0.10757942, z: 1}
   m_Children: []
   m_Father: {fileID: 488660087}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.043}
+  m_AnchoredPosition: {x: 0, y: 0.184}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118708092
@@ -32373,11 +32959,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.76
+      value: -6.1
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalRotation.w

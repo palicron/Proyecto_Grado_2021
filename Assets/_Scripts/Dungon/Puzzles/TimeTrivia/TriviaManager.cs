@@ -180,7 +180,7 @@ public class TriviaManager : MonoBehaviour
         }
         tiempoRestante = tiempoInicial;
         SetAwnsers();
-        hintTxt.text= QaA[current].hint;
+        if(QaA[current].hint!=null){hintTxt.text= QaA[current].hint;}
         QaA.RemoveAt(current);
     }
 
