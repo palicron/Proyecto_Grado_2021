@@ -40,6 +40,7 @@ public class EquipmentManager : MonoBehaviour
 
     void Start()
     {
+        //PlayerPrefsX.SetIntArray("Equipment", new int[0]);
         currentEquipment = new Equipment[6];
         equipmentUI = GameObject.Find("Equipment");
         playerCtr = gameObject.GetComponent<PlayerCtr>();
@@ -51,7 +52,12 @@ public class EquipmentManager : MonoBehaviour
         int[] savedEquipment = PlayerPrefsX.GetIntArray("Equipment");
         for (int i = 0; i < savedEquipment.Length; i++)
         {
-            Equip(equipmentList.equipments[savedEquipment[i]]);
+            int index = savedEquipment[i];
+            if(index!=-1)
+            {
+                Equip(equipmentList.equipments[savedEquipment[i]]);
+                Debug.Log("Recuperando equipamiento: " + savedEquipment[i]);
+            }
         }
     }
 
@@ -63,6 +69,10 @@ public class EquipmentManager : MonoBehaviour
             if(currentEquipment[i]!=null)
             {
                 savedEquipment[i] = currentEquipment[i].equipmentId;
+            }
+            else
+            {
+                savedEquipment[i] = -1;
             }
         }
         PlayerPrefsX.SetIntArray("Equipment", savedEquipment);
