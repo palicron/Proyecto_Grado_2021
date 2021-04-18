@@ -15,7 +15,8 @@ MonoBehaviour:
   bIsRandomDialogue: 0
   DialoguePriority: 1
   lines:
-  - DialogueDescription: Pregunta 1
+  - id: -1
+    DialogueDescription: Pregunta 1
     LocutorName: Rafael
     JumpQuestion: 0
     JumpTo: 0
@@ -31,7 +32,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Respuesta correcta
+  - id: -1
+    DialogueDescription: Respuesta correcta
     LocutorName: Rafael
     JumpQuestion: 1
     JumpTo: 3
@@ -44,7 +46,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Respuesta incorrecta
+  - id: -1
+    DialogueDescription: Respuesta incorrecta
     LocutorName: Rafael
     JumpQuestion: 1
     JumpTo: 0
@@ -57,11 +60,12 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Continuacion 1
+  - id: -1
+    DialogueDescription: Continuacion 1
     LocutorName: Rafael
     JumpQuestion: 0
     JumpTo: 0
-    sentences: 'La sigueinte pregunta es '
+    sentences: 'La siguiente pregunta es:'
     Type: 0
     Answers: []
     CorrectAnswer: 0
@@ -70,7 +74,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Pregunta 2
+  - id: -1
+    DialogueDescription: Pregunta 2
     LocutorName: Rafael
     JumpQuestion: 0
     JumpTo: 0
@@ -85,7 +90,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Pregunta 3
+  - id: -1
+    DialogueDescription: Pregunta 3
     LocutorName: Rafael
     JumpQuestion: 0
     JumpTo: 0
@@ -100,7 +106,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Continuacion4
+  - id: -1
+    DialogueDescription: Continuacion4
     LocutorName: Rafael
     JumpQuestion: 0
     JumpTo: 0

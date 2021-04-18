@@ -69,5 +69,6 @@ public enum MenuType
     Inventory,
     Description,
     Storage,
-    MiniGame
+    MiniGame,
+    Diary
 }

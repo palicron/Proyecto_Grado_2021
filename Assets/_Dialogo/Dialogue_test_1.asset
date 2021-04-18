@@ -15,12 +15,13 @@ MonoBehaviour:
   bIsRandomDialogue: 0
   DialoguePriority: 1
   lines:
-  - DialogueDescription: 
+  - id: 3
+    DialogueDescription: "Sobre el peri\xF3dico..."
     LocutorName: Carlos
     JumpQuestion: 0
     JumpTo: 0
-    sentences: "El reciclar una tonelada de papel periodico ahorra la suficiente
-      energia  para abastecer una casa de 3 habitaciones durante un a\xF1o. Ahora
+    sentences: "El reciclar una tonelada de papel peri\xF3dico ahorra la suficiente
+      energia para abastecer una casa de 3 habitaciones durante un a\xF1o. Ahora
       tenemos que luchar para conseguir energia para explorar las industrias."
     Type: 0
     Answers: []
@@ -30,13 +31,14 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: 
+  - id: 4
+    DialogueDescription: Sobre las botellas...
     LocutorName: Carlos
     JumpQuestion: 0
     JumpTo: 0
-    sentences: Para producir una botella de 1 litro de agua son necesario 80 litros
-      de agua.  Increible que gastemos tanto para consumir tan poco y todo esto puede
-      mejorar reciclando.  ja que facil!
+    sentences: "Para producir una botella de 1 con capacidad de un litro de agua
+      son necesario 80 litros de agua.  Increible que gastemos tanto para consumir
+      tan poco y todo esto puede mejorar reciclando. \xA1As\xED de f\xE1cil!"
     Type: 0
     Answers: []
     CorrectAnswer: 0
@@ -45,7 +47,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: 
+  - id: 5
+    DialogueDescription: Sobre el aluminio...
     LocutorName: Carlos
     JumpQuestion: 0
     JumpTo: 0
