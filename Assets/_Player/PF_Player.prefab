@@ -572,12 +572,15 @@ MonoBehaviour:
   JumpForce: 12
   NoGroundDownForce: 15
   ForceDownTipe: 1
+  Xvel: 0
+  Yvel: 0
   isGrounded: 0
   canDoubleJump: 0
   CanControlPlayer: 1
   LerpingVelocity: 12
   PlayerVcam: {fileID: 927678895}
   PlayerCamera: {fileID: 0}
+  freeLockCamera: {fileID: 0}
   Tool: {fileID: 165780252}
   Weapon: {fileID: 791989672}
 --- !u!114 &2611549101238117223
@@ -609,6 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storage: {fileID: 0}
+  itemsList: {fileID: 11400000, guid: ac2ae2fc7f3f1444794c6b5961cd8f2e, type: 2}
 --- !u!114 &1161704402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,6 +659,7 @@ MonoBehaviour:
   currentEquipment: []
   equipmentUI: {fileID: 0}
   playerCtr: {fileID: 0}
+  equipmentList: {fileID: 11400000, guid: 6ff1b0e6cde2c9b44b255b989ca54e5d, type: 2}
 --- !u!114 &3105449046126650713
 MonoBehaviour:
   m_ObjectHideFlags: 0

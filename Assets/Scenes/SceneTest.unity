@@ -1132,9 +1132,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
-  far clip plane: 5000
-  field of view: 40
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1159,8 +1159,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303790260}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.44692266, y: -0.00000006021343, z: 0.00000006949527, w: 0.8945726}
+  m_LocalPosition: {x: -7.0508027, y: 11.154591, z: 30.3389}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3923,17 +3923,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1392839994776863535, guid: 91c8c52f13d4da24eaa7b59f3b6bb70b, type: 3}
   m_PrefabInstance: {fileID: 1324772318}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1368823868 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7205207377362041548, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-  m_PrefabInstance: {fileID: 5707072291213595966}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28de0876a4c132f42bdf675c577a344b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &1460490864
 Mesh:
   m_ObjectHideFlags: 0
@@ -5965,198 +5954,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 366645156, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 366645156, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 366645156, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 366645156, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 366645156, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 366645156, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 366645157, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 366645157, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1368823868}
-    - target: {fileID: 366645157, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowDetail
-      objectReference: {fileID: 0}
-    - target: {fileID: 366645157, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RecyclingDiary, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 366645157, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 539535032, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 539535032, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 539535032, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 539535032, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 539535032, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 539535032, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 539535033, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 539535033, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1368823868}
-    - target: {fileID: 539535033, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowDetail
-      objectReference: {fileID: 0}
-    - target: {fileID: 539535033, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RecyclingDiary, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 539535033, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 558799285, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 784648838, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 784648838, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 784648838, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 784648838, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 784648838, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 784648838, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 784648839, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 784648839, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1368823868}
-    - target: {fileID: 784648839, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowDetail
-      objectReference: {fileID: 0}
-    - target: {fileID: 784648839, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RecyclingDiary, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 784648839, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055074452, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1368823868}
-    - target: {fileID: 1055074452, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseDetailButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055074452, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RecyclingDiary, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178965759, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178965759, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178965759, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178965759, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178965759, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178965759, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178965760, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178965760, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1368823868}
-    - target: {fileID: 1178965760, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowDetail
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178965760, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RecyclingDiary, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178965760, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1377372762, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6164,42 +5961,6 @@ PrefabInstance:
     - target: {fileID: 1377372762, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 881067878025876434, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 881067878025876434, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1368823868}
-    - target: {fileID: 881067878025876434, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowDetail
-      objectReference: {fileID: 0}
-    - target: {fileID: 881067878025876434, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RecyclingDiary, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 881067878025876434, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 881067878105105817, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 881067878105105817, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1368823868}
-    - target: {fileID: 881067878105105817, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowDetail
-      objectReference: {fileID: 0}
-    - target: {fileID: 881067878105105817, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RecyclingDiary, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2176437045916823276, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6361,70 +6122,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6677736017439949234, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736017439949234, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736017439949234, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736017439949234, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736017439949234, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736017439949234, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736017494808569, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736017494808569, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736017494808569, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736017494808569, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736017494808569, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736017494808569, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736018764746254, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736018874783700, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1368823868}
-    - target: {fileID: 6677736018874783700, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677736018874783700, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RecyclingDiary, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 6868413340197721835, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6449,47 +6146,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7205207377362041548, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: detailTitle
-      value: 
-      objectReference: {fileID: 5707072291213595969}
-    - target: {fileID: 7205207377362041548, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: detailWindow
-      value: 
-      objectReference: {fileID: 5707072291213595967}
-    - target: {fileID: 7205207377362041548, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-      propertyPath: detailDescription
-      value: 
-      objectReference: {fileID: 5707072291213595968}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
---- !u!1 &5707072291213595967 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 558799285, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-  m_PrefabInstance: {fileID: 5707072291213595966}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5707072291213595968 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 548804492, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-  m_PrefabInstance: {fileID: 5707072291213595966}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5707072291213595969 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 264634323, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
-  m_PrefabInstance: {fileID: 5707072291213595966}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6028154330829157459
 PrefabInstance:
   m_ObjectHideFlags: 0
