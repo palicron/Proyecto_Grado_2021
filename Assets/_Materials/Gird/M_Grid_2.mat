@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3826460711171179507
+--- !u!114 &-8318390997459148366
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,19 +20,22 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_pipes
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 2
+  m_Name: M_Grid_2
+  m_Shader: {fileID: -6465566751694194690, guid: 1406fb4494d5f6a4e91456c189d532c6, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_971363cfc01a43a99902263b3a2ad7e4:
+        m_Texture: {fileID: 2800000, guid: 2e018b0ef6ae54e4ab22cbdc8e233db0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -73,6 +76,30 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_0fd58e777dae4a7bb34637035d8db5f2_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 822d4986852e393439463fe50e971f31, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_29d0d67689f84acf975dc7a2d4c82a65_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 7e06cc7c025c0a1418e53c4ca3719656, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_382edb87490e4106ae11b69a814a9272_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 6ebaf7b516961644bbb03641c29211a1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_4b0051292a754a23a0a62ab66ded7930_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 2e018b0ef6ae54e4ab22cbdc8e233db0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_ae8638fd5bb6479c98d402600414d99c_Texture_1:
+        m_Texture: {fileID: 2800000, guid: d78f6645473a96f4c87f2a98c6ff6faa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_e95a835cae7d4d708fd4f8b2c24f76ec_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 183b3e7ff84c8b64cb04c1dcb53c3f3c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -104,12 +131,12 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Metallic: 0.693
+    - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.649
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -117,8 +144,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.21568628, g: 0.19234823, b: 0.15294118, a: 1}
+    - Vector2_1bd2e65f52ac4f41a0fa639bb76f42f8: {r: 10, g: 1, b: 0, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.078431375, g: 0.02745098, b: 0.015686275, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
