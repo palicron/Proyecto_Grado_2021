@@ -254,6 +254,7 @@ public class PlaftormController : MonoBehaviour
         else if (type == PlatformType.MOVEMENTESCREENTRIGGERED) 
         {
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
+            
         }
         else if (type == PlatformType.TRANSLATEMOVEMENT) 
         {

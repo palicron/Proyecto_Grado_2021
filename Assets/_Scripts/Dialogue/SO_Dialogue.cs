@@ -30,7 +30,7 @@ public class line
     [Space]
     public string[] Answers;
     public int CorrectAnswer;
-    public int CorrectJump;
+    public int CorrectJump; 
     public int InCorrectJump;
     [Header("Asking")]
     public int[] elementNeded;

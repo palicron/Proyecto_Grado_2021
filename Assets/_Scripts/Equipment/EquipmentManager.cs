@@ -36,11 +36,46 @@ public class EquipmentManager : MonoBehaviour
 
     bool callback = true;
 
+    public EquipmentsList equipmentList;
+
     void Start()
     {
+        //PlayerPrefsX.SetIntArray("Equipment", new int[0]);
         currentEquipment = new Equipment[6];
         equipmentUI = GameObject.Find("Equipment");
         playerCtr = gameObject.GetComponent<PlayerCtr>();
+        SetEquipment();
+    }
+
+    void SetEquipment()
+    {
+        int[] savedEquipment = PlayerPrefsX.GetIntArray("Equipment");
+        for (int i = 0; i < savedEquipment.Length; i++)
+        {
+            int index = savedEquipment[i];
+            if(index!=-1)
+            {
+                Equip(equipmentList.equipments[savedEquipment[i]]);
+                Debug.Log("Recuperando equipamiento: " + savedEquipment[i]);
+            }
+        }
+    }
+
+    void OnDestroy()
+    {
+        int[] savedEquipment = new int[currentEquipment.Length];
+        for (int i = 0; i < currentEquipment.Length; i++)
+        {
+            if(currentEquipment[i]!=null)
+            {
+                savedEquipment[i] = currentEquipment[i].equipmentId;
+            }
+            else
+            {
+                savedEquipment[i] = -1;
+            }
+        }
+        PlayerPrefsX.SetIntArray("Equipment", savedEquipment);
     }
 
     public bool Equip (Equipment newItem)

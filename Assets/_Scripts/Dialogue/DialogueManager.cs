@@ -103,7 +103,7 @@ public class DialogueManager : MonoBehaviour
         if (CurrentConversation && ActiveLineIndex < CurrentConversation.lines.Length && !ToEndConversation)
         {
 
-
+            Debug.Log(CurrentConversation.lines[ActiveLineIndex].Type);
             switch (CurrentConversation.lines[ActiveLineIndex].Type)
             {
                 case DialogueType.EndDialogue:
@@ -150,6 +150,7 @@ public class DialogueManager : MonoBehaviour
         {
             StopAllCoroutines();
             DialogueText.text = CurrentConversation.lines[ActiveLineIndex].sentences;
+            Debug.Log("ae: "+DialogueText.text);
             DialogueText.fontSize = textSizeFinal;
             IsTyping = false;
             if (CurrentConversation.lines[ActiveLineIndex].JumpQuestion)
@@ -164,8 +165,12 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-
-            Currentsentece = CurrentConversation.lines[ActiveLineIndex].sentences;
+            line currentLine = CurrentConversation.lines[ActiveLineIndex];
+            Currentsentece = currentLine.sentences;
+            if(currentLine.id != -1)
+            {
+                RecyclingDiary.instance.AddEntry(currentLine.sentences, currentLine.DialogueDescription, currentLine.LocutorName, currentLine.id);
+            }
             StopAllCoroutines();
             StartCoroutine(TypeSentence(Currentsentece));
 
@@ -316,7 +321,6 @@ public class DialogueManager : MonoBehaviour
             {"Play_time",Time.timeSinceLevelLoad },
             {"Repusta a mas informacion","no"}
             });
-                Debug.Log(Result);
             }
 
           

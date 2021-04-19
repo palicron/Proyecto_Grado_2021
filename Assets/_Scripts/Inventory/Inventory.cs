@@ -42,6 +42,8 @@ public class Inventory : MonoBehaviour
 
     public List<ListItem> items = new List<ListItem>();
 
+    public ItemsList itemsList;
+
     void Start()
     {
         //PlayerPrefs.SetInt("numExtraBags", 0);
@@ -54,10 +56,40 @@ public class Inventory : MonoBehaviour
                 extraBag2 = true;
             }
         }
+        SetInventory();
         if (onPocketAddedCallback != null)
         {
             onPocketAddedCallback.Invoke();
         }
+    }
+
+    void SetInventory()
+    {
+        int[] savedItems = PlayerPrefsX.GetIntArray("Inv_Items");
+        int[] savedQuantity = PlayerPrefsX.GetIntArray("Inv_Quantity");
+        for(int i = 0; i<savedItems.Length;i++)
+        {
+            ListItem newListItem = new ListItem(itemsList.items[savedItems[i]]);
+            newListItem.quantity = savedQuantity[i];
+            items.Add(newListItem);
+        }
+        if (onItemChangedCallBack != null)
+        {
+            onItemChangedCallBack.Invoke();
+        }
+    }
+
+    void OnDestroy()
+    {
+        int[] savedItems = new int[items.Count];
+        int[] savedQuantity = new int[items.Count];
+        for (int i = 0; i < items.Count; i++)
+        {
+            savedItems[i] = items[i].id;
+            savedQuantity[i] = items[i].quantity;
+        }
+        PlayerPrefsX.SetIntArray("Inv_Items", savedItems);
+        PlayerPrefsX.SetIntArray("Inv_Quantity", savedQuantity);
     }
 
     private bool VerifyExtraBag()

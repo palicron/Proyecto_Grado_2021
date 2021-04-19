@@ -23,7 +23,7 @@ public class ButtonTriviaTrigger : MonoBehaviour
         cantidadPreguntasTrivia = manager.cantidadDePreguntas;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(PuzzlePoints.Length>0 && manager.preguntasRespondidasCorrectamente < PuzzlePoints.Length) 
         {
@@ -37,11 +37,12 @@ public class ButtonTriviaTrigger : MonoBehaviour
         {
             if (manager.listOfAwnsers.Contains(option))
             {
-                manager.preguntasRespondidasCorrectamente++;
+
+                StartCoroutine(WaitButtonMove(waitTime));
                 anuncio.text = "Correcto";
                 foreach(TextMeshPro ops in OtrosOpciones)
                 {
-                ops.text="Incorrecto";
+                     ops.text="Incorrecto";
                 }
                 if (cantidadPreguntasTrivia == manager.preguntasRespondidasCorrectamente)
                 {
@@ -49,7 +50,15 @@ public class ButtonTriviaTrigger : MonoBehaviour
                 }
             }
             else {
+                manager.ContIncorrectas++;
                 anuncio.text = "Incorrecto";
+                if(manager.ContIncorrectas==manager.LimiteIncorrectas)
+                {
+                    if(manager.preguntasRespondidasCorrectamente > 0){
+                        manager.preguntasRespondidasCorrectamente--;
+                    }
+                    manager.ContIncorrectas=0; 
+                }
             }
         }
 
@@ -78,11 +87,18 @@ public class ButtonTriviaTrigger : MonoBehaviour
                 ops.text="";
             }
         }
+        manager.Questiontxt.text="";
         anuncio.text="";
         yield return new WaitForSeconds(time);
-        manager.changeQuestion();
-
+        if(manager.QaA.Count !=0)
+        {
+            manager.changeQuestion();
+        }
     }
 
+    IEnumerator WaitButtonMove(float time) {
+         yield return new WaitForSeconds(time);
+           manager.preguntasRespondidasCorrectamente++;
+    }
 
 }

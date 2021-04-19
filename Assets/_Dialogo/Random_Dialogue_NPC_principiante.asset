@@ -15,7 +15,8 @@ MonoBehaviour:
   bIsRandomDialogue: 1
   DialoguePriority: 1
   lines:
-  - DialogueDescription: Random_NPC
+  - id: 6
+    DialogueDescription: Sobre la basura...
     LocutorName: Reciclador Novato
     JumpQuestion: 0
     JumpTo: 0
@@ -30,13 +31,14 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Random_NPC
+  - id: 7
+    DialogueDescription: Sobre el reciclaje 2...
     LocutorName: Reciclador Novato
     JumpQuestion: 0
     JumpTo: 0
     sentences: "El reciclaje es un proceso para crear nuevos objetos a partir de
       materiales viejos y usados. Esto ayuda a reducir la energ\xEDa requerida  y
-      materiales necesarios para la produccion de nuevos elementos\n"
+      materiales necesarios para la produccion de nuevos elementos.\n"
     Type: 0
     Answers: []
     CorrectAnswer: 0
@@ -45,15 +47,14 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Random_NPC
+  - id: 8
+    DialogueDescription: Sobre el aluminio 2...
     LocutorName: Reciclador Novato
     JumpQuestion: 0
     JumpTo: 0
-    sentences: 'El Aluminio es el metal que permite ser reciclado en su totalidad
-      permitiendo asi reconstruir latas enteras de otra lata utilizada. Imaginate
-      todo lo que usemos podemos reciclarlo no hay perdida increible !
-
-'
+    sentences: "El Aluminio es el metal que permite ser reciclado en su totalidad
+      permitiendo asi reconstruir latas enteras de otra lata utilizada. \xA1Imaginate
+      todo lo que usemos podemos reciclarlo no hay perdida increible!\n"
     Type: 0
     Answers: []
     CorrectAnswer: 0
@@ -62,7 +63,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Random_NPC
+  - id: 9
+    DialogueDescription: Sobre el papel 2...
     LocutorName: Reciclador Novato
     JumpQuestion: 0
     JumpTo: 0
@@ -76,7 +78,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Random_NPC
+  - id: 10
+    DialogueDescription: Sobre el vidrio...
     LocutorName: Reciclador Novato
     JumpQuestion: 0
     JumpTo: 0
@@ -91,7 +94,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Random_NPC
+  - id: 11
+    DialogueDescription: "Sobre el pl\xE1stico 2..."
     LocutorName: Reciclador Novato
     JumpQuestion: 0
     JumpTo: 0
@@ -106,13 +110,14 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Random_NPC
+  - id: 12
+    DialogueDescription: Sobre la basura 2...
     LocutorName: Reciclador Novato
     JumpQuestion: 0
     JumpTo: 0
     sentences: "Nuestra basura se compone de: 45% materia org\xE1nica, 22% papel
-      y cart\xF3n, 10% pl\xE1stico, 7% vidrio, 4% metal, 2% brik y 10% otros residuos. 
-      Lo que podemos reciclar es una locura!"
+      y cart\xF3n, 10% pl\xE1stico, 7% vidrio, 4% metal, 2% brik y 10% otros residuos.
+      \xA1Lo que podemos reciclar es una locura!"
     Type: 0
     Answers: []
     CorrectAnswer: 0
