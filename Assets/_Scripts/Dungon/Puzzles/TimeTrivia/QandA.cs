@@ -6,11 +6,12 @@ using UnityEngine;
 public class QandA
 {
     public string question;
-    public string hint;
-    [Header("Anagrama Dependences")]
-    public string PalabraAnagrama;
     public List<AnswerScript> opciones;
     public QuestionType type;
+    [Header("Anagrama Dependences")]
+    public string PalabraAnagrama;
+    public string hint;
+    
   
 
 
