@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class EquipmentSlot : MonoBehaviour
 {
@@ -71,9 +72,9 @@ public class EquipmentSlot : MonoBehaviour
         }
     }
 
-    public void UseItem()
+    public void UseItem(PointerEventData eventData)
     {
-        if (inventoryUI.activeSelf)
+        if (eventData.button == PointerEventData.InputButton.Right)
         {
             removeItem();
         }

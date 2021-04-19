@@ -6,6 +6,7 @@ using UnityEngine;
 public class Equipment : Item
 {
     public EquipSlot slot;
+    public int equipmentId;
     public int armorModifier;
     public int damageModifier;
     public int velocityModifier;

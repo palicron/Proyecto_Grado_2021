@@ -26,8 +26,6 @@ public class PlayerScore : MonoBehaviour
 
     void Start()
     {
-        int[] p = { 1000, 1000, 1000, 1000 };
-        PlayerPrefsX.SetIntArray("Score", p );
         score = PlayerPrefsX.GetIntArray("Score", 0, 4);
         scoreUI = GameObject.Find("PF_GameUI/Score/Recipient");
         scoreUIText[0] = scoreUI.transform.Find("paper").transform.Find("Quantity").GetComponent<Text>();
@@ -41,13 +39,16 @@ public class PlayerScore : MonoBehaviour
     {
         score[element] += augment;
         scoreUIText[element].text = score[element].ToString();
+    }
+
+    void OnDestroy()
+    {
         PlayerPrefsX.SetIntArray("Score", score);
     }
 
     public void SetScore(int[] newScore)
     {
         score = newScore;
-        PlayerPrefsX.SetIntArray("Score", score);
         RefreshInterface();
     }
 

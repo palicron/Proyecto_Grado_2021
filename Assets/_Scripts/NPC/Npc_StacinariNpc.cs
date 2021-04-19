@@ -63,6 +63,7 @@ public class Npc_StacinariNpc : NPC
         else
         {
             DialogueManager.intance.StarDialogue(Dialogues[DialogueIndex], this);
+            Debug.Log(Dialogues[DialogueIndex]);
         }
     }
 
