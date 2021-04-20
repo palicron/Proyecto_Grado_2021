@@ -8,15 +8,17 @@ public class OptionTrigger : MonoBehaviour
     [Header("Dependences")]
     public DivisionManager manager;
     public PlaftormController platform;
+    public PlaftormController[] otherPlatforms;
     [Header("Trigger Characteristics")]
     public int optionNumber;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Platform")
+        if (other.gameObject.tag == "Player")
         {
             if (platform!=null) 
             {
+                platform.active = true;
                 if (manager.listOfAwnsers.Contains(optionNumber)) 
                 {
                     platform.GetComponentInChildren<TextMeshPro>().text = "Correcto";
@@ -29,10 +31,16 @@ public class OptionTrigger : MonoBehaviour
                     manager.ContIncorrectas++;
                     manager.oportunidades--;
                 }
+                foreach (PlaftormController plat in otherPlatforms)
+                {
+                    plat.active = true;
+                }
                 //Activo la plataforma con la que colisiono
-                manager.changeQuestionChossing();
-                platform.active = true;
-
+                if (manager.QaA.Count != 0)
+                {
+                    manager.changeQuestionChossing();
+                }
+                else { manager.failed = true; }
             }
         }
 

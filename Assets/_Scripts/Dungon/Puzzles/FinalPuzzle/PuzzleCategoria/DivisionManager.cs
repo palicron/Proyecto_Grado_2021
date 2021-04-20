@@ -17,27 +17,28 @@ public class DivisionManager : MonoBehaviour
     public float tiempoInicial;
     public float tiempoRestante;
     public bool CuentaRegresiva;
-    private bool changingTimer;
+    public float waitingTime;
     [Header("Questions/Anwsers")]
     public List<QandA> QaA;
     public int current;
     public List<int> listOfAwnsers;
     [Header("Task Failed")]
     public PlaftormController platformsFailed;
-    [Header("Task Completed")]
+    [Header("Task Information")]
     public int oportunidades;
     public int faltantes;
     public int ContIncorrectas;
     public int ContCorrectas;
     public bool completed;
+    public bool failed;
 
 
     private void Start()
     {
         CuentaRegresiva = false;
-        changingTimer = false;
         ContCorrectas = 0;
         ContIncorrectas = 0;
+        failed = false;
         completed = false;
         if (Inicializar) { generateQuestion(); }
     }
@@ -60,18 +61,36 @@ public class DivisionManager : MonoBehaviour
                 changeQuestionTimer();
             }
         }
+        if ( failed) 
+        {
+            Questiontxt.text = "Fallaste";
+            timeTxt.text = "";
+            foreach (PlaftormController plat in platforms) 
+            {
+                plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
+                plat.active = true;
+            }
+        }
     }
 
     public void changeQuestionTimer()
     {
         CuentaRegresiva = false;
-        StartCoroutine(WaitTimerOut(1f));
+        foreach (PlaftormController plat in platforms)
+        {
+            plat.waitTime = waitingTime-0.4f;
+            plat.active = true;
+        }
+        StartCoroutine(WaitTimerOut(waitingTime));
+
     }
 
     public void changeQuestionChossing() 
     {
         CuentaRegresiva = false;
-        StartCoroutine(WaitTimeChoosed(1.5f));
+        StartCoroutine(WaitTimeChoosed(waitingTime));
+      
+       
     }
 
     void generateQuestion()
@@ -112,6 +131,8 @@ public class DivisionManager : MonoBehaviour
     }
 
 
+
+
     IEnumerator WaitTimerOut(float time)
     {
         yield return new WaitForSeconds(time);
@@ -123,6 +144,11 @@ public class DivisionManager : MonoBehaviour
     IEnumerator WaitTimeChoosed(float time)
     {
         Questiontxt.text = "";
+        foreach (PlaftormController plat in platforms)
+        {
+            plat.waitTime = waitingTime - 0.4f;
+            plat.active = true;
+        }
         yield return new WaitForSeconds(time);
         generateQuestion();
     }

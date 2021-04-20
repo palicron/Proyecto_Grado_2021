@@ -18,6 +18,7 @@ public class PlaftormController : MonoBehaviour
     [Header("Platform Movement")]
     public float platformSpeed;
     public float waitTime;
+    public Vector3 initialPoint;
     public Vector3 VelocityVector;
     [Header("Platform Rotations")]
     public float rotationX;
@@ -71,6 +72,7 @@ public class PlaftormController : MonoBehaviour
 
     void Start()
     {
+        initialPoint = this.transform.position;
         plactr = GameObject.Find("Player").GetComponent<PlayerCtr>();
         PlayerInventory = GameObject.Find("Player").GetComponent<Inventory>() ;
         Equipment = GameObject.Find("Player").GetComponent<EquipmentManager>();
