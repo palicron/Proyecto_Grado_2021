@@ -31,6 +31,10 @@ public class DivisionManager : MonoBehaviour
     public int ContCorrectas;
     public bool completed;
     public bool failed;
+    [Header("Completed depencies")]
+    public PlaftormController[] completedPlat;
+    [Header("Trap depencies")]
+    public PlaftormController[] changeQuestTrap;
 
 
     private void Start()
@@ -66,6 +70,29 @@ public class DivisionManager : MonoBehaviour
             Questiontxt.text = "Fallaste";
             timeTxt.text = "";
             foreach (PlaftormController plat in platforms) 
+            {
+                plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
+                plat.active = true;
+            }
+            foreach (PlaftormController plat in changeQuestTrap) 
+            {
+                plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
+                plat.GetComponentInChildren<DebufController>().DammageDebuff = 100f;
+                plat.platformSpeed = 4f;   
+                plat.active = true;
+            }
+        }
+        if (completed) 
+        {
+            CuentaRegresiva = false;
+            timeTxt.text = "";
+            Questiontxt.text = "Completado";
+            foreach (PlaftormController plat in completedPlat)
+            {
+                 plat.active = true;
+
+            }
+            foreach (PlaftormController plat in platforms)
             {
                 plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
                 plat.active = true;

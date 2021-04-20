@@ -18,24 +18,41 @@ public class OptionTrigger : MonoBehaviour
         {
             if (platform!=null) 
             {
+                //Activo la plataforma con la que colisiono
                 platform.active = true;
                 if (manager.listOfAwnsers.Contains(optionNumber)) 
                 {
                     platform.GetComponentInChildren<TextMeshPro>().text = "Correcto";
                     manager.ContCorrectas++;
                     manager.faltantes--;
+                    if (manager.faltantes==0) 
+                    {
+                        manager.completed = true;
+                    }
                 }
                 else 
                 {
                     platform.GetComponentInChildren<TextMeshPro>().text = "Incorrecto";
+                    manager.timeTxt.text = "Trampa activada";
                     manager.ContIncorrectas++;
                     manager.oportunidades--;
+                    if (manager.oportunidades == 0)
+                    {
+                        manager.failed = true;
+                    }
+                    else
+                    {
+                        for (int i = 1; i <= manager.ContIncorrectas; i++)
+                        {
+                            manager.changeQuestTrap[i].active = true;
+                        }
+                    }
+
                 }
                 foreach (PlaftormController plat in otherPlatforms)
                 {
                     plat.active = true;
                 }
-                //Activo la plataforma con la que colisiono
                 if (manager.QaA.Count != 0)
                 {
                     manager.changeQuestionChossing();

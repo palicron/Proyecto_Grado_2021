@@ -30,7 +30,6 @@ public class DebufController : MonoBehaviour
     }
 
 
-
     void OnTriggerEnter(Collider other) 
     {
 
