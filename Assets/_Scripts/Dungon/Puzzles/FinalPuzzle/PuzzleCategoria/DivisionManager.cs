@@ -74,13 +74,7 @@ public class DivisionManager : MonoBehaviour
                 plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
                 plat.active = true;
             }
-            foreach (PlaftormController plat in changeQuestTrap) 
-            {
-                plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
-                plat.GetComponentInChildren<DebufController>().DammageDebuff = 100f;
-                plat.platformSpeed = 4f;   
-                plat.active = true;
-            }
+            changeQuestTrap[ContIncorrectas].active = true;
         }
         if (completed) 
         {
@@ -95,6 +89,13 @@ public class DivisionManager : MonoBehaviour
             foreach (PlaftormController plat in platforms)
             {
                 plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
+                plat.active = true;
+            }
+            foreach (PlaftormController plat in changeQuestTrap)
+            {
+                plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
+                plat.GetComponentInChildren<DebufController>().DammageDebuff = 0f;
+                plat.platformSpeed = 10f;
                 plat.active = true;
             }
         }
