@@ -6,9 +6,10 @@ public class TriggerFinalRooms : MonoBehaviour
 {
 
     [Header("Dependences")]
-    public PaperRoomManager oldManager;
-    public PaperRoomManager newManager;
+    public PaperRoomManager paperManager;
+    public MetalRoomManager metalManager;
     public PlaftormController platform;
+
 
 
     private void OnTriggerEnter(Collider other)
@@ -19,9 +20,9 @@ public class TriggerFinalRooms : MonoBehaviour
             {
                 platform.active = false;
             }
-            if(oldManager!=null && newManager!=null) 
+            if(paperManager != null && metalManager != null) 
             {
-                newManager.oportunidades += oldManager.oportunidades;
+                metalManager.oportunidades = paperManager.oportunidades + metalManager.oportunidades;
             }
         }
 
