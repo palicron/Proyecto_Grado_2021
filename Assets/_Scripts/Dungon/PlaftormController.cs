@@ -34,6 +34,8 @@ public class PlaftormController : MonoBehaviour
     public float playerDrag;
     [Header("TrapPlatform")]
     public int positionTrap;
+    [Header("Button Values")]
+    public bool buttonOn;
     [Header("Platform Array")]
     public Transform[] positions;
     public float[] speedVariation;
@@ -47,7 +49,6 @@ public class PlaftormController : MonoBehaviour
     public bool active = false;
     public float verify=0;
     [Header("banda Trasportadora")]
-   
     public float BandaSpeed=15.0f;
     [SerializeField]
     bool direction=true;
@@ -67,7 +68,7 @@ public class PlaftormController : MonoBehaviour
         WALLPATHSPEEDVAR,
         ROTATIONTIMER,
         TRAPFALLINGPLATFORM,
-        BUTTONTRIGGERTRAP
+        BUTTONPLATFORM
     }
 
     void Start()
@@ -78,6 +79,7 @@ public class PlaftormController : MonoBehaviour
         Equipment = GameObject.Find("Player").GetComponent<EquipmentManager>();
         Score = GameObject.Find("Player").GetComponent<PlayerScore>();
         playerOnPlat = false;
+        buttonOn = false;
         positionTrap = 1;
         if(!direction)
         {
@@ -118,7 +120,13 @@ public class PlaftormController : MonoBehaviour
         }
         else if (type == PlatformType.ROTATIONTIMER)
         {
-            platformRB.DORotate(new Vector3(0, 0, 0), platformSpeed/2, RotateMode.Fast);
+            platformRB.DORotate(new Vector3(0, 0, 0), platformSpeed / 2, RotateMode.Fast);
+
+        }
+        //Retorna el Boton a la posicion para ser activado
+        else if (type == PlatformType.BUTTONPLATFORM)
+        {
+            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed*Time.deltaTime));
 
         }
         else if (type == PlatformType.TRIGGEREXIT)
@@ -258,6 +266,12 @@ public class PlaftormController : MonoBehaviour
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
             
         }
+        //Activa el boton en espera de la reactiacion para volver a su posicion inicial
+        else if (type == PlatformType.BUTTONPLATFORM)
+        {
+            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[1].position, platformSpeed * Time.deltaTime));
+
+        }
         else if (type == PlatformType.TRANSLATEMOVEMENT) 
         {
                 if (moveToTheNext)
@@ -320,35 +334,9 @@ public class PlaftormController : MonoBehaviour
         else if (type == PlatformType.TRANSPORTPLAYER)
         {
             if (playerOnPlat)
-               {
+            {
 
                 playerRigid.AddForce(transform.right * directInt * BandaSpeed,ForceMode.Acceleration);
-                    //playerVelx = VelX;
-                    //playerVelz = Velz;
-                    //if (VelX==0 && Velz==0)
-                    //{
-                    //playerVelx = playerRigid.velocity.x;
-                    //playerVelz = playerRigid.velocity.z;
-
-                //}
-                //else if (plactr.Yvel !=0 && plactr.Xvel==0)
-                //{
-                //    playerVelx = playerRigid.velocity.x;
-                //}
-                //else if (plactr.Xvel != 0 && plactr.Yvel==0)
-                //{
-                //    playerVelz = playerRigid.velocity.z;
-                //}
-                //else if (plactr.Yvel != 0 && plactr.Xvel != 0)
-                //{
-                //    playerVelz = playerRigid.velocity.z;
-                //    playerVelx = playerRigid.velocity.x;
-                //}
-                //playerVely = playerRigid.velocity.y;
-                //Vector3 newVelocity = new Vector3(playerVelx, playerVely, playerVelz);
-                //playerRigid.velocity = newVelocity;
-
-
             }
            
         }
@@ -407,10 +395,6 @@ public class PlaftormController : MonoBehaviour
                     playerRigid.velocity = newVelocity;
                }
             StartCoroutine(WaitForReset(waitTime));
-        }
-        else if (type == PlatformType.BUTTONTRIGGERTRAP)
-        {
-            //TODO 
         }
     }
 

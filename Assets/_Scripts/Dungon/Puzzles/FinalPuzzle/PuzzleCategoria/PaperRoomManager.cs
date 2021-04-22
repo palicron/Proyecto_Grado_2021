@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DivisionManager : MonoBehaviour
+public class PaperRoomManager : MonoBehaviour
 {
-    [Header("Question Dependences")]
+    [Header("Manager Dependences")]
     public TextMeshPro Questiontxt;
     public TextMeshPro timeTxt;
     public GameObject[] panelOpciones;
     public PlaftormController[] platforms;
+    public int positionBotons;
     public TextMeshPro oportunidadesTxt;
     public TextMeshPro faltantesTxt;
     public bool Inicializar;
@@ -33,8 +34,6 @@ public class DivisionManager : MonoBehaviour
     public bool failed;
     [Header("Completed depencies")]
     public PlaftormController[] completedPlat;
-    [Header("Trap depencies")]
-    public PlaftormController[] changeQuestTrap;
 
 
     private void Start()
@@ -50,6 +49,7 @@ public class DivisionManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         oportunidadesTxt.text = "Oportunidades \n " + oportunidades;
         faltantesTxt.text = "Faltan \n " + faltantes;
         if (CuentaRegresiva)
@@ -61,7 +61,7 @@ public class DivisionManager : MonoBehaviour
             }
             else
             {
-                timeTxt.text = "Se acabo el tiempo";
+                timeTxt.text = "Tiempo agotado";
                 changeQuestionTimer();
             }
         }
@@ -69,12 +69,7 @@ public class DivisionManager : MonoBehaviour
         {
             Questiontxt.text = "Fallaste";
             timeTxt.text = "";
-            foreach (PlaftormController plat in platforms) 
-            {
-                plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
-                plat.active = true;
-            }
-            changeQuestTrap[ContIncorrectas].active = true;
+            platformsFailed.active = true;
         }
         if (completed) 
         {
@@ -91,37 +86,26 @@ public class DivisionManager : MonoBehaviour
                 plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
                 plat.active = true;
             }
-            foreach (PlaftormController plat in changeQuestTrap)
-            {
-                plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
-                plat.GetComponentInChildren<DebufController>().DammageDebuff = 0f;
-                plat.platformSpeed = 10f;
-                plat.active = true;
-            }
         }
     }
 
     public void changeQuestionTimer()
     {
         CuentaRegresiva = false;
-        foreach (PlaftormController plat in platforms)
-        {
-            plat.waitTime = waitingTime-0.4f;
-            plat.active = true;
-        }
+        ContIncorrectas++;
+        oportunidades--;
         StartCoroutine(WaitTimerOut(waitingTime));
 
     }
 
-    public void changeQuestionChossing() 
+    public void AnwserChoosed() 
     {
         CuentaRegresiva = false;
-        StartCoroutine(WaitTimeChoosed(waitingTime));
-      
-       
+        Questiontxt.text = "";
+   
     }
 
-    void generateQuestion()
+   public void generateQuestion()
     {
         current = Random.Range(0, QaA.Count);
         Questiontxt.text = QaA[current].question;
@@ -132,6 +116,10 @@ public class DivisionManager : MonoBehaviour
         for (int i = 0; i < panelOpciones.Length; i++)
         {
             panelOpciones[i].GetComponentInChildren<TextMeshPro>().text = "";
+        }
+        foreach (PlaftormController palt in platforms)
+        {
+            palt.active = false;
         }
         tiempoRestante = tiempoInicial;
         SetAwnsers();
@@ -159,25 +147,10 @@ public class DivisionManager : MonoBehaviour
     }
 
 
-
-
     IEnumerator WaitTimerOut(float time)
     {
         yield return new WaitForSeconds(time);
-        ContIncorrectas++;
-        oportunidades--;
         generateQuestion();
     }
 
-    IEnumerator WaitTimeChoosed(float time)
-    {
-        Questiontxt.text = "";
-        foreach (PlaftormController plat in platforms)
-        {
-            plat.waitTime = waitingTime - 0.4f;
-            plat.active = true;
-        }
-        yield return new WaitForSeconds(time);
-        generateQuestion();
-    }
 }

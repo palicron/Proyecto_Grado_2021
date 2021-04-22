@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class OptionTrigger : MonoBehaviour
+public class PaperRoomTrigger : MonoBehaviour
 {
     [Header("Dependences")]
-    public DivisionManager manager;
+    public PaperRoomManager manager;
     public PlaftormController platform;
-    public PlaftormController[] otherPlatforms;
+    public PaperQuestionTrigger questionManger;
     [Header("Trigger Characteristics")]
     public int optionNumber;
+    public float waitTime;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,7 +21,6 @@ public class OptionTrigger : MonoBehaviour
             if (platform!=null) 
             {
                 //Activo la plataforma con la que colisiono
-                platform.active = true;
                 if (manager.listOfAwnsers.Contains(optionNumber)) 
                 {
                     platform.GetComponentInChildren<TextMeshPro>().text = "Correcto";
@@ -27,6 +28,13 @@ public class OptionTrigger : MonoBehaviour
                     manager.faltantes--;
                     if (manager.faltantes==0) 
                     {
+                        foreach (PlaftormController plat in questionManger.traps)
+                        {
+                            plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
+                            plat.GetComponentInChildren<DebufController>().DammageDebuff = 0f;
+                            plat.platformSpeed = 10f;
+                            plat.active = true;
+                        }
                         manager.completed = true;
                     }
                 }
@@ -40,26 +48,25 @@ public class OptionTrigger : MonoBehaviour
                     {
                         manager.failed = true;
                     }
-                    else
-                    {
-                        for (int i = 1; i <= manager.ContIncorrectas; i++)
-                        {
-                            manager.changeQuestTrap[i].active = true;
-                        }
-                    }
 
                 }
-                foreach (PlaftormController plat in otherPlatforms)
-                {
-                    plat.active = true;
-                }
-                if (manager.QaA.Count != 0)
-                {
-                    manager.changeQuestionChossing();
-                }
-                else { manager.failed = true; }
+                questionManger.activated = false;
+                StartCoroutine(WaitMovement(waitTime));
+                manager.AnwserChoosed();
+               
             }
         }
 
     }
+
+    IEnumerator WaitMovement(float time)
+    {
+        yield return new WaitForSeconds(time);
+        foreach (PlaftormController plat in manager.platforms)
+        {
+
+            plat.active = true;
+        }
+    }
+
 }
