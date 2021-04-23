@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerFinalRooms : MonoBehaviour
+public class TrapTrigger : MonoBehaviour
 {
 
     [Header("Dependences")]

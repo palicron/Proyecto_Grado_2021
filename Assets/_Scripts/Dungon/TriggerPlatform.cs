@@ -10,6 +10,7 @@ public class TriggerPlatform : MonoBehaviour
 
     public PlaftormController platformCt;
     [Header("ON/OFF VALUES")]
+    public float waitTimeTriggered;
     public TextMeshPro state;
     public float Velx;
     public float Velz;
@@ -28,13 +29,14 @@ public class TriggerPlatform : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (platformCt.type == PlaftormController.PlatformType.TRIGGEREXIT)
-            {
-                platformCt.active = true;
-            }
-            else if (platformCt.type == PlaftormController.PlatformType.ROTATIVE)
+            
+             if (platformCt.type == PlaftormController.PlatformType.ROTATIVE)
             {
                 platformCt.platformSpeed = 0;
+            }
+            else if (platformCt.type == PlaftormController.PlatformType.TIMEDTRIGGERDMOVE)
+            {
+                StartCoroutine(WaitForMove(waitTimeTriggered));
             }
 
             else if (platformCt.type == PlaftormController.PlatformType.TRANSPORTPLAYER)
@@ -52,15 +54,6 @@ public class TriggerPlatform : MonoBehaviour
                     }
                 }
                     
-
-                //if (Velx != 0)
-                //{
-                //    platformCt.VelX = Velx;
-                //}
-                //if (Velz != 0)
-                //{
-                //    platformCt.Velz = Velz;
-                //}
             }
             else if(state!=null)
             {
@@ -99,16 +92,38 @@ public class TriggerPlatform : MonoBehaviour
         
     }
 
-    void OnTriggerExit(Collider other) {
-        if (platformCt.type == PlaftormController.PlatformType.ROTATIVETRIGGER)
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
         {
-            platformCt.platformRB.DORotate(new Vector3(0, 0, 0), platformCt.platformSpeed, RotateMode.Fast);
-            platformCt.active = false;
-        }
-        else if (platformCt.type == PlaftormController.PlatformType.TRIGGEREXIT)
-        {
-            platformCt.active = false;
 
+            if (platformCt.type == PlaftormController.PlatformType.TRIGGEREXIT)
+            {
+                platformCt.active = true;
+
+            }
+            else if (platformCt.type == PlaftormController.PlatformType.TRANSLATEMOVEMENT)
+            {
+                platformCt.active = true;
+
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider other) {
+
+        if (other.gameObject.tag == "Player")
+        {
+            if (platformCt.type == PlaftormController.PlatformType.ROTATIVETRIGGER)
+            {
+                platformCt.platformRB.DORotate(new Vector3(0, 0, 0), platformCt.platformSpeed, RotateMode.Fast);
+                platformCt.active = false;
+            }
+            else if (platformCt.type == PlaftormController.PlatformType.TRIGGEREXIT)
+            {
+                platformCt.active = false;
+
+            }
         }
     }
 

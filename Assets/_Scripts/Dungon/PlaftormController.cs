@@ -24,6 +24,7 @@ public class PlaftormController : MonoBehaviour
     public float rotationX;
     public float rotationY;
     public float rotationZ;
+    public bool initialDif;
     [Header("Platform Velocity ")]
     public float VelX;
     public float Vely;
@@ -68,7 +69,8 @@ public class PlaftormController : MonoBehaviour
         WALLPATHSPEEDVAR,
         ROTATIONTIMER,
         TRAPFALLINGPLATFORM,
-        BUTTONPLATFORM
+        BUTTONPLATFORM,
+        TIMEDTRIGGERDMOVE
     }
 
     void Start()
@@ -106,10 +108,6 @@ public class PlaftormController : MonoBehaviour
         playerOnPlat = false;
         playerRigid = null;
     }
-
-
-
-
     private void FixedUpdate()
     {
         VelocityVector = platformRB.velocity;
@@ -130,6 +128,11 @@ public class PlaftormController : MonoBehaviour
 
         }
         else if (type == PlatformType.TRIGGEREXIT)
+        {
+            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
+
+        }
+        else if (type == PlatformType.TIMEDTRIGGERDMOVE)
         {
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
 
@@ -265,6 +268,12 @@ public class PlaftormController : MonoBehaviour
         {
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
             
+        }
+        else if (type == PlatformType.TIMEDTRIGGERDMOVE)
+        {
+            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[1].position, platformSpeed * Time.deltaTime));
+            StartCoroutine(WaitForReset(waitTime));
+
         }
         //Activa el boton en espera de la reactiacion para volver a su posicion inicial
         else if (type == PlatformType.BUTTONPLATFORM)
@@ -413,6 +422,7 @@ public class PlaftormController : MonoBehaviour
         yield return new WaitForSeconds(time);
         active = true;
     }
+
 
     IEnumerator WaitForReset(float time)
     {
