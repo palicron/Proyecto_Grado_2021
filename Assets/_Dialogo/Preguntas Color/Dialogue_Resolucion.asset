@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f450dec53465c4ab22560f8b560a95, type: 3}
+  m_Name: Dialogue_Resolucion
+  m_EditorClassIdentifier: 
+  bIsRandomDialogue: 0
+  DialoguePriority: 1
+  lines:
+  - id: 100
+    DialogueDescription: Reglamentacion Colombia
+    LocutorName: Reciclador Experto
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: 'Hola reciclado, veo que bienes por algo de conocimiento '
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: 101
+    DialogueDescription: Reglamentacion Colombia
+    LocutorName: Reciclador Experto
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "\xBFTe gustar\xEDa que te contara sobre la legislaci\xF3n del reciclaje
+      dentro de Colombia?"
+    Type: 5
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About:
+    - Por supuesto
+    - No gracias
+    WhereToJumpInfo: 0200000008000000
+  - id: 11
+    DialogueDescription: Reglamentacion Colombia
+    LocutorName: Reciclador Experto
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "Seg\xFAn el nuevo c\xF3digo de reciclaje en Colombia se usa tres
+      c\xF3digos de color para identificar los distintos residuos."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: 12
+    DialogueDescription: Reglamentacion Colombia
+    LocutorName: Reciclador Experto
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "Seg\xFAn la resoluci\xF3n 2184 se usar\xE1n los siguientes colores
+      Blanco Verde y negro, con rojo para residuos peligroso."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: 13
+    DialogueDescription: Reglamentacion Colombia
+    LocutorName: Reciclador Experto
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "En este nuevo c\xF3digo colombiano la caneca verde contiene los residuos
+      Org\xE1nicos."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: 14
+    DialogueDescription: Reglamentacion Colombia
+    LocutorName: Reciclador Experto
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "En este nuevo c\xF3digo colombiano la caneca negra contiene los residuos
+      No aprovechables."
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: 16
+    DialogueDescription: Reglamentacion Colombia
+    LocutorName: Reciclador Experto
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "En este nuevo c\xF3digo colombiano la caneca blanca contiene todo
+      residuo aprovechable"
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: 102
+    DialogueDescription: Reglamentacion Colombia
+    LocutorName: Reciclador Experto
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "Recuerda bien estas legislaciones nuevas para que pueda ayudar al
+      pa\xEDs reciclando de forma correcta."
+    Type: 1
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: 103
+    DialogueDescription: Reglamentacion Colombia
+    LocutorName: Reciclador Experto
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: "Ok espero que ya conozcas esta nuevas reglas para ayudar el pa\xEDs "
+    Type: 1
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
