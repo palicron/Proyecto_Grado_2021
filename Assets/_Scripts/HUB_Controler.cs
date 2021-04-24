@@ -17,7 +17,7 @@ public class HUB_Controler : MonoBehaviour
     GameObject IndustriColum;
     [SerializeField]
     GameObject TowerDoor;
-
+    [SerializeField]
     private void Start()
     {
         intance = this;
@@ -25,16 +25,18 @@ public class HUB_Controler : MonoBehaviour
 
     public void starHub()
     {
-        Debug.Log("Hub");
-        Debug.Log(GameManager.progress[1]);
+       
         if (GameManager.progress[1])
         {
             Destroy(TomsTrigger);
         }
-
-    if(GameManager.progress[2])
+        if(GameManager.progress[2])
         {
             Destroy(IndutryDorr);
+        }
+        if(GameManager.progress[3])
+        {
+            Destroy(TowerDoor);
         }
     }
 }

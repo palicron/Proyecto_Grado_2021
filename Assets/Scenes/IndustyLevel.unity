@@ -685,10 +685,12 @@ MonoBehaviour:
   type: 6
   platformSpeed: 0
   waitTime: 1.5
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -697,6 +699,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 2090140638}
   - {fileID: 798156191}
@@ -987,10 +990,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 10
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -999,6 +1004,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1285195554}
   speedVariation: []
@@ -1320,6 +1326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 740834702}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -1442,7 +1449,7 @@ Transform:
   - {fileID: 167435569}
   - {fileID: 287991816}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &128807594
 GameObject:
@@ -2087,10 +2094,12 @@ MonoBehaviour:
   type: 6
   platformSpeed: 8
   waitTime: 2
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -2099,6 +2108,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1005278330}
   - {fileID: 734228429}
@@ -2242,6 +2252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 197064737}
+  waitTimeTriggered: 0
   state: {fileID: 177285324}
   Velx: 0
   Velz: 0
@@ -2848,10 +2859,12 @@ MonoBehaviour:
   type: 5
   platformSpeed: 4
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -2860,6 +2873,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions: []
   speedVariation: []
   waitVariation: []
@@ -3007,10 +3021,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 0.5
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -3019,6 +3035,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 111982972}
   speedVariation: []
@@ -3164,10 +3181,12 @@ MonoBehaviour:
   type: 0
   platformSpeed: 0
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -3176,6 +3195,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions: []
   speedVariation: []
   waitVariation: []
@@ -3370,6 +3390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 190962178}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -3531,10 +3552,12 @@ MonoBehaviour:
   type: 12
   platformSpeed: 10
   waitTime: 2
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -3543,6 +3566,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1639477022}
   - {fileID: 850207248}
@@ -3845,10 +3869,12 @@ MonoBehaviour:
   type: 8
   platformSpeed: 13
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -3857,6 +3883,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1350477124}
   - {fileID: 496300177}
@@ -4003,10 +4030,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 5
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -4015,6 +4044,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 764371558}
   - {fileID: 1605793040}
@@ -4411,10 +4441,12 @@ MonoBehaviour:
   type: 12
   platformSpeed: 10
   waitTime: 3
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -4423,6 +4455,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1359647403}
   - {fileID: 1736686583}
@@ -4928,10 +4961,12 @@ MonoBehaviour:
   type: 6
   platformSpeed: 3
   waitTime: 1.5
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -4940,6 +4975,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 87782633}
   - {fileID: 1632366106}
@@ -5093,10 +5129,12 @@ MonoBehaviour:
   type: 8
   platformSpeed: 0
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -5105,6 +5143,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 952451324}
   - {fileID: 1141271820}
@@ -10731,10 +10770,12 @@ MonoBehaviour:
   type: 4
   platformSpeed: 40
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 1
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -10743,6 +10784,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions: []
   speedVariation: []
   waitVariation: []
@@ -10852,10 +10894,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 20
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -10864,6 +10908,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 176862327}
   speedVariation: []
@@ -11485,10 +11530,12 @@ MonoBehaviour:
   type: 8
   platformSpeed: 0
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -11497,6 +11544,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1602329509}
   - {fileID: 1090049212}
@@ -11819,10 +11867,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 15
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -11831,6 +11881,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 733427489}
   speedVariation: []
@@ -12209,10 +12260,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 0.5
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -12221,6 +12274,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 549696532}
   speedVariation: []
@@ -12645,10 +12699,12 @@ MonoBehaviour:
   type: 2
   platformSpeed: 3
   waitTime: 1.5
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -12657,6 +12713,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1328754055}
   - {fileID: 1199245475}
@@ -13133,6 +13190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1598272118}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -13430,6 +13488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 2078906717}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -13503,10 +13562,12 @@ MonoBehaviour:
   type: 2
   platformSpeed: 6
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -13515,6 +13576,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 895423191}
   - {fileID: 1116587401}
@@ -13542,6 +13604,73 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &486163409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 486163411}
+  - component: {fileID: 486163410}
+  m_Layer: 0
+  m_Name: CM vcam1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &486163410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486163409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: 10
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
+  m_Lens:
+    FieldOfView: 40
+    OrthographicSize: 5
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
+    Dutch: 0
+    LensShift: {x: 0, y: 0}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+  m_LegacyBlendHint: 0
+  m_ComponentOwner: {fileID: 1056767727}
+--- !u!4 &486163411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486163409}
+  m_LocalRotation: {x: -0.004626872, y: -0.008581231, z: 0.0013283604, w: -0.99995166}
+  m_LocalPosition: {x: 0.5566759, y: 3.09, z: -30.519165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1056767727}
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0.531, y: 0.983, z: -0.148}
 --- !u!1 &487648179
 GameObject:
   m_ObjectHideFlags: 0
@@ -13738,8 +13867,6 @@ MonoBehaviour:
   QaA:
   - question: "Cual de estos tipos de papeles no deber\xEDa introducirse en la caneca
       gris"
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: Papel Higienico
@@ -13754,10 +13881,10 @@ MonoBehaviour:
       respuestaTexto: Panfletos
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: "Cual de estos tipos objetos no deber\xEDa introducirse en la caneca
       gris"
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: Papel de fax
@@ -13772,10 +13899,10 @@ MonoBehaviour:
       respuestaTexto: Periodico
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Dentro de los tipos de papel se encuentra el papel de primer uso, el
       reciclable y el
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: Ecologico
@@ -13790,10 +13917,10 @@ MonoBehaviour:
       respuestaTexto: Degradable
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: "Cual de estos productos tiene una mayor cantidad de consumo de \xE1rboles
       para su producci\xF3n"
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: "Pa\xF1ales"
@@ -13808,10 +13935,10 @@ MonoBehaviour:
       respuestaTexto: Periodico
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: " Al reducir el uso de papel cu\xE1l de estos recursos no tiene un
       cambio en su consumo "
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: Aire
@@ -13826,9 +13953,9 @@ MonoBehaviour:
       respuestaTexto: Energia
       numeroOrden: 0
     type: 1
-  - question: Cuanto dura en promedio en degradarse el papel
-    hint: Rotacion alrededor del sol
     PalabraAnagrama: 
+    hint: 
+  - question: Cuanto dura en promedio en degradarse el papel
     opciones:
     - correct: 1
       respuestaTexto: "1 A\xF1o"
@@ -13843,9 +13970,9 @@ MonoBehaviour:
       respuestaTexto: "2  a\xF1os"
       numeroOrden: 0
     type: 1
-  - question: Cual es el material que se degrada con mayor facilidad
-    hint: 
     PalabraAnagrama: 
+    hint: Rotacion alrededor del sol
+  - question: Cual es el material que se degrada con mayor facilidad
     opciones:
     - correct: 1
       respuestaTexto: Papel
@@ -13860,9 +13987,9 @@ MonoBehaviour:
       respuestaTexto: Vidrio
       numeroOrden: 0
     type: 1
-  - question: "Para la producci\xF3n del papel cu\xE1l de estos recursos no es utilizado"
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: "Para la producci\xF3n del papel cu\xE1l de estos recursos no es utilizado"
     opciones:
     - correct: 1
       respuestaTexto: Combustible
@@ -13877,10 +14004,10 @@ MonoBehaviour:
       respuestaTexto: Energia
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: "En promedio cuantas veces se puede reciclar el papel en diferentes
       tipos de papel o cart\xF3n"
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: 11
@@ -13895,9 +14022,9 @@ MonoBehaviour:
       respuestaTexto: 5
       numeroOrden: 0
     type: 1
-  - question: Cual de estos no es un metodo para blanquear el papel
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: Cual de estos no es un metodo para blanquear el papel
     opciones:
     - correct: 1
       respuestaTexto: PTC
@@ -13912,9 +14039,9 @@ MonoBehaviour:
       respuestaTexto: ECF
       numeroOrden: 0
     type: 1
-  - question: "Cu\xE1ntos  \xE1rboles en promedio usa una familia"
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: "Cu\xE1ntos  \xE1rboles en promedio usa una familia"
     opciones:
     - correct: 1
       respuestaTexto: 6 arboles
@@ -13929,9 +14056,9 @@ MonoBehaviour:
       respuestaTexto: 4 arboles
       numeroOrden: 0
     type: 1
-  - question: 1 Tonelada de papel es producida con
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: 1 Tonelada de papel es producida con
     opciones:
     - correct: 1
       respuestaTexto: 17 arboles
@@ -13946,9 +14073,9 @@ MonoBehaviour:
       respuestaTexto: 3 arboles
       numeroOrden: 0
     type: 1
-  - question: En cuantos tipos se clasifican los plasticos
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: En cuantos tipos se clasifican los plasticos
     opciones:
     - correct: 1
       respuestaTexto: 7
@@ -13963,9 +14090,9 @@ MonoBehaviour:
       respuestaTexto: 9
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Cual es el tipo de plastico que tiene asignado el numero 1
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: PET
@@ -13980,9 +14107,9 @@ MonoBehaviour:
       respuestaTexto: PS
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Cual es el tipo de plastico que tiene asignado el numero 2
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: HDPE
@@ -13997,9 +14124,9 @@ MonoBehaviour:
       respuestaTexto: PS
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Cual es el tipo de plastico que tiene asignado el numero 3
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: PVC
@@ -14014,9 +14141,9 @@ MonoBehaviour:
       respuestaTexto: PS
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Cual es el tipo de plastico que tiene asignado el numero 4
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: LDPE
@@ -14031,9 +14158,9 @@ MonoBehaviour:
       respuestaTexto: PS
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Cual es el tipo de plastico que tiene asignado el numero 5
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: PP
@@ -14048,9 +14175,9 @@ MonoBehaviour:
       respuestaTexto: PS
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Cual es el tipo de plastico que tiene asignado el numero 6
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: PS
@@ -14065,9 +14192,9 @@ MonoBehaviour:
       respuestaTexto: PS
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Cual es el tipo de plastico que tiene asignado el numero 7
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: Otros
@@ -14082,9 +14209,9 @@ MonoBehaviour:
       respuestaTexto: PS
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Cual es el tipo de plsatico con mayor facilidad de reciclaje
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: PET
@@ -14099,9 +14226,9 @@ MonoBehaviour:
       respuestaTexto: PP
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Cual es el plastico con mayor dificultad de reciclaje
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: PVC
@@ -14116,9 +14243,9 @@ MonoBehaviour:
       respuestaTexto: LDPE
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Cual es el tipo de palstico usado en las botellas de refresco
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: PET
@@ -14133,9 +14260,9 @@ MonoBehaviour:
       respuestaTexto: LDPE
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Cual es el tipo de palstico usado en las bolsas de mercado
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: HDPE
@@ -14150,9 +14277,9 @@ MonoBehaviour:
       respuestaTexto: LDPE
       numeroOrden: 0
     type: 1
-  - question: "Cual es el tipo de palstico usado en las ca\xF1erias"
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: "Cual es el tipo de palstico usado en las ca\xF1erias"
     opciones:
     - correct: 1
       respuestaTexto: PVC
@@ -14167,9 +14294,9 @@ MonoBehaviour:
       respuestaTexto: Otros
       numeroOrden: 0
     type: 1
-  - question: Cual es el tipo de palstico usado en los pitillos
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: Cual es el tipo de palstico usado en los pitillos
     opciones:
     - correct: 1
       respuestaTexto: PP
@@ -14184,9 +14311,9 @@ MonoBehaviour:
       respuestaTexto: LDPE
       numeroOrden: 0
     type: 1
-  - question: Cual es el tipo de palstico usado en las bolsas de basura
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: Cual es el tipo de palstico usado en las bolsas de basura
     opciones:
     - correct: 1
       respuestaTexto: LDPE
@@ -14201,9 +14328,9 @@ MonoBehaviour:
       respuestaTexto: HDPE
       numeroOrden: 0
     type: 1
-  - question: Cual es el tipo de palstico usado en los platos desechables
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: Cual es el tipo de palstico usado en los platos desechables
     opciones:
     - correct: 1
       respuestaTexto: PS
@@ -14218,9 +14345,9 @@ MonoBehaviour:
       respuestaTexto: HDPE
       numeroOrden: 0
     type: 1
-  - question: Cual es el tipo de palstico usado en los telefonos
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: Cual es el tipo de palstico usado en los telefonos
     opciones:
     - correct: 1
       respuestaTexto: Otros
@@ -14235,9 +14362,9 @@ MonoBehaviour:
       respuestaTexto: HDPE
       numeroOrden: 0
     type: 1
-  - question: Cual de estos es un lugar de procedencia del plastico
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: Cual de estos es un lugar de procedencia del plastico
     opciones:
     - correct: 1
       respuestaTexto: Sal natural
@@ -14252,9 +14379,9 @@ MonoBehaviour:
       respuestaTexto: Lana
       numeroOrden: 0
     type: 1
-  - question: Cuanto se demora en degradarse el plastico en promedio
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: Cuanto se demora en degradarse el plastico en promedio
     opciones:
     - correct: 1
       respuestaTexto: "700 a\xF1os"
@@ -14269,9 +14396,9 @@ MonoBehaviour:
       respuestaTexto: "800 a\xF1os"
       numeroOrden: 0
     type: 1
-  - question: Entre los productos plasticos mas contamienantes del planeta se encuentra
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: Entre los productos plasticos mas contamienantes del planeta se encuentra
     opciones:
     - correct: 1
       respuestaTexto: Bolsa plastica
@@ -14286,9 +14413,9 @@ MonoBehaviour:
       respuestaTexto: Telefonos
       numeroOrden: 0
     type: 1
-  - question: Cuando puede demorarse en descomponerse el poliestireno
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: Cuando puede demorarse en descomponerse el poliestireno
     opciones:
     - correct: 1
       respuestaTexto: Nunca
@@ -14303,9 +14430,9 @@ MonoBehaviour:
       respuestaTexto: "800 a\xF1os"
       numeroOrden: 0
     type: 1
-  - question: Cual es el material que demora mas en descomponerse
-    hint: 
     PalabraAnagrama: 
+    hint: 
+  - question: Cual es el material que demora mas en descomponerse
     opciones:
     - correct: 1
       respuestaTexto: Plastico
@@ -14320,6 +14447,8 @@ MonoBehaviour:
       respuestaTexto: Organicos
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   current: 0
   correctAnwser: 0
   movileCompleted:
@@ -14353,10 +14482,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 3
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -14365,6 +14496,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 977477115}
   speedVariation: []
@@ -14958,10 +15090,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 5
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -14970,6 +15104,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 156873837}
   - {fileID: 906318502}
@@ -15256,10 +15391,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 4
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -15268,6 +15405,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 186101694}
   speedVariation: []
@@ -17136,10 +17274,12 @@ MonoBehaviour:
   type: 8
   platformSpeed: 4
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -17148,6 +17288,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1770769183}
   - {fileID: 1113618623}
@@ -17477,10 +17618,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 2
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -17489,6 +17632,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 565913381}
   - {fileID: 1911750268}
@@ -17890,7 +18034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675374731446324, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3847675374731446324, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17938,31 +18082,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: 0.5566759
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.178
+      value: 3.09
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.17
+      value: -30.519165
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99875855
+      value: -0.99995166
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.049813714
+      value: -0.004626872
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000003450481
+      value: -0.008581231
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000017209493
+      value: 0.0013283604
       objectReference: {fileID: 0}
     - target: {fileID: 4078643985135607696, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -18043,6 +18187,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3847675375939190475, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
   m_PrefabInstance: {fileID: 725464903}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &725464905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1902527299, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+  m_PrefabInstance: {fileID: 725464903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &730105398
 GameObject:
   m_ObjectHideFlags: 0
@@ -18101,10 +18250,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 5
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -18113,6 +18264,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1641462385}
   - {fileID: 1845206891}
@@ -18516,10 +18668,12 @@ MonoBehaviour:
   type: 2
   platformSpeed: 8
   waitTime: 2
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -18528,6 +18682,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 888837632}
   - {fileID: 1363226065}
@@ -18685,6 +18840,87 @@ Transform:
   m_Father: {fileID: 1469981614}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &754315358
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1620234971569298744, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: level
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298744, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2126783373}
+    - target: {fileID: 1620234971569298744, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: SecondCam
+      value: 
+      objectReference: {fileID: 486163409}
+    - target: {fileID: 1620234971569298744, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: playerCam
+      value: 
+      objectReference: {fileID: 725464905}
+    - target: {fileID: 1620234971569298745, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_Name
+      value: EndLVltrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298758, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298758, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1768671
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298758, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298758, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -225.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298758, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298758, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298758, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298758, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298758, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298758, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298758, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298759, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_Size.x
+      value: 2.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620234971569298759, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
+      propertyPath: m_Size.y
+      value: 3.41
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6939167c0e6a1da4b861740d6c366d28, type: 3}
 --- !u!54 &755650751
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18739,10 +18975,12 @@ MonoBehaviour:
   type: 6
   platformSpeed: 0
   waitTime: 1.5
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -18751,6 +18989,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1458299666}
   - {fileID: 2036848049}
@@ -18806,10 +19045,12 @@ MonoBehaviour:
   type: 6
   platformSpeed: 0
   waitTime: 1.5
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -18818,6 +19059,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 798156191}
   - {fileID: 836222601}
@@ -19096,10 +19338,12 @@ MonoBehaviour:
   type: 0
   platformSpeed: 0
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -19108,6 +19352,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions: []
   speedVariation: []
   waitVariation: []
@@ -19270,6 +19515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 307616480}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -19411,10 +19657,12 @@ MonoBehaviour:
   type: 8
   platformSpeed: 13
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -19423,6 +19671,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1831794059}
   - {fileID: 254818641}
@@ -19791,6 +20040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 688464839}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -19962,10 +20212,12 @@ MonoBehaviour:
   type: 8
   platformSpeed: 13
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -19974,6 +20226,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1192825314}
   - {fileID: 1370693994}
@@ -20019,7 +20272,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2054301884410271413, guid: f0b45ae19dbfbd7468afc0e8303837a5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2054301884410271413, guid: f0b45ae19dbfbd7468afc0e8303837a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20116,6 +20369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1251769175}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -20258,10 +20512,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 1
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -20270,6 +20526,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 0}
   speedVariation: []
@@ -21074,10 +21331,12 @@ MonoBehaviour:
   type: 12
   platformSpeed: 10
   waitTime: 3
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -21086,6 +21345,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1909172330}
   - {fileID: 1279123871}
@@ -21771,6 +22031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1607842181}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -21970,10 +22231,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 30
   waitTime: 2.5
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -21982,6 +22245,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 517388463}
   - {fileID: 2076220339}
@@ -22139,7 +22403,7 @@ Transform:
   - {fileID: 1087772687}
   - {fileID: 1029210845}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &938808253
 GameObject:
@@ -22224,6 +22488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1391212202}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -22258,6 +22523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 381882744}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -22592,6 +22858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1002599539}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -23792,10 +24059,12 @@ MonoBehaviour:
   type: 5
   platformSpeed: 2.5
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -23804,6 +24073,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions: []
   speedVariation: []
   waitVariation: []
@@ -24313,6 +24583,100 @@ Transform:
   m_Father: {fileID: 778789857}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1056767726
+GameObject:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1056767727}
+  - component: {fileID: 1056767730}
+  - component: {fileID: 1056767729}
+  - component: {fileID: 1056767728}
+  m_Layer: 0
+  m_Name: cm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1056767727
+Transform:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056767726}
+  m_LocalRotation: {x: 0.0824051, y: 0.008658558, z: -0.0006567486, w: -0.9965611}
+  m_LocalPosition: {x: -1.0872223, y: -0.3429284, z: 30.982023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 486163411}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1056767728
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056767726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BindingMode: 1
+  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_XDamping: 1
+  m_YDamping: 1
+  m_ZDamping: 1
+  m_AngularDampingMode: 0
+  m_PitchDamping: 0
+  m_YawDamping: 0
+  m_RollDamping: 0
+  m_AngularDamping: 0
+--- !u!114 &1056767729
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056767726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_HorizontalDamping: 0.5
+  m_VerticalDamping: 0.5
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
+--- !u!114 &1056767730
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056767726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1057562155
 GameObject:
   m_ObjectHideFlags: 0
@@ -24717,6 +25081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1639741347}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -25135,10 +25500,12 @@ MonoBehaviour:
   type: 2
   platformSpeed: 8
   waitTime: 2
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -25147,6 +25514,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1259072360}
   - {fileID: 1384114899}
@@ -25747,10 +26115,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 5
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -25759,6 +26129,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1845206891}
   - {fileID: 122544568}
@@ -26135,10 +26506,12 @@ MonoBehaviour:
   type: 11
   platformSpeed: 2
   waitTime: 6
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 120
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -26147,6 +26520,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions: []
   speedVariation: []
   waitVariation: []
@@ -26682,10 +27056,12 @@ MonoBehaviour:
   type: 6
   platformSpeed: 0
   waitTime: 1.5
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -26694,6 +27070,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 836222601}
   - {fileID: 1458299666}
@@ -26785,6 +27162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 190962178}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -26933,10 +27311,12 @@ MonoBehaviour:
   type: 12
   platformSpeed: 10
   waitTime: 3
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -26945,6 +27325,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1057562156}
   - {fileID: 1338729162}
@@ -27110,10 +27491,12 @@ MonoBehaviour:
   type: 8
   platformSpeed: 13
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -27122,6 +27505,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1996906438}
   - {fileID: 1669127483}
@@ -27273,10 +27657,12 @@ MonoBehaviour:
   type: 3
   platformSpeed: 3
   waitTime: 4
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -27285,6 +27671,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1697305421}
   - {fileID: 743630854}
@@ -27636,7 +28023,7 @@ Transform:
   - {fileID: 1821176916}
   - {fileID: 2034106909}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1282633650
 GameObject:
@@ -28140,10 +28527,12 @@ MonoBehaviour:
   type: 6
   platformSpeed: 8
   waitTime: 2
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -28152,6 +28541,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1541217817}
   - {fileID: 1653495442}
@@ -28319,7 +28709,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2054301884410271413, guid: f0b45ae19dbfbd7468afc0e8303837a5, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2054301884410271413, guid: f0b45ae19dbfbd7468afc0e8303837a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29148,10 +29538,12 @@ MonoBehaviour:
   type: 2
   platformSpeed: 8
   waitTime: 2
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -29160,6 +29552,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1384114899}
   - {fileID: 2076830958}
@@ -29556,10 +29949,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 15
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -29568,6 +29963,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1314091078}
   speedVariation: []
@@ -29744,10 +30140,12 @@ MonoBehaviour:
   type: 8
   platformSpeed: 1
   waitTime: 0.2
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -29756,6 +30154,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 32788391}
   - {fileID: 1421063600}
@@ -29982,7 +30381,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1430333708
 GameObject:
@@ -30356,10 +30755,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 5
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -30368,6 +30769,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 906318502}
   - {fileID: 516109159}
@@ -30789,10 +31191,12 @@ MonoBehaviour:
   type: 6
   platformSpeed: 0
   waitTime: 1.5
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -30801,6 +31205,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 2036848049}
   - {fileID: 689634563}
@@ -31666,10 +32071,12 @@ MonoBehaviour:
   type: 2
   platformSpeed: 8
   waitTime: 2
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -31678,6 +32085,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 2076830958}
   - {fileID: 1384053193}
@@ -32010,10 +32418,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 4
   waitTime: 2
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -32022,6 +32432,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 472156020}
   - {fileID: 1406581778}
@@ -32226,10 +32637,12 @@ MonoBehaviour:
   type: 5
   platformSpeed: 6
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -32238,6 +32651,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions: []
   speedVariation: []
   waitVariation: []
@@ -32409,10 +32823,12 @@ MonoBehaviour:
   type: 3
   platformSpeed: 8
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -32421,6 +32837,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 100889278}
   - {fileID: 1473407630}
@@ -32527,7 +32944,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1902527300, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
   m_PrefabInstance: {fileID: 725464903}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 725464905}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 319d2fe34a804e245819465c9505ea59, type: 3}
@@ -32590,10 +33007,12 @@ MonoBehaviour:
   type: 2
   platformSpeed: 8
   waitTime: 2
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -32602,6 +33021,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1384053193}
   - {fileID: 79569673}
@@ -32927,10 +33347,12 @@ MonoBehaviour:
   type: 2
   platformSpeed: 4
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -32939,6 +33361,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 761321669}
   - {fileID: 1084297451}
@@ -33233,6 +33656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 485114030}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -33339,6 +33763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1989837814}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -33435,6 +33860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1598272118}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -33672,10 +34098,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 5
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -33684,6 +34112,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 700066051}
   - {fileID: 1422776061}
@@ -34159,10 +34588,12 @@ MonoBehaviour:
   type: 11
   platformSpeed: 6
   waitTime: 12
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 90
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -34171,6 +34602,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions: []
   speedVariation: []
   waitVariation: []
@@ -34345,10 +34777,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 4
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -34357,6 +34791,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1546275887}
   speedVariation: []
@@ -34570,10 +35005,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 30
   waitTime: 2.5
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -34582,6 +35019,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1452296183}
   - {fileID: 1622225300}
@@ -34953,6 +35391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1002599539}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -35279,10 +35718,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 3
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -35291,6 +35732,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1832933316}
   speedVariation: []
@@ -35453,10 +35895,12 @@ MonoBehaviour:
   type: 8
   platformSpeed: 1
   waitTime: 0.2
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -35465,6 +35909,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1461934267}
   - {fileID: 1930660804}
@@ -35894,7 +36339,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2054301884410271413, guid: f0b45ae19dbfbd7468afc0e8303837a5, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2054301884410271413, guid: f0b45ae19dbfbd7468afc0e8303837a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36171,8 +36616,6 @@ MonoBehaviour:
   CuentaRegresiva: 0
   QaA:
   - question: Prueba
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: 1
@@ -36187,9 +36630,9 @@ MonoBehaviour:
       respuestaTexto: 4
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Prueba
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: 1
@@ -36204,9 +36647,9 @@ MonoBehaviour:
       respuestaTexto: 4
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Prueba
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: 1
@@ -36221,9 +36664,9 @@ MonoBehaviour:
       respuestaTexto: 4
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Prueba
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: 1
@@ -36238,9 +36681,9 @@ MonoBehaviour:
       respuestaTexto: 4
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Prueba
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: 1
@@ -36255,9 +36698,9 @@ MonoBehaviour:
       respuestaTexto: 4
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Prueba
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: 1
@@ -36272,9 +36715,9 @@ MonoBehaviour:
       respuestaTexto: 4
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   - question: Prueba
-    hint: 
-    PalabraAnagrama: 
     opciones:
     - correct: 1
       respuestaTexto: 1
@@ -36289,6 +36732,8 @@ MonoBehaviour:
       respuestaTexto: 4
       numeroOrden: 0
     type: 1
+    PalabraAnagrama: 
+    hint: 
   current: 0
   correctAnwser: 0
   movileCompleted:
@@ -36481,10 +36926,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 5
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -36493,6 +36940,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1605793040}
   - {fileID: 1732289636}
@@ -36999,10 +37447,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 6
   waitTime: 0.6
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -37011,6 +37461,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 109853065}
   - {fileID: 2011133722}
@@ -37269,7 +37720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5707072289671058493, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5707072289671058493, guid: 860b3949626d5b9449e7115bb8bf69a2, type: 3}
       propertyPath: m_AnchorMax.x
@@ -37505,10 +37956,12 @@ MonoBehaviour:
   type: 7
   platformSpeed: 4
   waitTime: 0
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -37517,6 +37970,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 244471359}
   speedVariation: []
@@ -37746,6 +38200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 419379879}
+  waitTimeTriggered: 0
   state: {fileID: 977714975}
   Velx: 0
   Velz: 0
@@ -38244,10 +38699,12 @@ MonoBehaviour:
   type: 3
   platformSpeed: 4
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -38256,6 +38713,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1911414344}
   - {fileID: 866314910}
@@ -38365,10 +38823,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 6
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -38377,6 +38837,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 975612249}
   - {fileID: 890545865}
@@ -38576,10 +39037,12 @@ MonoBehaviour:
   type: 11
   platformSpeed: 2
   waitTime: 6
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: -120
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -38588,6 +39051,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions: []
   speedVariation: []
   waitVariation: []
@@ -39068,10 +39532,12 @@ MonoBehaviour:
   type: 1
   platformSpeed: 5
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -39080,6 +39546,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 1381230780}
   - {fileID: 700066051}
@@ -39449,10 +39916,12 @@ MonoBehaviour:
   type: 3
   platformSpeed: 0.5
   waitTime: 1
+  initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
   rotationY: 0
   rotationZ: 0
+  initialDif: 0
   VelX: 0
   Vely: 0
   Velz: 0
@@ -39461,6 +39930,7 @@ MonoBehaviour:
   playerVelz: 0
   playerDrag: 0
   positionTrap: 0
+  buttonOn: 0
   positions:
   - {fileID: 128807595}
   - {fileID: 700392845}
@@ -39890,6 +40360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 399664979}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -39924,6 +40395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1091579428}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -39945,6 +40417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1547290826}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -39966,6 +40439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1624497470}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -39987,6 +40461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 1364964353}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -40070,6 +40545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 190962178}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -40347,7 +40823,7 @@ PrefabInstance:
       objectReference: {fileID: 1622849933}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalScale.x
@@ -40408,6 +40884,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1398348542, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
   m_PrefabInstance: {fileID: 2126783371}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2126783373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3169579316793145574, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
+  m_PrefabInstance: {fileID: 2126783371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463aff11d1255924489e6211987f8ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2128383620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40579,6 +41066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformCt: {fileID: 190962178}
+  waitTimeTriggered: 0
   state: {fileID: 0}
   Velx: 0
   Velz: 0
@@ -41893,7 +42381,7 @@ Transform:
   - {fileID: 1619875800}
   - {fileID: 1343267093}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &562745567032244286
 MeshRenderer:
