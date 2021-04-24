@@ -116,8 +116,8 @@ public class TriggerPlatform : MonoBehaviour
         {
             if (platformCt.type == PlaftormController.PlatformType.ROTATIVETRIGGER)
             {
-                platformCt.platformRB.DORotate(new Vector3(0, 0, 0), platformCt.platformSpeed, RotateMode.Fast);
                 platformCt.active = false;
+                platformCt.platformRB.DORotate(new Vector3(0, 0, 0), platformCt.platformSpeed, RotateMode.Fast);
             }
             else if (platformCt.type == PlaftormController.PlatformType.TRIGGEREXIT)
             {

@@ -31,9 +31,9 @@ public class PlasticTrapTimer : MonoBehaviour
             }
             else
             {
+                timerTxt.text = "Trampa activada";
                 activarTrampa();
-                tiempoRestante = tiempoInicial;
-                StartCoroutine(WaitTrapTime(waitTime));
+                
             }
         }
     }
@@ -44,12 +44,5 @@ public class PlasticTrapTimer : MonoBehaviour
         trampZone.active=true;
     }
 
-
-    IEnumerator WaitTrapTime(float time)
-    {
-        yield return new WaitForSeconds(time);
-        trampZone.active=false;
-
-    }
 
 }
