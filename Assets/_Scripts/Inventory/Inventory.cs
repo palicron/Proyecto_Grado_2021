@@ -8,9 +8,9 @@ public class Inventory : MonoBehaviour
     #region Singleton
     public static Inventory instance;
 
-    void Awake ()
+    void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.LogWarning("More than one inventory instance found");
         }
@@ -48,19 +48,19 @@ public class Inventory : MonoBehaviour
     {
         //PlayerPrefs.SetInt("numExtraBags", 0);
         int numExtraBags = PlayerPrefs.GetInt("numExtraBags");
-        if(numExtraBags>=1)
+        if (numExtraBags >= 1)
         {
             extraBag1 = true;
-            if(numExtraBags==2)
+            if (numExtraBags == 2)
             {
                 extraBag2 = true;
             }
         }
-        SetInventory();
         if (onPocketAddedCallback != null)
         {
             onPocketAddedCallback.Invoke();
         }
+        SetInventory();
     }
 
     void SetInventory()

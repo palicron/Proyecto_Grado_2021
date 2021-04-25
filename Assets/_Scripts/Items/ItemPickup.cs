@@ -16,6 +16,7 @@ public class ItemPickup : MonoBehaviour
     {
         animator = gameObject.GetComponent<Animator>();
         animator.enabled = false;
+        gameObject.GetComponent<ParticleSystem>().Pause();
         StartCoroutine(StartP());
     }
 
@@ -63,7 +64,8 @@ public class ItemPickup : MonoBehaviour
 
     IEnumerator StartP()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
+        gameObject.GetComponent<ParticleSystem>().Play();
         animator.enabled = true;
         animator.applyRootMotion = true;
         animator.SetBool("start", true);

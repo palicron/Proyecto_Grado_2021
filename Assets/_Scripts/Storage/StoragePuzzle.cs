@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Storage : MonoBehaviour
+public class StoragePuzzle : Storage
 {
 
     #region Singleton
@@ -12,27 +12,18 @@ public class Storage : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning("More than one storage instance found");
+            Debug.LogWarning("More than one storagePuzzle instance found");
+            totalScore = 0;
         }
         instance = this;
     }
     #endregion
 
-    public delegate void OnStorageChanged();
+    private static int totalScore; 
 
-    public OnStorageChanged onStorageChangedCallBack;
-
-    public int space = 20;
-
-    public List<ListItem> items;
-
-    public StorageType storageType;
-
-    private static int totalScore;
-
-    public virtual bool Add(Item item)
+    public override bool Add(Item item)
     {
-        if(storageType != StorageType.Storage && (int) storageType != (int) item.type-1)
+        if (storageType != StorageType.Storage && (int)storageType != (int)item.type - 1)
         {
             ErrorDialog.instance.ThrowError("Esta caneca no es la adecuada para el elemento que deseas reciclar.");
             return false;
@@ -69,27 +60,9 @@ public class Storage : MonoBehaviour
         return true;
     }
 
-    public void Remove(ListItem item)
-    {
-        items.Remove(item);
-        if (onStorageChangedCallBack != null)
-        {
-            onStorageChangedCallBack.Invoke();
-        }
-    }
-
     public int GetTotalScore()
     {
         return totalScore;
     }
 
-    public void SetContent(ref List<ListItem> pItems, StorageType pType)
-    {
-        items = pItems;
-        storageType = pType;
-        if (onStorageChangedCallBack != null)
-        {
-            onStorageChangedCallBack.Invoke();
-        }
-    }
 }
