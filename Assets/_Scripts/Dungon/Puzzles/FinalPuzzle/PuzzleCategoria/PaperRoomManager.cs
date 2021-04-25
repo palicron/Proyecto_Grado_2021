@@ -49,8 +49,8 @@ public class PaperRoomManager : MonoBehaviour
     private void FixedUpdate()
     {
 
-        oportunidadesTxt.text = "Oportunidades \n " + oportunidades;
-        faltantesTxt.text = "Faltan \n " + faltantes;
+        oportunidadesTxt.text = oportunidades + "\n Oportunidades";
+        faltantesTxt.text = faltantes + "\n Restantes";
         if (CuentaRegresiva)
         {
             if (tiempoRestante > 0)

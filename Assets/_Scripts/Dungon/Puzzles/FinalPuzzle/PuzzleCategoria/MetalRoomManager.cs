@@ -55,8 +55,8 @@ public class MetalRoomManager : MonoBehaviour
     private void FixedUpdate()
     {
 
-        oportunidadesTxt.text = "Oportunidades \n " + oportunidades;
-        faltantesTxt.text = "Faltan \n " + faltantes;
+        oportunidadesTxt.text = oportunidades + "\n Oportunidades";
+        faltantesTxt.text = faltantes + "\n Restantes";
         if (activadoPuzzle) 
         {
             lavaFloor.active = true;

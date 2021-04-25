@@ -17,6 +17,12 @@ public class RecyclingBinsPuzzle : MonoBehaviour
 
     public Animator animator;
 
+    public PlaftormController completedPlatform;
+
+    public PlaftormController failedPlatform;
+
+
+
     public void EnableItems()
     {
         items.SetActive(true);
@@ -32,9 +38,11 @@ public class RecyclingBinsPuzzle : MonoBehaviour
         if(storage.GetTotalScore()<minimumScore)
         {
             textHolder.text = "No lograste completar el reto...";
+            failedPlatform.active=true;
             return;
         }
         textHolder.text = "¡Felicidades!\nSuperaste este reto.";
+        completedPlatform.active = true;
         Debug.Log("Puntos necesarios: " + minimumScore + " - Puntos adquiridos: " + storage.GetTotalScore());
         return;
     }
@@ -48,6 +56,7 @@ public class RecyclingBinsPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
     }
 }
