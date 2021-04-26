@@ -54,7 +54,7 @@ public class PaperRoomTrigger : MonoBehaviour
                 StartCoroutine(WaitMovement(waitTime));
                 manager.AnwserChoosed();
                
-            }
+            }   
         }
 
     }
