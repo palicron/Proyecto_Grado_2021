@@ -85,6 +85,7 @@ public class PaperRoomManager : MonoBehaviour
                 plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
                 plat.active = true;
             }
+            completed = false;
         }
     }
 
