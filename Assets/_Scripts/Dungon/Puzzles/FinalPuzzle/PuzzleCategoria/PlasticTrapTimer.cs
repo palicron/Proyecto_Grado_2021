@@ -6,7 +6,6 @@ using TMPro;
 public class PlasticTrapTimer : MonoBehaviour
 {
     [Header("Dependencies")]
-    public PlaftormController trampZone;
     public TextMeshPro timerTxt;
     [Header("Timer Dependences")]
     public float tiempoInicial;
@@ -41,7 +40,6 @@ public class PlasticTrapTimer : MonoBehaviour
     void activarTrampa() 
     {
         CuentaRegresiva = false;
-        trampZone.active=true;
     }
 
 

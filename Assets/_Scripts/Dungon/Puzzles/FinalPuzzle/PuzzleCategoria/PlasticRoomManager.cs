@@ -55,8 +55,8 @@ public class PlasticRoomManager : MonoBehaviour
     private void FixedUpdate()
     {
 
-        oportunidadesTxt.text = "Oportunidades \n " + oportunidades;
-        faltantesTxt.text = "Faltan \n " + faltantes;
+        oportunidadesTxt.text = oportunidades + "\n Oportunidades";
+        faltantesTxt.text = faltantes + "\n Restantes";
         if (!gasTriggerOut.GasIsActivated && gasTriggerOut.validacion==1)
         {
             ResetearPlataformas();
@@ -68,7 +68,7 @@ public class PlasticRoomManager : MonoBehaviour
             {
                 tiempoRestante -= Time.deltaTime;
                 timeTxt.text = "" + tiempoRestante.ToString("f0");
-                if (tiempoRestante < 10 )
+                if (tiempoRestante < 3 )
                 {
                     gasPlat.active = true;
 
