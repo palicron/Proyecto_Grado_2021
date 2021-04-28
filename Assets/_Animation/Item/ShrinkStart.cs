@@ -8,10 +8,20 @@ public class ShrinkStart : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Destroy(animator.GetComponent<Rigidbody>());
-        animator.GetComponent<ItemPickup>().hover = true;
+        ItemPickup item = animator.GetComponent<ItemPickup>();
+        if(item !=null)
+        {
+            animator.GetComponent<BoxCollider>().isTrigger = true;
+            item.hover = true;
+        }
+        else
+        {
+            EntryPickup pItem = animator.GetComponentInParent<EntryPickup>();
+            animator.GetComponentInParent<BoxCollider>().isTrigger = true;
+            pItem.hover = true;
+        }
         animator.transform.Translate(0, 40F * Time.deltaTime,0);
         animator.transform.localRotation = Quaternion.Euler(35, 0, 0);
-        animator.GetComponent<BoxCollider>().isTrigger = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

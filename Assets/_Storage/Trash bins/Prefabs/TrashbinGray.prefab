@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 3141718157939858077}
   - component: {fileID: 4809888531895444439}
   - component: {fileID: 5931609664337341909}
+  - component: {fileID: 2611582601214102378}
   m_Layer: 0
   m_Name: TrashbinGray
   m_TagString: Untagged
@@ -212,8 +213,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.173587, z: 1}
+  m_Size: {x: 0.8, y: 1.173587, z: 1.3}
   m_Center: {x: 0.00000017881393, y: 0.58679336, z: 0.1}
+--- !u!65 &2611582601214102378
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4602025962161850522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.64300585, y: 1.173587, z: 0.7}
+  m_Center: {x: 0.00000017881393, y: 0.58679336, z: -0.042004004}
 --- !u!1 &5101812496642826434
 GameObject:
   m_ObjectHideFlags: 0

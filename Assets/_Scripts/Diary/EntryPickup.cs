@@ -2,56 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPickup : MonoBehaviour
+public class EntryPickup : MonoBehaviour
 {
-    public Item item;
+    public DiaryEntry item;
     bool pickedUp = false;
     public bool hover = false;
     float speed = 0.001F;
     float directionSymbol = 1.0F;
     float acceleration = 1.0F;
-    Animator animator;
+    public Animator animator;
+    public Animator animatorText;
+
 
     void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
         animator.enabled = false;
+        animatorText.SetBool("isInteracting", true);
         gameObject.GetComponent<ParticleSystem>().Pause();
         StartCoroutine(StartP());
     }
 
     void Update()
     {
-        if(hover)
+        if (hover)
         {
             if (speed <= 0)
             {
                 //Debug.Log("Changing direction");
-                directionSymbol = (float) (directionSymbol * -1.0);
+                directionSymbol = (float)(directionSymbol * -1.0);
             }
             if (speed >= 0.3F)
             {
                 //Debug.Log("Changing acceleration");
-                acceleration = (float) (acceleration * -1.0);
+                acceleration = (float)(acceleration * -1.0);
             }
-            transform.localPosition += new Vector3(0,speed * directionSymbol * Time.deltaTime, 0);
-            speed += (float) (0.002 * directionSymbol * acceleration);
+            transform.localPosition += new Vector3(0, speed * directionSymbol * Time.deltaTime, 0);
+            speed += (float)(0.002 * directionSymbol * acceleration);
         }
     }
 
     void OnTriggerEnter(Collider collider)
     {
 
-        if (collider.gameObject.tag == "Player" && !pickedUp)
+        if (collider.gameObject.tag == "Player")
         {
-            pickedUp = Inventory.instance.Add(item);
-            if (pickedUp)
-            {
-                hover = false;
-                UI_SFX.instance.PlayPickUp();
-                gameObject.GetComponent<ParticleSystem>().Stop();
-                StartCoroutine(DestroyObject());
-            }
+            RecyclingDiary.instance.AddEntry(item.description, item.title, item.sourceName, item.id);
+            animatorText.SetBool("isInteracting", false);
+            hover = false;
+            UI_SFX.instance.PlayPickUp();
+            gameObject.GetComponent<ParticleSystem>().Stop();
+            StartCoroutine(DestroyObject());
         }
     }
 

@@ -77,6 +77,7 @@ public class RecyclingDiary : MonoBehaviour
         //ResetEntries();
         comparer = new EntryComparer();
         actualIndex = 0;
+        ResetEntries();
         TranslateSavedLists();
         CheckDisableButton();
         BuildPage();
@@ -92,6 +93,7 @@ public class RecyclingDiary : MonoBehaviour
 
     public void AddEntry(string pEntry, string pName, string pNpc, int pId)
     {
+        Debug.Log("Se añadió una entrada");
         Entry repeated = entriesList.Find(x => x.entryId == pId);
         if(repeated==null)
         {
@@ -155,7 +157,7 @@ public class RecyclingDiary : MonoBehaviour
         if(entry!=null)
         {
             detailTitle.text = entry.entryName;
-            detailDescription.text = entry.entry;
+            detailDescription.text = entry.entryNpc+": "+entry.entry;
         }
         detailWindow.SetActive(true);
     }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5424084271720105895}
   - component: {fileID: 834627744468294695}
   - component: {fileID: 6909167569481566362}
+  - component: {fileID: 67821343657469076}
   m_Layer: 0
   m_Name: TrashbinBlue
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 258aec9daa4237b488bf9fba30cfb921, type: 2}
+  - {fileID: 2100000, guid: f9f466fd68c22084fadb9d32ca9bf1c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,8 +99,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.64300585, y: 1.173587, z: 0.7297379}
-  m_Center: {x: 0.00000017881393, y: 0.58679336, z: -0.042004004}
+  m_Size: {x: 0.8, y: 1.173587, z: 1.3}
+  m_Center: {x: 0.00000017881393, y: 0.58679336, z: 0.1}
 --- !u!95 &834627744468294695
 Animator:
   serializedVersion: 3
@@ -133,6 +134,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactingText: {fileID: 6298100235669153214}
   storageType: 2
+--- !u!65 &67821343657469076
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703639341689392469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.64300585, y: 1.173587, z: 0.7}
+  m_Center: {x: 0.00000017881393, y: 0.58679336, z: -0.042004004}
 --- !u!1 &4029916364427953561
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +206,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 258aec9daa4237b488bf9fba30cfb921, type: 2}
+  - {fileID: 2100000, guid: f9f466fd68c22084fadb9d32ca9bf1c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -494,7 +508,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 258aec9daa4237b488bf9fba30cfb921, type: 2}
+  - {fileID: 2100000, guid: f9f466fd68c22084fadb9d32ca9bf1c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
