@@ -98,12 +98,6 @@ public class PaperRoomManager : MonoBehaviour
 
     }
 
-    public void AnwserChoosed() 
-    {
-        CuentaRegresiva = false;
-        Questiontxt.text = "";
-   
-    }
 
    public void generateQuestion()
     {
@@ -119,7 +113,7 @@ public class PaperRoomManager : MonoBehaviour
         }
         foreach (PlaftormController palt in platforms)
         {
-            palt.active = false;
+            palt.active = true;
         }
         tiempoRestante = tiempoInicial;
         SetAwnsers();

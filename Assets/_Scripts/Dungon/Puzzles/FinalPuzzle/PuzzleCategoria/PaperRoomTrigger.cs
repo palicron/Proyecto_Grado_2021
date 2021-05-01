@@ -20,10 +20,13 @@ public class PaperRoomTrigger : MonoBehaviour
         {
             if (platform!=null) 
             {
+                //Texto guia posterior a una decision del jugador
+                manager.CuentaRegresiva=false;
+                manager.Questiontxt.text = "Vuelve a la plataforma de preguntas";
                 //Activo la plataforma con la que colisiono
                 if (manager.listOfAwnsers.Contains(optionNumber)) 
                 {
-                    platform.GetComponentInChildren<TextMeshPro>().text = "Correcto";
+                    manager.timeTxt.text = "Correcto";
                     manager.ContCorrectas++;
                     manager.faltantes--;
                     if (manager.faltantes==0) 
@@ -40,8 +43,7 @@ public class PaperRoomTrigger : MonoBehaviour
                 }
                 else 
                 {
-                    platform.GetComponentInChildren<TextMeshPro>().text = "Incorrecto";
-                    manager.timeTxt.text = "Trampa activada";
+                    manager.timeTxt.text = "Incorrecto";
                     manager.ContIncorrectas++;
                     manager.oportunidades--;
                     if (manager.oportunidades == 0)
@@ -51,9 +53,7 @@ public class PaperRoomTrigger : MonoBehaviour
 
                 }
                 questionManger.activated = false;
-                StartCoroutine(WaitMovement(waitTime));
-                manager.AnwserChoosed();
-               
+                StartCoroutine(WaitMovement(waitTime));          
             }   
         }
 
@@ -65,7 +65,7 @@ public class PaperRoomTrigger : MonoBehaviour
         foreach (PlaftormController plat in manager.platforms)
         {
 
-            plat.active = true;
+            plat.active = false;
         }
     }
 
