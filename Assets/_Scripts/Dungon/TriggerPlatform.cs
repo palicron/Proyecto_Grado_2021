@@ -124,6 +124,7 @@ public class TriggerPlatform : MonoBehaviour
                 platformCt.active = false;
 
             }
+         
         }
     }
 

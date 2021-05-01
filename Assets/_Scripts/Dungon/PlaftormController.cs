@@ -70,7 +70,8 @@ public class PlaftormController : MonoBehaviour
         ROTATIONTIMER,
         TRAPFALLINGPLATFORM,
         BUTTONPLATFORM,
-        TIMEDTRIGGERDMOVE
+        TIMEDTRIGGERDMOVE,
+       
     }
 
     void Start()
@@ -129,7 +130,14 @@ public class PlaftormController : MonoBehaviour
         }
         else if (type == PlatformType.TRIGGEREXIT)
         {
-            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
+            if (speedVariation.Length!=0)
+            {
+                platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, speedVariation[0] * Time.deltaTime));
+            }
+            else {
+                platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
+
+            }
 
         }
         else if (type == PlatformType.TIMEDTRIGGERDMOVE)

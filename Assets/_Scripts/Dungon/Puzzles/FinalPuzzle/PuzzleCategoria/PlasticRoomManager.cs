@@ -67,7 +67,7 @@ public class PlasticRoomManager : MonoBehaviour
             if (tiempoRestante > 0)
             {
                 tiempoRestante -= Time.deltaTime;
-                timeTxt.text = "" + tiempoRestante.ToString("f0");
+                timeTxt.text = "Liberando gas toxico en \n " + tiempoRestante.ToString("f0");
                 if (tiempoRestante < 3 )
                 {
                     gasPlat.active = true;
@@ -113,7 +113,6 @@ public class PlasticRoomManager : MonoBehaviour
     public void verifyAnwsers()
     {
         CuentaRegresiva = false;
-        questionManager.plat.active = true;
         foreach (MetalRoomOption met in platOpciones)
         {
             if (met.choosed && listOfAwnsers.Contains(met.opcion))
@@ -188,7 +187,6 @@ public class PlasticRoomManager : MonoBehaviour
     IEnumerator WaitTimerOut(float time)
     {
         yield return new WaitForSeconds(time);
-        questionManager.plat.active = false;
         questionManager.activated = false;
 
     }
