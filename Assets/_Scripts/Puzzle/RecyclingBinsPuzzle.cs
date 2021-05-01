@@ -50,7 +50,7 @@ public class RecyclingBinsPuzzle : MonoBehaviour
     void Start()
     {
         items.SetActive(false);
-        animator.SetBool("enter", true);
+        //animator.SetBool("enter", true);
     }
 
     // Update is called once per frame
