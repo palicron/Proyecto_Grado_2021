@@ -13,6 +13,7 @@ public class PaperRoomManager : MonoBehaviour
     public TextMeshPro oportunidadesTxt;
     public TextMeshPro faltantesTxt;
     public bool Inicializar;
+    public PaperQuestionTrigger questionManger;
     [Header("Timer Dependences")]
     public float tiempoInicial;
     public float tiempoRestante;
@@ -60,6 +61,7 @@ public class PaperRoomManager : MonoBehaviour
             }
             else
             {
+                Questiontxt.text = "Vuelve al activador";
                 timeTxt.text = "Tiempo agotado";
                 changeQuestionTimer();
             }
@@ -73,8 +75,10 @@ public class PaperRoomManager : MonoBehaviour
         if (completed) 
         {
             CuentaRegresiva = false;
-            timeTxt.text = "";
-            Questiontxt.text = "Completado";
+            timeTxt.text = "Completado";
+            Questiontxt.text = "Ve a la siguiente fase";
+            faltantesTxt.text = ">>>";
+            oportunidadesTxt.text = "Reciclaste " + oportunidades + " oportunidades";
             foreach (PlaftormController plat in completedPlat)
             {
                  plat.active = true;
@@ -82,10 +86,8 @@ public class PaperRoomManager : MonoBehaviour
             }
             foreach (PlaftormController plat in platforms)
             {
-                plat.type = PlaftormController.PlatformType.MOVEMENTESCREENTRIGGERED;
-                plat.active = true;
+                plat.active = false;
             }
-            completed = false;
         }
     }
 
@@ -94,6 +96,12 @@ public class PaperRoomManager : MonoBehaviour
         CuentaRegresiva = false;
         ContIncorrectas++;
         oportunidades--;
+        questionManger.activated = false;
+        questionManger.stateText.text = "Activador \n en espera";
+        foreach (PlaftormController palt in platforms)
+        {
+            palt.active = false;
+        }
         StartCoroutine(WaitTimerOut(waitingTime));
 
     }
@@ -144,7 +152,8 @@ public class PaperRoomManager : MonoBehaviour
     IEnumerator WaitTimerOut(float time)
     {
         yield return new WaitForSeconds(time);
-        generateQuestion();
+       
+        //generateQuestion();
     }
 
 }

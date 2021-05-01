@@ -20,19 +20,22 @@ public class TriggerFinalRooms : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (platform != null)
-            {
-                platform.active = false;
-            }
+          
             if (paperManager != null && metalManager != null && !activada)
             {
+                paperManager.completed = false;
                 metalManager.oportunidades = paperManager.oportunidades + metalManager.oportunidades;
             }
             else if (plasticManager != null && metalManager != null && !activada)
             {
+                metalManager.completed = false;
                 plasticManager.oportunidades = plasticManager.oportunidades + metalManager.oportunidades;
             }
-            activada=true;
+            if (platform != null)
+            {
+                platform.active = false;
+            }
+            activada =true;
         }
 
     }

@@ -22,7 +22,7 @@ public class PaperRoomTrigger : MonoBehaviour
             {
                 //Texto guia posterior a una decision del jugador
                 manager.CuentaRegresiva=false;
-                manager.Questiontxt.text = "Vuelve a la plataforma de preguntas";
+                manager.Questiontxt.text = "Vuelve al activador";
                 //Activo la plataforma con la que colisiono
                 if (manager.listOfAwnsers.Contains(optionNumber)) 
                 {
@@ -62,9 +62,9 @@ public class PaperRoomTrigger : MonoBehaviour
     IEnumerator WaitMovement(float time)
     {
         yield return new WaitForSeconds(time);
+        questionManger.stateText.text = "Activador \n en espera";
         foreach (PlaftormController plat in manager.platforms)
         {
-
             plat.active = false;
         }
     }
