@@ -173,11 +173,13 @@ public class NPC_Tom : NPC
             {
                 FocuseCamera.SetActive(true);
                 playerCamera.SetActive(false);
+                cameraFocuse = true;
             }
             else
             {
                 FocuseCamera.SetActive(false);
                 playerCamera.SetActive(true);
+                cameraFocuse = false;
             }
         }
     }
