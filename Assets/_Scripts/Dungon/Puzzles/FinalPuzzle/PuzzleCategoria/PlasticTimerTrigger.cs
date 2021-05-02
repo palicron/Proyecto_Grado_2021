@@ -6,7 +6,6 @@ public class PlasticTimerTrigger : MonoBehaviour
 {
     public PlasticTrapTimer option;
     public PlasticTrapTimer option2;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
