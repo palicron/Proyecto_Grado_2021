@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PaperQuestionTrigger : MonoBehaviour
 {
     [Header("Dependences")]
     public PaperRoomManager manager;
     public PlaftormController[] traps;
+    public TextMeshPro stateText;
     [Header("Trigger Characteristics")]
     public bool activated;
 
+
+    private void Start()
+    {
+        stateText.text = "Activador \n en espera";
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +24,7 @@ public class PaperQuestionTrigger : MonoBehaviour
         {
             if (!activated)
             {
+                stateText.text = "Activador \n generado";
                 if (manager.QaA.Count != 0)
                 {
                     manager.generateQuestion();
@@ -40,4 +48,5 @@ public class PaperQuestionTrigger : MonoBehaviour
         }
 
     }
+
 }

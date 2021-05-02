@@ -7,11 +7,11 @@ public class PlasticTrapTimer : MonoBehaviour
 {
     [Header("Dependencies")]
     public TextMeshPro timerTxt;
+    public PlaftormController plat;
     [Header("Timer Dependences")]
     public float tiempoInicial;
     public float tiempoRestante;
     public bool CuentaRegresiva;
-    public float waitTime;
 
     private void Start()
     {
@@ -26,11 +26,11 @@ public class PlasticTrapTimer : MonoBehaviour
             if (tiempoRestante > 0)
             {
                 tiempoRestante -= Time.deltaTime;
-                timerTxt.text = "" + tiempoRestante.ToString("f0");
+                timerTxt.text = "Trampa activada \n" + tiempoRestante.ToString("f0");
             }
             else
             {
-                timerTxt.text = "Trampa activada";
+                timerTxt.text = "";
                 activarTrampa();
                 
             }
@@ -40,6 +40,7 @@ public class PlasticTrapTimer : MonoBehaviour
     void activarTrampa() 
     {
         CuentaRegresiva = false;
+        plat.active = true;
     }
 
 
