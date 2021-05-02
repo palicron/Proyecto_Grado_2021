@@ -14,7 +14,11 @@ public class NPC_Tom : NPC
     [SerializeField]
     GameObject EndPoint;
     Animator anim;
-
+    [SerializeField]
+    GameObject FocuseCamera;
+    [SerializeField]
+    GameObject playerCamera;
+    bool cameraFocuse = false;
     NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
@@ -41,6 +45,13 @@ public class NPC_Tom : NPC
 
 
         StopAllCoroutines();
+
+        if(FocuseCamera && playerCamera)
+        {
+            FocuseCamera.SetActive(false);
+            playerCamera.SetActive(true);
+            cameraFocuse = false;
+        }
      
         if (MoveAtTheEnd)
         {
@@ -156,7 +167,19 @@ public class NPC_Tom : NPC
 
     public override void midDialgueAction()
     {
-        throw new System.NotImplementedException();
+        if(FocuseCamera)
+        {
+            if(!cameraFocuse)
+            {
+                FocuseCamera.SetActive(true);
+                playerCamera.SetActive(false);
+            }
+            else
+            {
+                FocuseCamera.SetActive(false);
+                playerCamera.SetActive(true);
+            }
+        }
     }
 
 

@@ -15,8 +15,10 @@ MonoBehaviour:
   bIsRandomDialogue: 0
   DialoguePriority: 1
   lines:
-  - DialogueDescription: Reciclaje 1
+  - id: -1
+    DialogueDescription: Reciclaje 1
     LocutorName: 'Tom '
+    hasAevent: 0
     JumpQuestion: 0
     JumpTo: 0
     sentences: Nuevamente me sorprendes, lograste superar otra prueba, ahora es momento
@@ -30,8 +32,10 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Reciclaje 2
+  - id: -1
+    DialogueDescription: Reciclaje 2
     LocutorName: 'Tom '
+    hasAevent: 0
     JumpQuestion: 0
     JumpTo: 0
     sentences: "Lastimosamente este no es un amistoso y muchos de mis recicladores
@@ -45,8 +49,10 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Reciclaje 3
+  - id: -1
+    DialogueDescription: Reciclaje 3
     LocutorName: 'Tom '
+    hasAevent: 1
     JumpQuestion: 0
     JumpTo: 0
     sentences: "Es tiempo que uses los residuos que tienes y los ingresen en las
@@ -61,8 +67,10 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Reciclaje 4
+  - id: -1
+    DialogueDescription: Reciclaje 4
     LocutorName: 'Tom '
+    hasAevent: 0
     JumpQuestion: 0
     JumpTo: 0
     sentences: "Por \xFAltimo, usa la <color=blue>Maquina</color> para reciclar los

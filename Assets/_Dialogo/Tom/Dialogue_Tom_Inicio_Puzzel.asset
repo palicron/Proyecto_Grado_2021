@@ -15,13 +15,31 @@ MonoBehaviour:
   bIsRandomDialogue: 0
   DialoguePriority: 1
   lines:
-  - DialogueDescription: Puzzel star
+  - id: -1
+    DialogueDescription: Puzzel star
     LocutorName: Tom Radio
     JumpQuestion: 0
     JumpTo: 0
     sentences: 'Grandioso!  has superado todos los obstaculos. Sin embargo, todavia
       quedan las pruebas de tu conocimiento. Recuerda que hay una unica respuesta
       para cada pregunta.
+
+'
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: -1
+    DialogueDescription: Puzzel star
+    LocutorName: Tom Radio
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: 'Usa todo lo que recojiste en tu diario para superar los obstaculos
+      que siguen
 
 '
     Type: 0
