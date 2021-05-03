@@ -43,6 +43,7 @@ public class End_Level_Sequence : NPC
     {
         if (other.gameObject.tag.Equals("Player"))
         {
+            Debug.Log("cosas");
             TriggerDialogue();
 
         }

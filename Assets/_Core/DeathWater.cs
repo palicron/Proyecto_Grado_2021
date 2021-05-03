@@ -8,7 +8,7 @@ public class DeathWater : MonoBehaviour
     {
         if(other.gameObject.tag.Equals("Player"))
         {
-            GameManager.intance.resetPlayer(35);
+            GameManager.intance.resetPlayer(15);
         }
        
     }

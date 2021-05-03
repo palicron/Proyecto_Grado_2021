@@ -63,7 +63,11 @@ public class Patrol : State
 
             if(waypoints.Count>0)
             {
-                agent.SetDestination(waypoints[currentIndex].transform.position);
+                if(waypoints[currentIndex].transform.position!=null)
+                {
+                    agent.SetDestination(waypoints[currentIndex].transform.position);
+                }
+               
             }
           
             FirtPoint = true;

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f450dec53465c4ab22560f8b560a95, type: 3}
+  m_Name: Dialogue_Tom_paper_interruptor
+  m_EditorClassIdentifier: 
+  bIsRandomDialogue: 0
+  DialoguePriority: 1
+  lines:
+  - id: -1
+    DialogueDescription: interruptor
+    LocutorName: Tom
+    hasAevent: 0
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: 'Ten cuidado en el siguiente cuarto '
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: -1
+    DialogueDescription: interruptor
+    LocutorName: Tom
+    hasAevent: 1
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: Acabo de revisar y hay recicladores contaminados, y acabo de dar cuenta
+      que <color=green>las bandas que te permiten llegar al otro lugar se encuentran
+      apagadas </color>.
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: -1
+    DialogueDescription: interruptor
+    LocutorName: Tom
+    hasAevent: 0
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: Pero revisando acabo de encontrar el interruptor que las activa.
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: -1
+    DialogueDescription: interruptor
+    LocutorName: Tom
+    hasAevent: 1
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: Ten cuidado derrota a los acumuladores y activa las bandas para avanzar.
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
