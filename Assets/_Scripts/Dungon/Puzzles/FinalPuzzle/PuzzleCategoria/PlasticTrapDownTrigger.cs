@@ -11,7 +11,6 @@ public class PlasticTrapDownTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-
             trap.active = false;
 
         }

@@ -10,8 +10,10 @@ public class PlasticRoomManager : MonoBehaviour
     public TextMeshPro timeTxt;
     public TextMeshPro timeText2;
     public GameObject[] panelOpciones;
+    public TextMeshPro[] panelesOpcionesArriba;
     public MetalRoomOption[] platOpciones;
     public PlaftormController[] OpcionesMoviles;
+    public PlaftormController[] platfinales;
     public PlasticQuestionManager questionManager;
     public TextMeshPro oportunidadesTxt;
     public TextMeshPro faltantesTxt;
@@ -40,8 +42,7 @@ public class PlasticRoomManager : MonoBehaviour
     public PlaftormController[] completedPlat;
     [Header("Trap depencies")]
     public PlaftormController gasPlat;
-    public GasTriggerOut gasTriggerOut;
-
+    
 
     private void Start()
     {
@@ -58,18 +59,13 @@ public class PlasticRoomManager : MonoBehaviour
 
         oportunidadesTxt.text = oportunidades + "\n Oportunidades";
         faltantesTxt.text = faltantes + "\n Restantes";
-        if (!gasTriggerOut.GasIsActivated && gasTriggerOut.validacion==1)
-        {
-            ResetearPlataformas();
-            
-        }
         if (CuentaRegresiva)
         {
             if (tiempoRestante > 0)
             {
                 tiempoRestante -= Time.deltaTime;
-                timeTxt.text = "Liberando gas toxico en \n " + tiempoRestante.ToString("f0");
-                timeText2.text = "Liberando gas toxico en \n " + tiempoRestante.ToString("f0");
+                timeTxt.text = "Liberando gas toxico \n " + tiempoRestante.ToString("f0");
+                timeText2.text = "Liberando gas toxico \n " + tiempoRestante.ToString("f0");
             }
             else
             {
@@ -87,9 +83,9 @@ public class PlasticRoomManager : MonoBehaviour
         if (completed)
         {
             CuentaRegresiva = false;
-            timeTxt.text = "";
+            timeTxt.text = "Completo";
             timeText2.text = "";
-            Questiontxt.text = "Desbloqueado";
+            Questiontxt.text = "";
             foreach (PlaftormController plat in completedPlat)
             {
                 plat.active = true;
@@ -100,7 +96,6 @@ public class PlasticRoomManager : MonoBehaviour
     }
 
     public void ResetearPlataformas() {
-        gasTriggerOut.validacion = 0;
         foreach (PlaftormController plat in OpcionesMoviles)
         {    
             if (plat.playerOnPlat==true) 
@@ -113,14 +108,19 @@ public class PlasticRoomManager : MonoBehaviour
     public void verifyAnwsers()
     {
         CuentaRegresiva = false;
-        foreach (MetalRoomOption met in platOpciones)
+        foreach (PlaftormController plat in platfinales)
+        {
+            plat.active = true;
+        }
+            foreach (MetalRoomOption met in platOpciones)
         {
             if (met.choosed && listOfAwnsers.Contains(met.opcion))
             {
-                Questiontxt.text = "Esperando el activador";
-                timeTxt.text = "Correcto";
-                timeText2.text = "Correcto";
+                Questiontxt.text = "";
+                timeTxt.text = "Esperando el activador";
+                timeText2.text = "Gas liberado \n correcto";
                 resetPanelOpciones();
+                StartCoroutine(WaitTrapTime(waitTimeTrap*3f));
                 ContCorrectas++;
                 faltantes--;
             }
@@ -128,9 +128,9 @@ public class PlasticRoomManager : MonoBehaviour
             {
                
                 met.activarTrampa();
-                Questiontxt.text = "Esperando el activador";
-                timeTxt.text = "Inorrecto";
-                timeText2.text = "Incorrecto";
+                Questiontxt.text = "";
+                timeTxt.text = "Esperando el activador";
+                timeText2.text = "Gas liberado\n Incorrecto";
                 StartCoroutine(WaitTrapTime(waitTimeTrap));
                 resetPanelOpciones();
                 ContIncorrectas++;
@@ -139,12 +139,13 @@ public class PlasticRoomManager : MonoBehaviour
         }
         if (!escogioAlguna())
         {
-            Questiontxt.text = "Esperando el activador";
-            timeTxt.text = "Inorrecto";
-            timeText2.text = "Incorrecto";
+            Questiontxt.text = "";
+            timeTxt.text = "Esperando el activador";
+            timeText2.text = "Gas liberado\n incorrecto";
             ContIncorrectas++;
             oportunidades--;
             resetPanelOpciones();
+            StartCoroutine(WaitTrapTime(waitTimeTrap));
         }
         StartCoroutine(WaitTimerOut(waitingTime));
     }
@@ -155,6 +156,7 @@ public class PlasticRoomManager : MonoBehaviour
         foreach (MetalRoomOption met in platOpciones)
         {
             panelOpciones[met.opcion].GetComponent<TextMeshPro>().text = "";
+            panelesOpcionesArriba[met.opcion].GetComponent<TextMeshPro>().text = "";
         }
     }
 
@@ -173,6 +175,7 @@ public class PlasticRoomManager : MonoBehaviour
         for (int i = 0; i < panelOpciones.Length; i++)
         {
             panelOpciones[i].GetComponentInChildren<TextMeshPro>().text = "";
+            panelesOpcionesArriba[i].GetComponentInChildren<TextMeshPro>().text = "";
         }
         tiempoRestante = tiempoInicial;
         SetAwnsers();
@@ -190,6 +193,7 @@ public class PlasticRoomManager : MonoBehaviour
             {
                 randomOption = Random.Range(0, QaA[current].opciones.Count);
                 panelOpciones[i].GetComponentInChildren<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
+                panelesOpcionesArriba[i].GetComponentInChildren<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
                 if (QaA[current].opciones[randomOption].correct)
                 {
                     listOfAwnsers.Add(i);
@@ -212,9 +216,8 @@ public class PlasticRoomManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         foreach (PlaftormController met in OpcionesMoviles)
         {
-            met.active = true;
+            met.active = true; 
         }
-        yield return new WaitForSeconds(time*2);
     }
 
     public bool escogioAlguna()
