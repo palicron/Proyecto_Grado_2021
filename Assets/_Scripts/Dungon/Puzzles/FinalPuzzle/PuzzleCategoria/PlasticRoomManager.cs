@@ -70,14 +70,10 @@ public class PlasticRoomManager : MonoBehaviour
                 tiempoRestante -= Time.deltaTime;
                 timeTxt.text = "Liberando gas toxico en \n " + tiempoRestante.ToString("f0");
                 timeText2.text = "Liberando gas toxico en \n " + tiempoRestante.ToString("f0");
-                if (tiempoRestante < 3 )
-                {
-                    gasPlat.active = true;
-
-                }
             }
             else
             {
+                gasPlat.active = true;
                 verifyAnwsers();
             }
         }
@@ -121,30 +117,46 @@ public class PlasticRoomManager : MonoBehaviour
         {
             if (met.choosed && listOfAwnsers.Contains(met.opcion))
             {
-                Questiontxt.text = "Peligro Gas Venenoso";
-                panelOpciones[met.opcion].GetComponent<TextMeshPro>().text = "Correcto";
+                Questiontxt.text = "Esperando el activador";
+                timeTxt.text = "Correcto";
+                timeText2.text = "Correcto";
+                resetPanelOpciones();
                 ContCorrectas++;
                 faltantes--;
             }
             else if (met.choosed && !listOfAwnsers.Contains(met.opcion))
             {
-                Questiontxt.text = "Peligro Gas Venenoso";
+               
                 met.activarTrampa();
-                StartCoroutine(WaitTrapTime(waitTimeTrap,met));
-                panelOpciones[met.opcion].GetComponent<TextMeshPro>().text = "Incorrecto";
+                Questiontxt.text = "Esperando el activador";
+                timeTxt.text = "Inorrecto";
+                timeText2.text = "Incorrecto";
+                StartCoroutine(WaitTrapTime(waitTimeTrap));
+                resetPanelOpciones();
                 ContIncorrectas++;
                 oportunidades--;
             }
         }
         if (!escogioAlguna())
         {
-            Questiontxt.text = "No selecionaste";
+            Questiontxt.text = "Esperando el activador";
+            timeTxt.text = "Inorrecto";
+            timeText2.text = "Incorrecto";
             ContIncorrectas++;
             oportunidades--;
+            resetPanelOpciones();
         }
         StartCoroutine(WaitTimerOut(waitingTime));
     }
 
+    //RESETEA LOS TEXTOS DE LOS PANELES DE OPCIONES
+    public void resetPanelOpciones() 
+    {
+        foreach (MetalRoomOption met in platOpciones)
+        {
+            panelOpciones[met.opcion].GetComponent<TextMeshPro>().text = "";
+        }
+    }
 
     public void generateQuestion()
     {
@@ -195,12 +207,14 @@ public class PlasticRoomManager : MonoBehaviour
 
     }
 
-    IEnumerator WaitTrapTime(float time, MetalRoomOption met)
+    IEnumerator WaitTrapTime(float time)
     {
-        
         yield return new WaitForSeconds(time);
-        OpcionesMoviles[met.opcion].active = true;
-        
+        foreach (PlaftormController met in OpcionesMoviles)
+        {
+            met.active = true;
+        }
+        yield return new WaitForSeconds(time*2);
     }
 
     public bool escogioAlguna()

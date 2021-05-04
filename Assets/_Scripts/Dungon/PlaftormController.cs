@@ -126,6 +126,7 @@ public class PlaftormController : MonoBehaviour
         else if (type == PlatformType.BUTTONPLATFORM)
         {
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed*Time.deltaTime));
+            if (speedVariation.Length != 0) { platformSpeed = speedVariation[1]; }
 
         }
         else if (type == PlatformType.TRIGGEREXIT)
@@ -287,6 +288,7 @@ public class PlaftormController : MonoBehaviour
         else if (type == PlatformType.BUTTONPLATFORM)
         {
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[1].position, platformSpeed * Time.deltaTime));
+            if (speedVariation.Length != 0) { platformSpeed = speedVariation[0]; }
 
         }
         else if (type == PlatformType.TRANSLATEMOVEMENT) 
