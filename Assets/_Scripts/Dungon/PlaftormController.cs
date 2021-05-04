@@ -54,7 +54,9 @@ public class PlaftormController : MonoBehaviour
     [SerializeField]
     bool direction=true;
     int directInt = 1;
-
+    [SerializeField]
+    AudioClip powerUpsound;
+    bool playsound =true;
     public enum PlatformType{ 
         NORMAL,
         TRANSLATEPATH,
@@ -267,6 +269,7 @@ public class PlaftormController : MonoBehaviour
         //PLATFORM THAT ROTATES DURING CERTAIN TIME
         else if (type == PlatformType.ROTATIONTIMER)
         {
+
             platformRB.DORotate(new Vector3(rotationX, rotationY, rotationZ), platformSpeed, RotateMode.Fast);
             StartCoroutine(WaitForRotation(waitTime));
  
@@ -275,6 +278,11 @@ public class PlaftormController : MonoBehaviour
         //PLATFORM THAT MOVES A RIGIDBODY TO A DETERMINED POSITION WHEN IS TRIGERED 
         else if (type == PlatformType.MOVEMENTESCREENTRIGGERED) 
         {
+            if(powerUpsound && playsound)
+            {
+                playsound = false;
+                GameManager.intance.playSound(powerUpsound);
+            }
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
             
         }
