@@ -169,6 +169,7 @@ public class NPC_Tom : NPC
     {
         if(FocuseCamera)
         {
+
             if(!cameraFocuse)
             {
                 FocuseCamera.SetActive(true);
