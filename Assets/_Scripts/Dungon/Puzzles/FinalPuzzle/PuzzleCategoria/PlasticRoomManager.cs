@@ -91,6 +91,7 @@ public class PlasticRoomManager : MonoBehaviour
                 plat.active = true;
 
             }
+            FinalLevelCtr.intance.endFight();
             completed = false;
         }
     }
