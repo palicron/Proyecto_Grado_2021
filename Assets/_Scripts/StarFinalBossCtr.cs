@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StarFinalBossCtr : MonoBehaviour
 {
-
+  
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,4 +15,6 @@ public class StarFinalBossCtr : MonoBehaviour
         }
         
     }
+
+ 
 }

@@ -21,8 +21,8 @@ public class RecyclingBinsPuzzle : MonoBehaviour
 
     public PlaftormController failedPlatform;
 
-
-
+    
+    
     public void EnableItems()
     {
         items.SetActive(true);
@@ -51,6 +51,7 @@ public class RecyclingBinsPuzzle : MonoBehaviour
     {
         items.SetActive(false);
         //animator.SetBool("enter", true);
+     
     }
 
     // Update is called once per frame
