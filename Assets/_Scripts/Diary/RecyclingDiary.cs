@@ -77,7 +77,6 @@ public class RecyclingDiary : MonoBehaviour
         //ResetEntries();
         comparer = new EntryComparer();
         actualIndex = 0;
-        ResetEntries();
         TranslateSavedLists();
         CheckDisableButton();
         BuildPage();

@@ -25,7 +25,8 @@ public class FinalLevelCtr : MonoBehaviour
     GameObject NormalCamera;
     [SerializeField]
     GameObject NewCamera;
-
+    [SerializeField]
+    RecyclingBinsPuzzle Puzzel;
     Material scrollingMat;
     
     void Start()
@@ -43,15 +44,15 @@ public class FinalLevelCtr : MonoBehaviour
 
     public void starFight()
     {
-        NewCamera.SetActive(true);
-        NormalCamera.SetActive(false);
+       // NewCamera.SetActive(true);
+        //NormalCamera.SetActive(false);
         StartCoroutine(StarMove());
     }
 
     public void endFight()
     {
-        NormalCamera.SetActive(true);
-        NewCamera.SetActive(false);
+        //NormalCamera.SetActive(true);
+      //  NewCamera.SetActive(false);
         StartCoroutine(EndMoveMove());
     }
     IEnumerator StarMove()
@@ -64,6 +65,9 @@ public class FinalLevelCtr : MonoBehaviour
         
         }
         scrollingMat.SetVector("Vector2_9793e25384094873bf5a133e32e2768a", new Vector2(0, ScrollingSpeed));
+
+        Puzzel.StartPuzzle();
+
     }
     IEnumerator EndMoveMove()
     {
