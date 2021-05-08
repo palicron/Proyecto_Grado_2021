@@ -352,7 +352,6 @@ GameObject:
   m_Component:
   - component: {fileID: 60242508}
   - component: {fileID: 60242510}
-  - component: {fileID: 60242509}
   m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
@@ -374,18 +373,6 @@ Transform:
   m_Father: {fileID: 207794710}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &60242509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60242507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c8514475fce22498270c544a24194d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &60242510
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13619,7 +13606,6 @@ GameObject:
   m_Component:
   - component: {fileID: 419731310}
   - component: {fileID: 419731312}
-  - component: {fileID: 419731311}
   m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
@@ -13641,18 +13627,6 @@ Transform:
   m_Father: {fileID: 246316146}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &419731311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419731309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c8514475fce22498270c544a24194d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &419731312
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14814,30 +14788,18 @@ MonoBehaviour:
   - {fileID: 1693289939}
   - {fileID: 268394616}
   Inicializar: 0
-  panelVF: []
-  CantRespCorrectas: 1
-  listOfAwnsers: 
-  correctOrder: []
-  tiempoInicial: 0
-  tiempoRestante: 0
-  PanelTiempo: {fileID: 0}
-  CuentaRegresiva: 0
   QaA:
   - question: "Cual de estos tipos de papeles no deber\xEDa introducirse en la caneca
       gris"
     opciones:
     - correct: 1
       respuestaTexto: Papel Higienico
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Copias de papel
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Periodico
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Panfletos
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -14846,16 +14808,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Papel de fax
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Revistas
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Carton
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Periodico
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -14864,16 +14822,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Ecologico
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: No reciclable
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Segundo uso
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Degradable
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -14882,16 +14836,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: "Pa\xF1ales"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Libros
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Cajas
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Periodico
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -14900,16 +14850,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Aire
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Agua
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Madera
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Energia
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -14917,16 +14863,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: "1 A\xF1o"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 6 meses
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "10 a\xF1os"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "2  a\xF1os"
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: Rotacion alrededor del sol
@@ -14934,16 +14876,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Papel
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Plastico
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Metal
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Vidrio
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -14951,16 +14889,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Combustible
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Agua
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Madera
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Energia
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -14969,16 +14903,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: 11
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 8
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 15
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 5
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -14986,16 +14916,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: PTC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PFC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: TFC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: ECF
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15003,16 +14929,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: 6 arboles
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 12 arboles
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 8 arboles
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 4 arboles
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15020,16 +14942,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: 17 arboles
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 22 arboles
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 10 arboles
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 3 arboles
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15037,16 +14955,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: 7
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 5
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 8
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 9
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15054,16 +14968,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15071,16 +14981,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: HDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15088,16 +14994,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: HDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15105,16 +15007,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: LDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: HDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15122,16 +15020,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: PP
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: HDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15139,16 +15033,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: PS
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: HDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15156,16 +15046,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Otros
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: HDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15173,16 +15059,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PP
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15190,16 +15072,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PP
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15207,16 +15085,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PP
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15224,16 +15098,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: HDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PP
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15241,16 +15111,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Otros
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15258,16 +15124,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: PP
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15275,16 +15137,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: LDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: HDPE
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15292,16 +15150,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: PS
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Otros
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: HDPE
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15309,16 +15163,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Otros
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Otros
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: HDPE
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15326,16 +15176,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Sal natural
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Madera
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Hicopor
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Lana
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15343,16 +15189,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: "700 a\xF1os"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "300 a\xF1os"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "500 a\xF1os"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "800 a\xF1os"
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15360,16 +15202,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Bolsa plastica
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Botellas plasticas
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Platos desechables
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Telefonos
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15377,16 +15215,12 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Nunca
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "400 a\xF1os"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "600 a\xF1os"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "800 a\xF1os"
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -15394,21 +15228,22 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Plastico
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Papel
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Vidrio
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Organicos
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
   current: 0
   correctAnwser: 0
+  listOfAwnsers: 
+  tiempoInicial: 0
+  tiempoRestante: 0
+  PanelTiempo: {fileID: 0}
+  CuentaRegresiva: 0
   movileCompleted:
   - {fileID: 1733342166}
   - {fileID: 488660092}
@@ -19125,19 +18960,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000017306578
-      objectReference: {fileID: 0}
-    - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -8.631759e-10
-      objectReference: {fileID: 0}
-    - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
-      propertyPath: m_LocalRotation.y
       value: 0.99875855
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.049813725
+      objectReference: {fileID: 0}
+    - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000017051805
+      objectReference: {fileID: 0}
+    - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.049813684
+      value: -8.504697e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1691807237, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -19157,19 +18992,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -9.31285e-10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -8.379002e-12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
-      propertyPath: m_LocalRotation.y
       value: 0.9999595
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.008996884
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 9.31285e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.008996884
+      value: -8.379002e-12
       objectReference: {fileID: 0}
     - target: {fileID: 1902527300, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_Follow
@@ -19185,11 +19020,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3179998
+      value: 12.508
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.77
+      value: -146.11
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19205,19 +19040,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.00000001732247
-      objectReference: {fileID: 0}
-    - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 7.85765e-10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
-      propertyPath: m_LocalRotation.y
       value: 0.9989728
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.045314413
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00000001732247
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.04531443
+      value: 7.8576473e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2176437046675016371, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -19297,27 +19132,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3179998
+      value: 12.508
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.77
+      value: -146.11
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000034631423
-      objectReference: {fileID: 0}
-    - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.0000000017272629
-      objectReference: {fileID: 0}
-    - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
-      propertyPath: m_LocalRotation.y
       value: 0.99875855
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.049813736
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00000003450481
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.049813677
+      value: -0.00000000172095
       objectReference: {fileID: 0}
     - target: {fileID: 4078643985135607696, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -22991,7 +22826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887385074}
   m_Layer: 6
-  m_Name: PuntoFinal
+  m_Name: PlataformaCentralP3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24200,7 +24035,7 @@ GameObject:
   m_Component:
   - component: {fileID: 938808254}
   m_Layer: 6
-  m_Name: PlatformPoints
+  m_Name: PuntosPlataformasPuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28116,7 +27951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113618623}
   m_Layer: 6
-  m_Name: PuntoCentral
+  m_Name: PlataformaCentralP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31785,7 +31620,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1341962874}
   - component: {fileID: 1341962876}
-  - component: {fileID: 1341962875}
   m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
@@ -31807,18 +31641,6 @@ Transform:
   m_Father: {fileID: 883760171}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1341962875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341962873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c8514475fce22498270c544a24194d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1341962876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39450,7 +39272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1770769183}
   m_Layer: 6
-  m_Name: PuntoInicial
+  m_Name: PlataformaCentralP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41023,29 +40845,17 @@ MonoBehaviour:
   - {fileID: 402005182}
   - {fileID: 209972055}
   Inicializar: 1
-  panelVF: []
-  CantRespCorrectas: 1
-  listOfAwnsers: 
-  correctOrder: []
-  tiempoInicial: 0
-  tiempoRestante: 0
-  PanelTiempo: {fileID: 0}
-  CuentaRegresiva: 0
   QaA:
   - question: Prueba
     opciones:
     - correct: 1
       respuestaTexto: 1
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 2
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 3
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 4
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
@@ -41053,106 +40863,22 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: 1
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 2
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 3
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 4
-      numeroOrden: 0
-    type: 1
-    PalabraAnagrama: 
-    hint: 
-  - question: Prueba
-    opciones:
-    - correct: 1
-      respuestaTexto: 1
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 2
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 3
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 4
-      numeroOrden: 0
-    type: 1
-    PalabraAnagrama: 
-    hint: 
-  - question: Prueba
-    opciones:
-    - correct: 1
-      respuestaTexto: 1
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 2
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 3
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 4
-      numeroOrden: 0
-    type: 1
-    PalabraAnagrama: 
-    hint: 
-  - question: Prueba
-    opciones:
-    - correct: 1
-      respuestaTexto: 1
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 2
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 3
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 4
-      numeroOrden: 0
-    type: 1
-    PalabraAnagrama: 
-    hint: 
-  - question: Prueba
-    opciones:
-    - correct: 1
-      respuestaTexto: 1
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 2
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 3
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 4
-      numeroOrden: 0
-    type: 1
-    PalabraAnagrama: 
-    hint: 
-  - question: Prueba
-    opciones:
-    - correct: 1
-      respuestaTexto: 1
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 2
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 3
-      numeroOrden: 0
-    - correct: 0
-      respuestaTexto: 4
-      numeroOrden: 0
     type: 1
     PalabraAnagrama: 
     hint: 
   current: 0
   correctAnwser: 0
+  listOfAwnsers: 
+  tiempoInicial: 0
+  tiempoRestante: 0
+  PanelTiempo: {fileID: 0}
+  CuentaRegresiva: 0
   movileCompleted:
   - {fileID: 555022277}
   - {fileID: 1943634874}
@@ -44286,7 +44012,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2067560429}
   - component: {fileID: 2067560431}
-  - component: {fileID: 2067560430}
   m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
@@ -44308,18 +44033,6 @@ Transform:
   m_Father: {fileID: 1216097959}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2067560430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067560428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c8514475fce22498270c544a24194d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2067560431
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45804,11 +45517,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.52
+      value: 11.71
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.73
+      value: -140.61
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalRotation.w

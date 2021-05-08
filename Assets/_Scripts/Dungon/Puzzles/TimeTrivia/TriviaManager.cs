@@ -6,28 +6,21 @@ using TMPro;
 public class TriviaManager : MonoBehaviour
 {
 
-
-    [Header("Question Dependences")]
+    [Header("Trivia Dependences")]
     public TextMeshPro Questiontxt;
     public TextMeshPro hintTxt;
     public GameObject[] panelOpciones;
     public bool Inicializar;
-    [Header("True/Flase Dependences")]
-    public GameObject[] panelVF;
-    [Header("Multiawnsers Dependences")]
-    public int CantRespCorrectas;
-    public List<int> listOfAwnsers;
-    [Header("Order Dependences")]
-    public string[] correctOrder;
-    [Header("TimeQuestion Dependences")]
-    public float  tiempoInicial;
-    public float  tiempoRestante;
-    public TextMeshPro PanelTiempo;
-    public bool CuentaRegresiva;
     [Header("Questions/Anwsers")]
     public List<QandA> QaA;
     public int current;
     public int correctAnwser;
+    public List<int> listOfAwnsers;
+    [Header("Timer Dependences")]
+    public float tiempoInicial;
+    public float tiempoRestante;
+    public TextMeshPro PanelTiempo;
+    public bool CuentaRegresiva;
     [Header("Task Completed")]
     public PlaftormController[] movileCompleted;
     public float waitTimeCompleted;
@@ -41,10 +34,8 @@ public class TriviaManager : MonoBehaviour
     private void Start()
     {
         CuentaRegresiva = false;
-        CantRespCorrectas = 0;
         completed = false;
         if (Inicializar) { generateQuestion(); }
-//        generateQuestion();
     }
 
     public void changeQuestion() 
@@ -82,7 +73,6 @@ public class TriviaManager : MonoBehaviour
         listOfAwnsers = new List<int>();
         if (QaA[current].type == QandA.QuestionType.SIMPLEANSWER || QaA[current].type == QandA.QuestionType.COMPLETAR)
         {
-            CantRespCorrectas = 1;
             int randomOption = 0;
             for (int i = 0; i < panelOpciones.Length; i++)
             {
@@ -91,75 +81,6 @@ public class TriviaManager : MonoBehaviour
                 if (QaA[current].opciones[randomOption].correct)
                 {
                     listOfAwnsers.Add(i);   
-                }
-                QaA[current].opciones.RemoveAt(randomOption);
-            }
-        }
-        else if (QaA[current].type == QandA.QuestionType.VF)
-        {
-                CantRespCorrectas = 1;
-                int randomOption = 0;
-                 int i = 0;
-                foreach (GameObject gameojb in panelVF) 
-                {
-                    randomOption = Random.Range(0, QaA[current].opciones.Count);
-                    gameojb.GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
-                    if (QaA[current].opciones[randomOption].correct)
-                    {
-                        listOfAwnsers.Add(i); 
-                    }
-                    i++;
-                    QaA[current].opciones.RemoveAt(randomOption);
-                 }             
-        }
-        else if (QaA[current].type == QandA.QuestionType.MULTPIPLEANSWERS)
-        {
-            CantRespCorrectas = 0;
-            int randomOption = 0;
-            for (int i = 0; i < panelOpciones.Length; i++)
-            {
-                randomOption = Random.Range(0, QaA[current].opciones.Count);
-                panelOpciones[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
-                if (QaA[current].opciones[randomOption].correct)
-                {
-                    listOfAwnsers.Add(i);
-                    CantRespCorrectas++;
-                   
-                }
-                QaA[current].opciones.RemoveAt(randomOption);
-            }
-        }
-        else if (QaA[current].type == QandA.QuestionType.CUENTAREGRESIVA)
-        {
-            CantRespCorrectas = 0;
-            int randomOption = 0;
-            for (int i = 0; i < panelOpciones.Length; i++)
-            {
-                randomOption = Random.Range(0, QaA[current].opciones.Count);
-                panelOpciones[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
-                if (QaA[current].opciones[randomOption].correct)
-                {
-
-                    listOfAwnsers.Add(i);
-                    
-                }
-                QaA[current].opciones.RemoveAt(randomOption);
-            }
-            CuentaRegresiva = true;
-        }
-        else if (QaA[current].type == QandA.QuestionType.ORDENAR)
-        {
-            CantRespCorrectas = 0;
-            int randomOption = 0;
-            for (int i = 0; i < panelOpciones.Length; i++)
-            {
-                randomOption = Random.Range(0, QaA[current].opciones.Count);
-                panelOpciones[i].GetComponent<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
-                if (QaA[current].opciones[randomOption].correct)
-                {
-
-                    listOfAwnsers.Add(i);
-
                 }
                 QaA[current].opciones.RemoveAt(randomOption);
             }
@@ -180,7 +101,6 @@ public class TriviaManager : MonoBehaviour
         }
         tiempoRestante = tiempoInicial;
         SetAwnsers();
-        if(QaA[current].hint!=null){hintTxt.text= QaA[current].hint;}
         QaA.RemoveAt(current);
     }
 
