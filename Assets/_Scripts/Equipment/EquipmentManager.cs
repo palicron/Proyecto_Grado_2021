@@ -47,6 +47,15 @@ public class EquipmentManager : MonoBehaviour
         SetEquipment();
     }
 
+    IEnumerator Initialize()
+    {
+        yield return new WaitForSeconds(0.1F);
+        if (onItemEquipedCallBack != null)
+        {
+            onItemEquipedCallBack.Invoke();
+        }
+    }
+
     void SetEquipment()
     {
         int[] savedEquipment = PlayerPrefsX.GetIntArray("Equipment");
@@ -59,6 +68,7 @@ public class EquipmentManager : MonoBehaviour
                 Debug.Log("Recuperando equipamiento: " + savedEquipment[i]);
             }
         }
+        StartCoroutine(Initialize());
     }
 
     void OnDestroy()

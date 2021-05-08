@@ -105,11 +105,18 @@ public class UIManager : MonoBehaviour
 
     public void DeathMenuEnable()
     {
+        Pause();
         DeathMenu.SetActive(true);
     }
     public void endlevel()
     {
         FinishMenu.SetActive(true);
+    }
+
+    public void RestarFromCheckPoint()
+    {
+        Resume();
+        GameManager.intance.RestarLevelCheckPoint();
     }
 
 }

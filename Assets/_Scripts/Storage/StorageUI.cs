@@ -10,13 +10,13 @@ public class StorageUI : MonoBehaviour
 
     StorageSlot[] slots;
 
-    Color32 blue = new Color32(83, 101, 255, 240);
+    //Color32 blue = new Color32(83, 101, 255, 240);
 
-    Color32 red = new Color32(212, 115, 173, 240);
+    //Color32 red = new Color32(212, 115, 173, 240);
     
-    Color32 green = new Color32(119, 212, 173, 240);
+    //Color32 green = new Color32(119, 212, 173, 240);
 
-    Color32 yellow = new Color32(193, 212, 119, 240);
+    //Color32 yellow = new Color32(193, 212, 119, 240);
 
     // Start is called before the first frame update
     void Start()
@@ -37,21 +37,21 @@ public class StorageUI : MonoBehaviour
 
     void UpdateUI()
     {
-        switch ((int)storage.storageType)
-        {
-            case 1:
-                itemsParent.GetComponent<Image>().color = blue;
-                break;
-            case 2:
-                itemsParent.GetComponent<Image>().color = yellow;
-                break;
-            case 3:
-                itemsParent.GetComponent<Image>().color = green;
-                break;
-            case 4:
-                itemsParent.GetComponent<Image>().color = red;
-                break;
-        }
+        //switch ((int)storage.storageType)
+        //{
+        //    case 1:
+        //        itemsParent.GetComponent<Image>().color = blue;
+        //        break;
+        //    case 2:
+        //        itemsParent.GetComponent<Image>().color = yellow;
+        //        break;
+        //    case 3:
+        //        itemsParent.GetComponent<Image>().color = green;
+        //        break;
+        //    case 4:
+        //        itemsParent.GetComponent<Image>().color = red;
+        //        break;
+        //}
         for (int i = 0; i < slots.Length; i++)
         {
             if (i < storage.items.Count)

@@ -139,7 +139,10 @@ public class GameManager : MonoBehaviour
 
         Application.Quit();
     }
-
+    public void RestarLevelCheckPoint()
+    {
+        StartCoroutine(LoadYourAsyncScene(CurrentLevelIndex, true,true));
+    }
 
     public void resetPlayer(int Dmg =0)
     {
@@ -166,7 +169,7 @@ public class GameManager : MonoBehaviour
      
     }
 
-    IEnumerator LoadYourAsyncScene(int index, bool TransferInv= false)
+    IEnumerator LoadYourAsyncScene(int index, bool TransferInv= false ,bool checkpoint=false)
     {
         Debug.Log("LODING" + index);
         List<ListItem> inv = Inventory.instance.items;
@@ -183,6 +186,11 @@ public class GameManager : MonoBehaviour
         if (TransferInv)
         {
             TrasnferInvetory(inv, CurrentScore, weapon, currentE);
+        }
+
+        if(checkpoint)
+        {
+            Player.transform.position = GameManager.CheckPoint;
         }
         GameManager.CheckPoint = Vector3.zero;
         GameManager.CheckPointName = "StarCheckPoint";
