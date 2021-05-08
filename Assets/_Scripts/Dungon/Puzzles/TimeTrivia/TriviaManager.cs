@@ -8,7 +8,7 @@ public class TriviaManager : MonoBehaviour
 
     [Header("Trivia Dependences")]
     public TextMeshPro Questiontxt;
-    public TextMeshPro hintTxt;
+    public TextMeshPro timerTxt;
     public GameObject[] panelOpciones;
     public bool Inicializar;
     [Header("Questions/Anwsers")]
@@ -19,7 +19,6 @@ public class TriviaManager : MonoBehaviour
     [Header("Timer Dependences")]
     public float tiempoInicial;
     public float tiempoRestante;
-    public TextMeshPro PanelTiempo;
     public bool CuentaRegresiva;
     [Header("Task Completed")]
     public PlaftormController[] movileCompleted;
@@ -56,11 +55,11 @@ public class TriviaManager : MonoBehaviour
             if (tiempoRestante >= 1)
             {
                 tiempoRestante -= Time.deltaTime;
-                PanelTiempo.text = "" + tiempoRestante.ToString("f0");
+                timerTxt.text = "" + tiempoRestante.ToString("f0");
             }
             else 
             {
-                PanelTiempo.text = "Se acabo el tiempo";
+                timerTxt.text = "--";
                 changeQuestion();
                 CuentaRegresiva = false;
             }
@@ -71,7 +70,7 @@ public class TriviaManager : MonoBehaviour
     void SetAwnsers() 
     {
         listOfAwnsers = new List<int>();
-        if (QaA[current].type == QandA.QuestionType.SIMPLEANSWER || QaA[current].type == QandA.QuestionType.COMPLETAR)
+        if (QaA[current].type == QandA.QuestionType.SIMPLEANSWER)
         {
             int randomOption = 0;
             for (int i = 0; i < panelOpciones.Length; i++)
@@ -91,10 +90,6 @@ public class TriviaManager : MonoBehaviour
     {
         current = Random.Range(0, QaA.Count);
         Questiontxt.text = QaA[current].question;
-        if (QaA[current].type == QandA.QuestionType.ORDENAR)
-        {   
-            Questiontxt.text = QaA[current].question + " : " + QaA[current].Anagrama();
-        }
         for (int i = 0; i < panelOpciones.Length; i++)
         {   
             panelOpciones[i].GetComponent<TextMeshPro>().text = "";

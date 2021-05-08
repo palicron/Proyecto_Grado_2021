@@ -157,10 +157,6 @@ public class MetalRoomManager : MonoBehaviour
         }
         current = Random.Range(0, QaA.Count);
         Questiontxt.text = QaA[current].question;
-        if (QaA[current].type == QandA.QuestionType.ORDENAR)
-        {
-            Questiontxt.text = QaA[current].question + " : " + QaA[current].Anagrama();
-        }
         for (int i = 0; i < panelOpciones.Length; i++)
         {
             panelOpciones[i].GetComponentInChildren<TextMeshPro>().text = "";

@@ -8,9 +8,7 @@ public class QandA
     public string question;
     public List<AnswerScript> opciones;
     public QuestionType type;
-    [Header("Anagrama Dependences")]
-    public string PalabraAnagrama;
-    public string hint;
+
     
   
 
@@ -19,21 +17,9 @@ public class QandA
     {
         NORMAL,
         SIMPLEANSWER,
-        MULTPIPLEANSWERS,
-        VF,
-        COMPLETAR,
-        CUENTAREGRESIVA,
-        ORDENAR
     }
 
 
-    public string Anagrama() 
-    {
-
-        string attemp= shuffle(PalabraAnagrama);
-        while (attemp== PalabraAnagrama) { shuffle(PalabraAnagrama); }
-        return attemp;
-    }
 
     public string shuffle(string palabra) 
     {
