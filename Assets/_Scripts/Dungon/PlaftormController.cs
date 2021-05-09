@@ -409,18 +409,7 @@ public class PlaftormController : MonoBehaviour
             {
                 platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[positions.Length-1].position, platformSpeed * Time.deltaTime));
             }
-            if (playerOnPlat)
-               {
-                    playerVelx = VelocityVector.x;
-                    playerVelz = VelocityVector.z;
-                    if (plactr.Xvel != 0 || plactr.Yvel != 0)
-                    {
-                        playerVelx = playerRigid.velocity.x;
-                        playerVelz = playerRigid.velocity.z;
-                    }
-                    Vector3 newVelocity = new Vector3(playerVelx, playerRigid.velocity.y, playerVelz);
-                    playerRigid.velocity = newVelocity;
-               }
+
             StartCoroutine(WaitForReset(waitTime));
         }
     }

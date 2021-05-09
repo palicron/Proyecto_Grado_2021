@@ -8,22 +8,18 @@ public class GuideQuestions : MonoBehaviour
     public TriviaManager manager;
     public TextMeshPro anuncioAlto;
     public TextMeshPro anuncioBajo;
-    private int faltantes;
-
 
     // Update is called once per frame
     void Update()
     {
-        faltantes = manager.cantidadDePreguntas - manager.preguntasRespondidasCorrectamente;
-        anuncioAlto.text = "Faltan: " + faltantes;
-        anuncioBajo.text = "Incorrectas: " + manager.ContIncorrectas;
+      
+        anuncioAlto.text = "Restantes: " + manager.Restantes;
+        anuncioBajo.text = "Oportunidades: " + manager.Oportunidades;
 
         if(manager.completed){
 
-             anuncioAlto.text = " ";
+            anuncioAlto.text = " ";
             anuncioBajo.text = " ";
-
-
         }
     }
 }

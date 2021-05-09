@@ -5,7 +5,7 @@ using TMPro;
 
 public class TriggerTime : MonoBehaviour
 {
-    public PlaftormController[] platforms;
+    public PlaftormController[] plataformasRegreso;
     public PlaftormController[] panelesElevadizos;
     public TextMeshPro[] TextopanelOpciones;
     public TriviaManager manager;
@@ -21,20 +21,24 @@ public class TriggerTime : MonoBehaviour
     {
         if (other.gameObject.tag == "Platform")
         {
-            if (!used)
+            if (!used && !manager.completed)
             {
-                foreach (PlaftormController platctr in platforms)
+                foreach (PlaftormController platctr in plataformasRegreso)
                 {
                   platctr.active = true;
                 }
-                if(TextopanelOpciones.Length!=0)
+                foreach (PlaftormController platctr in panelesElevadizos)
+                {
+                    platctr.active = false;
+                }
+                if (TextopanelOpciones.Length!=0)
                 {
                     foreach (TextMeshPro textField in TextopanelOpciones)
                     {
                     textField.text = "";
                     }
                 }
-               
+                manager.timerTxt.text = "Esperando Activador";
                 used = true;
             }
             else 
@@ -42,10 +46,12 @@ public class TriggerTime : MonoBehaviour
                 used = false;
                 if (manager!=null) 
                 {
-
-                    if (manager.preguntasRespondidasCorrectamente == manager.cantidadDePreguntas)
+                    foreach (PlaftormController platctr in plataformasRegreso)
                     {
-                       
+                        platctr.active = false;
+                    }
+                    if ( manager.Restantes == 0)
+                    {
                         manager.completed = true;
                     }
                     else if(manager.QaA.Count==0)
@@ -59,8 +65,8 @@ public class TriggerTime : MonoBehaviour
                             {
                                 platctr.active = true;
                             }
-                        }
-                       
+                        }   
+                        manager.CuentaRegresiva = true;
                         manager.changeQuestion();
                     }
                 }

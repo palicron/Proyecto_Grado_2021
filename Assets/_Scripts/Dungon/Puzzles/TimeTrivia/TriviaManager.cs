@@ -23,16 +23,15 @@ public class TriviaManager : MonoBehaviour
     [Header("Task Completed")]
     public PlaftormController[] movileCompleted;
     public float waitTimeCompleted;
-    public int preguntasRespondidasCorrectamente;
+    public int ContCorrectas;
     public int ContIncorrectas;
-    public int LimiteIncorrectas;
-    public int cantidadDePreguntas;
+    public int Oportunidades;
+    public int Restantes;
     public bool completed;
 
 
     private void Start()
     {
-        CuentaRegresiva = false;
         completed = false;
         if (Inicializar) { generateQuestion(); }
     }
@@ -47,25 +46,25 @@ public class TriviaManager : MonoBehaviour
         if (completed) 
         { 
             Questiontxt.text= "Completado";
+            if (timerTxt!=null) { timerTxt.text = ""; }
             StartCoroutine(WaitForMove(waitTimeCompleted));
             
         }
         if (CuentaRegresiva) 
         {
-            if (tiempoRestante >= 1)
+            if (tiempoRestante > 0)
             {
                 tiempoRestante -= Time.deltaTime;
                 timerTxt.text = "" + tiempoRestante.ToString("f0");
             }
             else 
             {
-                timerTxt.text = "--";
-                changeQuestion();
                 CuentaRegresiva = false;
             }
         }
        
     }
+
 
     void SetAwnsers() 
     {

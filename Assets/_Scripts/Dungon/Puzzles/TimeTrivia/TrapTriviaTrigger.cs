@@ -9,9 +9,6 @@ public class TrapTriviaTrigger : MonoBehaviour
    public TextMeshPro[] TextopanelOpciones;
    public TriviaManager manager;
    public bool used;
-   public int incorrectPosition=1;
-   public bool choosedAPlatform;
-
 
     private void Start()
     {
@@ -26,45 +23,47 @@ public class TrapTriviaTrigger : MonoBehaviour
             {
                 for (int i=0; i < platforms.Length; i++) 
                 {
-                     if (manager.listOfAwnsers.Contains(i))
-                    {
-                        if (platforms[i].playerOnPlat) { 
+                  
+                    if (platforms[i].playerOnPlat && manager.listOfAwnsers.Contains(i)) { 
+                           manager.timerTxt.text = "Correcto";
+                           manager.ContCorrectas++;
+                           manager.Restantes--;
+                      }
 
-                            if(TextopanelOpciones.Length!=0){TextopanelOpciones[i].text= "Correcto";}
-                            choosedAPlatform = true;
-                            manager.preguntasRespondidasCorrectamente++;
-                        }
-                        
-                        
-                    }
-                    else 
+                    else if(platforms[i].playerOnPlat && !manager.listOfAwnsers.Contains(i))
                     {
-
-                        
-                            if(TextopanelOpciones.Length!=0){TextopanelOpciones[i].text= "Incorrecto";}
-                        platforms[i].positionTrap = incorrectPosition;
-                        platforms[i].active = true;
+                        manager.timerTxt.text = "Incorrecto";
                         if (platforms[i].playerOnPlat)
                         {
-                            choosedAPlatform = true;
-                            incorrectPosition++;
+                        
+                            manager.ContIncorrectas++;
+                            manager.Oportunidades--;
                         }
+                        platforms[i].positionTrap = manager.ContIncorrectas;
+                        platforms[i].active = true;  
                     }
-                    
                 }
-            
                 used = true;
+               
+                resetAllText();
+               
             }
-            if (!choosedAPlatform) 
-            {
-                incorrectPosition++;
-            }
+
         }
 
     }
 
+    void resetAllText() 
+    {
+        foreach (TextMeshPro textInfo in TextopanelOpciones) 
+        {
+            textInfo.text = "";
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
+        manager.Questiontxt.text = "";   
         used = false;
     }
 }
