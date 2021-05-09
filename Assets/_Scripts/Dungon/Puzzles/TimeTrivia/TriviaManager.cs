@@ -28,6 +28,9 @@ public class TriviaManager : MonoBehaviour
     public int Oportunidades;
     public int Restantes;
     public bool completed;
+    [Header("Task Failed")]
+    public bool failed;
+    public PlaftormController[] FallingPlatforms;
 
 
     private void Start()
@@ -49,6 +52,20 @@ public class TriviaManager : MonoBehaviour
             if (timerTxt!=null) { timerTxt.text = ""; }
             StartCoroutine(WaitForMove(waitTimeCompleted));
             
+        }
+        if (failed)
+        {
+            if (FallingPlatforms.Length!=0) {
+                foreach (PlaftormController plat in FallingPlatforms)
+                {
+                    plat.waitTime = 5f;
+                    plat.positionTrap = 3;
+                    plat.active = true;
+                    Questiontxt.text = "Failed";
+                }
+            }
+           
+            failed = false;
         }
         if (CuentaRegresiva) 
         {

@@ -2933,7 +2933,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181608757}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.53, y: 1.2, z: -179.77}
+  m_LocalPosition: {x: -0.53, y: -7.23, z: -179.77}
   m_LocalScale: {x: 21.425482, y: 1, z: 8.63901}
   m_Children: []
   m_Father: {fileID: 1343267093}
@@ -12369,6 +12369,7 @@ MonoBehaviour:
   - {fileID: 1344727714}
   - {fileID: 1371053957}
   - {fileID: 1414720885}
+  puntoFallido: {fileID: 181608758}
   OtrosOpciones:
   - {fileID: 1981180968}
   - {fileID: 402005184}
@@ -14703,8 +14704,29 @@ MonoBehaviour:
   - {fileID: 268394616}
   Inicializar: 0
   QaA:
-  - question: "Cual de estos tipos de papeles no deber\xEDa introducirse en la caneca
-      gris"
+  - question: "\xBFCual es el material que demora mas en descomponerse?"
+    opciones:
+    - correct: 1
+      respuestaTexto: Plastico
+    - correct: 0
+      respuestaTexto: Papel
+    - correct: 0
+      respuestaTexto: Vidrio
+    - correct: 0
+      respuestaTexto: Organicos
+    type: 1
+  - question: "\xBFCual es el producto  plastico mas contamienantes del planeta?"
+    opciones:
+    - correct: 1
+      respuestaTexto: Bolsa plastica
+    - correct: 0
+      respuestaTexto: "Pa\xF1ales"
+    - correct: 0
+      respuestaTexto: Platos desechables
+    - correct: 0
+      respuestaTexto: Telefonos
+    type: 1
+  - question: "\xBFCual de estos productos no deberia introducirse en la caneca gris?"
     opciones:
     - correct: 1
       respuestaTexto: Papel Higienico
@@ -14715,32 +14737,8 @@ MonoBehaviour:
     - correct: 0
       respuestaTexto: Panfletos
     type: 1
-  - question: "Cual de estos tipos objetos no deber\xEDa introducirse en la caneca
-      gris"
-    opciones:
-    - correct: 1
-      respuestaTexto: Papel de fax
-    - correct: 0
-      respuestaTexto: Revistas
-    - correct: 0
-      respuestaTexto: Carton
-    - correct: 0
-      respuestaTexto: Periodico
-    type: 1
-  - question: Dentro de los tipos de papel se encuentra el papel de primer uso, el
-      reciclable y el
-    opciones:
-    - correct: 1
-      respuestaTexto: Ecologico
-    - correct: 0
-      respuestaTexto: No reciclable
-    - correct: 0
-      respuestaTexto: Segundo uso
-    - correct: 0
-      respuestaTexto: Degradable
-    type: 1
-  - question: "Cual de estos productos tiene una mayor cantidad de consumo de \xE1rboles
-      para su producci\xF3n"
+  - question: "\xBFCual de estos productos tiene una mayor cantidad de consumo de
+      \xE1rboles para su producci\xF3n?"
     opciones:
     - correct: 1
       respuestaTexto: "Pa\xF1ales"
@@ -14751,19 +14749,7 @@ MonoBehaviour:
     - correct: 0
       respuestaTexto: Periodico
     type: 1
-  - question: " Al reducir el uso de papel cu\xE1l de estos recursos no tiene un
-      cambio en su consumo "
-    opciones:
-    - correct: 1
-      respuestaTexto: Aire
-    - correct: 0
-      respuestaTexto: Agua
-    - correct: 0
-      respuestaTexto: Madera
-    - correct: 0
-      respuestaTexto: Energia
-    type: 1
-  - question: Cuanto dura en promedio en degradarse el papel
+  - question: "\xBFCuanto dura en promedio en degradarse el papel?"
     opciones:
     - correct: 1
       respuestaTexto: "1 A\xF1o"
@@ -14774,7 +14760,7 @@ MonoBehaviour:
     - correct: 0
       respuestaTexto: "2  a\xF1os"
     type: 1
-  - question: Cual es el material que se degrada con mayor facilidad
+  - question: "\xBFCual es el material que se degrada con mayor facilidad?"
     opciones:
     - correct: 1
       respuestaTexto: Papel
@@ -14796,8 +14782,18 @@ MonoBehaviour:
     - correct: 0
       respuestaTexto: Energia
     type: 1
-  - question: "En promedio cuantas veces se puede reciclar el papel en diferentes
-      tipos de papel o cart\xF3n"
+  - question: "\xBFAl reducir el uso del papel se disminuye el consumo de?"
+    opciones:
+    - correct: 1
+      respuestaTexto: Madera
+    - correct: 0
+      respuestaTexto: Aire
+    - correct: 0
+      respuestaTexto: Plastico
+    - correct: 1
+      respuestaTexto: Energia
+    type: 1
+  - question: "\xBFCuantas veces se puede reciclar el papel?"
     opciones:
     - correct: 1
       respuestaTexto: 11
@@ -14808,280 +14804,171 @@ MonoBehaviour:
     - correct: 0
       respuestaTexto: 5
     type: 1
-  - question: Cual de estos no es un metodo para blanquear el papel
+  - question: "\xBFCual es el tipo de papel que garantiza su fabricaci\xF3n con un
+      minimo impacto ambiental?"
     opciones:
     - correct: 1
-      respuestaTexto: PTC
+      respuestaTexto: Ecologico
     - correct: 0
-      respuestaTexto: PFC
+      respuestaTexto: Primer uso
+    - correct: 0
+      respuestaTexto: Reciclado
+    - correct: 0
+      respuestaTexto: Segundo uso
+    type: 1
+  - question: "\xBFCual es el papel fabricado a partir de celulosa de madera?"
+    opciones:
+    - correct: 1
+      respuestaTexto: Primer uso
+    - correct: 0
+      respuestaTexto: Ecologico
+    - correct: 0
+      respuestaTexto: Reciclable
+    - correct: 0
+      respuestaTexto: Ecoreciclado
+    type: 1
+  - question: "\xBFCual es el papel fabricado a partir de papel usado?"
+    opciones:
+    - correct: 0
+      respuestaTexto: Primer uso
+    - correct: 0
+      respuestaTexto: Ecologico
+    - correct: 1
+      respuestaTexto: Reciclable
+    - correct: 0
+      respuestaTexto: Ecoreciclado
+    type: 1
+  - question: "\xBFCual es el papel fabricado que usa cloro para sun blanqueamiento?"
+    opciones:
+    - correct: 0
+      respuestaTexto: Primer uso
+    - correct: 0
+      respuestaTexto: Ecologico
+    - correct: 1
+      respuestaTexto: Reciclable
+    - correct: 0
+      respuestaTexto: Ecoreciclado
+    type: 1
+  - question: "\xBFCual de estos tipos de blanqueamiento  es libre de cloro?"
+    opciones:
     - correct: 0
       respuestaTexto: TFC
     - correct: 0
       respuestaTexto: ECF
+    - correct: 1
+      respuestaTexto: PFC
+    - correct: 0
+      respuestaTexto: PFF
     type: 1
-  - question: "Cu\xE1ntos  \xE1rboles en promedio usa una familia"
+  - question: "\xBFCual es el metal mas reciclado del mundo?"
     opciones:
     - correct: 1
-      respuestaTexto: 6 arboles
+      respuestaTexto: Acero
     - correct: 0
-      respuestaTexto: 12 arboles
+      respuestaTexto: Bronce
     - correct: 0
-      respuestaTexto: 8 arboles
+      respuestaTexto: Oro
     - correct: 0
-      respuestaTexto: 4 arboles
+      respuestaTexto: Aluminio
     type: 1
-  - question: 1 Tonelada de papel es producida con
+  - question: "\xBFCual es el metal menos reciclado del mundo?"
     opciones:
     - correct: 1
-      respuestaTexto: 17 arboles
+      respuestaTexto: Litio
     - correct: 0
-      respuestaTexto: 22 arboles
+      respuestaTexto: Plomo
     - correct: 0
-      respuestaTexto: 10 arboles
+      respuestaTexto: Bronce
     - correct: 0
-      respuestaTexto: 3 arboles
+      respuestaTexto: Plata
     type: 1
-  - question: En cuantos tipos se clasifican los plasticos
+  - question: "\xBFCual es el metal que se puede reciclar en su totalidad?"
     opciones:
     - correct: 1
-      respuestaTexto: 7
+      respuestaTexto: Aluminio
     - correct: 0
-      respuestaTexto: 5
+      respuestaTexto: Hierro
     - correct: 0
-      respuestaTexto: 8
+      respuestaTexto: Bronce
     - correct: 0
-      respuestaTexto: 9
+      respuestaTexto: Acero
     type: 1
-  - question: Cual es el tipo de plastico que tiene asignado el numero 1
+  - question: "\xBFCuanto se demora en descomponerse una lata de aluminio?"
     opciones:
     - correct: 1
-      respuestaTexto: PET
+      respuestaTexto: "80 a\xF1os"
     - correct: 0
-      respuestaTexto: PVC
+      respuestaTexto: "100 a\xF1os"
     - correct: 0
-      respuestaTexto: PS
+      respuestaTexto: "10 a\xF1os"
     - correct: 0
-      respuestaTexto: PS
+      respuestaTexto: "50 a\xF1os"
     type: 1
-  - question: Cual es el tipo de plastico que tiene asignado el numero 2
+  - question: "\xBFCual metal se usa para la realizaci\xF3n de tornillos?"
     opciones:
     - correct: 1
-      respuestaTexto: HDPE
+      respuestaTexto: Hierro
     - correct: 0
-      respuestaTexto: LDPE
+      respuestaTexto: Bronce
     - correct: 0
-      respuestaTexto: PET
+      respuestaTexto: Oro
     - correct: 0
-      respuestaTexto: PS
+      respuestaTexto: Aluminio
     type: 1
-  - question: Cual es el tipo de plastico que tiene asignado el numero 3
+  - question: "\xBFCual metal se usa para la realizaci\xF3n de tuber\xEDas?"
     opciones:
     - correct: 1
-      respuestaTexto: PVC
+      respuestaTexto: Acero
+    - correct: 1
+      respuestaTexto: Cobre
     - correct: 0
-      respuestaTexto: HDPE
+      respuestaTexto: Hierro
     - correct: 0
-      respuestaTexto: PET
-    - correct: 0
-      respuestaTexto: PS
+      respuestaTexto: Aluminio
     type: 1
-  - question: Cual es el tipo de plastico que tiene asignado el numero 4
+  - question: "\xBFCual metal se usa para la realizaci\xF3n de latas?"
     opciones:
     - correct: 1
-      respuestaTexto: LDPE
+      respuestaTexto: Aluminio
     - correct: 0
-      respuestaTexto: HDPE
+      respuestaTexto: Hierro
     - correct: 0
-      respuestaTexto: PVC
+      respuestaTexto: Acero
     - correct: 0
-      respuestaTexto: PS
+      respuestaTexto: Zinc
     type: 1
-  - question: Cual es el tipo de plastico que tiene asignado el numero 5
+  - question: "\xBFCual metal se usa para la realizaci\xF3n de joyeria o estatuas?"
     opciones:
     - correct: 1
-      respuestaTexto: PP
+      respuestaTexto: Bronce
     - correct: 0
-      respuestaTexto: HDPE
+      respuestaTexto: Aluminio
     - correct: 0
-      respuestaTexto: PVC
+      respuestaTexto: Acero
     - correct: 0
-      respuestaTexto: PS
+      respuestaTexto: Hierro
     type: 1
-  - question: Cual es el tipo de plastico que tiene asignado el numero 6
+  - question: "\xBFCual metal se usa para la realizaci\xF3n de pilas?"
     opciones:
     - correct: 1
-      respuestaTexto: PS
+      respuestaTexto: Plomo
     - correct: 0
-      respuestaTexto: HDPE
+      respuestaTexto: Bronce
     - correct: 0
-      respuestaTexto: PVC
+      respuestaTexto: Oro
     - correct: 0
-      respuestaTexto: PS
+      respuestaTexto: Aluminio
     type: 1
-  - question: Cual es el tipo de plastico que tiene asignado el numero 7
+  - question: "\xBFCual es la fuente princiipal de desechos de acero?"
     opciones:
     - correct: 1
-      respuestaTexto: Otros
+      respuestaTexto: Automoviles sin uso
     - correct: 0
-      respuestaTexto: HDPE
+      respuestaTexto: Tuberias
     - correct: 0
-      respuestaTexto: PVC
+      respuestaTexto: Chatarra
     - correct: 0
-      respuestaTexto: PS
-    type: 1
-  - question: Cual es el tipo de plsatico con mayor facilidad de reciclaje
-    opciones:
-    - correct: 1
-      respuestaTexto: PET
-    - correct: 0
-      respuestaTexto: PS
-    - correct: 0
-      respuestaTexto: PVC
-    - correct: 0
-      respuestaTexto: PP
-    type: 1
-  - question: Cual es el plastico con mayor dificultad de reciclaje
-    opciones:
-    - correct: 1
-      respuestaTexto: PVC
-    - correct: 0
-      respuestaTexto: PS
-    - correct: 0
-      respuestaTexto: PP
-    - correct: 0
-      respuestaTexto: LDPE
-    type: 1
-  - question: Cual es el tipo de palstico usado en las botellas de refresco
-    opciones:
-    - correct: 1
-      respuestaTexto: PET
-    - correct: 0
-      respuestaTexto: PS
-    - correct: 0
-      respuestaTexto: PP
-    - correct: 0
-      respuestaTexto: LDPE
-    type: 1
-  - question: Cual es el tipo de palstico usado en las bolsas de mercado
-    opciones:
-    - correct: 1
-      respuestaTexto: HDPE
-    - correct: 0
-      respuestaTexto: PET
-    - correct: 0
-      respuestaTexto: PP
-    - correct: 0
-      respuestaTexto: LDPE
-    type: 1
-  - question: "Cual es el tipo de palstico usado en las ca\xF1erias"
-    opciones:
-    - correct: 1
-      respuestaTexto: PVC
-    - correct: 0
-      respuestaTexto: PET
-    - correct: 0
-      respuestaTexto: LDPE
-    - correct: 0
-      respuestaTexto: Otros
-    type: 1
-  - question: Cual es el tipo de palstico usado en los pitillos
-    opciones:
-    - correct: 1
-      respuestaTexto: PP
-    - correct: 0
-      respuestaTexto: PVC
-    - correct: 0
-      respuestaTexto: LDPE
-    - correct: 0
-      respuestaTexto: LDPE
-    type: 1
-  - question: Cual es el tipo de palstico usado en las bolsas de basura
-    opciones:
-    - correct: 1
-      respuestaTexto: LDPE
-    - correct: 0
-      respuestaTexto: PET
-    - correct: 0
-      respuestaTexto: PVC
-    - correct: 0
-      respuestaTexto: HDPE
-    type: 1
-  - question: Cual es el tipo de palstico usado en los platos desechables
-    opciones:
-    - correct: 1
-      respuestaTexto: PS
-    - correct: 0
-      respuestaTexto: Otros
-    - correct: 0
-      respuestaTexto: LDPE
-    - correct: 0
-      respuestaTexto: HDPE
-    type: 1
-  - question: Cual es el tipo de palstico usado en los telefonos
-    opciones:
-    - correct: 1
-      respuestaTexto: Otros
-    - correct: 0
-      respuestaTexto: Otros
-    - correct: 0
-      respuestaTexto: LDPE
-    - correct: 0
-      respuestaTexto: HDPE
-    type: 1
-  - question: Cual de estos es un lugar de procedencia del plastico
-    opciones:
-    - correct: 1
-      respuestaTexto: Sal natural
-    - correct: 0
-      respuestaTexto: Madera
-    - correct: 0
-      respuestaTexto: Hicopor
-    - correct: 0
-      respuestaTexto: Lana
-    type: 1
-  - question: Cuanto se demora en degradarse el plastico en promedio
-    opciones:
-    - correct: 1
-      respuestaTexto: "700 a\xF1os"
-    - correct: 0
-      respuestaTexto: "300 a\xF1os"
-    - correct: 0
-      respuestaTexto: "500 a\xF1os"
-    - correct: 0
-      respuestaTexto: "800 a\xF1os"
-    type: 1
-  - question: Entre los productos plasticos mas contamienantes del planeta se encuentra
-    opciones:
-    - correct: 1
-      respuestaTexto: Bolsa plastica
-    - correct: 0
-      respuestaTexto: Botellas plasticas
-    - correct: 0
-      respuestaTexto: Platos desechables
-    - correct: 0
-      respuestaTexto: Telefonos
-    type: 1
-  - question: Cuando puede demorarse en descomponerse el poliestireno
-    opciones:
-    - correct: 1
-      respuestaTexto: Nunca
-    - correct: 0
-      respuestaTexto: "400 a\xF1os"
-    - correct: 0
-      respuestaTexto: "600 a\xF1os"
-    - correct: 0
-      respuestaTexto: "800 a\xF1os"
-    type: 1
-  - question: Cual es el material que demora mas en descomponerse
-    opciones:
-    - correct: 1
-      respuestaTexto: Plastico
-    - correct: 0
-      respuestaTexto: Papel
-    - correct: 0
-      respuestaTexto: Vidrio
-    - correct: 0
-      respuestaTexto: Organicos
+      respuestaTexto: Latas de comida
     type: 1
   current: 0
   correctAnwser: 0
@@ -15098,6 +14985,12 @@ MonoBehaviour:
   Oportunidades: 4
   Restantes: 3
   completed: 0
+  failed: 0
+  FallingPlatforms:
+  - {fileID: 883760176}
+  - {fileID: 1216097964}
+  - {fileID: 246316151}
+  - {fileID: 207794715}
 --- !u!114 &488660092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17984,6 +17877,7 @@ MonoBehaviour:
   - {fileID: 1344727714}
   - {fileID: 1371053957}
   - {fileID: 1414720885}
+  puntoFallido: {fileID: 181608758}
   OtrosOpciones:
   - {fileID: 1981180968}
   - {fileID: 140990267}
@@ -18773,15 +18667,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.049813695
+      value: -0.049813703
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017318863
+      value: 0.000000017185023
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.637888e-10
+      value: 8.5711366e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1691807237, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -18809,11 +18703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017212441
+      value: 6.2226485e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.5486461e-10
+      value: -5.598671e-12
       objectReference: {fileID: 0}
     - target: {fileID: 1902527300, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_Follow
@@ -18853,15 +18747,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.04531441
+      value: 0.045314413
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000001795675
+      value: 0.00000001732247
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -8.1453627e-10
+      value: -7.8576473e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2176437046675016371, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -18941,11 +18835,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2920318
+      value: 1.988
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.2596817
+      value: -9.3
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18953,15 +18847,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.049813703
+      value: -0.049813714
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000034637566
+      value: 0.000000034370043
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000017275702
+      value: 0.0000000017142276
       objectReference: {fileID: 0}
     - target: {fileID: 4078643985135607696, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -25976,6 +25870,7 @@ MonoBehaviour:
   - {fileID: 1344727714}
   - {fileID: 1371053957}
   - {fileID: 1414720885}
+  puntoFallido: {fileID: 181608758}
   OtrosOpciones:
   - {fileID: 140990267}
   - {fileID: 402005184}
@@ -31694,7 +31589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348169566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.28, y: -11.79, z: -6.1399946}
+  m_LocalPosition: {x: 5.28, y: -12.5, z: -6.1399946}
   m_LocalScale: {x: 5.6123238, y: 1, z: 7.1616187}
   m_Children: []
   m_Father: {fileID: 921351747}
@@ -34767,7 +34662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504974351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.4, y: -11.79, z: 1.2800035}
+  m_LocalPosition: {x: -6.4, y: -12, z: 1.2800035}
   m_LocalScale: {x: 5.6123238, y: 1, z: 7.1616187}
   m_Children: []
   m_Father: {fileID: 921351747}
@@ -38977,7 +38872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756846082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.399999, y: -11.79, z: -6.1399946}
+  m_LocalPosition: {x: -6.399999, y: -12, z: -6.1399946}
   m_LocalScale: {x: 5.6123238, y: 1, z: 7.1616187}
   m_Children: []
   m_Father: {fileID: 921351747}
@@ -40557,6 +40452,7 @@ Transform:
   - {fileID: 1943634872}
   - {fileID: 875748404}
   - {fileID: 348547586}
+  - {fileID: 2020105240}
   m_Father: {fileID: 1343267093}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40641,63 +40537,8 @@ MonoBehaviour:
   - {fileID: 140990265}
   - {fileID: 402005182}
   - {fileID: 209972055}
-  Inicializar: 1
+  Inicializar: 0
   QaA:
-  - question: Prueba
-    opciones:
-    - correct: 1
-      respuestaTexto: 1
-    - correct: 0
-      respuestaTexto: 2
-    - correct: 0
-      respuestaTexto: 3
-    - correct: 0
-      respuestaTexto: 4
-    type: 1
-  - question: Prueba
-    opciones:
-    - correct: 1
-      respuestaTexto: 1
-    - correct: 0
-      respuestaTexto: 2
-    - correct: 0
-      respuestaTexto: 3
-    - correct: 0
-      respuestaTexto: 4
-    type: 1
-  - question: Prueba
-    opciones:
-    - correct: 1
-      respuestaTexto: 1
-    - correct: 0
-      respuestaTexto: 2
-    - correct: 0
-      respuestaTexto: 3
-    - correct: 0
-      respuestaTexto: 4
-    type: 1
-  - question: Prueba
-    opciones:
-    - correct: 1
-      respuestaTexto: 1
-    - correct: 0
-      respuestaTexto: 2
-    - correct: 0
-      respuestaTexto: 3
-    - correct: 0
-      respuestaTexto: 4
-    type: 1
-  - question: Prueba
-    opciones:
-    - correct: 1
-      respuestaTexto: 1
-    - correct: 0
-      respuestaTexto: 2
-    - correct: 0
-      respuestaTexto: 3
-    - correct: 0
-      respuestaTexto: 4
-    type: 1
   - question: Prueba
     opciones:
     - correct: 1
@@ -40722,9 +40563,12 @@ MonoBehaviour:
   waitTimeCompleted: 6.5
   ContCorrectas: 0
   ContIncorrectas: 0
-  Oportunidades: 3
+  Oportunidades: 6
   Restantes: 3
   completed: 0
+  failed: 0
+  FallingPlatforms:
+  - {fileID: 0}
 --- !u!54 &1868743597
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40932,6 +40776,7 @@ MonoBehaviour:
   - {fileID: 1344727714}
   - {fileID: 1371053957}
   - {fileID: 1414720885}
+  puntoFallido: {fileID: 181608758}
   OtrosOpciones:
   - {fileID: 1981180968}
   - {fileID: 140990267}
@@ -42199,7 +42044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939940921}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.28, y: -11.79, z: 1.2800035}
+  m_LocalPosition: {x: 5.28, y: -12.5, z: 1.2800035}
   m_LocalScale: {x: 5.6123238, y: 1, z: 7.1616187}
   m_Children: []
   m_Father: {fileID: 921351747}
@@ -43497,6 +43342,36 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &2020105239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020105240}
+  m_Layer: 6
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2020105240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020105239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1868743592}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2023815234
 GameObject:
   m_ObjectHideFlags: 0

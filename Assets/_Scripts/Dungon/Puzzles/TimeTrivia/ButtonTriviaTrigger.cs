@@ -9,6 +9,7 @@ public class ButtonTriviaTrigger : MonoBehaviour
     public TriviaManager manager;   
     public Rigidbody PuzzleRigid;
     public Transform[] PuzzlePoints;
+    public Transform puntoFallido;
     public TextMeshPro[] OtrosOpciones;
     public float speed;
     [Header("Button Information")]
@@ -64,11 +65,16 @@ public class ButtonTriviaTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if(manager.QaA.Count > 0 && manager.completed==false)
+            if (manager.QaA.Count > 0 && manager.completed == false)
             {
                 StartCoroutine(WaitToChangeQuestion(waitTime));
             }
+            else if (manager.QaA.Count ==0 || manager.Oportunidades==0)
+            {
+                PuzzleRigid.MovePosition(Vector3.MoveTowards(PuzzleRigid.position, puntoFallido.position, speed * Time.deltaTime));
+            }
         }
+       
 
     }
 

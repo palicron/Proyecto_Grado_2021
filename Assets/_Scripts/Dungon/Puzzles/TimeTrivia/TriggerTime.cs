@@ -56,7 +56,8 @@ public class TriggerTime : MonoBehaviour
                     }
                     else if(manager.QaA.Count==0)
                     {
-                        //TODO
+                        manager.timerTxt.text = "Fallaste";
+                        manager.failed=true;
                     }
                     else {
                         if (panelesElevadizos.Length!=0)
