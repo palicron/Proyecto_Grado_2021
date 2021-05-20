@@ -10,6 +10,7 @@ public class Equipment : Item
     public int armorModifier;
     public int damageModifier;
     public int velocityModifier;
+    public GameObject equippedView;
 
     public void Reset()
     {
