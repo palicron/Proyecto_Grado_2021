@@ -30,7 +30,7 @@ public class FloatingTrigger : MonoBehaviour
                         fOption.active = true;
                     }
                 }
-
+                    
                 StartCoroutine(MoveMovingObject(optionActual.waitTime));
             }
         }
@@ -39,11 +39,11 @@ public class FloatingTrigger : MonoBehaviour
 
     IEnumerator MoveMovingObject(float time)
     {
-        yield return new WaitForSeconds(time);
         if (manager != null)
         {
             manager.active = true;
         }
+        yield return new WaitForSeconds(time);
         optionActual.active = true;
     }
 }

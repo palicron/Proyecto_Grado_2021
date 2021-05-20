@@ -19,9 +19,8 @@ public class FallingManagerTrigger : MonoBehaviour
                 if (manager.ActualFloatingPosition <= manager.managers.Count && !optionActual.active)
                 {
                     manager.ActualFloatingPosition++;
-                   
-                    StartCoroutine(waitForMove(optionActual.waitTime));
-                   
+                    manager.changeQuestion();
+
                 }
                 else if(manager.ActualFloatingPosition > manager.managers.Count)
                 {
@@ -32,9 +31,4 @@ public class FallingManagerTrigger : MonoBehaviour
 
     }
 
-    IEnumerator waitForMove(float time)
-    {     
-        yield return new WaitForSeconds(time+1);
-        manager.changeQuestion();
-    }
 }
