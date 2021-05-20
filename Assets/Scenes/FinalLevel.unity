@@ -219,6 +219,99 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3694333}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &3798481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3798482}
+  - component: {fileID: 3798483}
+  m_Layer: 6
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3798482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798481}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5892, y: 0.3092, z: -0.0121}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5666261585771871004}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &3798483
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798481}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 0.4669811, b: 0.4669811, a: 1}
+  m_Intensity: 19.31
+  m_Range: 140.42
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &8462981
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,6 +3874,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1902527299, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
   m_PrefabInstance: {fileID: 1518750395}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &256416361 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8844949818480473861, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+  m_PrefabInstance: {fileID: 1518750395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256416359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e62c82b3be64042ac529dee964cc2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &265194171
 GameObject:
   m_ObjectHideFlags: 0
@@ -20631,6 +20735,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379524000}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1384993841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1384993842}
+  - component: {fileID: 1384993843}
+  - component: {fileID: 1384993844}
+  m_Layer: 0
+  m_Name: EndLevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1384993842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384993841}
+  m_LocalRotation: {x: -0, y: 0.67936754, z: -0, w: 0.73379815}
+  m_LocalPosition: {x: -1.2605, y: 0.143, z: 0.0179}
+  m_LocalScale: {x: 0.052805718, y: 0.051444434, z: 0.052805718}
+  m_Children: []
+  m_Father: {fileID: 5666261585771871004}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 85.588, z: 0}
+--- !u!65 &1384993843
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384993841}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14.18, y: 5.92, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1384993844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384993841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da1a2367080acd4c83ca3ea4a5333c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  story: {fileID: 256416361}
+  TimeTotrasition: 1
 --- !u!1 &1390212907
 GameObject:
   m_ObjectHideFlags: 0
@@ -22285,19 +22448,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9579045
+      value: 0.7095446
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.047776073
+      value: -0.035388973
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.28273234
+      value: 0.7028977
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.014101446
+      value: 0.035057455
       objectReference: {fileID: 0}
     - target: {fileID: 368609291, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_TrackedObjectOffset.y
@@ -22313,19 +22476,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9589371
+      value: 0.7103095
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.017415378
+      value: -0.012900022
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.28303713
+      value: 0.7036553
       objectReference: {fileID: 0}
     - target: {fileID: 1888972547, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0051402715
+      value: 0.012779173
       objectReference: {fileID: 0}
     - target: {fileID: 1902527300, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_Follow
@@ -22345,15 +22508,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9965477
+      value: -4.049757
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.358
+      value: 1.658
       objectReference: {fileID: 0}
     - target: {fileID: 1902527301, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.1885
+      value: -15.591764
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22369,19 +22532,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9588479
+      value: 0.71024334
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.021780752
+      value: -0.016133567
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.2830108
+      value: 0.70358986
       objectReference: {fileID: 0}
     - target: {fileID: 2058919339, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0064287432
+      value: 0.015982427
       objectReference: {fileID: 0}
     - target: {fileID: 3847675374731446324, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_RootOrder
@@ -22431,33 +22594,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3847675375939190473, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847675375939190473, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847675375939190473, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9965477
+      value: -4.049757
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.358
+      value: 1.658
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.1885
+      value: -15.591764
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9579045
+      value: 0.7095445
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0477761
+      value: -0.03538897
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.2827323
+      value: 0.7028977
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.014101455
+      value: 0.03505745
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844949818480473861, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
@@ -24534,342 +24713,222 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: 7
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 9
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 6
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 8
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFComo se llama el plastico con clasificacion numerica igual a 1?"
     opciones:
     - correct: 1
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PEAD
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PP
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFComo se llama el plastico con clasificacion numerica igual a 2?"
     opciones:
     - correct: 1
       respuestaTexto: HDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFComo se llama el plastico con clasificacion numerica igual a 3?"
     opciones:
     - correct: 1
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PP
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFComo se llama el plastico con clasificacion numerica igual a 4?"
     opciones:
     - correct: 1
       respuestaTexto: LDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFComo se llama el plastico con clasificacion numerica igual a 5?"
     opciones:
     - correct: 1
       respuestaTexto: PP
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Otros
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFComo se llama el plastico con clasificacion numerica igual a 6?"
     opciones:
     - correct: 1
       respuestaTexto: PS
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PP
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Otros
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFComo se llama el plastico con clasificacion numerica igual a 7?"
     opciones:
     - correct: 1
       respuestaTexto: Otros
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PP
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFPET esta clasificado segun su tipo con el numero?"
     opciones:
     - correct: 1
       respuestaTexto: 1
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 2
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 3
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 4
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFPVC  esta clasificado segun su tipo con el numero?"
     opciones:
     - correct: 1
       respuestaTexto: 3
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 2
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 1
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 4
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFPP  esta clasificado segun su tipo con el numero?"
     opciones:
     - correct: 1
       respuestaTexto: 5
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 4
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 6
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 3
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFPS  esta clasificado segun su tipo con el numero?"
     opciones:
     - correct: 1
       respuestaTexto: 6
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 5
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 7
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 4
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCual es el tipo de plastico con mayor dificultad de reciclaje?"
     opciones:
     - correct: 1
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 1
       respuestaTexto: Otros
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCual es el tipo de plastico con mayor facilidad de reciclaje?"
     opciones:
     - correct: 1
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 1
       respuestaTexto: HDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PP
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFQue tipo de plastico se encuentra en las botellas?"
     opciones:
     - correct: 1
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PP
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFQue tipo de plastico se encuentra en las bolsas de basura?"
     opciones:
     - correct: 1
       respuestaTexto: LDPE
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PVC
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PP
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFQue tipo de plastico se encuentra en los pitillos?"
     opciones:
     - correct: 1
       respuestaTexto: PP
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PS
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: PET
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: LDPE
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFAdemas del recicljae mec\xE1nico, cual es el otro proceso de reciclaje?"
     opciones:
     - correct: 1
       respuestaTexto: Quimico
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Natural
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Electrico
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Automatico
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFLos palsticos generados en los hogares se denomina desecho?"
     opciones:
     - correct: 1
       respuestaTexto: Domestico
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Industrial
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Comercial
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Social
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCuanto se demora en degradarse el plastico?"
     opciones:
     - correct: 1
       respuestaTexto: "700 a\xF1os"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "100 a\xF1os"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "1 a\xF1o"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "50 a\xF1os"
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   current: 0
   listOfAwnsers: 
   platformsFailed: {fileID: 646369389}
@@ -25421,15 +25480,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.96
+      value: 33.42
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3203786552322567196, guid: b1a8a7daa18de4b4ebb5fbe1add7b995, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32443,7 +32502,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 23742960a63e1ba4791e7b97ef66e139, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -32555,7 +32614,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 23742960a63e1ba4791e7b97ef66e139, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -34130,276 +34189,180 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: 3R
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: R
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 2R
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 6R
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFAdemas de reciclar  otra de las propuestas que hacen parte de
       las 3R es?"
     opciones:
     - correct: 1
       respuestaTexto: Reutlizar
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Redescubrir
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "Redise\xF1ar"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Reemplazar
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFAdemas de reciclar  otra de las propuestas que hacen parte de
       las 3R es?"
     opciones:
     - correct: 1
       respuestaTexto: Reducir
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Reemplazar
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Reordenar
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "Redise\xF1ar"
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEl simbolo de reciclar contiene cuantas flechas ?"
     opciones:
     - correct: 1
       respuestaTexto: 3 felchas
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 2 flechas
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 1 flecha
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 4 flechas
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEl simbolo de reducir contiene cuantas flechas?"
     opciones:
     - correct: 1
       respuestaTexto: 1 flecha
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 2 felcjas
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 4 flechas
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 3 flechas
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEl simbolo de reutilizar contiene cuantas flechas?"
     opciones:
     - correct: 0
       respuestaTexto: 1 flecha
-      numeroOrden: 0
     - correct: 1
       respuestaTexto: 2 felcjas
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 4 flechas
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 3 flechas
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCual es el color distintivo del reciclaje?"
     opciones:
     - correct: 0
       respuestaTexto: Azul
-      numeroOrden: 0
     - correct: 1
       respuestaTexto: Verde
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Blanco
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Gris
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCual es el metal mas reciclado del mundo?"
     opciones:
     - correct: 0
       respuestaTexto: Plomo
-      numeroOrden: 0
     - correct: 1
       respuestaTexto: Aluminio
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Hierro
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Acero
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCual es la prinicipal fuente de reciclaje del acero?"
     opciones:
     - correct: 1
       respuestaTexto: Automoviles
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Electrodomesticos
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Refracciones
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Muebles
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCual es uno de los metales menos reciclados del mundo?"
     opciones:
     - correct: 1
       respuestaTexto: Litio
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Plata
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Hierro
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Mercurio
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEl hierro es un metal que se encuentra en?"
     opciones:
     - correct: 1
       respuestaTexto: Tornillos
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Tuberias
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Estatuas
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Pilas
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEl acero y el cobre se usan para realizar ?"
     opciones:
     - correct: 1
       respuestaTexto: Las tuberias
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Estatuas
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Tornillos
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Pilas
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFQue metal se utiliza para construir las latas de comida?"
     opciones:
     - correct: 1
       respuestaTexto: Aluminio
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Acero
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Hierro
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Plata
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFQue metal se encuenta en las estatuas?"
     opciones:
     - correct: 1
       respuestaTexto: Bronce
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Plata
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Hierro
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Aluminio
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFQue metal es utilizado para realizar las pilas?"
     opciones:
     - correct: 1
       respuestaTexto: Plomo
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Hierro
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Magnesio
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Aluminio
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCual es el metal que se puede reciclar en su totalidad?"
     opciones:
     - correct: 0
       respuestaTexto: Acero
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Hierro
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Magnesio
-      numeroOrden: 0
     - correct: 1
       respuestaTexto: Aluminio
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   current: 0
   listOfAwnsers: 
   platformsFailed: {fileID: 646369389}
@@ -35027,186 +34990,121 @@ MonoBehaviour:
     opciones:
     - correct: 1
       respuestaTexto: Papel de Fax
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Periodico
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Carton
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCual de estos tipos de papel no deberia de introducirse en la
       caneca de papel?"
     opciones:
     - correct: 1
       respuestaTexto: Carton encerado
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Papel blanco
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Periodico
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFDentro de los tipos de papeles existen el reciclable y?"
     opciones:
     - correct: 0
       respuestaTexto: No reciclable
-      numeroOrden: 0
     - correct: 1
       respuestaTexto: Ecologico
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Reusable
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCual de estos productos tiene el mayor consumo de arboles?"
     opciones:
     - correct: 1
       respuestaTexto: "Pa\xF1ales"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Libros
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Servilletas
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCuanto dura en degradarse el papel?"
     opciones:
     - correct: 1
       respuestaTexto: "1 a\xF1o"
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 6 meses
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: "2 a\xF1os"
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFCual es el material que se degrada con mayor facilidad?"
     opciones:
     - correct: 1
       respuestaTexto: Papel
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Plastico
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Vidrio
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEn que caneca se debe depositar el vidrio?"
     opciones:
     - correct: 1
       respuestaTexto: Blanco
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Verde
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Amarillo
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEn que caneca se debe depositar el papel?"
     opciones:
     - correct: 1
       respuestaTexto: Gris
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Blanco
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Rojo
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEn que caneca se debe depositar el metal?"
     opciones:
     - correct: 1
       respuestaTexto: Amarillo
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Azul
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Blanco
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEn que caneca se debe depositar el plastico?"
     opciones:
     - correct: 1
       respuestaTexto: Azul
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Gris
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Rojo
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEn que caneca se debe depositar el residuo organico?"
     opciones:
     - correct: 1
       respuestaTexto: Verde
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Rojo
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Gris
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEn que caneca se debe depositar el residuo peligroso?"
     opciones:
     - correct: 1
       respuestaTexto: Rojo
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Amarillo
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: Gris
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   - question: "\xBFEn el nuevo codigo de reciclaje de colombia  cuantas canecas se
       utilizan?"
     opciones:
     - correct: 1
       respuestaTexto: 3
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 5
-      numeroOrden: 0
     - correct: 0
       respuestaTexto: 2
-      numeroOrden: 0
     type: 1
-    PalabraAnagrama: 
-    hint: 
   current: 0
   listOfAwnsers: 
   platformsFailed: {fileID: 646369389}
@@ -35846,7 +35744,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: a12a1a8d8e2f6e04ebf9756aac0621a9, type: 3}
+  - {fileID: 2100000, guid: a79567dbef7d2b34ba7ae91cca5848be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35998,6 +35896,8 @@ Transform:
   - {fileID: 6732398566543381177}
   - {fileID: 3745622627810331734}
   - {fileID: 4083501150888061301}
+  - {fileID: 3798482}
+  - {fileID: 1384993842}
   m_Father: {fileID: 13370626}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -91.234, z: 0}
@@ -36438,7 +36338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b7b3bce28df6630429605b38ef530563, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
