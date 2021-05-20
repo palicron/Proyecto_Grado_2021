@@ -8,13 +8,16 @@ using UnityEngine.Analytics;
 using Cinemachine;
 public class PlayerCtr : MonoBehaviour
 {
+
     // Related to equipment and added stats
+
     int armorModifier = 0;
     int damageModifier = 0;
     int velocityModifier = 0;
     bool hasWeapon = false;
     bool menuOpen = false;
     UI_Status menuStatus;
+    float slowFall = 1;
 
     GameObject CurrentWeaponPb;
     public void ModifyStats(int a, int d, int v)
@@ -27,7 +30,7 @@ public class PlayerCtr : MonoBehaviour
     public void SetWeapon(GameObject pWeapon, bool equip)
     {
         hasWeapon = equip;
-        if(WeaponVisual != null)
+        if (WeaponVisual != null)
         {
             Destroy(WeaponVisual);
             CurrentWeaponPb = null;
@@ -40,14 +43,28 @@ public class PlayerCtr : MonoBehaviour
             WeaponVisual = aWeapon;
         }
     }
-     public GameObject getWeapon()
+
+    public void SetBoots(int i)
+    {
+        bootsTextures.SetTexture(i);
+        if(i == 2)
+        {
+            canDoubleJump = true;
+        }
+        else
+        {
+            canDoubleJump = false;
+        }
+    }
+
+    public GameObject getWeapon()
     {
         return CurrentWeaponPb;
     }
 
     public void SetTool(GameObject pTool, bool equip)
     {
-        if (ToolVisual != null)
+        if (ToolVisual != null || !equip)
         {
             Destroy(ToolVisual);
         }
@@ -56,6 +73,25 @@ public class PlayerCtr : MonoBehaviour
             GameObject aTool = Instantiate(pTool);
             aTool.transform.SetParent(Tool.transform, false);
             ToolVisual = aTool;
+        }
+    }
+
+    public void SetHead(GameObject pHead, bool equip, int rarity)
+    {
+        if (HeadVisual != null || !equip)
+        {
+            Destroy(HeadVisual);
+            slowFall = 1;
+        }
+        if (pHead != null)
+        {
+            GameObject aHead = Instantiate(pHead);
+            aHead.transform.SetParent(Head.transform, false);
+            HeadVisual = aHead;
+            if(rarity == 2)
+            {
+                slowFall = .001F;
+            }
         }
     }
 
@@ -158,10 +194,14 @@ public class PlayerCtr : MonoBehaviour
     GameObject ToolVisual;
     public GameObject Weapon;
     GameObject WeaponVisual;
+    public GameObject Head;
+    GameObject HeadVisual;
     private float CamYvel;
     private float CamXvel;
+    private BootsTexture bootsTextures;
     void Start()
     {
+        bootsTextures = gameObject.GetComponent<BootsTexture>();
         menuStatus = UI_Status.instance;
         menuStatus.onMenusChangedCallBack += changeMenuStatus;
         CurrentSpeed = Speed;
@@ -244,7 +284,7 @@ public class PlayerCtr : MonoBehaviour
         GroundCheck();
         if (!isGrounded)
         {
-            rb.AddForce(Vector2.down * NoGroundDownForce*Time.deltaTime, ForceDownTipe);
+            rb.AddForce(Vector2.down * slowFall * NoGroundDownForce*Time.deltaTime, ForceDownTipe);
         }
 
         if (!CanControlPlayer)

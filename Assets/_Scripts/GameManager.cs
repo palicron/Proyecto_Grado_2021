@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
        if (StarLoad)
         {
            loadLevel(0);
-         }
+       }
       
 
     }
@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour
             Player.GetComponent<healthsystems>().TakeDmg(Dmg);
         }
     }
-
+ 
     public void PlayerDeath()
     {
         AnalyticsResult Result = Analytics.CustomEvent("Player_Death", new Dictionary<string, object>
@@ -171,11 +171,18 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoadYourAsyncScene(int index, bool TransferInv= false ,bool checkpoint=false)
     {
-        Debug.Log("LODING" + index);
-        List<ListItem> inv = Inventory.instance.items;
-        int[] CurrentScore = Player.gameObject.GetComponent<PlayerScore>().GetScore();
-        GameObject weapon = Player.getWeapon();
-        Equipment[] currentE = Player.gameObject.GetComponent<EquipmentManager>().currentEquipment;
+        List<ListItem> inv = null;
+        int[] CurrentScore = null;
+        GameObject weapon = null;
+        Equipment[] currentE = null;
+        if (Inventory.instance && Player)
+        {
+           inv = Inventory.instance.items;
+            CurrentScore = Player.gameObject.GetComponent<PlayerScore>().GetScore();
+            weapon = Player.getWeapon();
+            currentE = Player.gameObject.GetComponent<EquipmentManager>().currentEquipment;
+        }
+      
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Levels[index]);
         while (!asyncLoad.isDone)
         {

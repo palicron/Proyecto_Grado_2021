@@ -43,7 +43,6 @@ public class EquipmentManager : MonoBehaviour
         //PlayerPrefsX.SetIntArray("Equipment", new int[0]);
         currentEquipment = new Equipment[6];
         equipmentUI = GameObject.Find("Equipment");
-        playerCtr = gameObject.GetComponent<PlayerCtr>();
         SetEquipment();
     }
 
@@ -111,18 +110,34 @@ public class EquipmentManager : MonoBehaviour
                         ErrorDialog.instance.ThrowError("¡Ya tienes un arma equipada!");
                         return false;
                     }
-                    playerCtr.SetWeapon(((Tool)newItem).toolEquippedView, true);
+                    playerCtr.SetWeapon(((Tool)newItem).equippedView, true);
                     weaponEquipped = true;
                 }
                 else
                 {
-                    GameObject pfView = ((Tool)newItem).toolEquippedView;
+                    GameObject pfView = ((Tool)newItem).equippedView;
                     if(pfView != null)
                     {
                         playerCtr.SetTool(pfView, true);
                     }
                 }
             }
+
+            if (newItem.slot == EquipSlot.Feet)
+            {
+                playerCtr.SetBoots((int)newItem.rarity+1);
+                weaponEquipped = true;
+            }
+
+            if (newItem.slot == EquipSlot.Head)
+            {
+                GameObject pfView = newItem.equippedView;
+                if (pfView != null)
+                {
+                    playerCtr.SetHead(pfView, true, (int) newItem.rarity);
+                }
+            }
+
             if (currentEquipment[slotIndex] != null)
             {
                 callback = false;
@@ -154,6 +169,14 @@ public class EquipmentManager : MonoBehaviour
             {
                 playerCtr.SetTool(null, false);
             }
+        }
+        if (currentEquipment[pSlot].slot == EquipSlot.Feet)
+        {
+            playerCtr.SetBoots(0);
+        }
+        if (currentEquipment[pSlot].slot == EquipSlot.Head)
+        {
+            playerCtr.SetHead(null,false,0);
         }
         currentEquipment[pSlot] = null;
         if(!callback)
