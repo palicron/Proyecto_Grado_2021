@@ -55,6 +55,15 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void DeathPause()
+    {
+        GameIsPaused = true;
+     
+        Time.timeScale = 0.0f;
+        Cursor.lockState = CursorLockMode.Confined;
+
+    }
+
     public void UpdatePlayerLife(float life)
     {
         StopAllCoroutines();
@@ -105,7 +114,7 @@ public class UIManager : MonoBehaviour
 
     public void DeathMenuEnable()
     {
-        Pause();
+        DeathPause();
         DeathMenu.SetActive(true);
     }
     public void endlevel()

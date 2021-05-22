@@ -32,7 +32,7 @@ public class EndGame : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        GameManager.intance.loadLevel(5);
+        GameManager.intance.loadLevel(6);
     }
 
 

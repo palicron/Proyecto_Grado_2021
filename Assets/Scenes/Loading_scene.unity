@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3319833183115843719, guid: 4fcad8ea051cd67459592efafb33ae58, type: 3}
       propertyPath: StarLoad
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3319833183115843719, guid: 4fcad8ea051cd67459592efafb33ae58, type: 3}
       propertyPath: YkillZone
@@ -189,6 +189,10 @@ PrefabInstance:
     - target: {fileID: 3319833183115843719, guid: 4fcad8ea051cd67459592efafb33ae58, type: 3}
       propertyPath: YKillZoneDmg
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319833183115843719, guid: 4fcad8ea051cd67459592efafb33ae58, type: 3}
+      propertyPath: Levels.Array.size
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3319833183115843719, guid: 4fcad8ea051cd67459592efafb33ae58, type: 3}
       propertyPath: Levels.Array.data[2]
@@ -204,6 +208,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3319833183115843719, guid: 4fcad8ea051cd67459592efafb33ae58, type: 3}
       propertyPath: Levels.Array.data[5]
+      value: FinalLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319833183115843719, guid: 4fcad8ea051cd67459592efafb33ae58, type: 3}
+      propertyPath: Levels.Array.data[6]
       value: Outro
       objectReference: {fileID: 0}
     m_RemovedComponents: []
