@@ -54,7 +54,7 @@ public class End_Level_Sequence : NPC
 
         SecondCam.SetActive(true);
         playerCam.SetActive(false);
-        GameManager.progress[2] = true;
+        GameManager.progress[level] = true;
         while (timeTOend< TimeToendLevel)
         {
             timeTOend += Time.deltaTime;
