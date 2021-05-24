@@ -109,6 +109,10 @@ public class UIManager : MonoBehaviour
     public void LoadLevel(int index)
     {
         Resume();
+        if(index==0)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
         GameManager.intance.loadLevel(index);
     }
 

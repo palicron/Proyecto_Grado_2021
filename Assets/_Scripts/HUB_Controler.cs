@@ -28,7 +28,7 @@ public class HUB_Controler : MonoBehaviour
        
         if (GameManager.progress[1])
         {
-            Destroy(TomsTrigger);
+         //   Destroy(TomsTrigger);
         }
         if(GameManager.progress[2])
         {
