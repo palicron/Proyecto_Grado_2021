@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using Random = UnityEngine.Random;
+
 
 public class Minigame : MonoBehaviour
 {
@@ -16,12 +19,44 @@ public class Minigame : MonoBehaviour
     // En la posición 0 las preguntas relacionadas al Papel
     // En la posición 1 las preguntas relacionadas al Plástico
     // En la posición 2 las preguntas relacionadas al Vidrio
-    // En la posición 3 las preguntas relacionadas al Metal
-    public QuestionList paperQuestions;
-    public QuestionList plasticQuestions;
-    public QuestionList glassQuestions;
-    public QuestionList metalQuestions;
-    QuestionList[] questionArray;
+    // En la posición 3 las preguntas relacionadas al Metal 
+
+    public class QuestionsStatus
+    {
+        public int[] status;
+    }
+
+    static QuestionsStatus paperQuestions = new QuestionsStatus();
+    static QuestionsStatus plasticQuestions = new QuestionsStatus();
+    static QuestionsStatus glassQuestions = new QuestionsStatus();
+    static QuestionsStatus metalQuestions = new QuestionsStatus();
+        
+    QuestionsStatus[] questionsStatus = { paperQuestions, plasticQuestions, glassQuestions, metalQuestions };
+
+    public TextAsset questionsJSON;
+
+    [System.Serializable]
+    public class Question
+    {
+        public string question;
+        public string[] answers;
+        public int res;
+    }
+
+    [System.Serializable]
+    public class QuestionSet
+    {
+        public Question[] questionSet;
+    }
+
+    [System.Serializable]
+    public class Questions
+    {
+        public QuestionSet[] questions;
+    }
+
+    public Questions questions = new Questions();
+
     public GameObject minigameUI;
     public GameObject mainMenu;
     public GameObject quizScreen;
@@ -33,10 +68,36 @@ public class Minigame : MonoBehaviour
 
     Color red = new Color32(255, 46, 40, 255);
 
+    Animator anim;
+
     void Start()
     {
-        questionArray = new QuestionList[4] { paperQuestions, plasticQuestions, glassQuestions, metalQuestions };
+        questions = JsonUtility.FromJson<Questions>(questionsJSON.text);
+        questionsStatus[0].status = PlayerPrefsX.GetIntArray("PaperQ", 0, questions.questions[0].questionSet.Length);
+        questionsStatus[1].status = PlayerPrefsX.GetIntArray("PlasticQ", 0, questions.questions[1].questionSet.Length);
+        questionsStatus[2].status = PlayerPrefsX.GetIntArray("GlassQ", 0, questions.questions[2].questionSet.Length);
+        questionsStatus[3].status = PlayerPrefsX.GetIntArray("MetalQ", 0, questions.questions[3].questionSet.Length);
+        anim = iconBonus.GetComponent<Animator>();
     }
+
+    void OnDestroy()
+    {
+        PlayerPrefsX.SetIntArray("PaperQ", paperQuestions.status);
+        PlayerPrefsX.SetIntArray("PlasticQ", plasticQuestions.status);
+        PlayerPrefsX.SetIntArray("GlassQ", glassQuestions.status);
+        PlayerPrefsX.SetIntArray("MetalQ", metalQuestions.status);
+    }
+
+    private bool IsEmptyArray(int[] list)
+    {
+        return !(Array.Exists(list, e => e == 0));
+    }
+
+    private static bool isTrue(bool b)
+    {
+        return b;
+    }
+
     public void ExitGame()
     {
         minigameUI.SetActive(false);
@@ -68,8 +129,8 @@ public class Minigame : MonoBehaviour
             resultGmO.color = green;
             PlayerScore.instance.UpdateScore(actualMaterial, 10);
             bonusSprite.sprite = icons[actualMaterial];
-            iconBonus.GetComponent<Animator>().SetBool("correct", true);
-            questionArray[actualMaterial].list.RemoveAt(actualQuestion);
+            anim.SetBool("correct", true);
+            questionsStatus[actualMaterial].status[actualQuestion] = 1;
             UI_SFX.instance.PlayAnswer(true);
         }
         else
@@ -82,8 +143,8 @@ public class Minigame : MonoBehaviour
 
     public void ShowQuestion()
     {
-        QuestionList selectedMaterial = questionArray[actualMaterial];
-        if (selectedMaterial.list.Count == 0)
+        QuestionsStatus selectedMaterial = questionsStatus[actualMaterial];
+        if (IsEmptyArray(selectedMaterial.status))
         {
             ErrorDialog.instance.ThrowError("Ya completaste todas las preguntas de esta categoría");
             return;
@@ -91,25 +152,15 @@ public class Minigame : MonoBehaviour
         mainMenu.SetActive(false);
         resultScreen.SetActive(false);
         quizScreen.SetActive(true);
-        actualQuestion = Random.Range(0, selectedMaterial.list.Count);
-        GameQuestion selectedQuestion = selectedMaterial.list[actualQuestion];
+        Question[] questionList = questions.questions[actualMaterial].questionSet;
+        actualQuestion = Random.Range(0, questionList.Length);
+        Question selectedQuestion = questionList[actualQuestion];
+        Debug.Log(selectedMaterial.status.Length);
         questionGmO.text = selectedQuestion.question;
         for(int i = 0; i < 4; i++)
         {
             answersGmO[i].text = selectedQuestion.answers[i];
         }
-        actualAnswer = selectedQuestion.answer;
+        actualAnswer = selectedQuestion.res;
     }
-}
-[System.Serializable]
-public class GameQuestion
-{
-    public string question;
-    public string[] answers = new string[4];
-    public int answer;
-}
-[System.Serializable]
-public class QuestionList
-{
-    public List<GameQuestion> list;
 }

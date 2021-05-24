@@ -17,7 +17,6 @@ public class Minigame_Interaction : MonoBehaviour
     void Start()
     {
         gameUI = GameObject.Find("/PF_GameUI");
-
         minigameUI = gameUI.transform.Find("MiniGame").gameObject;
     }
 
@@ -49,7 +48,6 @@ public class Minigame_Interaction : MonoBehaviour
             if (interacting) return;
             minigameUI.SetActive(true);
             UI_Status.instance.SetOpen(true, MenuType.MiniGame);
-            Time.timeScale = 0.0f;
         }
     }
 }

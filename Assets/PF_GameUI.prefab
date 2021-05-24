@@ -325,10 +325,10 @@ RectTransform:
   m_Father: {fileID: 567831813}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 437.18384, y: -71.0488}
-  m_SizeDelta: {x: 800, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &12159945
 CanvasRenderer:
@@ -5497,10 +5497,10 @@ RectTransform:
   m_Father: {fileID: 567831813}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 437.18384, y: -281.0488}
-  m_SizeDelta: {x: 800, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &858422289
 CanvasRenderer:
@@ -6306,10 +6306,10 @@ RectTransform:
   m_Father: {fileID: 567831813}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 437.18384, y: -351.0488}
-  m_SizeDelta: {x: 800, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &951335135
 CanvasRenderer:
@@ -6758,10 +6758,10 @@ RectTransform:
   m_Father: {fileID: 567831813}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 437.18384, y: -141.0488}
-  m_SizeDelta: {x: 800, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1012584267
 CanvasRenderer:
@@ -8116,10 +8116,10 @@ RectTransform:
   m_Father: {fileID: 567831813}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 437.18384, y: -211.0488}
-  m_SizeDelta: {x: 800, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1299065779
 CanvasRenderer:
@@ -16074,50 +16074,9 @@ MonoBehaviour:
   - {fileID: 111914650}
   - {fileID: 756682084}
   resultGmO: {fileID: 1855192404}
-  paperQuestions:
-    list:
-    - question: "\xBFCu\xE1ntos \xE1rboles se necesitan para producir una tonelada
-        de papel?"
-      answers:
-      - 1
-      - 8
-      - 11
-      - 17
-      answer: 3
-  plasticQuestions:
-    list:
-    - question: "\xBFCu\xE1nto tiempo dura el pl\xE1stico para comenzar a descomponerse?"
-      answers:
-      - "50 a\xF1os"
-      - "450 a\xF1os"
-      - "720 a\xF1os"
-      - "1000 a\xF1os"
-      answer: 1
-    - question: "\xBFCu\xE1l de los siguientes no es un tipo de pl\xE1stico?"
-      answers:
-      - PED
-      - PVC
-      - HDPE
-      - PP
-      answer: 0
-  glassQuestions:
-    list:
-    - question: "\xBFCu\xE1ntas veces se puede reciclar el vidrio?"
-      answers:
-      - Infinitamente
-      - 5
-      - 10
-      - Depende
-      answer: 0
-  metalQuestions:
-    list:
-    - question: "\xBFCu\xE1nto porcentaje de energ\xEDa ahorra el reciclaje del aluminio?"
-      answers:
-      - 35%
-      - 50%
-      - 80%
-      - 95%
-      answer: 3
+  questionsJSON: {fileID: 4900000, guid: 3ec490e38e56dbd48aaf18e17d4bb277, type: 3}
+  questions:
+    questions: []
   minigameUI: {fileID: 943411410}
   mainMenu: {fileID: 31993716}
   quizScreen: {fileID: 197025879}
