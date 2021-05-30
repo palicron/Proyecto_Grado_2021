@@ -8,9 +8,12 @@ public class PlasticRoomManager : MonoBehaviour
     [Header("Manager Dependences")]
     public TextMeshPro Questiontxt;
     public TextMeshPro timeTxt;
+    public TextMeshPro timeText2;
     public GameObject[] panelOpciones;
+    public TextMeshPro[] panelesOpcionesArriba;
     public MetalRoomOption[] platOpciones;
     public PlaftormController[] OpcionesMoviles;
+    public PlaftormController[] platfinales;
     public PlasticQuestionManager questionManager;
     public TextMeshPro oportunidadesTxt;
     public TextMeshPro faltantesTxt;
@@ -39,8 +42,7 @@ public class PlasticRoomManager : MonoBehaviour
     public PlaftormController[] completedPlat;
     [Header("Trap depencies")]
     public PlaftormController gasPlat;
-    public GasTriggerOut gasTriggerOut;
-
+    
 
     private void Start()
     {
@@ -57,25 +59,17 @@ public class PlasticRoomManager : MonoBehaviour
 
         oportunidadesTxt.text = oportunidades + "\n Oportunidades";
         faltantesTxt.text = faltantes + "\n Restantes";
-        if (!gasTriggerOut.GasIsActivated && gasTriggerOut.validacion==1)
-        {
-            ResetearPlataformas();
-            
-        }
         if (CuentaRegresiva)
         {
             if (tiempoRestante > 0)
             {
                 tiempoRestante -= Time.deltaTime;
-                timeTxt.text = "" + tiempoRestante.ToString("f0");
-                if (tiempoRestante < 3 )
-                {
-                    gasPlat.active = true;
-
-                }
+                timeTxt.text = "Liberando gas toxico \n " + tiempoRestante.ToString("f0");
+                timeText2.text = "Liberando gas toxico \n " + tiempoRestante.ToString("f0");
             }
             else
             {
+                gasPlat.active = true;
                 verifyAnwsers();
             }
         }
@@ -83,24 +77,26 @@ public class PlasticRoomManager : MonoBehaviour
         {
             Questiontxt.text = "Fallaste";
             timeTxt.text = "";
+            timeText2.text = "";
             platformsFailed.active = true;
         }
         if (completed)
         {
             CuentaRegresiva = false;
-            timeTxt.text = "";
-            Questiontxt.text = "Desbloqueado";
+            timeTxt.text = "Completo";
+            timeText2.text = "";
+            Questiontxt.text = "";
             foreach (PlaftormController plat in completedPlat)
             {
                 plat.active = true;
 
             }
+            FinalLevelCtr.intance.endFight();
             completed = false;
         }
     }
 
     public void ResetearPlataformas() {
-        gasTriggerOut.validacion = 0;
         foreach (PlaftormController plat in OpcionesMoviles)
         {    
             if (plat.playerOnPlat==true) 
@@ -113,35 +109,57 @@ public class PlasticRoomManager : MonoBehaviour
     public void verifyAnwsers()
     {
         CuentaRegresiva = false;
-        questionManager.plat.active = true;
-        foreach (MetalRoomOption met in platOpciones)
+        foreach (PlaftormController plat in platfinales)
+        {
+            plat.active = true;
+        }
+            foreach (MetalRoomOption met in platOpciones)
         {
             if (met.choosed && listOfAwnsers.Contains(met.opcion))
             {
-                Questiontxt.text = "Peligro Gas Venenoso";
-                panelOpciones[met.opcion].GetComponent<TextMeshPro>().text = "Correcto";
+                Questiontxt.text = "";
+                timeTxt.text = "Esperando el activador";
+                timeText2.text = "Gas liberado \n correcto";
+                resetPanelOpciones();
+                StartCoroutine(WaitTrapTime(waitTimeTrap*3f));
                 ContCorrectas++;
                 faltantes--;
             }
             else if (met.choosed && !listOfAwnsers.Contains(met.opcion))
             {
-                Questiontxt.text = "Peligro Gas Venenoso";
+               
                 met.activarTrampa();
-                StartCoroutine(WaitTrapTime(waitTimeTrap,met));
-                panelOpciones[met.opcion].GetComponent<TextMeshPro>().text = "Incorrecto";
+                Questiontxt.text = "";
+                timeTxt.text = "Esperando el activador";
+                timeText2.text = "Gas liberado\n Incorrecto";
+                StartCoroutine(WaitTrapTime(waitTimeTrap));
+                resetPanelOpciones();
                 ContIncorrectas++;
                 oportunidades--;
             }
         }
         if (!escogioAlguna())
         {
-            Questiontxt.text = "No selecionaste";
+            Questiontxt.text = "";
+            timeTxt.text = "Esperando el activador";
+            timeText2.text = "Gas liberado\n incorrecto";
             ContIncorrectas++;
             oportunidades--;
+            resetPanelOpciones();
+            StartCoroutine(WaitTrapTime(waitTimeTrap));
         }
         StartCoroutine(WaitTimerOut(waitingTime));
     }
 
+    //RESETEA LOS TEXTOS DE LOS PANELES DE OPCIONES
+    public void resetPanelOpciones() 
+    {
+        foreach (MetalRoomOption met in platOpciones)
+        {
+            panelOpciones[met.opcion].GetComponent<TextMeshPro>().text = "";
+            panelesOpcionesArriba[met.opcion].GetComponent<TextMeshPro>().text = "";
+        }
+    }
 
     public void generateQuestion()
     {
@@ -151,13 +169,10 @@ public class PlasticRoomManager : MonoBehaviour
         }
         current = Random.Range(0, QaA.Count);
         Questiontxt.text = QaA[current].question;
-        if (QaA[current].type == QandA.QuestionType.ORDENAR)
-        {
-            Questiontxt.text = QaA[current].question + " : " + QaA[current].Anagrama();
-        }
         for (int i = 0; i < panelOpciones.Length; i++)
         {
             panelOpciones[i].GetComponentInChildren<TextMeshPro>().text = "";
+            panelesOpcionesArriba[i].GetComponentInChildren<TextMeshPro>().text = "";
         }
         tiempoRestante = tiempoInicial;
         SetAwnsers();
@@ -175,6 +190,7 @@ public class PlasticRoomManager : MonoBehaviour
             {
                 randomOption = Random.Range(0, QaA[current].opciones.Count);
                 panelOpciones[i].GetComponentInChildren<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
+                panelesOpcionesArriba[i].GetComponentInChildren<TextMeshPro>().text = QaA[current].opciones[randomOption].respuestaTexto;
                 if (QaA[current].opciones[randomOption].correct)
                 {
                     listOfAwnsers.Add(i);
@@ -188,17 +204,17 @@ public class PlasticRoomManager : MonoBehaviour
     IEnumerator WaitTimerOut(float time)
     {
         yield return new WaitForSeconds(time);
-        questionManager.plat.active = false;
         questionManager.activated = false;
 
     }
 
-    IEnumerator WaitTrapTime(float time, MetalRoomOption met)
+    IEnumerator WaitTrapTime(float time)
     {
-        
         yield return new WaitForSeconds(time);
-        OpcionesMoviles[met.opcion].active = true;
-        
+        foreach (PlaftormController met in OpcionesMoviles)
+        {
+            met.active = true; 
+        }
     }
 
     public bool escogioAlguna()

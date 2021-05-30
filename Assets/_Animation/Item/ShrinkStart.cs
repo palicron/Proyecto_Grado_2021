@@ -11,13 +11,13 @@ public class ShrinkStart : StateMachineBehaviour
         ItemPickup item = animator.GetComponent<ItemPickup>();
         if(item !=null)
         {
-            animator.GetComponent<BoxCollider>().isTrigger = true;
+            animator.GetComponent<Collider>().isTrigger = true;
             item.hover = true;
         }
         else
         {
             EntryPickup pItem = animator.GetComponentInParent<EntryPickup>();
-            animator.GetComponentInParent<BoxCollider>().isTrigger = true;
+            animator.GetComponentInParent<Collider>().isTrigger = true;
             pItem.hover = true;
         }
         animator.transform.Translate(0, 40F * Time.deltaTime,0);

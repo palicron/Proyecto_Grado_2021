@@ -167,7 +167,12 @@ public class DialogueManager : MonoBehaviour
         {
             line currentLine = CurrentConversation.lines[ActiveLineIndex];
             Currentsentece = currentLine.sentences;
-            if(currentLine.id != -1)
+            if(currentLine.hasAevent)
+            {
+                CurrentNPCTalking.midDialgueAction();
+            }
+         
+            if (currentLine.id != -1)
             {
                 RecyclingDiary.instance.AddEntry(currentLine.sentences, currentLine.DialogueDescription, currentLine.LocutorName, currentLine.id);
             }

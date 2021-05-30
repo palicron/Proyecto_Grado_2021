@@ -15,7 +15,8 @@ MonoBehaviour:
   bIsRandomDialogue: 0
   DialoguePriority: 1
   lines:
-  - DialogueDescription: Entrando a la fabrica de metal
+  - id: -1
+    DialogueDescription: Entrando a la fabrica de metal
     LocutorName: Tom
     JumpQuestion: 0
     JumpTo: 0
@@ -30,7 +31,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Entrando a la fabrica de metal 2
+  - id: -1
+    DialogueDescription: Entrando a la fabrica de metal 2
     LocutorName: Tom
     JumpQuestion: 0
     JumpTo: 0
@@ -44,7 +46,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Entrando a la fabrica de metal 3
+  - id: 98
+    DialogueDescription: Entrando a la fabrica de metal 3
     LocutorName: Tom
     JumpQuestion: 0
     JumpTo: 0
@@ -58,7 +61,8 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Entrando a la fabrica de metal 4
+  - id: -1
+    DialogueDescription: Entrando a la fabrica de metal 4
     LocutorName: Tom
     JumpQuestion: 0
     JumpTo: 0
@@ -73,7 +77,8 @@ MonoBehaviour:
     - Si me encantaria
     - No gracias ya lo se t
     WhereToJumpInfo: 0400000005000000
-  - DialogueDescription: Entrando a la fabrica de metal datos curiosos
+  - id: 97
+    DialogueDescription: Entrando a la fabrica de metal datos curiosos
     LocutorName: Tom
     JumpQuestion: 0
     JumpTo: 0
@@ -87,7 +92,24 @@ MonoBehaviour:
     elementNeded: 
     About: []
     WhereToJumpInfo: 
-  - DialogueDescription: Entrando a la fabrica de metal datos curiosos
+  - id: 99
+    DialogueDescription: Entrando a la fabrica de metal datos curiosos
+    LocutorName: Tom
+    JumpQuestion: 0
+    JumpTo: 0
+    sentences: Recuerda que puede abrir tu diario para ver lo que has aprendido,
+      recuerda hablando con mis recicladores o recolectado hojas de conosimiento
+      llenaras este diario
+    Type: 0
+    Answers: []
+    CorrectAnswer: 0
+    CorrectJump: 0
+    InCorrectJump: 0
+    elementNeded: 
+    About: []
+    WhereToJumpInfo: 
+  - id: -1
+    DialogueDescription: Entrando a la fabrica de metal datos curiosos
     LocutorName: Tom
     JumpQuestion: 0
     JumpTo: 0

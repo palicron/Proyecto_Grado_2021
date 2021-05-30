@@ -11,7 +11,10 @@ public class PlasticQuestionManager : MonoBehaviour
     [Header("Trigger Characteristics")]
     public bool activated;
 
-
+    private void Start()
+    {
+        activated = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

@@ -55,6 +55,15 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void DeathPause()
+    {
+        GameIsPaused = true;
+     
+        Time.timeScale = 0.0f;
+        Cursor.lockState = CursorLockMode.Confined;
+
+    }
+
     public void UpdatePlayerLife(float life)
     {
         StopAllCoroutines();
@@ -100,16 +109,27 @@ public class UIManager : MonoBehaviour
     public void LoadLevel(int index)
     {
         Resume();
+        if(index==0)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
         GameManager.intance.loadLevel(index);
     }
 
     public void DeathMenuEnable()
     {
+        DeathPause();
         DeathMenu.SetActive(true);
     }
     public void endlevel()
     {
         FinishMenu.SetActive(true);
+    }
+
+    public void RestarFromCheckPoint()
+    {
+        Resume();
+        GameManager.intance.RestarLevelCheckPoint();
     }
 
 }

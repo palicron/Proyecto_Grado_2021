@@ -54,7 +54,7 @@ public class MetalRoomManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        
         oportunidadesTxt.text = oportunidades + "\n Oportunidades";
         faltantesTxt.text = faltantes + "\n Restantes";
         if (activadoPuzzle) 
@@ -88,14 +88,20 @@ public class MetalRoomManager : MonoBehaviour
         {
             CuentaRegresiva = false;
             lavaFloor.active = false;
-            timeTxt.text = "";
-            Questiontxt.text = "Desbloqueado";
+            timeTxt.text = "Completado";
+            Questiontxt.text = "Pase a la siguiente fase";
+            faltantesTxt.text = ">>>";
+            oportunidadesTxt.text = "Reciclaste " + oportunidades + " oportunidades";
             foreach (PlaftormController plat in completedPlat)
             {
                 plat.active = true;
 
             }
-            completed = false;
+            foreach (PlaftormController plat in platSaltos)
+            {
+                plat.active = false;
+
+            }
         }
     }
 
@@ -111,27 +117,35 @@ public class MetalRoomManager : MonoBehaviour
         {
             if (met.choosed && listOfAwnsers.Contains(met.opcion))
             {
-                Questiontxt.text = "Esperando pregunta";
-                panelOpciones[met.opcion].GetComponent<TextMeshPro>().text = "Correcto";
+                Questiontxt.text = "Vuelva al activador";
+                timeTxt.text = "Correcto";  
                 ContCorrectas++;
                 faltantes--;
             }
             else if (met.choosed && !listOfAwnsers.Contains(met.opcion))
             {
-                Questiontxt.text = "Esperando pregunta  ";
+                Questiontxt.text = "Vuelva al activador";
+                timeTxt.text = "Incorrecto";
                 StartCoroutine(WaitTrapTime(waitTimeTrap, met));
-                panelOpciones[met.opcion].GetComponent<TextMeshPro>().text = "Incorrecto";
                 ContIncorrectas++;
                 oportunidades--;
             }
+            panelOpciones[met.opcion].GetComponent<TextMeshPro>().text = "";
         }
-        if (!escogioAlguna())
+
+        if (!escogio()) 
         {
-            Questiontxt.text = "No selecionaste";
-            ContIncorrectas++;
-            oportunidades--;
+                Questiontxt.text = "Vuelva al activador";
+                timeTxt.text = "Sin elección";
+                ContIncorrectas++;
+                oportunidades--;
         }
+
         StartCoroutine(WaitTimerOut(waitingTime));
+        if (faltantes==0)
+        {
+            completed = true;
+        }
     }
 
 
@@ -143,10 +157,6 @@ public class MetalRoomManager : MonoBehaviour
         }
         current = Random.Range(0, QaA.Count);
         Questiontxt.text = QaA[current].question;
-        if (QaA[current].type == QandA.QuestionType.ORDENAR)
-        {
-            Questiontxt.text = QaA[current].question + " : " + QaA[current].Anagrama();
-        }
         for (int i = 0; i < panelOpciones.Length; i++)
         {
             panelOpciones[i].GetComponentInChildren<TextMeshPro>().text = "";
@@ -185,6 +195,7 @@ public class MetalRoomManager : MonoBehaviour
         {
             plat.active = true;
         }
+        questionManager.stateText.text = "Activdaor \n en espera";
         questionManager.activated = false;
 
     }
@@ -197,14 +208,11 @@ public class MetalRoomManager : MonoBehaviour
 
     }
 
-    public bool escogioAlguna()
+    public bool escogio() 
     {
         foreach (MetalRoomOption met in platOpciones) 
         {
-            if (met.choosed) 
-            {
-                return true;
-            }
+            if (met.choosed) { return true; }
         }
         return false;
     }

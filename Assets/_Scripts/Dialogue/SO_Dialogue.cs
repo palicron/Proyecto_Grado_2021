@@ -21,6 +21,7 @@ public class line
     public int id = -1;
     public string DialogueDescription;
     public string LocutorName;
+    public bool hasAevent = false;
     public bool JumpQuestion;
     public int JumpTo;
     [TextArea(3, 10)]

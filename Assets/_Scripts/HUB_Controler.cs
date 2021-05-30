@@ -28,14 +28,17 @@ public class HUB_Controler : MonoBehaviour
        
         if (GameManager.progress[1])
         {
-            Destroy(TomsTrigger);
+         //   Destroy(TomsTrigger);
         }
         if(GameManager.progress[2])
         {
+            Destroy(TomsTrigger);
             Destroy(IndutryDorr);
         }
         if(GameManager.progress[3])
         {
+            Destroy(TomsTrigger);
+            Destroy(IndutryDorr);
             Destroy(TowerDoor);
         }
     }

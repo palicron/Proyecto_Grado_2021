@@ -54,7 +54,9 @@ public class PlaftormController : MonoBehaviour
     [SerializeField]
     bool direction=true;
     int directInt = 1;
-
+    [SerializeField]
+    AudioClip powerUpsound;
+    bool playsound =true;
     public enum PlatformType{ 
         NORMAL,
         TRANSLATEPATH,
@@ -70,7 +72,8 @@ public class PlaftormController : MonoBehaviour
         ROTATIONTIMER,
         TRAPFALLINGPLATFORM,
         BUTTONPLATFORM,
-        TIMEDTRIGGERDMOVE
+        TIMEDTRIGGERDMOVE,
+       
     }
 
     void Start()
@@ -125,11 +128,19 @@ public class PlaftormController : MonoBehaviour
         else if (type == PlatformType.BUTTONPLATFORM)
         {
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed*Time.deltaTime));
+            if (speedVariation.Length != 0) { platformSpeed = speedVariation[1]; }
 
         }
         else if (type == PlatformType.TRIGGEREXIT)
         {
-            platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
+            if (speedVariation.Length!=0)
+            {
+                platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, speedVariation[0] * Time.deltaTime));
+            }
+            else {
+                platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
+
+            }
 
         }
         else if (type == PlatformType.TIMEDTRIGGERDMOVE)
@@ -258,6 +269,7 @@ public class PlaftormController : MonoBehaviour
         //PLATFORM THAT ROTATES DURING CERTAIN TIME
         else if (type == PlatformType.ROTATIONTIMER)
         {
+
             platformRB.DORotate(new Vector3(rotationX, rotationY, rotationZ), platformSpeed, RotateMode.Fast);
             StartCoroutine(WaitForRotation(waitTime));
  
@@ -266,6 +278,11 @@ public class PlaftormController : MonoBehaviour
         //PLATFORM THAT MOVES A RIGIDBODY TO A DETERMINED POSITION WHEN IS TRIGERED 
         else if (type == PlatformType.MOVEMENTESCREENTRIGGERED) 
         {
+            if(powerUpsound && playsound)
+            {
+                playsound = false;
+                GameManager.intance.playSound(powerUpsound);
+            }
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[0].position, platformSpeed * Time.deltaTime));
             
         }
@@ -279,6 +296,7 @@ public class PlaftormController : MonoBehaviour
         else if (type == PlatformType.BUTTONPLATFORM)
         {
             platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[1].position, platformSpeed * Time.deltaTime));
+            if (speedVariation.Length != 0) { platformSpeed = speedVariation[0]; }
 
         }
         else if (type == PlatformType.TRANSLATEMOVEMENT) 
@@ -391,18 +409,7 @@ public class PlaftormController : MonoBehaviour
             {
                 platformRB.MovePosition(Vector3.MoveTowards(platformRB.position, positions[positions.Length-1].position, platformSpeed * Time.deltaTime));
             }
-            if (playerOnPlat)
-               {
-                    playerVelx = VelocityVector.x;
-                    playerVelz = VelocityVector.z;
-                    if (plactr.Xvel != 0 || plactr.Yvel != 0)
-                    {
-                        playerVelx = playerRigid.velocity.x;
-                        playerVelz = playerRigid.velocity.z;
-                    }
-                    Vector3 newVelocity = new Vector3(playerVelx, playerRigid.velocity.y, playerVelz);
-                    playerRigid.velocity = newVelocity;
-               }
+
             StartCoroutine(WaitForReset(waitTime));
         }
     }

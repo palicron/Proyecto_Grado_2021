@@ -56,11 +56,20 @@ public class Inventory : MonoBehaviour
                 extraBag2 = true;
             }
         }
+        SetInventory();
+    }
+
+    IEnumerator Initialize()
+    {
+        yield return new WaitForSeconds(0.1F);
+        if (onItemChangedCallBack != null)
+        {
+            onItemChangedCallBack.Invoke();
+        }
         if (onPocketAddedCallback != null)
         {
             onPocketAddedCallback.Invoke();
         }
-        SetInventory();
     }
 
     void SetInventory()
@@ -73,10 +82,7 @@ public class Inventory : MonoBehaviour
             newListItem.quantity = savedQuantity[i];
             items.Add(newListItem);
         }
-        if (onItemChangedCallBack != null)
-        {
-            onItemChangedCallBack.Invoke();
-        }
+        StartCoroutine(Initialize());
     }
 
     void OnDestroy()
