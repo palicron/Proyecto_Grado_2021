@@ -17569,7 +17569,7 @@ MonoBehaviour:
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 5
-  waitTime: 1
+  waitTime: 0
   initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
@@ -20146,7 +20146,7 @@ MonoBehaviour:
   plactr: {fileID: 0}
   type: 14
   platformSpeed: 4
-  waitTime: 50
+  waitTime: 3
   initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
@@ -23643,7 +23643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.035388976
+      value: -0.035388965
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -23651,7 +23651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53407225, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.035057466
+      value: 0.03505746
       objectReference: {fileID: 0}
     - target: {fileID: 368609291, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_TrackedObjectOffset.y
@@ -23815,7 +23815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.035388984
+      value: -0.03538897
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -23823,7 +23823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3847675375939190478, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.035057463
+      value: 0.035057448
       objectReference: {fileID: 0}
     - target: {fileID: 8844949818480473861, guid: c4af7a77fd3c7a149bec8d3421a0d64b, type: 3}
       propertyPath: m_Alpha
@@ -26430,7 +26430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hs: {fileID: 0}
   type: 1
-  DammageDebuff: 5
+  DammageDebuff: 1
   SlowDebuff: 0
   JumpDebuff: 0
   DashDebuff: 0
@@ -26478,8 +26478,8 @@ MonoBehaviour:
   - {fileID: 2124089651}
   - {fileID: 1390212908}
   speedVariation:
-  - 3
   - 5
+  - 9
   waitVariation: []
   rotations: []
   moveToTheNext: 1
@@ -27507,7 +27507,7 @@ MonoBehaviour:
   plactr: {fileID: 0}
   type: 1
   platformSpeed: 5
-  waitTime: 1
+  waitTime: 0
   initialPoint: {x: 0, y: 0, z: 0}
   VelocityVector: {x: 0, y: 0, z: 0}
   rotationX: 0
