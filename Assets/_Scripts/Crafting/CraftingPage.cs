@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Button = UnityEngine.UI.Button;
 
 public class CraftingPage : MonoBehaviour
 {
@@ -21,9 +22,13 @@ public class CraftingPage : MonoBehaviour
 
     public GameObject confirmText;
 
+    public ConfirmationWindow confirmationWindow;
+
     PlayerScore playerScore;
 
     private int[] score;
+
+    private bool actualPage;
 
     Recipe recipe;
 
@@ -31,6 +36,12 @@ public class CraftingPage : MonoBehaviour
 
     Color red = new Color32(255, 0, 0, 0);
 
+    public void Start()
+    {
+        confirmationWindow.confirm.onClick.AddListener(Craft);
+        confirmationWindow.cancel.onClick.AddListener(Cancel);
+        actualPage = false;
+    }
 
     public void SetPageUI(Recipe pRecipe)
     {
@@ -54,10 +65,11 @@ public class CraftingPage : MonoBehaviour
 
     public void Craft()
     {
+        if (!actualPage) return;
+
+        actualPage = false;
         Text pText = confirmText.GetComponent<Text>();
         int[] newScore = recipe.IsCraftable(playerScore.GetScore());
-        playerScore.UpdateScore(3, 0);
-        Debug.Log(newScore.Length); 
         if (newScore.Length==4)
         {
             playerScore.SetScore(newScore);
@@ -79,6 +91,18 @@ public class CraftingPage : MonoBehaviour
             }
         }
         confirmText.GetComponent<Animator>().SetBool("itemRecycled", true);
+        Cancel();
+    }
+
+    public void CraftConfirmation()
+    {
+        actualPage = true;
+        confirmationWindow.gameObject.SetActive(true);
+    }
+
+    public void Cancel()
+    {
+        confirmationWindow.gameObject.SetActive(false);
     }
 
     public void SetPlayerScore(PlayerScore pScore)

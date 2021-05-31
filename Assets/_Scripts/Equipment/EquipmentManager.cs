@@ -48,7 +48,7 @@ public class EquipmentManager : MonoBehaviour
 
     IEnumerator Initialize()
     {
-        yield return new WaitForSeconds(0.1F);
+        yield return new WaitForSeconds(0.5F);
         if (onItemEquipedCallBack != null)
         {
             onItemEquipedCallBack.Invoke();

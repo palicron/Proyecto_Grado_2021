@@ -61,7 +61,7 @@ public class Inventory : MonoBehaviour
 
     IEnumerator Initialize()
     {
-        yield return new WaitForSeconds(0.1F);
+        yield return new WaitForSeconds(0.5F);
         if (onItemChangedCallBack != null)
         {
             onItemChangedCallBack.Invoke();
